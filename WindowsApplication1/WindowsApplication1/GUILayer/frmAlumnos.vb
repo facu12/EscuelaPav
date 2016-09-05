@@ -1,9 +1,4 @@
 ﻿Public Class Form1
-    Private listarAlumnos As List(Of Alumno)
-
-
-
-
     Private Sub frm_Alumnos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'carga la grilla apenas abre la ventana
@@ -35,5 +30,4 @@
 
 
     End Sub
-
-   
+End Class

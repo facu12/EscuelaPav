@@ -16,4 +16,8 @@
         Return oAlumnoDao.update(oAlumno)
     End Function
 
+    Public Function listarAlumnosConFiltros(ByVal apellido As String) As List(Of Alumno)
+        Return oAlumnoDao.getByFilters(apellido)
+    End Function
+
 End Class
