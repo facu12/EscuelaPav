@@ -23,30 +23,29 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn_salir = New System.Windows.Forms.Button()
+        Me.btn_editar = New System.Windows.Forms.Button()
+        Me.btn_agregar = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.lbl_telefono = New System.Windows.Forms.Label()
+        Me.txt_documento = New System.Windows.Forms.TextBox()
+        Me.lbl_documento = New System.Windows.Forms.Label()
         Me.lblMensajes = New System.Windows.Forms.Label()
-        Me.cmdBuscar = New System.Windows.Forms.Button()
         Me.txtNombres = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtApellido = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtLegajo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btn_buscar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.dgv_listarAlumnos = New System.Windows.Forms.DataGridView()
+        Me.Txt_box_buscar = New System.Windows.Forms.TextBox()
         Me.cmdConsultar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.cmdSalir = New System.Windows.Forms.Button()
-        Me.lbl_documento = New System.Windows.Forms.Label()
-        Me.txt_documento = New System.Windows.Forms.TextBox()
-        Me.lbl_telefono = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.btn_salir = New System.Windows.Forms.Button()
-        Me.btn_editar = New System.Windows.Forms.Button()
-        Me.btn_agregar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_listarAlumnos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -70,6 +69,80 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(429, 372)
         Me.Panel1.TabIndex = 29
         '
+        'btn_salir
+        '
+        Me.btn_salir.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_salir.Image = Global.WindowsApplication1.My.Resources.Resources.salir
+        Me.btn_salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_salir.Location = New System.Drawing.Point(339, 307)
+        Me.btn_salir.Name = "btn_salir"
+        Me.btn_salir.Size = New System.Drawing.Size(75, 55)
+        Me.btn_salir.TabIndex = 34
+        Me.btn_salir.Text = "Salir"
+        Me.btn_salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_salir.UseVisualStyleBackColor = False
+        '
+        'btn_editar
+        '
+        Me.btn_editar.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_editar.Image = Global.WindowsApplication1.My.Resources.Resources.editar
+        Me.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_editar.Location = New System.Drawing.Point(120, 307)
+        Me.btn_editar.Name = "btn_editar"
+        Me.btn_editar.Size = New System.Drawing.Size(75, 55)
+        Me.btn_editar.TabIndex = 33
+        Me.btn_editar.Text = "Editar"
+        Me.btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_editar.UseVisualStyleBackColor = False
+        '
+        'btn_agregar
+        '
+        Me.btn_agregar.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_agregar.Image = Global.WindowsApplication1.My.Resources.Resources.agregar
+        Me.btn_agregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_agregar.Location = New System.Drawing.Point(26, 307)
+        Me.btn_agregar.Name = "btn_agregar"
+        Me.btn_agregar.Size = New System.Drawing.Size(75, 55)
+        Me.btn_agregar.TabIndex = 32
+        Me.btn_agregar.Text = "Agregar"
+        Me.btn_agregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_agregar.UseVisualStyleBackColor = False
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(90, 119)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox2.TabIndex = 31
+        '
+        'lbl_telefono
+        '
+        Me.lbl_telefono.AutoSize = True
+        Me.lbl_telefono.Location = New System.Drawing.Point(23, 117)
+        Me.lbl_telefono.Name = "lbl_telefono"
+        Me.lbl_telefono.Size = New System.Drawing.Size(52, 13)
+        Me.lbl_telefono.TabIndex = 30
+        Me.lbl_telefono.Text = "Telefono:"
+        '
+        'txt_documento
+        '
+        Me.txt_documento.Location = New System.Drawing.Point(90, 92)
+        Me.txt_documento.Name = "txt_documento"
+        Me.txt_documento.Size = New System.Drawing.Size(121, 20)
+        Me.txt_documento.TabIndex = 29
+        '
+        'lbl_documento
+        '
+        Me.lbl_documento.AutoSize = True
+        Me.lbl_documento.Location = New System.Drawing.Point(10, 91)
+        Me.lbl_documento.Name = "lbl_documento"
+        Me.lbl_documento.Size = New System.Drawing.Size(65, 13)
+        Me.lbl_documento.TabIndex = 28
+        Me.lbl_documento.Text = "Documento:"
+        '
         'lblMensajes
         '
         Me.lblMensajes.AutoSize = True
@@ -78,17 +151,6 @@ Partial Class Form1
         Me.lblMensajes.Size = New System.Drawing.Size(68, 13)
         Me.lblMensajes.TabIndex = 27
         Me.lblMensajes.Text = "[lblMensajes]"
-        '
-        'cmdBuscar
-        '
-        Me.cmdBuscar.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.cmdBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdBuscar.Location = New System.Drawing.Point(311, 347)
-        Me.cmdBuscar.Name = "cmdBuscar"
-        Me.cmdBuscar.Size = New System.Drawing.Size(85, 23)
-        Me.cmdBuscar.TabIndex = 26
-        Me.cmdBuscar.Text = "Buscar"
-        Me.cmdBuscar.UseVisualStyleBackColor = False
         '
         'txtNombres
         '
@@ -141,11 +203,22 @@ Partial Class Form1
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Legajo:"
         '
+        'btn_buscar
+        '
+        Me.btn_buscar.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.btn_buscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_buscar.Location = New System.Drawing.Point(311, 347)
+        Me.btn_buscar.Name = "btn_buscar"
+        Me.btn_buscar.Size = New System.Drawing.Size(85, 23)
+        Me.btn_buscar.TabIndex = 26
+        Me.btn_buscar.Text = "Buscar"
+        Me.btn_buscar.UseVisualStyleBackColor = False
+        '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
-        Me.GroupBox1.Controls.Add(Me.cmdBuscar)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.dgv_listarAlumnos)
+        Me.GroupBox1.Controls.Add(Me.btn_buscar)
+        Me.GroupBox1.Controls.Add(Me.Txt_box_buscar)
         Me.GroupBox1.Controls.Add(Me.cmdConsultar)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Location = New System.Drawing.Point(472, 12)
@@ -155,23 +228,24 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Lista de Alumnos"
         '
-        'DataGridView1
+        'dgv_listarAlumnos
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 24)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(391, 306)
-        Me.DataGridView1.TabIndex = 19
+        Me.dgv_listarAlumnos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
+        Me.dgv_listarAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_listarAlumnos.Location = New System.Drawing.Point(6, 24)
+        Me.dgv_listarAlumnos.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgv_listarAlumnos.Name = "dgv_listarAlumnos"
+        Me.dgv_listarAlumnos.RowTemplate.Height = 24
+        Me.dgv_listarAlumnos.Size = New System.Drawing.Size(391, 306)
+        Me.dgv_listarAlumnos.TabIndex = 19
         '
-        'TextBox1
+        'Txt_box_buscar
         '
-        Me.TextBox1.Location = New System.Drawing.Point(56, 347)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(241, 20)
-        Me.TextBox1.TabIndex = 18
+        Me.Txt_box_buscar.Location = New System.Drawing.Point(56, 347)
+        Me.Txt_box_buscar.Margin = New System.Windows.Forms.Padding(2)
+        Me.Txt_box_buscar.Name = "Txt_box_buscar"
+        Me.Txt_box_buscar.Size = New System.Drawing.Size(241, 20)
+        Me.Txt_box_buscar.TabIndex = 18
         '
         'cmdConsultar
         '
@@ -193,97 +267,11 @@ Partial Class Form1
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Alumno:"
         '
-        'cmdSalir
-        '
-        Me.cmdSalir.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.cmdSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdSalir.Location = New System.Drawing.Point(788, 391)
-        Me.cmdSalir.Name = "cmdSalir"
-        Me.cmdSalir.Size = New System.Drawing.Size(80, 36)
-        Me.cmdSalir.TabIndex = 31
-        Me.cmdSalir.Text = "Salir"
-        Me.cmdSalir.UseVisualStyleBackColor = False
-        '
-        'lbl_documento
-        '
-        Me.lbl_documento.AutoSize = True
-        Me.lbl_documento.Location = New System.Drawing.Point(10, 91)
-        Me.lbl_documento.Name = "lbl_documento"
-        Me.lbl_documento.Size = New System.Drawing.Size(65, 13)
-        Me.lbl_documento.TabIndex = 28
-        Me.lbl_documento.Text = "Documento:"
-        '
-        'txt_documento
-        '
-        Me.txt_documento.Location = New System.Drawing.Point(90, 92)
-        Me.txt_documento.Name = "txt_documento"
-        Me.txt_documento.Size = New System.Drawing.Size(121, 20)
-        Me.txt_documento.TabIndex = 29
-        '
-        'lbl_telefono
-        '
-        Me.lbl_telefono.AutoSize = True
-        Me.lbl_telefono.Location = New System.Drawing.Point(23, 117)
-        Me.lbl_telefono.Name = "lbl_telefono"
-        Me.lbl_telefono.Size = New System.Drawing.Size(52, 13)
-        Me.lbl_telefono.TabIndex = 30
-        Me.lbl_telefono.Text = "Telefono:"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(90, 119)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox2.TabIndex = 31
-        '
-        'btn_salir
-        '
-        Me.btn_salir.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btn_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_salir.Image = Global.WindowsApplication1.My.Resources.Resources.salir
-        Me.btn_salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_salir.Location = New System.Drawing.Point(339, 307)
-        Me.btn_salir.Name = "btn_salir"
-        Me.btn_salir.Size = New System.Drawing.Size(75, 55)
-        Me.btn_salir.TabIndex = 34
-        Me.btn_salir.Text = "Salir"
-        Me.btn_salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_salir.UseVisualStyleBackColor = False
-        '
-        'btn_editar
-        '
-        Me.btn_editar.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_editar.Image = Global.WindowsApplication1.My.Resources.Resources.editar
-        Me.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_editar.Location = New System.Drawing.Point(120, 307)
-        Me.btn_editar.Name = "btn_editar"
-        Me.btn_editar.Size = New System.Drawing.Size(75, 55)
-        Me.btn_editar.TabIndex = 33
-        Me.btn_editar.Text = "Editar"
-        Me.btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_editar.UseVisualStyleBackColor = False
-        '
-        'btn_agregar
-        '
-        Me.btn_agregar.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btn_agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_agregar.Image = Global.WindowsApplication1.My.Resources.Resources.agregar
-        Me.btn_agregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_agregar.Location = New System.Drawing.Point(26, 307)
-        Me.btn_agregar.Name = "btn_agregar"
-        Me.btn_agregar.Size = New System.Drawing.Size(75, 55)
-        Me.btn_agregar.TabIndex = 32
-        Me.btn_agregar.Text = "Agregar"
-        Me.btn_agregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_agregar.UseVisualStyleBackColor = False
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(882, 428)
-        Me.Controls.Add(Me.cmdSalir)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Form1"
@@ -292,13 +280,13 @@ Partial Class Form1
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_listarAlumnos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents lblMensajes As System.Windows.Forms.Label
-    Friend WithEvents cmdBuscar As System.Windows.Forms.Button
+    Friend WithEvents btn_buscar As System.Windows.Forms.Button
     Friend WithEvents txtNombres As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txtApellido As System.Windows.Forms.TextBox
@@ -308,9 +296,8 @@ Partial Class Form1
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents cmdConsultar As System.Windows.Forms.Button
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents cmdSalir As System.Windows.Forms.Button
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents dgv_listarAlumnos As DataGridView
+    Friend WithEvents Txt_box_buscar As TextBox
     Friend WithEvents lbl_documento As Label
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents lbl_telefono As Label

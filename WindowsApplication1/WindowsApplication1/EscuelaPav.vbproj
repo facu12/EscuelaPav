@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BussinessLayer\Entities\Alumno.vb" />
+    <Compile Include="BussinessLayer\Entities\Profesor.vb" />
     <Compile Include="BussinessLayer\Services\AlumnoService.vb" />
     <Compile Include="DataLayer\DAOs\AlumnoDAO.vb" />
     <Compile Include="DataLayer\Helper\BDHelper.vb" />
@@ -131,11 +132,7 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BussinessLayer\Entities\" />
-    <Folder Include="BussinessLayer\Services\" />
-    <Folder Include="DataLayer\DAOs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\agregar.png" />
     <Content Include="Resources\editar.png" />
