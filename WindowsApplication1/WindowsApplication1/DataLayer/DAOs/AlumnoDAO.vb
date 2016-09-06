@@ -46,4 +46,27 @@
         Return (BDHelper.getDBHelper().EjecutarSQL(comandStr) = 1)
     End Function
 
+    Public Function getByFilters(ByVal apellido As String) As List(Of Alumno)
+        Dim alumno As New List(Of Alumno)
+        Dim strSQL = "SELECT * FROM dbo.Alumnos WHERE apellido LIKE '% " + apellido + "%'"
+        strSQL += " ORDER BY apellido DESC"
+
+        For Each row As DataRow In BDHelper.getDBHelper().ConsultaSQL(strSQL).Rows
+            alumno.Add(map(row))
+        Next
+
+        Return alumno
+    End Function
+
+    Private Function map(row As DataRow) As Alumno
+        Dim oAlumno As New Alumno
+        With oAlumno
+            .legajo = Convert.ToInt32(row.Item("legajo").ToString)
+            .apellido = row.Item("apellido").ToString
+            .nombre = row.Item("nombre").ToString
+            .telefono = row.Item("telefono").ToString
+            .documento = row.Item("documento").ToString
+        End With
+        Return oAlumno
+    End Function
 End Class
