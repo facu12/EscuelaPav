@@ -21,4 +21,16 @@
         Return oAlumno
     End Function
 
+    Public Function add(ByVal oAlumno As Alumno) As Boolean
+        Dim comandStr As String
+        comandStr = "INSERT INTO dbo.Alumno VALUES("
+        comandStr += "'" + oAlumno.legajo.ToString + "', "
+        comandStr += "'" + oAlumno.nombre + "', "
+        comandStr += "'" + oAlumno.apellido + "', "
+        comandStr += "'" + oAlumno.telefono + "', "
+        comandStr += "'" + oAlumno.documento + ")"
+
+        Return (BDHelper.getDBHelper().EjecutarSQL(comandStr) = 1)
+    End Function
+
 End Class
