@@ -33,4 +33,17 @@
         Return (BDHelper.getDBHelper().EjecutarSQL(comandStr) = 1)
     End Function
 
+    Public Function update(ByVal oAlumno As Alumno) As Boolean
+        Dim comandStr As String
+        comandStr = "UPDATE Alumnos SET "
+        comandStr += "legajo='" + oAlumno.legajo + "', "
+        comandStr += "nombre='" + oAlumno.nombre + "', "
+        comandStr += "apellido='" + oAlumno.apellido + "', "
+        comandStr += "telefono=" + oAlumno.telefono + ", "
+        comandStr += "documento=" + oAlumno.documento + " "
+        comandStr += "WHERE legajo=" + oAlumno.legajo.ToString
+
+        Return (BDHelper.getDBHelper().EjecutarSQL(comandStr) = 1)
+    End Function
+
 End Class
