@@ -76,6 +76,12 @@
     <Compile Include="BussinessLayer\Services\AlumnoService.vb" />
     <Compile Include="DataLayer\DAOs\AlumnoDAO.vb" />
     <Compile Include="DataLayer\Helper\BDHelper.vb" />
+    <Compile Include="GUILayer\frmProfesores.Designer.vb">
+      <DependentUpon>frmProfesores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmProfesores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\frmAlumnos.Designer.vb">
       <DependentUpon>frmAlumnos.vb</DependentUpon>
     </Compile>
@@ -106,6 +112,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUILayer\frmProfesores.resx">
+      <DependentUpon>frmProfesores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmAlumnos.resx">
       <DependentUpon>frmAlumnos.vb</DependentUpon>
     </EmbeddedResource>
@@ -132,9 +141,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BussinessLayer\Entities\" />
-    <Folder Include="BussinessLayer\Services\" />
-    <Folder Include="DataLayer\DAOs\" />
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\agregar.png" />

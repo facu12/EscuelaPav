@@ -1,8 +1,8 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class frmProfesores
     Inherits System.Windows.Forms.Form
 
-    'Form overrides dispose to clean up the component list.
+    'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
@@ -14,38 +14,34 @@ Partial Class Form1
         End Try
     End Sub
 
-    'Required by the Windows Form Designer
+    'Requerido por el Diseñador de Windows Forms
     Private components As System.ComponentModel.IContainer
 
-    'NOTE: The following procedure is required by the Windows Form Designer
-    'It can be modified using the Windows Form Designer.  
-    'Do not modify it using the code editor.
+    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
+    'Se puede modificar usando el Diseñador de Windows Forms.  
+    'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btn_salir = New System.Windows.Forms.Button()
         Me.btn_editar = New System.Windows.Forms.Button()
         Me.btn_agregar = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.lbl_telefono = New System.Windows.Forms.Label()
-        Me.txt_documento = New System.Windows.Forms.TextBox()
-        Me.lbl_documento = New System.Windows.Forms.Label()
         Me.lbl_Mensajes = New System.Windows.Forms.Label()
-        Me.txtNombres = New System.Windows.Forms.TextBox()
+        Me.txt_Nombres = New System.Windows.Forms.TextBox()
         Me.lbl_nombre = New System.Windows.Forms.Label()
-        Me.txtApellido = New System.Windows.Forms.TextBox()
+        Me.txt_Apellido = New System.Windows.Forms.TextBox()
         Me.lbl_apellido = New System.Windows.Forms.Label()
-        Me.txtLegajo = New System.Windows.Forms.TextBox()
+        Me.txt_Legajo = New System.Windows.Forms.TextBox()
         Me.lbl_legajo = New System.Windows.Forms.Label()
-        Me.btn_buscar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.txt_busqueda_alumnos = New System.Windows.Forms.TextBox()
+        Me.dgv_profesores = New System.Windows.Forms.DataGridView()
+        Me.btn_buscar = New System.Windows.Forms.Button()
+        Me.txt_busqueda_profesor = New System.Windows.Forms.TextBox()
         Me.cmdConsultar = New System.Windows.Forms.Button()
-        Me.lbl_alumnos = New System.Windows.Forms.Label()
+        Me.lbl_profesor = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_profesores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -53,21 +49,17 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.btn_salir)
         Me.Panel1.Controls.Add(Me.btn_editar)
         Me.Panel1.Controls.Add(Me.btn_agregar)
-        Me.Panel1.Controls.Add(Me.TextBox2)
-        Me.Panel1.Controls.Add(Me.lbl_telefono)
-        Me.Panel1.Controls.Add(Me.txt_documento)
-        Me.Panel1.Controls.Add(Me.lbl_documento)
         Me.Panel1.Controls.Add(Me.lbl_Mensajes)
-        Me.Panel1.Controls.Add(Me.txtNombres)
+        Me.Panel1.Controls.Add(Me.txt_Nombres)
         Me.Panel1.Controls.Add(Me.lbl_nombre)
-        Me.Panel1.Controls.Add(Me.txtApellido)
+        Me.Panel1.Controls.Add(Me.txt_Apellido)
         Me.Panel1.Controls.Add(Me.lbl_apellido)
-        Me.Panel1.Controls.Add(Me.txtLegajo)
+        Me.Panel1.Controls.Add(Me.txt_Legajo)
         Me.Panel1.Controls.Add(Me.lbl_legajo)
-        Me.Panel1.Location = New System.Drawing.Point(24, 12)
+        Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(429, 372)
-        Me.Panel1.TabIndex = 29
+        Me.Panel1.TabIndex = 30
         '
         'btn_salir
         '
@@ -111,38 +103,6 @@ Partial Class Form1
         Me.btn_agregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_agregar.UseVisualStyleBackColor = False
         '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(90, 119)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox2.TabIndex = 31
-        '
-        'lbl_telefono
-        '
-        Me.lbl_telefono.AutoSize = True
-        Me.lbl_telefono.Location = New System.Drawing.Point(23, 117)
-        Me.lbl_telefono.Name = "lbl_telefono"
-        Me.lbl_telefono.Size = New System.Drawing.Size(52, 13)
-        Me.lbl_telefono.TabIndex = 30
-        Me.lbl_telefono.Text = "Telefono:"
-        '
-        'txt_documento
-        '
-        Me.txt_documento.Location = New System.Drawing.Point(90, 92)
-        Me.txt_documento.Name = "txt_documento"
-        Me.txt_documento.Size = New System.Drawing.Size(121, 20)
-        Me.txt_documento.TabIndex = 29
-        '
-        'lbl_documento
-        '
-        Me.lbl_documento.AutoSize = True
-        Me.lbl_documento.Location = New System.Drawing.Point(10, 91)
-        Me.lbl_documento.Name = "lbl_documento"
-        Me.lbl_documento.Size = New System.Drawing.Size(65, 13)
-        Me.lbl_documento.TabIndex = 28
-        Me.lbl_documento.Text = "Documento:"
-        '
         'lbl_Mensajes
         '
         Me.lbl_Mensajes.AutoSize = True
@@ -152,13 +112,13 @@ Partial Class Form1
         Me.lbl_Mensajes.TabIndex = 27
         Me.lbl_Mensajes.Text = "[lblMensajes]"
         '
-        'txtNombres
+        'txt_Nombres
         '
-        Me.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNombres.Location = New System.Drawing.Point(90, 65)
-        Me.txtNombres.Name = "txtNombres"
-        Me.txtNombres.Size = New System.Drawing.Size(292, 20)
-        Me.txtNombres.TabIndex = 10
+        Me.txt_Nombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_Nombres.Location = New System.Drawing.Point(90, 65)
+        Me.txt_Nombres.Name = "txt_Nombres"
+        Me.txt_Nombres.Size = New System.Drawing.Size(292, 20)
+        Me.txt_Nombres.TabIndex = 10
         '
         'lbl_nombre
         '
@@ -169,13 +129,13 @@ Partial Class Form1
         Me.lbl_nombre.TabIndex = 9
         Me.lbl_nombre.Text = "Nombres:"
         '
-        'txtApellido
+        'txt_Apellido
         '
-        Me.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtApellido.Location = New System.Drawing.Point(90, 38)
-        Me.txtApellido.Name = "txtApellido"
-        Me.txtApellido.Size = New System.Drawing.Size(182, 20)
-        Me.txtApellido.TabIndex = 1
+        Me.txt_Apellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_Apellido.Location = New System.Drawing.Point(90, 38)
+        Me.txt_Apellido.Name = "txt_Apellido"
+        Me.txt_Apellido.Size = New System.Drawing.Size(182, 20)
+        Me.txt_Apellido.TabIndex = 1
         '
         'lbl_apellido
         '
@@ -186,13 +146,13 @@ Partial Class Form1
         Me.lbl_apellido.TabIndex = 0
         Me.lbl_apellido.Text = "Apellido:"
         '
-        'txtLegajo
+        'txt_Legajo
         '
-        Me.txtLegajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLegajo.Location = New System.Drawing.Point(90, 11)
-        Me.txtLegajo.Name = "txtLegajo"
-        Me.txtLegajo.Size = New System.Drawing.Size(91, 20)
-        Me.txtLegajo.TabIndex = 0
+        Me.txt_Legajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_Legajo.Location = New System.Drawing.Point(90, 11)
+        Me.txt_Legajo.Name = "txt_Legajo"
+        Me.txt_Legajo.Size = New System.Drawing.Size(91, 20)
+        Me.txt_Legajo.TabIndex = 0
         '
         'lbl_legajo
         '
@@ -202,6 +162,30 @@ Partial Class Form1
         Me.lbl_legajo.Size = New System.Drawing.Size(42, 13)
         Me.lbl_legajo.TabIndex = 0
         Me.lbl_legajo.Text = "Legajo:"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.dgv_profesores)
+        Me.GroupBox1.Controls.Add(Me.btn_buscar)
+        Me.GroupBox1.Controls.Add(Me.txt_busqueda_profesor)
+        Me.GroupBox1.Controls.Add(Me.cmdConsultar)
+        Me.GroupBox1.Controls.Add(Me.lbl_profesor)
+        Me.GroupBox1.Location = New System.Drawing.Point(459, 12)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(403, 372)
+        Me.GroupBox1.TabIndex = 31
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Lista de Profesores"
+        '
+        'dgv_profesores
+        '
+        Me.dgv_profesores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_profesores.Location = New System.Drawing.Point(6, 24)
+        Me.dgv_profesores.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgv_profesores.Name = "dgv_profesores"
+        Me.dgv_profesores.RowTemplate.Height = 24
+        Me.dgv_profesores.Size = New System.Drawing.Size(391, 306)
+        Me.dgv_profesores.TabIndex = 19
         '
         'btn_buscar
         '
@@ -214,37 +198,13 @@ Partial Class Form1
         Me.btn_buscar.Text = "Buscar"
         Me.btn_buscar.UseVisualStyleBackColor = False
         '
-        'GroupBox1
+        'txt_busqueda_profesor
         '
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
-        Me.GroupBox1.Controls.Add(Me.btn_buscar)
-        Me.GroupBox1.Controls.Add(Me.txt_busqueda_alumnos)
-        Me.GroupBox1.Controls.Add(Me.cmdConsultar)
-        Me.GroupBox1.Controls.Add(Me.lbl_alumnos)
-        Me.GroupBox1.Location = New System.Drawing.Point(472, 12)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(403, 372)
-        Me.GroupBox1.TabIndex = 30
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Lista de Alumnos"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 24)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(391, 306)
-        Me.DataGridView1.TabIndex = 19
-        '
-        'txt_busqueda_alumnos
-        '
-        Me.txt_busqueda_alumnos.Location = New System.Drawing.Point(56, 347)
-        Me.txt_busqueda_alumnos.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_busqueda_alumnos.Name = "txt_busqueda_alumnos"
-        Me.txt_busqueda_alumnos.Size = New System.Drawing.Size(241, 20)
-        Me.txt_busqueda_alumnos.TabIndex = 18
+        Me.txt_busqueda_profesor.Location = New System.Drawing.Point(56, 347)
+        Me.txt_busqueda_profesor.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_busqueda_profesor.Name = "txt_busqueda_profesor"
+        Me.txt_busqueda_profesor.Size = New System.Drawing.Size(241, 20)
+        Me.txt_busqueda_profesor.TabIndex = 18
         '
         'cmdConsultar
         '
@@ -257,51 +217,48 @@ Partial Class Form1
         Me.cmdConsultar.Text = "Consultar"
         Me.cmdConsultar.UseVisualStyleBackColor = False
         '
-        'lbl_alumnos
+        'lbl_profesor
         '
-        Me.lbl_alumnos.AutoSize = True
-        Me.lbl_alumnos.Location = New System.Drawing.Point(6, 349)
-        Me.lbl_alumnos.Name = "lbl_alumnos"
-        Me.lbl_alumnos.Size = New System.Drawing.Size(45, 13)
-        Me.lbl_alumnos.TabIndex = 13
-        Me.lbl_alumnos.Text = "Alumno:"
+        Me.lbl_profesor.AutoSize = True
+        Me.lbl_profesor.Location = New System.Drawing.Point(6, 349)
+        Me.lbl_profesor.Name = "lbl_profesor"
+        Me.lbl_profesor.Size = New System.Drawing.Size(49, 13)
+        Me.lbl_profesor.TabIndex = 13
+        Me.lbl_profesor.Text = "Profesor:"
         '
-        'Form1
+        'frmProfesores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(882, 428)
+        Me.ClientSize = New System.Drawing.Size(876, 414)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "frmProfesores"
+        Me.Text = "Form2"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_profesores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents lbl_Mensajes As System.Windows.Forms.Label
-    Friend WithEvents btn_buscar As System.Windows.Forms.Button
-    Friend WithEvents txtNombres As System.Windows.Forms.TextBox
-    Friend WithEvents lbl_nombre As System.Windows.Forms.Label
-    Friend WithEvents txtApellido As System.Windows.Forms.TextBox
-    Friend WithEvents lbl_apellido As System.Windows.Forms.Label
-    Friend WithEvents txtLegajo As System.Windows.Forms.TextBox
-    Friend WithEvents lbl_legajo As System.Windows.Forms.Label
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents cmdConsultar As System.Windows.Forms.Button
-    Friend WithEvents lbl_alumnos As System.Windows.Forms.Label
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents txt_busqueda_alumnos As TextBox
-    Friend WithEvents lbl_documento As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents lbl_telefono As Label
-    Friend WithEvents txt_documento As TextBox
+
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btn_salir As Button
     Friend WithEvents btn_editar As Button
     Friend WithEvents btn_agregar As Button
-    Friend WithEvents btn_salir As Button
+    Friend WithEvents lbl_Mensajes As Label
+    Friend WithEvents txt_Nombres As TextBox
+    Friend WithEvents lbl_nombre As Label
+    Friend WithEvents txt_Apellido As TextBox
+    Friend WithEvents lbl_apellido As Label
+    Friend WithEvents txt_Legajo As TextBox
+    Friend WithEvents lbl_legajo As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents dgv_profesores As DataGridView
+    Friend WithEvents btn_buscar As Button
+    Friend WithEvents txt_busqueda_profesor As TextBox
+    Friend WithEvents cmdConsultar As Button
+    Friend WithEvents lbl_profesor As Label
 End Class
