@@ -72,6 +72,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BussinessLayer\Entities\Alumno.vb" />
+    <Compile Include="BussinessLayer\Services\AlumnoService.vb" />
+    <Compile Include="DataLayer\DAOs\AlumnoDAO.vb" />
     <Compile Include="DataLayer\Helper\BDHelper.vb" />
     <Compile Include="GUILayer\frmAlumnos.Designer.vb">
       <DependentUpon>frmAlumnos.vb</DependentUpon>
@@ -128,11 +131,7 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BussinessLayer\Entities\" />
-    <Folder Include="BussinessLayer\Services\" />
-    <Folder Include="DataLayer\DAOs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
