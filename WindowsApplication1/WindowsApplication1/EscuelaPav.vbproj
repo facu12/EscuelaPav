@@ -73,6 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLayer\Helper\BDHelper.vb" />
+    <Compile Include="GUILayer\frmAlumnos.Designer.vb">
+      <DependentUpon>frmAlumnos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmAlumnos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\Presentacion.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUILayer\frmAlumnos.resx">
+      <DependentUpon>frmAlumnos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Presentacion.resx">
       <DependentUpon>Presentacion.vb</DependentUpon>
     </EmbeddedResource>
