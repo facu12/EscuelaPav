@@ -131,6 +131,16 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BussinessLayer\Entities\" />
+    <Folder Include="BussinessLayer\Services\" />
+    <Folder Include="DataLayer\DAOs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\agregar.png" />
+    <Content Include="Resources\editar.png" />
+    <Content Include="Resources\salir.png" />
+  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
