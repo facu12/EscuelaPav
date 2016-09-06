@@ -12,4 +12,8 @@
         Return oAlumnoDao.add(oAlumno)
     End Function
 
+    Public Function actualizarAlumno(ByVal oAlumno As Alumno) As Boolean
+        Return oAlumnoDao.update(oAlumno)
+    End Function
+
 End Class
