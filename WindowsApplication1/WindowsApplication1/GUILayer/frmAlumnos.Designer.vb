@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,14 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
+        Me.btn_nuevo = New System.Windows.Forms.Button()
         Me.btn_salir = New System.Windows.Forms.Button()
         Me.btn_editar = New System.Windows.Forms.Button()
-        Me.btn_agregar = New System.Windows.Forms.Button()
+        Me.btn_confirmar = New System.Windows.Forms.Button()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.lbl_telefono = New System.Windows.Forms.Label()
         Me.txt_documento = New System.Windows.Forms.TextBox()
@@ -39,20 +41,26 @@ Partial Class Form1
         Me.lbl_legajo = New System.Windows.Forms.Label()
         Me.btn_buscar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgv_listarAlumnos = New System.Windows.Forms.DataGridView()
+        Me.col_legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_busqueda_alumnos = New System.Windows.Forms.TextBox()
         Me.cmdConsultar = New System.Windows.Forms.Button()
         Me.lbl_alumnos = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgv_listarAlumnos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.btn_cancelar)
+        Me.Panel1.Controls.Add(Me.btn_nuevo)
         Me.Panel1.Controls.Add(Me.btn_salir)
         Me.Panel1.Controls.Add(Me.btn_editar)
-        Me.Panel1.Controls.Add(Me.btn_agregar)
+        Me.Panel1.Controls.Add(Me.btn_confirmar)
         Me.Panel1.Controls.Add(Me.TextBox2)
         Me.Panel1.Controls.Add(Me.lbl_telefono)
         Me.Panel1.Controls.Add(Me.txt_documento)
@@ -69,15 +77,37 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(429, 372)
         Me.Panel1.TabIndex = 29
         '
+        'btn_cancelar
+        '
+        Me.btn_cancelar.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_cancelar.Location = New System.Drawing.Point(293, 235)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(75, 54)
+        Me.btn_cancelar.TabIndex = 36
+        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_cancelar.UseVisualStyleBackColor = False
+        '
+        'btn_nuevo
+        '
+        Me.btn_nuevo.Location = New System.Drawing.Point(133, 308)
+        Me.btn_nuevo.Name = "btn_nuevo"
+        Me.btn_nuevo.Size = New System.Drawing.Size(78, 54)
+        Me.btn_nuevo.TabIndex = 35
+        Me.btn_nuevo.Text = "Nuevo"
+        Me.btn_nuevo.UseVisualStyleBackColor = True
+        '
         'btn_salir
         '
         Me.btn_salir.BackColor = System.Drawing.SystemColors.ControlLight
         Me.btn_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_salir.Image = Global.WindowsApplication1.My.Resources.Resources.salir
         Me.btn_salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_salir.Location = New System.Drawing.Point(339, 307)
+        Me.btn_salir.Location = New System.Drawing.Point(339, 308)
         Me.btn_salir.Name = "btn_salir"
-        Me.btn_salir.Size = New System.Drawing.Size(75, 55)
+        Me.btn_salir.Size = New System.Drawing.Size(75, 54)
         Me.btn_salir.TabIndex = 34
         Me.btn_salir.Text = "Salir"
         Me.btn_salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -89,27 +119,27 @@ Partial Class Form1
         Me.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_editar.Image = Global.WindowsApplication1.My.Resources.Resources.editar
         Me.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_editar.Location = New System.Drawing.Point(120, 307)
+        Me.btn_editar.Location = New System.Drawing.Point(240, 308)
         Me.btn_editar.Name = "btn_editar"
-        Me.btn_editar.Size = New System.Drawing.Size(75, 55)
+        Me.btn_editar.Size = New System.Drawing.Size(75, 54)
         Me.btn_editar.TabIndex = 33
         Me.btn_editar.Text = "Editar"
         Me.btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_editar.UseVisualStyleBackColor = False
         '
-        'btn_agregar
+        'btn_confirmar
         '
-        Me.btn_agregar.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btn_agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_agregar.Image = Global.WindowsApplication1.My.Resources.Resources.agregar
-        Me.btn_agregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_agregar.Location = New System.Drawing.Point(26, 307)
-        Me.btn_agregar.Name = "btn_agregar"
-        Me.btn_agregar.Size = New System.Drawing.Size(75, 55)
-        Me.btn_agregar.TabIndex = 32
-        Me.btn_agregar.Text = "Agregar"
-        Me.btn_agregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_agregar.UseVisualStyleBackColor = False
+        Me.btn_confirmar.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_confirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_confirmar.Image = Global.WindowsApplication1.My.Resources.Resources.agregar
+        Me.btn_confirmar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_confirmar.Location = New System.Drawing.Point(186, 235)
+        Me.btn_confirmar.Name = "btn_confirmar"
+        Me.btn_confirmar.Size = New System.Drawing.Size(75, 54)
+        Me.btn_confirmar.TabIndex = 32
+        Me.btn_confirmar.Text = "Confirmar"
+        Me.btn_confirmar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_confirmar.UseVisualStyleBackColor = False
         '
         'TextBox2
         '
@@ -216,7 +246,7 @@ Partial Class Form1
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.dgv_listarAlumnos)
         Me.GroupBox1.Controls.Add(Me.btn_buscar)
         Me.GroupBox1.Controls.Add(Me.txt_busqueda_alumnos)
         Me.GroupBox1.Controls.Add(Me.cmdConsultar)
@@ -228,15 +258,36 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Lista de Alumnos"
         '
-        'DataGridView1
+        'dgv_listarAlumnos
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 24)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(391, 306)
-        Me.DataGridView1.TabIndex = 19
+        Me.dgv_listarAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_listarAlumnos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_legajo, Me.col_apellido, Me.col_nombre, Me.col_documento})
+        Me.dgv_listarAlumnos.Location = New System.Drawing.Point(6, 24)
+        Me.dgv_listarAlumnos.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgv_listarAlumnos.Name = "dgv_listarAlumnos"
+        Me.dgv_listarAlumnos.RowTemplate.Height = 24
+        Me.dgv_listarAlumnos.Size = New System.Drawing.Size(391, 306)
+        Me.dgv_listarAlumnos.TabIndex = 19
+        '
+        'col_legajo
+        '
+        Me.col_legajo.HeaderText = "Legajo"
+        Me.col_legajo.Name = "col_legajo"
+        '
+        'col_apellido
+        '
+        Me.col_apellido.HeaderText = "Apelllido"
+        Me.col_apellido.Name = "col_apellido"
+        '
+        'col_nombre
+        '
+        Me.col_nombre.HeaderText = "Nombre"
+        Me.col_nombre.Name = "col_nombre"
+        '
+        'col_documento
+        '
+        Me.col_documento.HeaderText = "DNI"
+        Me.col_documento.Name = "col_documento"
         '
         'txt_busqueda_alumnos
         '
@@ -274,12 +325,12 @@ Partial Class Form1
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "Cargar Alumnos"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgv_listarAlumnos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -295,13 +346,19 @@ Partial Class Form1
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents cmdConsultar As System.Windows.Forms.Button
     Friend WithEvents lbl_alumnos As System.Windows.Forms.Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgv_listarAlumnos As DataGridView
     Friend WithEvents txt_busqueda_alumnos As TextBox
     Friend WithEvents lbl_documento As Label
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents lbl_telefono As Label
     Friend WithEvents txt_documento As TextBox
     Friend WithEvents btn_editar As Button
-    Friend WithEvents btn_agregar As Button
+    Friend WithEvents btn_confirmar As Button
     Friend WithEvents btn_salir As Button
+    Friend WithEvents btn_nuevo As Button
+    Friend WithEvents btn_cancelar As Button
+    Friend WithEvents col_legajo As DataGridViewTextBoxColumn
+    Friend WithEvents col_apellido As DataGridViewTextBoxColumn
+    Friend WithEvents col_nombre As DataGridViewTextBoxColumn
+    Friend WithEvents col_documento As DataGridViewTextBoxColumn
 End Class
