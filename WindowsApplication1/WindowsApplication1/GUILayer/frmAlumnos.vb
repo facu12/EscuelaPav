@@ -6,7 +6,16 @@
         'muestra los btn al momento del inicio
         btnMomentoInicial()
 
+
+
     End Sub
+
+    Enum Action_type
+        Insert
+        Update
+    End Enum
+
+    Public action As Action_type
 
 
     Friend Sub llenarGrid(Optional ByVal lst As List(Of Alumno) = Nothing)
@@ -22,6 +31,7 @@
         dgv_listarAlumnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgv_listarAlumnos.Rows.Clear()
         For Each oAlumno In lst
+
             With oAlumno
                 'cargar filas del datagridview a partir de un array de strings
                 dgv_listarAlumnos.Rows.Add(New String() { .legajo.ToString, .apellido.ToString, .nombre.ToString, .documento.ToString, .telefono.ToString})
@@ -57,24 +67,55 @@
         al.nombre = txtNombres.Text.ToString
         al.documento = Convert.ToInt32(txt_documento.Text.ToString)
         al.telefono = Convert.ToInt32(txt_telefono.Text.ToString)
+
+
         Return al
 
     End Function
 
     Private Sub btn_confirmar_Click(sender As Object, e As EventArgs) Handles btn_confirmar.Click
-        'btn confirmar manda un obj alumno al servicio
 
-        Dim al As Alumno
-        al = crearAlumno()
+        'FALTA VALIDACIONES DE CAMPOS  Y TIPOS 
 
-        'tomo el alumno creado por la funcion y se la paso al servicio para crear
-        Dim oAlumnoServicio As New AlumnoService
-        oAlumnoServicio.registrarAlumno(al)
+        If MessageBox.Show("Seguro que desea confirmar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
 
-        'vuelve al estado incial los btn y actualiza la grilla
-        limpiarCampos()
-        dgv_listarAlumnos.Refresh()
-        btnMomentoInicial()
+            'dimensiono alumno apartir de los txt
+            Dim al As Alumno
+            al = crearAlumno()
+            'dimensiono rta segun realiza con exito o no la consulta sql
+            Dim rta As Boolean
+            'dimensiono el servicio 
+            Dim oAlumnoServicio As New AlumnoService
+
+            'verifico si es un nuevo alumno o modifico uno ya creado 
+            If action = Action_type.Insert Then
+                'tomo el alumno creado por la funcion y se la paso al servicio para crear
+
+                rta = oAlumnoServicio.registrarAlumno(al)
+            Else
+                'tomo al alumno creado por la funcion y se lo paso al servicio para actualizar
+                rta = oAlumnoServicio.actualizarAlumno(al)
+            End If
+
+
+            'vuelve al estado incial los btn 
+            limpiarCampos()
+            btnMomentoInicial()
+
+            'segun si pudo o no realizar la consulta sql, muestro un aviso
+            If rta = True Then
+                MsgBox("operacion realizada exitosamente", vbOKOnly + MsgBoxStyle.Information, "Aviso")
+                llenarGrid()
+            Else
+                MsgBox("operacion no se realizo con exito", vbOKOnly + MsgBoxStyle.Information, "Aviso")
+
+            End If
+
+        Else
+
+            limpiarCampos()
+            btnMomentoInicial()
+        End If
 
     End Sub
 
@@ -98,16 +139,27 @@
     End Sub
 
     Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
-        limpiarCampos()
+
+        'si cancela se limpian los datos de los txt
+
+        If MessageBox.Show("Seguro que desea cancelar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+            limpiarCampos()
+
+
+        End If
 
     End Sub
 
     Private Sub btn_nuevo_Click(sender As Object, e As EventArgs) Handles btn_nuevo.Click
 
+        'setea el action tipe en insert
+        action = Action_type.Insert
+
+
         'limpio campos txt
         limpiarCampos()
 
-        'Habilita los txt para carga de datos
+        'Habilita los txt para carga de datos 
         txt_telefono.Enabled = True
         txtApellido.Enabled = True
         txtLegajo.Enabled = True
@@ -142,4 +194,35 @@
     End Sub
 
 
+
+    Private Sub btn_editar_Click(sender As Object, e As EventArgs) Handles btn_editar.Click
+        'setea la variable action en update
+        action = Action_type.Update
+
+
+        'Habilita los txt para carga de datos excepto el legajo porque es PK 
+        txt_telefono.Enabled = True
+        txtApellido.Enabled = True
+        txtLegajo.Enabled = False
+        txtNombres.Enabled = True
+        txt_documento.Enabled = True
+
+        'habilito y muestro btn de confirmar y cancelar
+        btn_cancelar.Enabled = True
+        btn_cancelar.Visible = True
+        btn_confirmar.Visible = True
+        btn_confirmar.Enabled = True
+
+
+
+
+
+    End Sub
+
+    Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
+
+
+
+
+    End Sub
 End Class

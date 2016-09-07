@@ -23,6 +23,8 @@ Partial Class frmProfesores
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
+        Me.btn_confirmar = New System.Windows.Forms.Button()
         Me.btn_salir = New System.Windows.Forms.Button()
         Me.btn_editar = New System.Windows.Forms.Button()
         Me.btn_agregar = New System.Windows.Forms.Button()
@@ -39,6 +41,9 @@ Partial Class frmProfesores
         Me.txt_busqueda_profesor = New System.Windows.Forms.TextBox()
         Me.cmdConsultar = New System.Windows.Forms.Button()
         Me.lbl_profesor = New System.Windows.Forms.Label()
+        Me.col_legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_profesores, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,6 +51,8 @@ Partial Class frmProfesores
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.btn_cancelar)
+        Me.Panel1.Controls.Add(Me.btn_confirmar)
         Me.Panel1.Controls.Add(Me.btn_salir)
         Me.Panel1.Controls.Add(Me.btn_editar)
         Me.Panel1.Controls.Add(Me.btn_agregar)
@@ -60,6 +67,34 @@ Partial Class frmProfesores
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(429, 372)
         Me.Panel1.TabIndex = 30
+        '
+        'btn_cancelar
+        '
+        Me.btn_cancelar.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_cancelar.Image = Global.WindowsApplication1.My.Resources.Resources.cancelar
+        Me.btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_cancelar.Location = New System.Drawing.Point(339, 235)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(75, 54)
+        Me.btn_cancelar.TabIndex = 38
+        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_cancelar.UseVisualStyleBackColor = False
+        '
+        'btn_confirmar
+        '
+        Me.btn_confirmar.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_confirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_confirmar.Image = Global.WindowsApplication1.My.Resources.Resources.Confirmar
+        Me.btn_confirmar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_confirmar.Location = New System.Drawing.Point(240, 235)
+        Me.btn_confirmar.Name = "btn_confirmar"
+        Me.btn_confirmar.Size = New System.Drawing.Size(75, 54)
+        Me.btn_confirmar.TabIndex = 37
+        Me.btn_confirmar.Text = "Confirmar"
+        Me.btn_confirmar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_confirmar.UseVisualStyleBackColor = False
         '
         'btn_salir
         '
@@ -180,10 +215,12 @@ Partial Class frmProfesores
         'dgv_profesores
         '
         Me.dgv_profesores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_profesores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_legajo, Me.col_apellido, Me.col_nombre})
         Me.dgv_profesores.Location = New System.Drawing.Point(6, 24)
         Me.dgv_profesores.Margin = New System.Windows.Forms.Padding(2)
         Me.dgv_profesores.Name = "dgv_profesores"
         Me.dgv_profesores.RowTemplate.Height = 24
+        Me.dgv_profesores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_profesores.Size = New System.Drawing.Size(391, 306)
         Me.dgv_profesores.TabIndex = 19
         '
@@ -226,6 +263,21 @@ Partial Class frmProfesores
         Me.lbl_profesor.TabIndex = 13
         Me.lbl_profesor.Text = "Profesor:"
         '
+        'col_legajo
+        '
+        Me.col_legajo.HeaderText = "Legajo"
+        Me.col_legajo.Name = "col_legajo"
+        '
+        'col_apellido
+        '
+        Me.col_apellido.HeaderText = "Apellido"
+        Me.col_apellido.Name = "col_apellido"
+        '
+        'col_nombre
+        '
+        Me.col_nombre.HeaderText = "Nombre"
+        Me.col_nombre.Name = "col_nombre"
+        '
         'frmProfesores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -261,4 +313,9 @@ Partial Class frmProfesores
     Friend WithEvents txt_busqueda_profesor As TextBox
     Friend WithEvents cmdConsultar As Button
     Friend WithEvents lbl_profesor As Label
+    Friend WithEvents btn_cancelar As Button
+    Friend WithEvents btn_confirmar As Button
+    Friend WithEvents col_legajo As DataGridViewTextBoxColumn
+    Friend WithEvents col_apellido As DataGridViewTextBoxColumn
+    Friend WithEvents col_nombre As DataGridViewTextBoxColumn
 End Class

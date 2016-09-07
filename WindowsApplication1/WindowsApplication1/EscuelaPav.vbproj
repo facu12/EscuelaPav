@@ -73,8 +73,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BussinessLayer\Entities\Alumno.vb" />
+    <Compile Include="BussinessLayer\Entities\Profesor.vb" />
     <Compile Include="BussinessLayer\Services\AlumnoService.vb" />
+    <Compile Include="BussinessLayer\Services\ProfesorService.vb" />
     <Compile Include="DataLayer\DAOs\AlumnoDAO.vb" />
+    <Compile Include="DataLayer\DAOs\ProfesorDAO.vb" />
     <Compile Include="DataLayer\Helper\BDHelper.vb" />
     <Compile Include="GUILayer\frmProfesores.Designer.vb">
       <DependentUpon>frmProfesores.vb</DependentUpon>
