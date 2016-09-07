@@ -23,12 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btn_cancelar = New System.Windows.Forms.Button()
-        Me.btn_nuevo = New System.Windows.Forms.Button()
-        Me.btn_salir = New System.Windows.Forms.Button()
-        Me.btn_editar = New System.Windows.Forms.Button()
-        Me.btn_confirmar = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txt_telefono = New System.Windows.Forms.TextBox()
         Me.lbl_telefono = New System.Windows.Forms.Label()
         Me.txt_documento = New System.Windows.Forms.TextBox()
         Me.lbl_documento = New System.Windows.Forms.Label()
@@ -42,13 +37,19 @@ Partial Class Form1
         Me.btn_buscar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgv_listarAlumnos = New System.Windows.Forms.DataGridView()
+        Me.txt_busqueda_alumnos = New System.Windows.Forms.TextBox()
+        Me.cmdConsultar = New System.Windows.Forms.Button()
+        Me.lbl_alumnos = New System.Windows.Forms.Label()
         Me.col_legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_busqueda_alumnos = New System.Windows.Forms.TextBox()
-        Me.cmdConsultar = New System.Windows.Forms.Button()
-        Me.lbl_alumnos = New System.Windows.Forms.Label()
+        Me.col_telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
+        Me.btn_nuevo = New System.Windows.Forms.Button()
+        Me.btn_salir = New System.Windows.Forms.Button()
+        Me.btn_editar = New System.Windows.Forms.Button()
+        Me.btn_confirmar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_listarAlumnos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,7 +62,7 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.btn_salir)
         Me.Panel1.Controls.Add(Me.btn_editar)
         Me.Panel1.Controls.Add(Me.btn_confirmar)
-        Me.Panel1.Controls.Add(Me.TextBox2)
+        Me.Panel1.Controls.Add(Me.txt_telefono)
         Me.Panel1.Controls.Add(Me.lbl_telefono)
         Me.Panel1.Controls.Add(Me.txt_documento)
         Me.Panel1.Controls.Add(Me.lbl_documento)
@@ -77,76 +78,13 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(429, 372)
         Me.Panel1.TabIndex = 29
         '
-        'btn_cancelar
+        'txt_telefono
         '
-        Me.btn_cancelar.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_cancelar.Location = New System.Drawing.Point(293, 235)
-        Me.btn_cancelar.Name = "btn_cancelar"
-        Me.btn_cancelar.Size = New System.Drawing.Size(75, 54)
-        Me.btn_cancelar.TabIndex = 36
-        Me.btn_cancelar.Text = "Cancelar"
-        Me.btn_cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_cancelar.UseVisualStyleBackColor = False
-        '
-        'btn_nuevo
-        '
-        Me.btn_nuevo.Location = New System.Drawing.Point(133, 308)
-        Me.btn_nuevo.Name = "btn_nuevo"
-        Me.btn_nuevo.Size = New System.Drawing.Size(78, 54)
-        Me.btn_nuevo.TabIndex = 35
-        Me.btn_nuevo.Text = "Nuevo"
-        Me.btn_nuevo.UseVisualStyleBackColor = True
-        '
-        'btn_salir
-        '
-        Me.btn_salir.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btn_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_salir.Image = Global.WindowsApplication1.My.Resources.Resources.salir
-        Me.btn_salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_salir.Location = New System.Drawing.Point(339, 308)
-        Me.btn_salir.Name = "btn_salir"
-        Me.btn_salir.Size = New System.Drawing.Size(75, 54)
-        Me.btn_salir.TabIndex = 34
-        Me.btn_salir.Text = "Salir"
-        Me.btn_salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_salir.UseVisualStyleBackColor = False
-        '
-        'btn_editar
-        '
-        Me.btn_editar.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_editar.Image = Global.WindowsApplication1.My.Resources.Resources.editar
-        Me.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_editar.Location = New System.Drawing.Point(240, 308)
-        Me.btn_editar.Name = "btn_editar"
-        Me.btn_editar.Size = New System.Drawing.Size(75, 54)
-        Me.btn_editar.TabIndex = 33
-        Me.btn_editar.Text = "Editar"
-        Me.btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_editar.UseVisualStyleBackColor = False
-        '
-        'btn_confirmar
-        '
-        Me.btn_confirmar.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btn_confirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_confirmar.Image = Global.WindowsApplication1.My.Resources.Resources.agregar
-        Me.btn_confirmar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_confirmar.Location = New System.Drawing.Point(186, 235)
-        Me.btn_confirmar.Name = "btn_confirmar"
-        Me.btn_confirmar.Size = New System.Drawing.Size(75, 54)
-        Me.btn_confirmar.TabIndex = 32
-        Me.btn_confirmar.Text = "Confirmar"
-        Me.btn_confirmar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_confirmar.UseVisualStyleBackColor = False
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(90, 119)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(121, 20)
-        Me.TextBox2.TabIndex = 31
+        Me.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_telefono.Location = New System.Drawing.Point(90, 119)
+        Me.txt_telefono.Name = "txt_telefono"
+        Me.txt_telefono.Size = New System.Drawing.Size(121, 20)
+        Me.txt_telefono.TabIndex = 31
         '
         'lbl_telefono
         '
@@ -159,6 +97,7 @@ Partial Class Form1
         '
         'txt_documento
         '
+        Me.txt_documento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txt_documento.Location = New System.Drawing.Point(90, 92)
         Me.txt_documento.Name = "txt_documento"
         Me.txt_documento.Size = New System.Drawing.Size(121, 20)
@@ -261,33 +200,13 @@ Partial Class Form1
         'dgv_listarAlumnos
         '
         Me.dgv_listarAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_listarAlumnos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_legajo, Me.col_apellido, Me.col_nombre, Me.col_documento})
+        Me.dgv_listarAlumnos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_legajo, Me.col_apellido, Me.col_nombre, Me.col_documento, Me.col_telefono})
         Me.dgv_listarAlumnos.Location = New System.Drawing.Point(6, 24)
         Me.dgv_listarAlumnos.Margin = New System.Windows.Forms.Padding(2)
         Me.dgv_listarAlumnos.Name = "dgv_listarAlumnos"
         Me.dgv_listarAlumnos.RowTemplate.Height = 24
         Me.dgv_listarAlumnos.Size = New System.Drawing.Size(391, 306)
         Me.dgv_listarAlumnos.TabIndex = 19
-        '
-        'col_legajo
-        '
-        Me.col_legajo.HeaderText = "Legajo"
-        Me.col_legajo.Name = "col_legajo"
-        '
-        'col_apellido
-        '
-        Me.col_apellido.HeaderText = "Apelllido"
-        Me.col_apellido.Name = "col_apellido"
-        '
-        'col_nombre
-        '
-        Me.col_nombre.HeaderText = "Nombre"
-        Me.col_nombre.Name = "col_nombre"
-        '
-        'col_documento
-        '
-        Me.col_documento.HeaderText = "DNI"
-        Me.col_documento.Name = "col_documento"
         '
         'txt_busqueda_alumnos
         '
@@ -316,6 +235,99 @@ Partial Class Form1
         Me.lbl_alumnos.Size = New System.Drawing.Size(45, 13)
         Me.lbl_alumnos.TabIndex = 13
         Me.lbl_alumnos.Text = "Alumno:"
+        '
+        'col_legajo
+        '
+        Me.col_legajo.HeaderText = "Legajo"
+        Me.col_legajo.Name = "col_legajo"
+        '
+        'col_apellido
+        '
+        Me.col_apellido.HeaderText = "Apelllido"
+        Me.col_apellido.Name = "col_apellido"
+        '
+        'col_nombre
+        '
+        Me.col_nombre.HeaderText = "Nombre"
+        Me.col_nombre.Name = "col_nombre"
+        '
+        'col_documento
+        '
+        Me.col_documento.HeaderText = "DNI"
+        Me.col_documento.Name = "col_documento"
+        '
+        'col_telefono
+        '
+        Me.col_telefono.HeaderText = "Telefono"
+        Me.col_telefono.Name = "col_telefono"
+        '
+        'btn_cancelar
+        '
+        Me.btn_cancelar.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_cancelar.Image = Global.WindowsApplication1.My.Resources.Resources.cancelar
+        Me.btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_cancelar.Location = New System.Drawing.Point(258, 312)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(75, 54)
+        Me.btn_cancelar.TabIndex = 36
+        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_cancelar.UseVisualStyleBackColor = False
+        '
+        'btn_nuevo
+        '
+        Me.btn_nuevo.Image = Global.WindowsApplication1.My.Resources.Resources.agregar
+        Me.btn_nuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_nuevo.Location = New System.Drawing.Point(13, 312)
+        Me.btn_nuevo.Name = "btn_nuevo"
+        Me.btn_nuevo.Size = New System.Drawing.Size(78, 54)
+        Me.btn_nuevo.TabIndex = 35
+        Me.btn_nuevo.Text = "Nuevo"
+        Me.btn_nuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_nuevo.UseVisualStyleBackColor = True
+        '
+        'btn_salir
+        '
+        Me.btn_salir.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_salir.Image = Global.WindowsApplication1.My.Resources.Resources.salir
+        Me.btn_salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_salir.Location = New System.Drawing.Point(339, 313)
+        Me.btn_salir.Name = "btn_salir"
+        Me.btn_salir.Size = New System.Drawing.Size(75, 54)
+        Me.btn_salir.TabIndex = 34
+        Me.btn_salir.Text = "Salir"
+        Me.btn_salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_salir.UseVisualStyleBackColor = False
+        '
+        'btn_editar
+        '
+        Me.btn_editar.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_editar.Image = Global.WindowsApplication1.My.Resources.Resources.editar
+        Me.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_editar.Location = New System.Drawing.Point(178, 312)
+        Me.btn_editar.Name = "btn_editar"
+        Me.btn_editar.Size = New System.Drawing.Size(75, 54)
+        Me.btn_editar.TabIndex = 33
+        Me.btn_editar.Text = "Editar"
+        Me.btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_editar.UseVisualStyleBackColor = False
+        '
+        'btn_confirmar
+        '
+        Me.btn_confirmar.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_confirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_confirmar.Image = Global.WindowsApplication1.My.Resources.Resources.Confirmar
+        Me.btn_confirmar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_confirmar.Location = New System.Drawing.Point(97, 312)
+        Me.btn_confirmar.Name = "btn_confirmar"
+        Me.btn_confirmar.Size = New System.Drawing.Size(75, 54)
+        Me.btn_confirmar.TabIndex = 32
+        Me.btn_confirmar.Text = "Confirmar"
+        Me.btn_confirmar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_confirmar.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -349,7 +361,7 @@ Partial Class Form1
     Friend WithEvents dgv_listarAlumnos As DataGridView
     Friend WithEvents txt_busqueda_alumnos As TextBox
     Friend WithEvents lbl_documento As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txt_telefono As TextBox
     Friend WithEvents lbl_telefono As Label
     Friend WithEvents txt_documento As TextBox
     Friend WithEvents btn_editar As Button
@@ -361,4 +373,5 @@ Partial Class Form1
     Friend WithEvents col_apellido As DataGridViewTextBoxColumn
     Friend WithEvents col_nombre As DataGridViewTextBoxColumn
     Friend WithEvents col_documento As DataGridViewTextBoxColumn
+    Friend WithEvents col_telefono As DataGridViewTextBoxColumn
 End Class

@@ -136,6 +136,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\agregar.png" />
+    <None Include="Resources\Confirmar.png" />
+    <None Include="Resources\cancelar.png" />
     <Content Include="Resources\editar.png" />
     <Content Include="Resources\salir.png" />
   </ItemGroup>

@@ -1,27 +1,15 @@
 ﻿Public Class AlumnoDAO
     'Permite obtener todos los alumnos
-    Public Function getAlumnos()
-        Dim alumno As New List(Of Alumno)
-        'Dim oTable As DataTable
+    Public Function getAlumnos() As List(Of Alumno)
+        Dim alumnos As New List(Of Alumno)
+        Dim strSQL = "SELECT * from Alumno"
 
-        'Armamos el query para ejecutar a la base
-        Dim strSQL As String = "SELECT * from Alumno"
-        'Delegamos la ejecución del comando SQL al Helper
-        ' oTable = BDHelper.getDBHelper().ConsultaSQL(strSQL)
-        'Con la tabla devuelta por el Helper creamos un OBJETO Alumno a partir de los datos de fila de la tabla Alumnos
-        'For Each row As DataRow In BDHelper.getDBHelper().ConsultaSQL(strSQL).Rows
-        'oAlumno = New Alumno()
-        'oAlumno.legajo = Convert.ToInt32(oTable.Rows(0).Item("legajo").ToString)
-        'oAlumno.apellido = oTable.Rows(0).Item("apellido").ToString
-        'oAlumno.nombre = oTable.Rows(0).Item("nombre").ToString
-        'oAlumno.documento = oTable.Rows(0).Item("documento").ToString
-        'oAlumno.telefono = oTable.Rows(0).Item("telefono").ToString
-        'Next
+        'Con la tabla devuelta por el Helper creamos N OBJETOS Bug a partir de los datos de la/s filas de la tabla Bugs
         For Each row As DataRow In BDHelper.getDBHelper().ConsultaSQL(strSQL).Rows
-            alumno.Add(map(row))
+            alumnos.Add(map(row))
         Next
 
-        Return alumno
+        Return alumnos
     End Function
 
     Public Function add(ByVal oAlumno As Alumno) As Boolean
@@ -31,7 +19,7 @@
         comandStr += "'" + oAlumno.nombre + "', "
         comandStr += "'" + oAlumno.apellido + "', "
         comandStr += "'" + oAlumno.telefono + "', "
-        comandStr += "'" + oAlumno.documento + ")"
+        comandStr += "'" + oAlumno.documento + "')"
 
         Return (BDHelper.getDBHelper().EjecutarSQL(comandStr) = 1)
     End Function
@@ -42,8 +30,8 @@
         comandStr += "legajo='" + oAlumno.legajo + "', "
         comandStr += "nombre='" + oAlumno.nombre + "', "
         comandStr += "apellido='" + oAlumno.apellido + "', "
-        comandStr += "telefono=" + oAlumno.telefono + ", "
-        comandStr += "documento=" + oAlumno.documento + " "
+        comandStr += "telefono='" + oAlumno.telefono + "', "
+        comandStr += "documento='" + oAlumno.documento + "' "
         comandStr += "WHERE legajo=" + oAlumno.legajo.ToString
 
         Return (BDHelper.getDBHelper().EjecutarSQL(comandStr) = 1)

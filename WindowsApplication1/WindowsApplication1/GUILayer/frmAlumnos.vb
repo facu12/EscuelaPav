@@ -8,21 +8,33 @@
 
     End Sub
 
-    Friend Sub llenarGrid(Optional ByVal lst As List(Of Alumno) = Nothing)
 
-        Dim oAlumnoServicio As New AlumnoService
-        'limpia la grilla
+    Friend Sub llenarGrid(Optional ByVal lst As List(Of Alumno) = Nothing)
+        Dim oAlumnoService As New AlumnoService
         dgv_listarAlumnos.Rows.Clear()
-        'carga grilla de alumnos
+
         If IsNothing(lst) Then
-            lst = oAlumnoServicio.listarAlumnos()
+            lst = oAlumnoService.listarAlumnos()
         End If
 
-
+        'Asignamos a la propiedad SelectionMode el valor FullRowSelect para que 
+        'al hacer click sobre la grilla se resalte toda la fila completa. Esto puede tmb hacerse en modo diseño.
+        dgv_listarAlumnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgv_listarAlumnos.Rows.Clear()
+        For Each oAlumno In lst
+            With oAlumno
+                'cargar filas del datagridview a partir de un array de strings
+                dgv_listarAlumnos.Rows.Add(New String() { .legajo.ToString, .apellido.ToString, .nombre.ToString, .documento.ToString, .telefono.ToString})
+            End With
+        Next
     End Sub
 
+
     Private Sub btn_salir_Click(sender As Object, e As EventArgs) Handles btn_salir.Click
-        Me.Close()
+        'Confirmación de salida.
+        If MessageBox.Show("Seguro que desea salir?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+            Me.Close()
+        End If
     End Sub
 
     Private Sub limpiarCampos()
@@ -31,6 +43,7 @@
         txtLegajo.Clear()
         txtNombres.Clear()
         txt_documento.Clear()
+        txt_telefono.Clear()
 
     End Sub
 
@@ -39,11 +52,11 @@
         'funcion que crea un alumno a partir de los campos del formulario
         Dim al As New Alumno
 
-        al.apellido = txtApellido.ToString
-        al.legajo = txtLegajo.ToString
-        al.nombre = txtNombres.ToString
-        al.documento = (Convert.ToInt32(txt_documento))
-
+        al.apellido = txtApellido.Text.ToString
+        al.legajo = txtLegajo.Text.ToString
+        al.nombre = txtNombres.Text.ToString
+        al.documento = Convert.ToInt32(txt_documento.Text.ToString)
+        al.telefono = Convert.ToInt32(txt_telefono.Text.ToString)
         Return al
 
     End Function
@@ -66,14 +79,18 @@
     End Sub
 
     Private Sub btnMomentoInicial()
+        'estado iniciales de los textbox
+        txt_telefono.Enabled = False
+        txtApellido.Enabled = False
+        txtLegajo.Enabled = False
+        txtNombres.Enabled = False
+        txt_documento.Enabled = False
 
         'estados iniciales de botones
         btn_confirmar.Visible = False
         btn_confirmar.Enabled = False
-
         btn_cancelar.Visible = False
         btn_cancelar.Enabled = False
-
         btn_editar.Enabled = True
         btn_salir.Enabled = True
         btn_nuevo.Enabled = True
@@ -90,10 +107,16 @@
         'limpio campos txt
         limpiarCampos()
 
+        'Habilita los txt para carga de datos
+        txt_telefono.Enabled = True
+        txtApellido.Enabled = True
+        txtLegajo.Enabled = True
+        txtNombres.Enabled = True
+        txt_documento.Enabled = True
+
         'habilito y muestro btn de confirmar y cancelar
         btn_cancelar.Enabled = True
         btn_cancelar.Visible = True
-
         btn_confirmar.Visible = True
         btn_confirmar.Enabled = True
 
@@ -109,7 +132,7 @@
 
 
         'cargo los txt con los datos de la linea seleccionada
-        txtApellido = dgv_listarAlumnos.CurrentRow.Cells.Item("col_apellido").Value
+        'txtApellido = dgv_listarAlumnos.CurrentRow.Cells.Item("col_apellido").Value
 
 
     End Sub
