@@ -91,7 +91,7 @@
         btn_confirmar.Enabled = False
         btn_cancelar.Visible = False
         btn_cancelar.Enabled = False
-        btn_editar.Enabled = True
+        btn_editar.Enabled = False
         btn_salir.Enabled = True
         btn_nuevo.Enabled = True
 
@@ -132,7 +132,11 @@
 
 
         'cargo los txt con los datos de la linea seleccionada
-        'txtApellido = dgv_listarAlumnos.CurrentRow.Cells.Item("col_apellido").Value
+        txtApellido.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_apellido").Value
+        txtLegajo.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_legajo").Value
+        txtNombres.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_nombre").Value
+        txt_documento.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_documento").Value
+        txt_telefono.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_telefono").Value
 
 
     End Sub
