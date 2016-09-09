@@ -39,8 +39,8 @@
 
     Public Function getByFilters(ByVal apellido As String) As List(Of Alumno)
         Dim alumno As New List(Of Alumno)
-        Dim strSQL = "SELECT * FROM dbo.Alumno WHERE apellido LIKE '% " + apellido + "%'"
-        strSQL += " ORDER BY apellido DESC"
+        Dim strSQL = "SELECT * FROM dbo.Alumno WHERE alumno.apellido LIKE '%" + apellido + "%'"
+        strSQL += " ORDER BY alumno.apellido DESC"
 
         For Each row As DataRow In BDHelper.getDBHelper().ConsultaSQL(strSQL).Rows
             alumno.Add(map(row))

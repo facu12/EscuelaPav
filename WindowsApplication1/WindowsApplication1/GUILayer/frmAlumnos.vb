@@ -221,8 +221,29 @@
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
 
-
-
+        buscarAlumno(txt_busqueda_alumnos.Text)
 
     End Sub
+
+    Friend Sub buscarAlumno(ByVal apellido As String, Optional ByVal lst As List(Of Alumno) = Nothing)
+        Dim oAlumnoService As New AlumnoService
+        dgv_listarAlumnos.Rows.Clear()
+
+        If IsNothing(lst) Then
+            lst = oAlumnoService.listarAlumnosConFiltros(apellido)
+        End If
+
+        'Asignamos a la propiedad SelectionMode el valor FullRowSelect para que 
+        'al hacer click sobre la grilla se resalte toda la fila completa. Esto puede tmb hacerse en modo diseño.
+        dgv_listarAlumnos.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgv_listarAlumnos.Rows.Clear()
+        For Each oAlumno In lst
+
+            With oAlumno
+                'cargar filas del datagridview a partir de un array de strings
+                dgv_listarAlumnos.Rows.Add(New String() { .legajo.ToString, .apellido.ToString, .nombre.ToString, .documento.ToString, .telefono.ToString})
+            End With
+        Next
+    End Sub
+
 End Class
