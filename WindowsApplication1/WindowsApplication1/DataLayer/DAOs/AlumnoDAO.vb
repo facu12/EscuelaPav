@@ -26,8 +26,8 @@
 
     Public Function update(ByVal oAlumno As Alumno) As Boolean
         Dim comandStr As String
-        comandStr = "UPDATE Alumnos SET "
-        comandStr += "legajo='" + oAlumno.legajo + "', "
+        comandStr = "UPDATE Alumno SET "
+        'comandStr += "legajo='" + oAlumno.legajo + "', "
         comandStr += "nombre='" + oAlumno.nombre + "', "
         comandStr += "apellido='" + oAlumno.apellido + "', "
         comandStr += "telefono='" + oAlumno.telefono + "', "

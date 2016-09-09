@@ -270,11 +270,16 @@ Partial Class Form1
         '
         'dgv_listarAlumnos
         '
+        Me.dgv_listarAlumnos.AllowUserToAddRows = False
+        Me.dgv_listarAlumnos.AllowUserToDeleteRows = False
+        Me.dgv_listarAlumnos.AllowUserToResizeColumns = False
+        Me.dgv_listarAlumnos.AllowUserToResizeRows = False
         Me.dgv_listarAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_listarAlumnos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_legajo, Me.col_apellido, Me.col_nombre, Me.col_documento, Me.col_telefono})
         Me.dgv_listarAlumnos.Location = New System.Drawing.Point(6, 24)
         Me.dgv_listarAlumnos.Margin = New System.Windows.Forms.Padding(2)
         Me.dgv_listarAlumnos.Name = "dgv_listarAlumnos"
+        Me.dgv_listarAlumnos.ReadOnly = True
         Me.dgv_listarAlumnos.RowTemplate.Height = 24
         Me.dgv_listarAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_listarAlumnos.Size = New System.Drawing.Size(391, 306)
