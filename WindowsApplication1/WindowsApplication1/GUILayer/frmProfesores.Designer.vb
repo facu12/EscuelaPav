@@ -37,13 +37,13 @@ Partial Class frmProfesores
         Me.lbl_legajo = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgv_profesores = New System.Windows.Forms.DataGridView()
+        Me.col_legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btn_buscar = New System.Windows.Forms.Button()
         Me.txt_busqueda_profesor = New System.Windows.Forms.TextBox()
         Me.cmdConsultar = New System.Windows.Forms.Button()
         Me.lbl_profesor = New System.Windows.Forms.Label()
-        Me.col_legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_profesores, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -224,6 +224,21 @@ Partial Class frmProfesores
         Me.dgv_profesores.Size = New System.Drawing.Size(391, 306)
         Me.dgv_profesores.TabIndex = 19
         '
+        'col_legajo
+        '
+        Me.col_legajo.HeaderText = "Legajo"
+        Me.col_legajo.Name = "col_legajo"
+        '
+        'col_apellido
+        '
+        Me.col_apellido.HeaderText = "Apellido"
+        Me.col_apellido.Name = "col_apellido"
+        '
+        'col_nombre
+        '
+        Me.col_nombre.HeaderText = "Nombre"
+        Me.col_nombre.Name = "col_nombre"
+        '
         'btn_buscar
         '
         Me.btn_buscar.BackColor = System.Drawing.SystemColors.ActiveBorder
@@ -262,21 +277,6 @@ Partial Class frmProfesores
         Me.lbl_profesor.Size = New System.Drawing.Size(49, 13)
         Me.lbl_profesor.TabIndex = 13
         Me.lbl_profesor.Text = "Profesor:"
-        '
-        'col_legajo
-        '
-        Me.col_legajo.HeaderText = "Legajo"
-        Me.col_legajo.Name = "col_legajo"
-        '
-        'col_apellido
-        '
-        Me.col_apellido.HeaderText = "Apellido"
-        Me.col_apellido.Name = "col_apellido"
-        '
-        'col_nombre
-        '
-        Me.col_nombre.HeaderText = "Nombre"
-        Me.col_nombre.Name = "col_nombre"
         '
         'frmProfesores
         '

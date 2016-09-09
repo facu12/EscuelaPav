@@ -58,8 +58,6 @@ Public Class frmProfesores
 
     End Sub
 
-
-
     Private Sub btn_confirmar_Click(sender As Object, e As EventArgs) Handles btn_confirmar.Click
 
         'FALTA VALIDACIONES DE CAMPOS  Y TIPOS 
@@ -111,19 +109,16 @@ Public Class frmProfesores
         prof.legajo = txt_Legajo.Text
         prof.apellido = txt_Apellido.Text
         prof.nombre = txt_Nombres.Text
-
-
         Return prof
 
     End Function
 
     Private Sub btnMomentoInicial()
-        'estado iniciales de los textbox
 
+        'estado iniciales de los textbox
         txt_Apellido.Enabled = False
         txt_Legajo.Enabled = False
         txt_Nombres.Enabled = False
-
 
         'estados iniciales de botones
         btn_confirmar.Visible = False
@@ -142,8 +137,6 @@ Public Class frmProfesores
 
         If MessageBox.Show("Seguro que desea cancelar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
             limpiarCampos()
-
-
         End If
 
     End Sub
@@ -153,23 +146,19 @@ Public Class frmProfesores
         'setea el action tipe en insert
         action = Action_type.Insert
 
-
         'limpio campos txt
         limpiarCampos()
 
         'Habilita los txt para carga de datos 
-
         txt_Apellido.Enabled = True
         txt_Legajo.Enabled = True
         txt_Nombres.Enabled = True
-
 
         'habilito y muestro btn de confirmar y cancelar
         btn_cancelar.Enabled = True
         btn_cancelar.Visible = True
         btn_confirmar.Visible = True
         btn_confirmar.Enabled = True
-
 
     End Sub
 
@@ -178,31 +167,22 @@ Public Class frmProfesores
         'habilito boton editar
         btn_editar.Enabled = True
 
-        'Dim al As Alumno
-
-
         'cargo los txt con los datos de la linea seleccionada
         txt_Apellido.Text = dgv_profesores.CurrentRow.Cells.Item("col_apellido").Value
         txt_Legajo.Text = dgv_profesores.CurrentRow.Cells.Item("col_legajo").Value
         txt_Nombres.Text = dgv_profesores.CurrentRow.Cells.Item("col_nombre").Value
 
-
-
     End Sub
-
 
 
     Private Sub btn_editar_Click(sender As Object, e As EventArgs) Handles btn_editar.Click
         'setea la variable action en update
         action = Action_type.Update
 
-
         'Habilita los txt para carga de datos excepto el legajo porque es PK 
-
         txt_Apellido.Enabled = True
         txt_Legajo.Enabled = False
         txt_Nombres.Enabled = True
-
 
         'habilito y muestro btn de confirmar y cancelar
         btn_cancelar.Enabled = True
@@ -210,12 +190,30 @@ Public Class frmProfesores
         btn_confirmar.Visible = True
         btn_confirmar.Enabled = True
 
-
-
-
-
     End Sub
 
+    Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
+        buscarProfesor(txt_busqueda_profesor.Text)
+    End Sub
+    Friend Sub buscarProfesor(ByVal apellido As String, Optional ByVal lst As List(Of Profesor) = Nothing)
+        'busca un profesor por apellido 
+        Dim oProfesorService As New ProfesorService
+        dgv_profesores.Rows.Clear()
 
+        If IsNothing(lst) Then
+            lst = oProfesorService.listarProfesorConFiltros(apellido)
+        End If
 
+        'Asignamos a la propiedad SelectionMode el valor FullRowSelect para que 
+        'al hacer click sobre la grilla se resalte toda la fila completa. Esto puede tmb hacerse en modo diseño.
+        dgv_profesores.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgv_profesores.Rows.Clear()
+        For Each oProfesor In lst
+
+            With oProfesor
+                'cargar filas del datagridview a partir de un array de strings
+                dgv_profesores.Rows.Add(New String() { .legajo.ToString, .apellido.ToString, .nombre.ToString})
+            End With
+        Next
+    End Sub
 End Class

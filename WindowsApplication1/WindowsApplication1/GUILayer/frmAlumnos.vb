@@ -220,12 +220,13 @@
     End Sub
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
-
+        'invoca al metodo buscaralumno para generar la query y llenar la tabla
         buscarAlumno(txt_busqueda_alumnos.Text)
 
     End Sub
 
     Friend Sub buscarAlumno(ByVal apellido As String, Optional ByVal lst As List(Of Alumno) = Nothing)
+        'busca un alumno por apellido 
         Dim oAlumnoService As New AlumnoService
         dgv_listarAlumnos.Rows.Clear()
 
