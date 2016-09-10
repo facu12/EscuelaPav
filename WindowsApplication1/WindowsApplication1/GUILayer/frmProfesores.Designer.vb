@@ -23,11 +23,6 @@ Partial Class frmProfesores
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btn_cancelar = New System.Windows.Forms.Button()
-        Me.btn_confirmar = New System.Windows.Forms.Button()
-        Me.btn_salir = New System.Windows.Forms.Button()
-        Me.btn_editar = New System.Windows.Forms.Button()
-        Me.btn_agregar = New System.Windows.Forms.Button()
         Me.lbl_Mensajes = New System.Windows.Forms.Label()
         Me.txt_Nombres = New System.Windows.Forms.TextBox()
         Me.lbl_nombre = New System.Windows.Forms.Label()
@@ -44,6 +39,11 @@ Partial Class frmProfesores
         Me.txt_busqueda_profesor = New System.Windows.Forms.TextBox()
         Me.cmdConsultar = New System.Windows.Forms.Button()
         Me.lbl_profesor = New System.Windows.Forms.Label()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
+        Me.btn_confirmar = New System.Windows.Forms.Button()
+        Me.btn_salir = New System.Windows.Forms.Button()
+        Me.btn_editar = New System.Windows.Forms.Button()
+        Me.btn_agregar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_profesores, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,76 +67,6 @@ Partial Class frmProfesores
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(429, 372)
         Me.Panel1.TabIndex = 30
-        '
-        'btn_cancelar
-        '
-        Me.btn_cancelar.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_cancelar.Image = Global.WindowsApplication1.My.Resources.Resources.cancelar
-        Me.btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_cancelar.Location = New System.Drawing.Point(339, 235)
-        Me.btn_cancelar.Name = "btn_cancelar"
-        Me.btn_cancelar.Size = New System.Drawing.Size(75, 54)
-        Me.btn_cancelar.TabIndex = 38
-        Me.btn_cancelar.Text = "Cancelar"
-        Me.btn_cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_cancelar.UseVisualStyleBackColor = False
-        '
-        'btn_confirmar
-        '
-        Me.btn_confirmar.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btn_confirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_confirmar.Image = Global.WindowsApplication1.My.Resources.Resources.Confirmar
-        Me.btn_confirmar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_confirmar.Location = New System.Drawing.Point(240, 235)
-        Me.btn_confirmar.Name = "btn_confirmar"
-        Me.btn_confirmar.Size = New System.Drawing.Size(75, 54)
-        Me.btn_confirmar.TabIndex = 37
-        Me.btn_confirmar.Text = "Confirmar"
-        Me.btn_confirmar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_confirmar.UseVisualStyleBackColor = False
-        '
-        'btn_salir
-        '
-        Me.btn_salir.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btn_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_salir.Image = Global.WindowsApplication1.My.Resources.Resources.salir
-        Me.btn_salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_salir.Location = New System.Drawing.Point(339, 307)
-        Me.btn_salir.Name = "btn_salir"
-        Me.btn_salir.Size = New System.Drawing.Size(75, 55)
-        Me.btn_salir.TabIndex = 34
-        Me.btn_salir.Text = "Salir"
-        Me.btn_salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_salir.UseVisualStyleBackColor = False
-        '
-        'btn_editar
-        '
-        Me.btn_editar.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_editar.Image = Global.WindowsApplication1.My.Resources.Resources.editar
-        Me.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_editar.Location = New System.Drawing.Point(120, 307)
-        Me.btn_editar.Name = "btn_editar"
-        Me.btn_editar.Size = New System.Drawing.Size(75, 55)
-        Me.btn_editar.TabIndex = 33
-        Me.btn_editar.Text = "Editar"
-        Me.btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_editar.UseVisualStyleBackColor = False
-        '
-        'btn_agregar
-        '
-        Me.btn_agregar.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btn_agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_agregar.Image = Global.WindowsApplication1.My.Resources.Resources.agregar
-        Me.btn_agregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_agregar.Location = New System.Drawing.Point(26, 307)
-        Me.btn_agregar.Name = "btn_agregar"
-        Me.btn_agregar.Size = New System.Drawing.Size(75, 55)
-        Me.btn_agregar.TabIndex = 32
-        Me.btn_agregar.Text = "Agregar"
-        Me.btn_agregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btn_agregar.UseVisualStyleBackColor = False
         '
         'lbl_Mensajes
         '
@@ -277,6 +207,76 @@ Partial Class frmProfesores
         Me.lbl_profesor.Size = New System.Drawing.Size(49, 13)
         Me.lbl_profesor.TabIndex = 13
         Me.lbl_profesor.Text = "Profesor:"
+        '
+        'btn_cancelar
+        '
+        Me.btn_cancelar.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_cancelar.Image = Global.WindowsApplication1.My.Resources.Resources.cancelar
+        Me.btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_cancelar.Location = New System.Drawing.Point(339, 231)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(75, 54)
+        Me.btn_cancelar.TabIndex = 38
+        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_cancelar.UseVisualStyleBackColor = False
+        '
+        'btn_confirmar
+        '
+        Me.btn_confirmar.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_confirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_confirmar.Image = Global.WindowsApplication1.My.Resources.Resources.Confirmar
+        Me.btn_confirmar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_confirmar.Location = New System.Drawing.Point(244, 231)
+        Me.btn_confirmar.Name = "btn_confirmar"
+        Me.btn_confirmar.Size = New System.Drawing.Size(75, 54)
+        Me.btn_confirmar.TabIndex = 37
+        Me.btn_confirmar.Text = "Confirmar"
+        Me.btn_confirmar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_confirmar.UseVisualStyleBackColor = False
+        '
+        'btn_salir
+        '
+        Me.btn_salir.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_salir.Image = Global.WindowsApplication1.My.Resources.Resources.salir
+        Me.btn_salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_salir.Location = New System.Drawing.Point(339, 307)
+        Me.btn_salir.Name = "btn_salir"
+        Me.btn_salir.Size = New System.Drawing.Size(75, 55)
+        Me.btn_salir.TabIndex = 34
+        Me.btn_salir.Text = "Salir"
+        Me.btn_salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_salir.UseVisualStyleBackColor = False
+        '
+        'btn_editar
+        '
+        Me.btn_editar.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_editar.Image = Global.WindowsApplication1.My.Resources.Resources.editar
+        Me.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_editar.Location = New System.Drawing.Point(120, 307)
+        Me.btn_editar.Name = "btn_editar"
+        Me.btn_editar.Size = New System.Drawing.Size(75, 55)
+        Me.btn_editar.TabIndex = 33
+        Me.btn_editar.Text = "Editar"
+        Me.btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_editar.UseVisualStyleBackColor = False
+        '
+        'btn_agregar
+        '
+        Me.btn_agregar.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btn_agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_agregar.Image = Global.WindowsApplication1.My.Resources.Resources.agregar
+        Me.btn_agregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btn_agregar.Location = New System.Drawing.Point(26, 307)
+        Me.btn_agregar.Name = "btn_agregar"
+        Me.btn_agregar.Size = New System.Drawing.Size(75, 55)
+        Me.btn_agregar.TabIndex = 32
+        Me.btn_agregar.Text = "Agregar"
+        Me.btn_agregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btn_agregar.UseVisualStyleBackColor = False
         '
         'frmProfesores
         '

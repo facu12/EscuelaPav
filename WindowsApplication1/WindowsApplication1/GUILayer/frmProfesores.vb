@@ -135,8 +135,10 @@ Public Class frmProfesores
 
         'si cancela se limpian los datos de los txt
 
+
         If MessageBox.Show("Seguro que desea cancelar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
             limpiarCampos()
+            btnMomentoInicial()
         End If
 
     End Sub
@@ -189,6 +191,7 @@ Public Class frmProfesores
         btn_cancelar.Visible = True
         btn_confirmar.Visible = True
         btn_confirmar.Enabled = True
+
 
     End Sub
 

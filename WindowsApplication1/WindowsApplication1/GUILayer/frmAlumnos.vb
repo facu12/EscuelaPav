@@ -144,7 +144,7 @@
 
         If MessageBox.Show("Seguro que desea cancelar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
             limpiarCampos()
-
+            btnMomentoInicial()
 
         End If
 
@@ -212,11 +212,6 @@
         btn_cancelar.Visible = True
         btn_confirmar.Visible = True
         btn_confirmar.Enabled = True
-
-
-
-
-
     End Sub
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
