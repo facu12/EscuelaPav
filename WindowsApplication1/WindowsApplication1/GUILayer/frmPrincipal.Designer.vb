@@ -24,6 +24,7 @@ Partial Class frmPrincipal
     Private Sub InitializeComponent()
         Me.btn_profesores = New System.Windows.Forms.Button()
         Me.btn_alumnos = New System.Windows.Forms.Button()
+        Me.btn_curso = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_profesores
@@ -48,11 +49,23 @@ Partial Class frmPrincipal
         Me.btn_alumnos.Text = "Alumnos"
         Me.btn_alumnos.UseVisualStyleBackColor = True
         '
+        'btn_curso
+        '
+        Me.btn_curso.Image = Global.WindowsApplication1.My.Resources.Resources.profesor_farsnworth_32
+        Me.btn_curso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_curso.Location = New System.Drawing.Point(218, 152)
+        Me.btn_curso.Name = "btn_curso"
+        Me.btn_curso.Size = New System.Drawing.Size(163, 67)
+        Me.btn_curso.TabIndex = 2
+        Me.btn_curso.Text = "Profesores"
+        Me.btn_curso.UseVisualStyleBackColor = True
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(608, 261)
+        Me.Controls.Add(Me.btn_curso)
         Me.Controls.Add(Me.btn_profesores)
         Me.Controls.Add(Me.btn_alumnos)
         Me.Name = "frmPrincipal"
@@ -63,4 +76,5 @@ Partial Class frmPrincipal
 
     Friend WithEvents btn_alumnos As Button
     Friend WithEvents btn_profesores As Button
+    Friend WithEvents btn_curso As Button
 End Class
