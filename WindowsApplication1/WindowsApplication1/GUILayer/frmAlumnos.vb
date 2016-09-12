@@ -132,9 +132,12 @@
         btn_confirmar.Enabled = False
         btn_cancelar.Visible = False
         btn_cancelar.Enabled = False
+        btn_editar.Visible = True
         btn_editar.Enabled = False
         btn_salir.Enabled = True
+        btn_nuevo.Visible = True
         btn_nuevo.Enabled = True
+
 
     End Sub
 
@@ -159,14 +162,11 @@
         'limpio campos txt
         limpiarCampos()
 
-        'Habilita los txt para carga de datos 
-        txt_telefono.Enabled = True
-        txtApellido.Enabled = True
-        txtLegajo.Enabled = True
-        txtNombres.Enabled = True
-        txt_documento.Enabled = True
+        habilitarcampos()
+
 
         'habilito y muestro btn de confirmar y cancelar
+        btn_nuevo.Visible = False
         btn_cancelar.Enabled = True
         btn_cancelar.Visible = True
         btn_confirmar.Visible = True
@@ -175,13 +175,20 @@
 
     End Sub
 
+    Private Sub habilitarCampos()
+        'Habilita los txt para carga de datos 
+        txt_telefono.Enabled = True
+        txtApellido.Enabled = True
+        txtLegajo.Enabled = True
+        txtNombres.Enabled = True
+        txt_documento.Enabled = True
+    End Sub
+
     Private Sub dgv_listarAlumnos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_listarAlumnos.CellContentClick
 
-        'habilito boton editar
+        'Oculto boton editar y nuevo
         btn_editar.Enabled = True
-
         'Dim al As Alumno
-
 
         'cargo los txt con los datos de la linea seleccionada
         txtApellido.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_apellido").Value
@@ -189,7 +196,6 @@
         txtNombres.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_nombre").Value
         txt_documento.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_documento").Value
         txt_telefono.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_telefono").Value
-
 
     End Sub
 
@@ -207,11 +213,13 @@
         txtNombres.Enabled = True
         txt_documento.Enabled = True
 
-        'habilito y muestro btn de confirmar y cancelar
+        'habilito y muestro btn de confirmar y cancelar, ademas oculto nuevo y editar
         btn_cancelar.Enabled = True
         btn_cancelar.Visible = True
         btn_confirmar.Visible = True
         btn_confirmar.Enabled = True
+        btn_nuevo.Visible = False
+        btn_editar.Visible = False
     End Sub
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
