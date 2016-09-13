@@ -11,28 +11,6 @@
 
     End Sub
 
-    Private Sub btnMomentoInicial()
-        'estado iniciales de los textbox
-        txt_telefono.Enabled = False
-        txtApellido.Enabled = False
-        txtLegajo.Enabled = False
-        txtNombres.Enabled = False
-        txt_documento.Enabled = False
-
-        'estados iniciales de botones
-        btn_confirmar.Visible = False
-        btn_confirmar.Enabled = False
-        btn_cancelar.Visible = False
-        btn_cancelar.Enabled = False
-        btn_editar.Visible = True
-        btn_editar.Enabled = False
-        btn_salir.Enabled = True
-        btn_nuevo.Visible = True
-        btn_nuevo.Enabled = True
-
-
-    End Sub
-
     Enum Action_type
         Insert
         Update
@@ -83,14 +61,9 @@
         'funcion que crea un alumno a partir de los campos del formulario
         Dim mat As New Materia
 
-        With mat
-            .codMateria = Convert.ToInt64(txt_cod_materia)
-            .nombre = txt_nombre.ToString
-            .descripcion = txt_descripcion.ToString
+        mat.
 
-        End With
-
-        Return mat
+        Return al
 
     End Function
 
