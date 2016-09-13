@@ -48,7 +48,7 @@
     End Function
 
     Private Function map(row As DataRow) As Materia
-        Dim oMateria As Materia
+        Dim oMateria As New Materia
         With oMateria
             .codMateria = row.Item("cod_materia").ToString
             .nombre = row.Item("nombre").ToString
