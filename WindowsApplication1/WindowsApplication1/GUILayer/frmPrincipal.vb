@@ -16,4 +16,8 @@
     Private Sub btn_curso_Click(sender As Object, e As EventArgs) Handles btn_curso.Click
 
     End Sub
+
+    Private Sub btn_materia_Click(sender As Object, e As EventArgs) Handles btn_materia.Click
+        frmMaterias.ShowDialog()
+    End Sub
 End Class
