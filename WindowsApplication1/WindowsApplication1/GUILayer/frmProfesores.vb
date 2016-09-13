@@ -162,6 +162,11 @@ Public Class frmProfesores
         btn_confirmar.Visible = True
         btn_confirmar.Enabled = True
 
+        btn_agregar.Visible = False
+        btn_agregar.Enabled = False
+        btn_editar.Visible = False
+        btn_editar.Enabled = False
+
     End Sub
 
     Private Sub dgv_listarAlumnos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_profesores.CellContentClick
@@ -187,6 +192,11 @@ Public Class frmProfesores
         txt_Nombres.Enabled = True
 
         'habilito y muestro btn de confirmar y cancelar
+        btn_agregar.Visible = False
+        btn_agregar.Enabled = False
+        btn_editar.Visible = False
+        btn_editar.Enabled = False
+
         btn_cancelar.Enabled = True
         btn_cancelar.Visible = True
         btn_confirmar.Visible = True

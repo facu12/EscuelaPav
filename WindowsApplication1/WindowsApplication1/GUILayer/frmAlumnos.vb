@@ -65,8 +65,8 @@
         al.apellido = txtApellido.Text.ToString
         al.legajo = txtLegajo.Text.ToString
         al.nombre = txtNombres.Text.ToString
-        al.documento = Convert.ToInt32(txt_documento.Text.ToString)
-        al.telefono = Convert.ToInt32(txt_telefono.Text.ToString)
+        al.documento = txt_documento.Text.ToString
+        al.telefono = txt_telefono.Text.ToString
 
 
         Return al

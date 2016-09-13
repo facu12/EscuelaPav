@@ -73,12 +73,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BussinessLayer\Entities\Alumno.vb" />
+    <Compile Include="BussinessLayer\Entities\Materia.vb" />
     <Compile Include="BussinessLayer\Entities\Profesor.vb" />
     <Compile Include="BussinessLayer\Entities\User.vb" />
     <Compile Include="BussinessLayer\Services\AlumnoService.vb" />
+    <Compile Include="BussinessLayer\Services\MateriaService.vb" />
     <Compile Include="BussinessLayer\Services\ProfesorService.vb" />
     <Compile Include="BussinessLayer\Services\UserService.vb" />
     <Compile Include="DataLayer\DAOs\AlumnoDAO.vb" />
+    <Compile Include="DataLayer\DAOs\MateriaDAO.vb" />
     <Compile Include="DataLayer\DAOs\ProfesorDAO.vb" />
     <Compile Include="DataLayer\DAOs\UserDAO.vb" />
     <Compile Include="DataLayer\Helper\BDHelper.vb" />
@@ -135,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmMaterias.resx">
+      <DependentUpon>frmMaterias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>

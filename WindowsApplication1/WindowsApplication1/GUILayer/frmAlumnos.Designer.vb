@@ -73,10 +73,9 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.lbl_apellido)
         Me.Panel1.Controls.Add(Me.txtLegajo)
         Me.Panel1.Controls.Add(Me.lbl_legajo)
-        Me.Panel1.Location = New System.Drawing.Point(32, 15)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Location = New System.Drawing.Point(24, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(572, 458)
+        Me.Panel1.Size = New System.Drawing.Size(429, 372)
         Me.Panel1.TabIndex = 29
         '
         'btn_cancelar
@@ -85,10 +84,9 @@ Partial Class Form1
         Me.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_cancelar.Image = Global.WindowsApplication1.My.Resources.Resources.cancelar
         Me.btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_cancelar.Location = New System.Drawing.Point(325, 385)
-        Me.btn_cancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_cancelar.Location = New System.Drawing.Point(244, 313)
         Me.btn_cancelar.Name = "btn_cancelar"
-        Me.btn_cancelar.Size = New System.Drawing.Size(100, 66)
+        Me.btn_cancelar.Size = New System.Drawing.Size(75, 54)
         Me.btn_cancelar.TabIndex = 36
         Me.btn_cancelar.Text = "Cancelar"
         Me.btn_cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -98,10 +96,9 @@ Partial Class Form1
         '
         Me.btn_nuevo.Image = Global.WindowsApplication1.My.Resources.Resources.agregar
         Me.btn_nuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_nuevo.Location = New System.Drawing.Point(213, 385)
-        Me.btn_nuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_nuevo.Location = New System.Drawing.Point(160, 313)
         Me.btn_nuevo.Name = "btn_nuevo"
-        Me.btn_nuevo.Size = New System.Drawing.Size(104, 66)
+        Me.btn_nuevo.Size = New System.Drawing.Size(78, 54)
         Me.btn_nuevo.TabIndex = 35
         Me.btn_nuevo.Text = "Nuevo"
         Me.btn_nuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -113,10 +110,9 @@ Partial Class Form1
         Me.btn_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_salir.Image = Global.WindowsApplication1.My.Resources.Resources.salir
         Me.btn_salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_salir.Location = New System.Drawing.Point(433, 385)
-        Me.btn_salir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_salir.Location = New System.Drawing.Point(325, 313)
         Me.btn_salir.Name = "btn_salir"
-        Me.btn_salir.Size = New System.Drawing.Size(100, 66)
+        Me.btn_salir.Size = New System.Drawing.Size(75, 54)
         Me.btn_salir.TabIndex = 34
         Me.btn_salir.Text = "Salir"
         Me.btn_salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -128,10 +124,9 @@ Partial Class Form1
         Me.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_editar.Image = Global.WindowsApplication1.My.Resources.Resources.editar
         Me.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_editar.Location = New System.Drawing.Point(325, 385)
-        Me.btn_editar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_editar.Location = New System.Drawing.Point(244, 313)
         Me.btn_editar.Name = "btn_editar"
-        Me.btn_editar.Size = New System.Drawing.Size(100, 66)
+        Me.btn_editar.Size = New System.Drawing.Size(75, 54)
         Me.btn_editar.TabIndex = 33
         Me.btn_editar.Text = "Editar"
         Me.btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -143,10 +138,9 @@ Partial Class Form1
         Me.btn_confirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_confirmar.Image = Global.WindowsApplication1.My.Resources.Resources.Confirmar
         Me.btn_confirmar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_confirmar.Location = New System.Drawing.Point(217, 385)
-        Me.btn_confirmar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_confirmar.Location = New System.Drawing.Point(163, 313)
         Me.btn_confirmar.Name = "btn_confirmar"
-        Me.btn_confirmar.Size = New System.Drawing.Size(100, 66)
+        Me.btn_confirmar.Size = New System.Drawing.Size(75, 54)
         Me.btn_confirmar.TabIndex = 32
         Me.btn_confirmar.Text = "Confirmar"
         Me.btn_confirmar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -155,50 +149,45 @@ Partial Class Form1
         'txt_telefono
         '
         Me.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_telefono.Location = New System.Drawing.Point(120, 146)
-        Me.txt_telefono.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_telefono.Location = New System.Drawing.Point(90, 119)
         Me.txt_telefono.MaxLength = 10
         Me.txt_telefono.Name = "txt_telefono"
-        Me.txt_telefono.Size = New System.Drawing.Size(161, 22)
+        Me.txt_telefono.Size = New System.Drawing.Size(121, 20)
         Me.txt_telefono.TabIndex = 31
         '
         'lbl_telefono
         '
         Me.lbl_telefono.AutoSize = True
-        Me.lbl_telefono.Location = New System.Drawing.Point(31, 144)
-        Me.lbl_telefono.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_telefono.Location = New System.Drawing.Point(23, 117)
         Me.lbl_telefono.Name = "lbl_telefono"
-        Me.lbl_telefono.Size = New System.Drawing.Size(68, 17)
+        Me.lbl_telefono.Size = New System.Drawing.Size(52, 13)
         Me.lbl_telefono.TabIndex = 30
         Me.lbl_telefono.Text = "Telefono:"
         '
         'txt_documento
         '
         Me.txt_documento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_documento.Location = New System.Drawing.Point(120, 113)
-        Me.txt_documento.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txt_documento.Location = New System.Drawing.Point(90, 92)
         Me.txt_documento.MaxLength = 8
         Me.txt_documento.Name = "txt_documento"
-        Me.txt_documento.Size = New System.Drawing.Size(161, 22)
+        Me.txt_documento.Size = New System.Drawing.Size(121, 20)
         Me.txt_documento.TabIndex = 29
         '
         'lbl_documento
         '
         Me.lbl_documento.AutoSize = True
-        Me.lbl_documento.Location = New System.Drawing.Point(13, 112)
-        Me.lbl_documento.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_documento.Location = New System.Drawing.Point(10, 91)
         Me.lbl_documento.Name = "lbl_documento"
-        Me.lbl_documento.Size = New System.Drawing.Size(84, 17)
+        Me.lbl_documento.Size = New System.Drawing.Size(65, 13)
         Me.lbl_documento.TabIndex = 28
         Me.lbl_documento.Text = "Documento:"
         '
         'lbl_Mensajes
         '
         Me.lbl_Mensajes.AutoSize = True
-        Me.lbl_Mensajes.Location = New System.Drawing.Point(31, 335)
-        Me.lbl_Mensajes.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_Mensajes.Location = New System.Drawing.Point(23, 272)
         Me.lbl_Mensajes.Name = "lbl_Mensajes"
-        Me.lbl_Mensajes.Size = New System.Drawing.Size(90, 17)
+        Me.lbl_Mensajes.Size = New System.Drawing.Size(68, 13)
         Me.lbl_Mensajes.TabIndex = 27
         Me.lbl_Mensajes.Text = "[lblMensajes]"
         Me.lbl_Mensajes.Visible = False
@@ -206,58 +195,52 @@ Partial Class Form1
         'txtNombres
         '
         Me.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNombres.Location = New System.Drawing.Point(120, 80)
-        Me.txtNombres.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNombres.Location = New System.Drawing.Point(90, 65)
         Me.txtNombres.Name = "txtNombres"
-        Me.txtNombres.Size = New System.Drawing.Size(389, 22)
+        Me.txtNombres.Size = New System.Drawing.Size(292, 20)
         Me.txtNombres.TabIndex = 10
         '
         'lbl_nombre
         '
         Me.lbl_nombre.AutoSize = True
-        Me.lbl_nombre.Location = New System.Drawing.Point(31, 80)
-        Me.lbl_nombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_nombre.Location = New System.Drawing.Point(23, 65)
         Me.lbl_nombre.Name = "lbl_nombre"
-        Me.lbl_nombre.Size = New System.Drawing.Size(69, 17)
+        Me.lbl_nombre.Size = New System.Drawing.Size(52, 13)
         Me.lbl_nombre.TabIndex = 9
         Me.lbl_nombre.Text = "Nombres:"
         '
         'txtApellido
         '
         Me.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtApellido.Location = New System.Drawing.Point(120, 47)
-        Me.txtApellido.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtApellido.Location = New System.Drawing.Point(90, 38)
         Me.txtApellido.Name = "txtApellido"
-        Me.txtApellido.Size = New System.Drawing.Size(242, 22)
+        Me.txtApellido.Size = New System.Drawing.Size(182, 20)
         Me.txtApellido.TabIndex = 1
         '
         'lbl_apellido
         '
         Me.lbl_apellido.AutoSize = True
-        Me.lbl_apellido.Location = New System.Drawing.Point(37, 48)
-        Me.lbl_apellido.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_apellido.Location = New System.Drawing.Point(28, 39)
         Me.lbl_apellido.Name = "lbl_apellido"
-        Me.lbl_apellido.Size = New System.Drawing.Size(62, 17)
+        Me.lbl_apellido.Size = New System.Drawing.Size(47, 13)
         Me.lbl_apellido.TabIndex = 0
         Me.lbl_apellido.Text = "Apellido:"
         '
         'txtLegajo
         '
         Me.txtLegajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLegajo.Location = New System.Drawing.Point(120, 14)
-        Me.txtLegajo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtLegajo.Location = New System.Drawing.Point(90, 11)
         Me.txtLegajo.MaxLength = 5
         Me.txtLegajo.Name = "txtLegajo"
-        Me.txtLegajo.Size = New System.Drawing.Size(121, 22)
+        Me.txtLegajo.Size = New System.Drawing.Size(91, 20)
         Me.txtLegajo.TabIndex = 0
         '
         'lbl_legajo
         '
         Me.lbl_legajo.AutoSize = True
-        Me.lbl_legajo.Location = New System.Drawing.Point(44, 16)
-        Me.lbl_legajo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_legajo.Location = New System.Drawing.Point(33, 13)
         Me.lbl_legajo.Name = "lbl_legajo"
-        Me.lbl_legajo.Size = New System.Drawing.Size(55, 17)
+        Me.lbl_legajo.Size = New System.Drawing.Size(42, 13)
         Me.lbl_legajo.TabIndex = 0
         Me.lbl_legajo.Text = "Legajo:"
         '
@@ -265,10 +248,9 @@ Partial Class Form1
         '
         Me.btn_buscar.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.btn_buscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_buscar.Location = New System.Drawing.Point(415, 427)
-        Me.btn_buscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_buscar.Location = New System.Drawing.Point(311, 347)
         Me.btn_buscar.Name = "btn_buscar"
-        Me.btn_buscar.Size = New System.Drawing.Size(113, 28)
+        Me.btn_buscar.Size = New System.Drawing.Size(85, 23)
         Me.btn_buscar.TabIndex = 26
         Me.btn_buscar.Text = "Buscar"
         Me.btn_buscar.UseVisualStyleBackColor = False
@@ -280,11 +262,9 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.txt_busqueda_alumnos)
         Me.GroupBox1.Controls.Add(Me.cmdConsultar)
         Me.GroupBox1.Controls.Add(Me.lbl_alumnos)
-        Me.GroupBox1.Location = New System.Drawing.Point(629, 15)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(472, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox1.Size = New System.Drawing.Size(537, 458)
+        Me.GroupBox1.Size = New System.Drawing.Size(403, 372)
         Me.GroupBox1.TabIndex = 30
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Lista de Alumnos"
@@ -297,14 +277,14 @@ Partial Class Form1
         Me.dgv_listarAlumnos.AllowUserToResizeRows = False
         Me.dgv_listarAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_listarAlumnos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_legajo, Me.col_apellido, Me.col_nombre, Me.col_documento, Me.col_telefono})
-        Me.dgv_listarAlumnos.Location = New System.Drawing.Point(8, 30)
-        Me.dgv_listarAlumnos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgv_listarAlumnos.Location = New System.Drawing.Point(6, 24)
+        Me.dgv_listarAlumnos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgv_listarAlumnos.Name = "dgv_listarAlumnos"
         Me.dgv_listarAlumnos.ReadOnly = True
         Me.dgv_listarAlumnos.RowHeadersVisible = False
         Me.dgv_listarAlumnos.RowTemplate.Height = 24
         Me.dgv_listarAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_listarAlumnos.Size = New System.Drawing.Size(521, 377)
+        Me.dgv_listarAlumnos.Size = New System.Drawing.Size(391, 306)
         Me.dgv_listarAlumnos.TabIndex = 19
         '
         'col_legajo
@@ -339,20 +319,19 @@ Partial Class Form1
         '
         'txt_busqueda_alumnos
         '
-        Me.txt_busqueda_alumnos.Location = New System.Drawing.Point(75, 427)
-        Me.txt_busqueda_alumnos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_busqueda_alumnos.Location = New System.Drawing.Point(56, 347)
+        Me.txt_busqueda_alumnos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_busqueda_alumnos.Name = "txt_busqueda_alumnos"
-        Me.txt_busqueda_alumnos.Size = New System.Drawing.Size(320, 22)
+        Me.txt_busqueda_alumnos.Size = New System.Drawing.Size(241, 20)
         Me.txt_busqueda_alumnos.TabIndex = 18
         '
         'cmdConsultar
         '
         Me.cmdConsultar.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.cmdConsultar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdConsultar.Location = New System.Drawing.Point(597, 30)
-        Me.cmdConsultar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmdConsultar.Location = New System.Drawing.Point(448, 24)
         Me.cmdConsultar.Name = "cmdConsultar"
-        Me.cmdConsultar.Size = New System.Drawing.Size(167, 38)
+        Me.cmdConsultar.Size = New System.Drawing.Size(125, 31)
         Me.cmdConsultar.TabIndex = 17
         Me.cmdConsultar.Text = "Consultar"
         Me.cmdConsultar.UseVisualStyleBackColor = False
@@ -360,21 +339,20 @@ Partial Class Form1
         'lbl_alumnos
         '
         Me.lbl_alumnos.AutoSize = True
-        Me.lbl_alumnos.Location = New System.Drawing.Point(8, 430)
-        Me.lbl_alumnos.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_alumnos.Location = New System.Drawing.Point(6, 349)
         Me.lbl_alumnos.Name = "lbl_alumnos"
-        Me.lbl_alumnos.Size = New System.Drawing.Size(59, 17)
+        Me.lbl_alumnos.Size = New System.Drawing.Size(45, 13)
         Me.lbl_alumnos.TabIndex = 13
         Me.lbl_alumnos.Text = "Alumno:"
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1176, 527)
+        Me.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.ClientSize = New System.Drawing.Size(882, 428)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Form1"
         Me.Text = "Cargar Alumnos"
         Me.Panel1.ResumeLayout(False)
