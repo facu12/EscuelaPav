@@ -24,11 +24,14 @@ Partial Class frmMaterias
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgv_materias = New System.Windows.Forms.DataGridView()
+        Me.col_cod_materia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btn_buscar = New System.Windows.Forms.Button()
         Me.txt_busqueda_materia = New System.Windows.Forms.TextBox()
         Me.cmdConsultar = New System.Windows.Forms.Button()
         Me.lbl_profesor = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lbl_descripcion = New System.Windows.Forms.Label()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.btn_confirmar = New System.Windows.Forms.Button()
         Me.btn_salir = New System.Windows.Forms.Button()
@@ -40,9 +43,7 @@ Partial Class frmMaterias
         Me.lbl_nombre = New System.Windows.Forms.Label()
         Me.txt_cod_materia = New System.Windows.Forms.TextBox()
         Me.lbl_cod_materia = New System.Windows.Forms.Label()
-        Me.lbl_descripcion = New System.Windows.Forms.Label()
-        Me.col_cod_materia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_materias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -65,7 +66,7 @@ Partial Class frmMaterias
         'dgv_materias
         '
         Me.dgv_materias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_materias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_cod_materia, Me.col_nombre})
+        Me.dgv_materias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_cod_materia, Me.col_nombre, Me.col_descripcion})
         Me.dgv_materias.Location = New System.Drawing.Point(9, 24)
         Me.dgv_materias.Margin = New System.Windows.Forms.Padding(2)
         Me.dgv_materias.Name = "dgv_materias"
@@ -73,6 +74,16 @@ Partial Class frmMaterias
         Me.dgv_materias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_materias.Size = New System.Drawing.Size(388, 306)
         Me.dgv_materias.TabIndex = 19
+        '
+        'col_cod_materia
+        '
+        Me.col_cod_materia.HeaderText = "Codigo"
+        Me.col_cod_materia.Name = "col_cod_materia"
+        '
+        'col_nombre
+        '
+        Me.col_nombre.HeaderText = "Nombre"
+        Me.col_nombre.Name = "col_nombre"
         '
         'btn_buscar
         '
@@ -131,6 +142,15 @@ Partial Class frmMaterias
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(429, 372)
         Me.Panel1.TabIndex = 32
+        '
+        'lbl_descripcion
+        '
+        Me.lbl_descripcion.AutoSize = True
+        Me.lbl_descripcion.Location = New System.Drawing.Point(15, 67)
+        Me.lbl_descripcion.Name = "lbl_descripcion"
+        Me.lbl_descripcion.Size = New System.Drawing.Size(69, 13)
+        Me.lbl_descripcion.TabIndex = 39
+        Me.lbl_descripcion.Text = "Descripcion: "
         '
         'btn_cancelar
         '
@@ -253,24 +273,10 @@ Partial Class frmMaterias
         Me.lbl_cod_materia.TabIndex = 0
         Me.lbl_cod_materia.Text = "Codigo:"
         '
-        'lbl_descripcion
+        'col_descripcion
         '
-        Me.lbl_descripcion.AutoSize = True
-        Me.lbl_descripcion.Location = New System.Drawing.Point(15, 67)
-        Me.lbl_descripcion.Name = "lbl_descripcion"
-        Me.lbl_descripcion.Size = New System.Drawing.Size(69, 13)
-        Me.lbl_descripcion.TabIndex = 39
-        Me.lbl_descripcion.Text = "Descripcion: "
-        '
-        'col_cod_materia
-        '
-        Me.col_cod_materia.HeaderText = "Codigo"
-        Me.col_cod_materia.Name = "col_cod_materia"
-        '
-        'col_nombre
-        '
-        Me.col_nombre.HeaderText = "Nombre"
-        Me.col_nombre.Name = "col_nombre"
+        Me.col_descripcion.HeaderText = "Descripcion"
+        Me.col_descripcion.Name = "col_descripcion"
         '
         'frmMaterias
         '
@@ -311,4 +317,5 @@ Partial Class frmMaterias
     Friend WithEvents lbl_cod_materia As Label
     Friend WithEvents col_cod_materia As DataGridViewTextBoxColumn
     Friend WithEvents col_nombre As DataGridViewTextBoxColumn
+    Friend WithEvents col_descripcion As DataGridViewTextBoxColumn
 End Class

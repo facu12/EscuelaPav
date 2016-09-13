@@ -56,7 +56,7 @@
 
             With oMateria
                 'cargar filas del datagridview a partir de un array de strings
-                dgv_materias.Rows.Add(New String() { .codMateria.ToString, .nombre.ToString, .nombre.ToString, .descripcion.ToString})
+                dgv_materias.Rows.Add(New String() { .codMateria.ToString, .nombre.ToString, .descripcion.ToString})
             End With
         Next
     End Sub
@@ -79,21 +79,146 @@
     End Sub
 
 
-    Private Function crearMateria()
-        'funcion que crea un alumno a partir de los campos del formulario
-        Dim mat As New Materia
+    Friend Function crearMateria()
+        'funcion que crea un materia a partir de los campos del formulario
+        Dim mate As New Materia
 
-        With mat
-            .codMateria = Convert.ToInt64(txt_cod_materia)
-            .nombre = txt_nombre.ToString
-            .descripcion = txt_descripcion.ToString
+        mate.codMateria = txt_cod_materia.Text.ToString
+        mate.nombre = txt_nombre.Text.ToString
+        mate.descripcion = txt_descripcion.Text.ToString
 
-        End With
 
-        Return mat
+
+        Return mate
 
     End Function
 
+    Private Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
 
 
+
+        'setea el action tipe en insert
+        action = Action_type.Insert
+
+
+        'limpio campos txt
+        limpiarCampos()
+
+        habilitarCampos()
+
+
+        'habilito y muestro btn de confirmar y cancelar
+        btn_agregar.Enabled = False
+        btn_agregar.Visible = False
+        btn_cancelar.Enabled = True
+        btn_cancelar.Visible = True
+        btn_confirmar.Visible = True
+        btn_confirmar.Enabled = True
+
+
+    End Sub
+
+    Private Sub habilitarCampos()
+        'habilito la edicion de los campos txt
+
+        txt_cod_materia.Enabled = True
+        txt_nombre.Enabled = True
+        txt_descripcion.Enabled = True
+
+    End Sub
+
+
+    Private Sub btn_confirmar_Click(sender As Object, e As EventArgs) Handles btn_confirmar.Click
+
+        'FALTA VALIDACIONES DE CAMPOS  Y TIPOS 
+
+        If MessageBox.Show("Seguro que desea confirmar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+
+            'dimensiono alumno apartir de los txt
+            Dim mat As Materia
+            mat = crearMateria()
+            'dimensiono rta segun realiza con exito o no la consulta sql
+            Dim rta As Boolean
+            'dimensiono el servicio 
+            Dim oMateriaService As New MateriaService
+
+            'verifico si es un nuevo alumno o modifico uno ya creado 
+            If action = Action_type.Insert Then
+                'tomo el alumno creado por la funcion y se la paso al servicio para crear
+
+                rta = oMateriaService.registrarMateria(mat)
+            Else
+                'tomo al alumno creado por la funcion y se lo paso al servicio para actualizar
+                rta = oMateriaService.actualizarMateria(mat)
+            End If
+
+
+            'vuelve al estado incial los btn 
+            limpiarCampos()
+            btnMomentoInicial()
+
+            'segun si pudo o no realizar la consulta sql, muestro un aviso
+            If rta = True Then
+                MsgBox("operacion realizada exitosamente", vbOKOnly + MsgBoxStyle.Information, "Aviso")
+                llenarGrid()
+            Else
+                MsgBox("operacion no se realizo con exito", vbOKOnly + MsgBoxStyle.Information, "Aviso")
+
+            End If
+
+        Else
+
+            limpiarCampos()
+            btnMomentoInicial()
+        End If
+
+
+
+
+
+    End Sub
+
+    Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
+        'si cancela se limpian los datos de los txt
+
+        If MessageBox.Show("Seguro que desea cancelar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+            limpiarCampos()
+            btnMomentoInicial()
+
+        End If
+    End Sub
+
+    Private Sub btn_editar_Click(sender As Object, e As EventArgs) Handles btn_editar.Click
+        'setea la variable action en update
+        action = Action_type.Update
+
+
+        'Habilita los txt para carga de datos excepto el legajo porque es PK 
+        habilitarCampos()
+
+        'habilito y muestro btn de confirmar y cancelar, ademas oculto nuevo y editar
+        btn_cancelar.Enabled = True
+        btn_cancelar.Visible = True
+        btn_confirmar.Visible = True
+        btn_confirmar.Enabled = True
+        btn_agregar.Visible = False
+        btn_agregar.Enabled = False
+        btn_editar.Visible = False
+
+
+    End Sub
+
+    Private Sub dgv_materias_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_materias.CellContentClick
+
+
+        ' boton editar y nuevo
+        btn_editar.Enabled = True
+
+        'cargo los txt con los datos de la linea seleccionada
+        txt_cod_materia.Text = dgv_materias.CurrentRow.Cells.Item("col_cod_materia").Value
+        txt_nombre.Text = dgv_materias.CurrentRow.Cells.Item("col_nombre").Value
+        txt_descripcion.Text = dgv_materias.CurrentRow.Cells.Item("col_descripcion").Value
+
+
+    End Sub
 End Class
