@@ -15,7 +15,7 @@
         Dim comandStr As String
 
         comandStr = "INSERT INTO Materia VALUES ("
-        comandStr += "'" + oMateria.codMateria + "',"
+        comandStr += "'" + oMateria.codMateria.ToString + "',"
         comandStr += "'" + oMateria.nombre + "',"
         comandStr += "' " + oMateria.descripcion + "'"
         comandStr += ")"
@@ -27,9 +27,9 @@
     Public Function update(ByVal oMateria As Materia) As Boolean
         Dim comandStr As String
         comandStr = "UPDATE Materia SET "
-        comandStr += "cod_legajo" + oMateria.codMateria + ";"
-        comandStr += "nombre" + oMateria.nombre + "', "
-        comandStr += "descripcion" + oMateria.descripcion + ";"
+        ' comandStr += "cod_materia='" + oMateria.codMateria + "',"
+        comandStr += "nombre='" + oMateria.nombre + "', "
+        comandStr += "descripcion='" + oMateria.descripcion + "' "
         comandStr += "WHERE cod_materia=" + oMateria.codMateria.ToString
 
         Return (BDHelper.getDBHelper().EjecutarSQL(comandStr) = 1)
@@ -48,7 +48,7 @@
     End Function
 
     Private Function map(row As DataRow) As Materia
-        Dim oMateria As Materia
+        Dim oMateria As New Materia
         With oMateria
             .codMateria = row.Item("cod_materia").ToString
             .nombre = row.Item("nombre").ToString
@@ -57,4 +57,8 @@
         End With
         Return oMateria
     End Function
+
+
 End Class
+
+

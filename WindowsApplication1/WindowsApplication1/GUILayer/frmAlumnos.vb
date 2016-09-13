@@ -188,6 +188,7 @@
 
         'Oculto boton editar y nuevo
         btn_editar.Enabled = True
+
         'Dim al As Alumno
 
         'cargo los txt con los datos de la linea seleccionada
