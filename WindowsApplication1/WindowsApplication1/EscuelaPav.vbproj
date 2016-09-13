@@ -97,6 +97,12 @@
     <Compile Include="GUILayer\frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\frmMaterias.Designer.vb">
+      <DependentUpon>frmMaterias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmMaterias.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\frmPrincipal.Designer.vb">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </Compile>
