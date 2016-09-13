@@ -13,11 +13,11 @@
 
     Private Sub btnMomentoInicial()
         'estado iniciales de los textbox
-        txt_telefono.Enabled = False
-        txtApellido.Enabled = False
-        txtLegajo.Enabled = False
-        txtNombres.Enabled = False
-        txt_documento.Enabled = False
+
+
+        txt_cod_materia.Enabled = False
+        txt_nombre.Enabled = False
+        txt_descripcion.Enabled = False
 
         'estados iniciales de botones
         btn_confirmar.Visible = False
@@ -27,8 +27,8 @@
         btn_editar.Visible = True
         btn_editar.Enabled = False
         btn_salir.Enabled = True
-        btn_nuevo.Visible = True
-        btn_nuevo.Enabled = True
+        btn_agregar.Visible = True
+        btn_agregar.Enabled = True
 
 
     End Sub
@@ -40,23 +40,23 @@
 
     Public action As Action_type
 
-    Friend Sub llenarGrid(Optional ByVal lst As List(Of Alumno) = Nothing)
-        Dim oAlumnoService As New AlumnoService
+    Friend Sub llenarGrid(Optional ByVal lst As List(Of Materia) = Nothing)
+        Dim oMateriaService As New MateriaService
         dgv_materias.Rows.Clear()
 
         If IsNothing(lst) Then
-            lst = oAlumnoService.listarAlumnos()
+            lst = oMateriaService.listarMateria()
         End If
 
         'Asignamos a la propiedad SelectionMode el valor FullRowSelect para que 
         'al hacer click sobre la grilla se resalte toda la fila completa. Esto puede tmb hacerse en modo diseño.
         dgv_materias.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         dgv_materias.Rows.Clear()
-        For Each oAlumno In lst
+        For Each oMateria In lst
 
-            With oAlumno
+            With oMateria
                 'cargar filas del datagridview a partir de un array de strings
-                dgv_materias.Rows.Add(New String() { .legajo.ToString, .apellido.ToString, .nombre.ToString, .documento.ToString, .telefono.ToString})
+                dgv_materias.Rows.Add(New String() { .codMateria.ToString, .nombre.ToString, .nombre.ToString, .descripcion.ToString})
             End With
         Next
     End Sub
