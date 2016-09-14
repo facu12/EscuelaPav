@@ -17,7 +17,7 @@
 
         txt_cod_materia.Enabled = False
         txt_nombre.Enabled = False
-        txt_descripcion.Enabled = False
+        chkContraturno.Enabled = False
 
         'estados iniciales de botones
         btn_confirmar.Visible = False
@@ -56,7 +56,7 @@
 
             With oMateria
                 'cargar filas del datagridview a partir de un array de strings
-                dgv_materias.Rows.Add(New String() { .codMateria.ToString, .nombre.ToString, .descripcion.ToString})
+                dgv_materias.Rows.Add(New String() { .codMateria.ToString, .nombre.ToString, .SiNo(.esContraturno.ToString)})
             End With
         Next
     End Sub
@@ -68,12 +68,14 @@
         End If
     End Sub
 
+
+
     Private Sub limpiarCampos()
         'limpia los campos txt del formulario
         txt_busqueda_materia.Clear()
         txt_cod_materia.Clear()
         txt_nombre.Clear()
-        txt_descripcion.Clear()
+        chkContraturno.Checked = 0
 
 
     End Sub
@@ -85,7 +87,7 @@
 
         mate.codMateria = txt_cod_materia.Text.ToString
         mate.nombre = txt_nombre.Text.ToString
-        mate.descripcion = txt_descripcion.Text.ToString
+        mate.esContraturno = mate.UnoCero(chkContraturno.Checked)
 
 
 
@@ -123,7 +125,7 @@
 
         txt_cod_materia.Enabled = True
         txt_nombre.Enabled = True
-        txt_descripcion.Enabled = True
+        chkContraturno.Enabled = True
 
     End Sub
 
@@ -217,8 +219,18 @@
         'cargo los txt con los datos de la linea seleccionada
         txt_cod_materia.Text = dgv_materias.CurrentRow.Cells.Item("col_cod_materia").Value
         txt_nombre.Text = dgv_materias.CurrentRow.Cells.Item("col_nombre").Value
-        txt_descripcion.Text = dgv_materias.CurrentRow.Cells.Item("col_descripcion").Value
-
+        chkContraturno.Checked = TrueFlase(dgv_materias.CurrentRow.Cells.Item("col_contraturno").Value)
 
     End Sub
+
+
+    'Funcion creada para reemplazar en el checkbox el Si/No de la grilla por un True/False
+    Private Function TrueFlase(x As String) As Boolean
+        If (x = "Si") Then
+            Return True
+        Else Return False
+        End If
+    End Function
+
+
 End Class
