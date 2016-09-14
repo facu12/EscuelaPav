@@ -17,7 +17,7 @@
         comandStr = "INSERT INTO Materia VALUES ("
         comandStr += "'" + oMateria.codMateria.ToString + "',"
         comandStr += "'" + oMateria.nombre + "',"
-        comandStr += "' " + oMateria.descripcion + "'"
+        comandStr += "'" + oMateria.UnoCero(oMateria.esContraturno) + "'"
         comandStr += ")"
 
 
@@ -28,9 +28,9 @@
         Dim comandStr As String
         comandStr = "UPDATE Materia SET "
         ' comandStr += "cod_materia='" + oMateria.codMateria + "',"
-        comandStr += "nombre='" + oMateria.nombre + "', "
-        comandStr += "descripcion='" + oMateria.descripcion + "' "
-        comandStr += "WHERE cod_materia=" + oMateria.codMateria.ToString
+        comandStr += "nombre= '" + oMateria.nombre + "', "
+        comandStr += "es_Contraturno= " + oMateria.UnoCero(oMateria.esContraturno)
+        comandStr += " WHERE cod_materia=" + oMateria.codMateria.ToString
 
         Return (BDHelper.getDBHelper().EjecutarSQL(comandStr) = 1)
     End Function
@@ -52,11 +52,11 @@
         With oMateria
             .codMateria = row.Item("cod_materia").ToString
             .nombre = row.Item("nombre").ToString
-            .descripcion = row.Item("descripcion").ToString
-
+            .esContraturno = row.Item("es_Contraturno").ToString
         End With
         Return oMateria
     End Function
+
 
 
 End Class
