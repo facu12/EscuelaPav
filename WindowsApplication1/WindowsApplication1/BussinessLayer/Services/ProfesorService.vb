@@ -8,6 +8,10 @@
         Return oProfesorDAO.getProfesores()
     End Function
 
+    Public Function listarProfesorCombo() As DataTable
+        Return oProfesorDAO.getProfesoresCombo()
+    End Function
+
     Public Function registrarProfesor(ByVal oProfesor As Profesor) As Boolean
         Return oProfesorDAO.add(oProfesor)
     End Function
