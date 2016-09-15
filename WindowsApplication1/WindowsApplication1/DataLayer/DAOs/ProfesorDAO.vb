@@ -13,6 +13,14 @@
         Return profesores
     End Function
 
+    Public Function getProfesoresCombo() As DataTable
+        Dim profesores As New List(Of Profesor)
+        Dim strSQL = "select legajo, apellido + ', ' + nombre as nombre from Profesor"
+
+        'Con la tabla devuelta por el Helper creamos N OBJETOS Bug a partir de los datos de la/s filas de la tabla Profesores
+        Return BDHelper.getDBHelper().ConsultaSQL(strSQL)
+    End Function
+
     Public Function add(ByVal oAlumno As Profesor) As Boolean
         Dim comandStr As String
         comandStr = "INSERT INTO dbo.Profesor VALUES("
