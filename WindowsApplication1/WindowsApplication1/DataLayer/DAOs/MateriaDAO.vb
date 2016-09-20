@@ -57,6 +57,22 @@
         Return oMateria
     End Function
 
+    Public Function getMateriasxCurso(cod As String) As DataTable
+        Dim str As String
+        str = "SELECT b.apellido + ', ' + b.nombre as profesor, c.nombre as materia FROM profesorxmateriaxcurso a "
+        str += "JOIN Profesor b ON a.legajo = b.legajo "
+        str += "JOIN Materia c ON a.cod_materia = c.cod_materia "
+        str += "WHERE cod_curso = "
+        str += "'" + cod.ToString + "'"
+        Return BDHelper.getDBHelper.ConsultaSQL(str)
+
+    End Function
+
+    Public Function addMateriaenCurso(cod As String, profesor As Integer, materia As Integer) As Boolean
+        Dim str As String
+
+    End Function
+
 
 
 End Class
