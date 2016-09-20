@@ -168,4 +168,8 @@
         cod_curso = txtAño.Text + txtNivel.Text + txtSubnivel.Text
         Return cod_curso
     End Function
+
+    Private Sub dgvMaterias_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMaterias.CellContentClick
+
+    End Sub
 End Class
