@@ -6,7 +6,10 @@
 
     Public Function listarMateria() As List(Of Materia)
         Return oMateriaDAO.getMaterias()
+    End Function
 
+    Public Function listarMateriaxCurso(curso As String) As DataTable
+        Return oMateriaDAO.getMateriasxCurso(curso)
     End Function
 
     Public Function registrarMateria(ByVal oMateria As Materia) As Boolean
