@@ -1,6 +1,6 @@
 ﻿Public Class MateriaService
     Private oMateriaDAO As MateriaDAO
-    ''Public Sub New()
+    Public Sub New()
         oMateriaDAO = New MateriaDAO()
     End Sub
 
