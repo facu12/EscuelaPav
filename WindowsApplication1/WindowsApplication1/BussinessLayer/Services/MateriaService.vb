@@ -1,6 +1,6 @@
 ﻿Public Class MateriaService
     Private oMateriaDAO As MateriaDAO
-    Public Sub New()
+    ''Public Sub New()
         oMateriaDAO = New MateriaDAO()
     End Sub
 
@@ -14,6 +14,10 @@
 
     Public Function registrarMateria(ByVal oMateria As Materia) As Boolean
         Return oMateriaDAO.add(oMateria)
+    End Function
+
+    Public Function registrarMateriaenCurso(cod As String, materia As Integer, profesor As Integer)
+        Return oMateriaDAO.addMateriaenCurso(cod, materia, profesor)
     End Function
 
     Public Function actualizarMateria(ByVal oMateria As Materia) As Boolean
