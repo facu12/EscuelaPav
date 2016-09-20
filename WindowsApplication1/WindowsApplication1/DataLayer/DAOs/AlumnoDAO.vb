@@ -18,8 +18,11 @@
         comandStr += "'" + oAlumno.legajo.ToString + "', "
         comandStr += "'" + oAlumno.nombre + "', "
         comandStr += "'" + oAlumno.apellido + "', "
+        comandStr += "'" + oAlumno.documento + "', "
+        comandStr += "'" + oAlumno.fecha_nac + "', "
+        comandStr += "'" + oAlumno.año_ingreso + "', "
         comandStr += "'" + oAlumno.telefono + "', "
-        comandStr += "'" + oAlumno.documento + "')"
+        comandStr += "'" + oAlumno.email + "')"
 
         Return (BDHelper.getDBHelper().EjecutarSQL(comandStr) = 1)
     End Function
@@ -30,8 +33,10 @@
         'comandStr += "legajo='" + oAlumno.legajo + "', "
         comandStr += "nombre='" + oAlumno.nombre + "', "
         comandStr += "apellido='" + oAlumno.apellido + "', "
+        comandStr += "dni='" + oAlumno.documento + "', "
+        comandStr += "año_ingreso='" + oAlumno.año_ingreso + "', "
         comandStr += "telefono='" + oAlumno.telefono + "', "
-        comandStr += "documento='" + oAlumno.documento + "' "
+        comandStr += "mail='" + oAlumno.email + "' "
         comandStr += "WHERE legajo=" + oAlumno.legajo.ToString
 
         Return (BDHelper.getDBHelper().EjecutarSQL(comandStr) = 1)
@@ -55,6 +60,9 @@
             .legajo = Convert.ToInt32(row.Item("legajo").ToString)
             .apellido = row.Item("apellido").ToString
             .nombre = row.Item("nombre").ToString
+            .documento = row.Item("documento").ToString
+            .fecha_nac = row.Item("fecha_nac").ToString
+            .año_ingreso = row.Item("año_ingreso").ToString
             .telefono = row.Item("telefono").ToString
             .documento = row.Item("documento").ToString
         End With

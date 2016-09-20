@@ -50,6 +50,10 @@ Partial Class Form1
         Me.txt_busqueda_alumnos = New System.Windows.Forms.TextBox()
         Me.cmdConsultar = New System.Windows.Forms.Button()
         Me.lbl_alumnos = New System.Windows.Forms.Label()
+        Me.lbl_fecha_nac = New System.Windows.Forms.Label()
+        Me.lbl_mail = New System.Windows.Forms.Label()
+        Me.txt_mail = New System.Windows.Forms.TextBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_listarAlumnos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,6 +61,10 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.DateTimePicker1)
+        Me.Panel1.Controls.Add(Me.txt_mail)
+        Me.Panel1.Controls.Add(Me.lbl_mail)
+        Me.Panel1.Controls.Add(Me.lbl_fecha_nac)
         Me.Panel1.Controls.Add(Me.btn_cancelar)
         Me.Panel1.Controls.Add(Me.btn_nuevo)
         Me.Panel1.Controls.Add(Me.btn_salir)
@@ -149,7 +157,7 @@ Partial Class Form1
         'txt_telefono
         '
         Me.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_telefono.Location = New System.Drawing.Point(90, 119)
+        Me.txt_telefono.Location = New System.Drawing.Point(117, 118)
         Me.txt_telefono.MaxLength = 10
         Me.txt_telefono.Name = "txt_telefono"
         Me.txt_telefono.Size = New System.Drawing.Size(121, 20)
@@ -158,7 +166,7 @@ Partial Class Form1
         'lbl_telefono
         '
         Me.lbl_telefono.AutoSize = True
-        Me.lbl_telefono.Location = New System.Drawing.Point(23, 117)
+        Me.lbl_telefono.Location = New System.Drawing.Point(3, 118)
         Me.lbl_telefono.Name = "lbl_telefono"
         Me.lbl_telefono.Size = New System.Drawing.Size(52, 13)
         Me.lbl_telefono.TabIndex = 30
@@ -167,7 +175,7 @@ Partial Class Form1
         'txt_documento
         '
         Me.txt_documento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_documento.Location = New System.Drawing.Point(90, 92)
+        Me.txt_documento.Location = New System.Drawing.Point(117, 92)
         Me.txt_documento.MaxLength = 8
         Me.txt_documento.Name = "txt_documento"
         Me.txt_documento.Size = New System.Drawing.Size(121, 20)
@@ -176,7 +184,7 @@ Partial Class Form1
         'lbl_documento
         '
         Me.lbl_documento.AutoSize = True
-        Me.lbl_documento.Location = New System.Drawing.Point(10, 91)
+        Me.lbl_documento.Location = New System.Drawing.Point(3, 92)
         Me.lbl_documento.Name = "lbl_documento"
         Me.lbl_documento.Size = New System.Drawing.Size(65, 13)
         Me.lbl_documento.TabIndex = 28
@@ -195,7 +203,7 @@ Partial Class Form1
         'txtNombres
         '
         Me.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNombres.Location = New System.Drawing.Point(90, 65)
+        Me.txtNombres.Location = New System.Drawing.Point(117, 66)
         Me.txtNombres.Name = "txtNombres"
         Me.txtNombres.Size = New System.Drawing.Size(292, 20)
         Me.txtNombres.TabIndex = 10
@@ -203,7 +211,7 @@ Partial Class Form1
         'lbl_nombre
         '
         Me.lbl_nombre.AutoSize = True
-        Me.lbl_nombre.Location = New System.Drawing.Point(23, 65)
+        Me.lbl_nombre.Location = New System.Drawing.Point(3, 66)
         Me.lbl_nombre.Name = "lbl_nombre"
         Me.lbl_nombre.Size = New System.Drawing.Size(52, 13)
         Me.lbl_nombre.TabIndex = 9
@@ -212,7 +220,7 @@ Partial Class Form1
         'txtApellido
         '
         Me.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtApellido.Location = New System.Drawing.Point(90, 38)
+        Me.txtApellido.Location = New System.Drawing.Point(117, 37)
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(182, 20)
         Me.txtApellido.TabIndex = 1
@@ -220,7 +228,7 @@ Partial Class Form1
         'lbl_apellido
         '
         Me.lbl_apellido.AutoSize = True
-        Me.lbl_apellido.Location = New System.Drawing.Point(28, 39)
+        Me.lbl_apellido.Location = New System.Drawing.Point(3, 40)
         Me.lbl_apellido.Name = "lbl_apellido"
         Me.lbl_apellido.Size = New System.Drawing.Size(47, 13)
         Me.lbl_apellido.TabIndex = 0
@@ -229,7 +237,7 @@ Partial Class Form1
         'txtLegajo
         '
         Me.txtLegajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLegajo.Location = New System.Drawing.Point(90, 11)
+        Me.txtLegajo.Location = New System.Drawing.Point(117, 11)
         Me.txtLegajo.MaxLength = 5
         Me.txtLegajo.Name = "txtLegajo"
         Me.txtLegajo.Size = New System.Drawing.Size(91, 20)
@@ -238,7 +246,7 @@ Partial Class Form1
         'lbl_legajo
         '
         Me.lbl_legajo.AutoSize = True
-        Me.lbl_legajo.Location = New System.Drawing.Point(33, 13)
+        Me.lbl_legajo.Location = New System.Drawing.Point(3, 14)
         Me.lbl_legajo.Name = "lbl_legajo"
         Me.lbl_legajo.Size = New System.Drawing.Size(42, 13)
         Me.lbl_legajo.TabIndex = 0
@@ -278,7 +286,7 @@ Partial Class Form1
         Me.dgv_listarAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_listarAlumnos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_legajo, Me.col_apellido, Me.col_nombre, Me.col_documento, Me.col_telefono})
         Me.dgv_listarAlumnos.Location = New System.Drawing.Point(6, 24)
-        Me.dgv_listarAlumnos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgv_listarAlumnos.Margin = New System.Windows.Forms.Padding(2)
         Me.dgv_listarAlumnos.Name = "dgv_listarAlumnos"
         Me.dgv_listarAlumnos.ReadOnly = True
         Me.dgv_listarAlumnos.RowHeadersVisible = False
@@ -320,7 +328,7 @@ Partial Class Form1
         'txt_busqueda_alumnos
         '
         Me.txt_busqueda_alumnos.Location = New System.Drawing.Point(56, 347)
-        Me.txt_busqueda_alumnos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_busqueda_alumnos.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_busqueda_alumnos.Name = "txt_busqueda_alumnos"
         Me.txt_busqueda_alumnos.Size = New System.Drawing.Size(241, 20)
         Me.txt_busqueda_alumnos.TabIndex = 18
@@ -344,6 +352,39 @@ Partial Class Form1
         Me.lbl_alumnos.Size = New System.Drawing.Size(45, 13)
         Me.lbl_alumnos.TabIndex = 13
         Me.lbl_alumnos.Text = "Alumno:"
+        '
+        'lbl_fecha_nac
+        '
+        Me.lbl_fecha_nac.AutoSize = True
+        Me.lbl_fecha_nac.Location = New System.Drawing.Point(3, 149)
+        Me.lbl_fecha_nac.Name = "lbl_fecha_nac"
+        Me.lbl_fecha_nac.Size = New System.Drawing.Size(111, 13)
+        Me.lbl_fecha_nac.TabIndex = 37
+        Me.lbl_fecha_nac.Text = "Fecha de Nacimiento:"
+        '
+        'lbl_mail
+        '
+        Me.lbl_mail.AutoSize = True
+        Me.lbl_mail.Location = New System.Drawing.Point(3, 176)
+        Me.lbl_mail.Name = "lbl_mail"
+        Me.lbl_mail.Size = New System.Drawing.Size(35, 13)
+        Me.lbl_mail.TabIndex = 39
+        Me.lbl_mail.Text = "Email:"
+        '
+        'txt_mail
+        '
+        Me.txt_mail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_mail.Location = New System.Drawing.Point(117, 173)
+        Me.txt_mail.Name = "txt_mail"
+        Me.txt_mail.Size = New System.Drawing.Size(182, 20)
+        Me.txt_mail.TabIndex = 40
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(117, 143)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 41
         '
         'Form1
         '
@@ -391,4 +432,8 @@ Partial Class Form1
     Friend WithEvents col_nombre As DataGridViewTextBoxColumn
     Friend WithEvents col_documento As DataGridViewTextBoxColumn
     Friend WithEvents col_telefono As DataGridViewTextBoxColumn
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents txt_mail As TextBox
+    Friend WithEvents lbl_mail As Label
+    Friend WithEvents lbl_fecha_nac As Label
 End Class
