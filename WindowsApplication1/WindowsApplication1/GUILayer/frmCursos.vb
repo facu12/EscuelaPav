@@ -118,7 +118,7 @@
     End Sub
 
     Private Sub dgvCursos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCursos.CellContentClick
-        Dim oMateriaService As New MateriaService
+
         ' llenar los campos de los cursos
         txtAño.Text = dgvCursos.CurrentRow.Cells.Item("año").Value
         txtNivel.Text = dgvCursos.CurrentRow.Cells.Item("nivel").Value
@@ -127,11 +127,9 @@
 
         Dim cod_curso As String
         cod_curso = txtAño.Text + txtNivel.Text + txtSubnivel.Text
-        'llenar las materias para ese curso
-        For Each row As DataRow In oMateriaService.listarMateriaxCurso(cod_curso).Rows
-            dgvMaterias.Rows.Add(New String() {row.Item("materia").ToString, row.Item("profesor").ToString})
-        Next
 
+        'llenar las materias para ese curso
+        llenarMateriaxCurso()
 
     End Sub
 
@@ -144,6 +142,30 @@
     End Sub
 
     Private Sub btnAgregarMateria_Click(sender As Object, e As EventArgs) Handles btnAgregarMateria.Click
+        Dim oMateriaService As New MateriaService
+
+        If oMateriaService.registrarMateriaenCurso(getCodigoCurso, cmbMateria.SelectedValue, cmbProfesor.SelectedValue) Then
+            MsgBox("Materia Agregada")
+            llenarMateriaxCurso()
+        Else
+            MsgBox("La Materia ya existe, intente nuevamente", vbCritical)
+
+        End If
+    End Sub
+
+    Private Sub llenarMateriaxCurso()
+        Dim oMateriaService As New MateriaService
+        dgvMaterias.Rows.Clear()
+        For Each row As DataRow In oMateriaService.listarMateriaxCurso(getCodigoCurso).Rows
+            dgvMaterias.Rows.Add(New String() {row.Item("materia").ToString, row.Item("profesor").ToString})
+        Next
+        dgvMaterias.Refresh()
 
     End Sub
+
+    Private Function getCodigoCurso() As String
+        Dim cod_curso As String
+        cod_curso = txtAño.Text + txtNivel.Text + txtSubnivel.Text
+        Return cod_curso
+    End Function
 End Class
