@@ -9,8 +9,10 @@ Public Class BDHelper
     Private Shared instance As BDHelper 'Unica instancia de la clase
 
     Private Sub New()
-        string_conexion = "Integrated Security=SSPI;Initial Catalog=pav;Data Source=DESKTOP-GQHCH0K\SQLEXPRESS"
+        'string_conexion = "Integrated Security=SSPI;Initial Catalog=pav;Data Source=DESKTOP-GQHCH0K\SQLEXPRESS"
         'conexion juan :  "Integrated Security=SSPI;Initial Catalog=pav;Data Source=DESKTOP-GQHCH0K\SQLEXPRESS"
+        string_conexion = "Integrated Security=SSPI;Initial Catalog=Pav;Data Source=VAIO\TEAMBI"
+        'conexion nico
     End Sub
 
     Public Shared Function getDBHelper() As BDHelper
@@ -42,7 +44,7 @@ Public Class BDHelper
             ' Retorna el resultado de ejecutar el comando
             Return cmd.ExecuteNonQuery()
         Catch ex As Exception
-            Throw ex
+            Return -1
         Finally
             ' Cierra la conexión
             conexion.Close()
