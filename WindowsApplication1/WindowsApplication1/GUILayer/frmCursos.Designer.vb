@@ -22,110 +22,47 @@ Partial Class frmCursos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.txtSubnivel = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtNivel = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtAño = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgvCursos = New System.Windows.Forms.DataGridView()
+        Me.año = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nivel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.subnivel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cmbProfesor = New System.Windows.Forms.ComboBox()
         Me.cmbMateria = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnAgregarMateria = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.dgvMaterias = New System.Windows.Forms.DataGridView()
         Me.col_materia = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_Profesor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnEliminarCurso = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.año = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nivel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.subnivel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnFinalizar = New System.Windows.Forms.Button()
         Me.btnEditarCurso = New System.Windows.Forms.Button()
-        Me.Panel2.SuspendLayout()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtAño = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtNivel = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtSubnivel = New System.Windows.Forms.TextBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.btnAgregarCurso = New System.Windows.Forms.Button()
+        Me.btnEliminarMateria = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dgvMaterias, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.txtSubnivel)
-        Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Controls.Add(Me.txtNivel)
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.txtAño)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(21, 12)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(496, 67)
-        Me.Panel2.TabIndex = 1
-        '
-        'txtSubnivel
-        '
-        Me.txtSubnivel.Location = New System.Drawing.Point(405, 20)
-        Me.txtSubnivel.Name = "txtSubnivel"
-        Me.txtSubnivel.Size = New System.Drawing.Size(71, 22)
-        Me.txtSubnivel.TabIndex = 5
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(330, 23)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(68, 17)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "SubNivel:"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'txtNivel
-        '
-        Me.txtNivel.Location = New System.Drawing.Point(235, 20)
-        Me.txtNivel.Name = "txtNivel"
-        Me.txtNivel.Size = New System.Drawing.Size(71, 22)
-        Me.txtNivel.TabIndex = 3
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(168, 23)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 17)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Nivel:"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'txtAño
-        '
-        Me.txtAño.Location = New System.Drawing.Point(65, 20)
-        Me.txtAño.Name = "txtAño"
-        Me.txtAño.Size = New System.Drawing.Size(71, 22)
-        Me.txtAño.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 23)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(37, 17)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Año:"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.dgvCursos)
         Me.GroupBox1.Location = New System.Drawing.Point(537, 13)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(387, 371)
+        Me.GroupBox1.Size = New System.Drawing.Size(387, 401)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Lista de Cursos"
@@ -141,121 +78,8 @@ Partial Class frmCursos
         Me.dgvCursos.ReadOnly = True
         Me.dgvCursos.RowHeadersVisible = False
         Me.dgvCursos.RowTemplate.Height = 24
-        Me.dgvCursos.Size = New System.Drawing.Size(374, 343)
+        Me.dgvCursos.Size = New System.Drawing.Size(374, 373)
         Me.dgvCursos.TabIndex = 0
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(11, 30)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(59, 17)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Materia:"
-        '
-        'cmbProfesor
-        '
-        Me.cmbProfesor.FormattingEnabled = True
-        Me.cmbProfesor.Location = New System.Drawing.Point(72, 27)
-        Me.cmbProfesor.Name = "cmbProfesor"
-        Me.cmbProfesor.Size = New System.Drawing.Size(164, 24)
-        Me.cmbProfesor.TabIndex = 10
-        Me.cmbProfesor.Text = "Seleccione Profesor..."
-        '
-        'cmbMateria
-        '
-        Me.cmbMateria.FormattingEnabled = True
-        Me.cmbMateria.Location = New System.Drawing.Point(253, 27)
-        Me.cmbMateria.Name = "cmbMateria"
-        Me.cmbMateria.Size = New System.Drawing.Size(164, 24)
-        Me.cmbMateria.TabIndex = 15
-        Me.cmbMateria.Text = "Seleccione Materia..."
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.btnAgregar)
-        Me.GroupBox2.Controls.Add(Me.cmbMateria)
-        Me.GroupBox2.Controls.Add(Me.btnEliminar)
-        Me.GroupBox2.Controls.Add(Me.cmbProfesor)
-        Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Location = New System.Drawing.Point(21, 85)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(496, 67)
-        Me.GroupBox2.TabIndex = 3
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Agregar Materias"
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.dgvMaterias)
-        Me.GroupBox3.Location = New System.Drawing.Point(21, 158)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(496, 226)
-        Me.GroupBox3.TabIndex = 4
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Lista de Materias"
-        '
-        'dgvMaterias
-        '
-        Me.dgvMaterias.AllowUserToAddRows = False
-        Me.dgvMaterias.AllowUserToDeleteRows = False
-        Me.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvMaterias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_materia, Me.col_Profesor})
-        Me.dgvMaterias.Location = New System.Drawing.Point(7, 22)
-        Me.dgvMaterias.Name = "dgvMaterias"
-        Me.dgvMaterias.ReadOnly = True
-        Me.dgvMaterias.RowHeadersVisible = False
-        Me.dgvMaterias.RowTemplate.Height = 24
-        Me.dgvMaterias.Size = New System.Drawing.Size(483, 198)
-        Me.dgvMaterias.TabIndex = 0
-        '
-        'col_materia
-        '
-        Me.col_materia.HeaderText = "Materia"
-        Me.col_materia.Name = "col_materia"
-        Me.col_materia.ReadOnly = True
-        '
-        'col_Profesor
-        '
-        Me.col_Profesor.HeaderText = "Profesor"
-        Me.col_Profesor.Name = "col_Profesor"
-        Me.col_Profesor.ReadOnly = True
-        '
-        'btnEliminar
-        '
-        Me.btnEliminar.Location = New System.Drawing.Point(432, 27)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(30, 23)
-        Me.btnEliminar.TabIndex = 5
-        Me.btnEliminar.Text = "X"
-        Me.btnEliminar.UseVisualStyleBackColor = True
-        '
-        'btnAgregar
-        '
-        Me.btnAgregar.Location = New System.Drawing.Point(462, 27)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(30, 23)
-        Me.btnAgregar.TabIndex = 16
-        Me.btnAgregar.Text = "V"
-        Me.btnAgregar.UseVisualStyleBackColor = True
-        '
-        'btnEliminarCurso
-        '
-        Me.btnEliminarCurso.Location = New System.Drawing.Point(807, 390)
-        Me.btnEliminarCurso.Name = "btnEliminarCurso"
-        Me.btnEliminarCurso.Size = New System.Drawing.Size(117, 23)
-        Me.btnEliminarCurso.TabIndex = 5
-        Me.btnEliminarCurso.Text = "Eliminar Curso"
-        Me.btnEliminarCurso.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(675, 390)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(117, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Agregar Curso"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'año
         '
@@ -275,9 +99,104 @@ Partial Class frmCursos
         Me.subnivel.Name = "subnivel"
         Me.subnivel.ReadOnly = True
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(11, 27)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(59, 17)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "Materia:"
+        '
+        'cmbProfesor
+        '
+        Me.cmbProfesor.FormattingEnabled = True
+        Me.cmbProfesor.Location = New System.Drawing.Point(238, 24)
+        Me.cmbProfesor.Name = "cmbProfesor"
+        Me.cmbProfesor.Size = New System.Drawing.Size(158, 24)
+        Me.cmbProfesor.TabIndex = 10
+        Me.cmbProfesor.Text = "Seleccione Profesor..."
+        '
+        'cmbMateria
+        '
+        Me.cmbMateria.FormattingEnabled = True
+        Me.cmbMateria.Location = New System.Drawing.Point(72, 24)
+        Me.cmbMateria.Name = "cmbMateria"
+        Me.cmbMateria.Size = New System.Drawing.Size(158, 24)
+        Me.cmbMateria.TabIndex = 15
+        Me.cmbMateria.Text = "Seleccione Materia..."
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.btnAgregarMateria)
+        Me.GroupBox2.Controls.Add(Me.cmbMateria)
+        Me.GroupBox2.Controls.Add(Me.cmbProfesor)
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Location = New System.Drawing.Point(21, 76)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(496, 56)
+        Me.GroupBox2.TabIndex = 3
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Agregar Materias"
+        '
+        'btnAgregarMateria
+        '
+        Me.btnAgregarMateria.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarMateria.Location = New System.Drawing.Point(415, 24)
+        Me.btnAgregarMateria.Name = "btnAgregarMateria"
+        Me.btnAgregarMateria.Size = New System.Drawing.Size(75, 23)
+        Me.btnAgregarMateria.TabIndex = 7
+        Me.btnAgregarMateria.Text = "Agregar"
+        Me.btnAgregarMateria.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.dgvMaterias)
+        Me.GroupBox3.Location = New System.Drawing.Point(21, 138)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(496, 276)
+        Me.GroupBox3.TabIndex = 4
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Lista de Materias"
+        '
+        'dgvMaterias
+        '
+        Me.dgvMaterias.AllowUserToAddRows = False
+        Me.dgvMaterias.AllowUserToDeleteRows = False
+        Me.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvMaterias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_materia, Me.col_Profesor})
+        Me.dgvMaterias.Location = New System.Drawing.Point(7, 22)
+        Me.dgvMaterias.Name = "dgvMaterias"
+        Me.dgvMaterias.ReadOnly = True
+        Me.dgvMaterias.RowHeadersVisible = False
+        Me.dgvMaterias.RowTemplate.Height = 24
+        Me.dgvMaterias.Size = New System.Drawing.Size(483, 248)
+        Me.dgvMaterias.TabIndex = 0
+        '
+        'col_materia
+        '
+        Me.col_materia.HeaderText = "Materia"
+        Me.col_materia.Name = "col_materia"
+        Me.col_materia.ReadOnly = True
+        '
+        'col_Profesor
+        '
+        Me.col_Profesor.HeaderText = "Profesor"
+        Me.col_Profesor.Name = "col_Profesor"
+        Me.col_Profesor.ReadOnly = True
+        '
+        'btnEliminarCurso
+        '
+        Me.btnEliminarCurso.Location = New System.Drawing.Point(802, 419)
+        Me.btnEliminarCurso.Name = "btnEliminarCurso"
+        Me.btnEliminarCurso.Size = New System.Drawing.Size(117, 23)
+        Me.btnEliminarCurso.TabIndex = 5
+        Me.btnEliminarCurso.Text = "Eliminar Curso"
+        Me.btnEliminarCurso.UseVisualStyleBackColor = True
+        '
         'btnFinalizar
         '
-        Me.btnFinalizar.Location = New System.Drawing.Point(436, 390)
+        Me.btnFinalizar.Location = New System.Drawing.Point(436, 419)
         Me.btnFinalizar.Name = "btnFinalizar"
         Me.btnFinalizar.Size = New System.Drawing.Size(75, 23)
         Me.btnFinalizar.TabIndex = 7
@@ -286,46 +205,138 @@ Partial Class frmCursos
         '
         'btnEditarCurso
         '
-        Me.btnEditarCurso.Location = New System.Drawing.Point(544, 390)
+        Me.btnEditarCurso.Location = New System.Drawing.Point(676, 419)
         Me.btnEditarCurso.Name = "btnEditarCurso"
         Me.btnEditarCurso.Size = New System.Drawing.Size(117, 23)
         Me.btnEditarCurso.TabIndex = 8
         Me.btnEditarCurso.Text = "Editar Curso"
         Me.btnEditarCurso.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 27)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(37, 17)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Año:"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'txtAño
+        '
+        Me.txtAño.Location = New System.Drawing.Point(53, 24)
+        Me.txtAño.MaxLength = 4
+        Me.txtAño.Name = "txtAño"
+        Me.txtAño.Size = New System.Drawing.Size(39, 22)
+        Me.txtAño.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(131, 27)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(43, 17)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Nivel:"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'txtNivel
+        '
+        Me.txtNivel.Location = New System.Drawing.Point(186, 24)
+        Me.txtNivel.MaxLength = 1
+        Me.txtNivel.Name = "txtNivel"
+        Me.txtNivel.Size = New System.Drawing.Size(39, 22)
+        Me.txtNivel.TabIndex = 3
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(261, 27)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(68, 17)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "SubNivel:"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'txtSubnivel
+        '
+        Me.txtSubnivel.Location = New System.Drawing.Point(340, 24)
+        Me.txtSubnivel.MaxLength = 1
+        Me.txtSubnivel.Name = "txtSubnivel"
+        Me.txtSubnivel.Size = New System.Drawing.Size(39, 22)
+        Me.txtSubnivel.TabIndex = 5
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.btnAgregarCurso)
+        Me.GroupBox4.Controls.Add(Me.txtSubnivel)
+        Me.GroupBox4.Controls.Add(Me.txtAño)
+        Me.GroupBox4.Controls.Add(Me.Label3)
+        Me.GroupBox4.Controls.Add(Me.Label1)
+        Me.GroupBox4.Controls.Add(Me.txtNivel)
+        Me.GroupBox4.Controls.Add(Me.Label2)
+        Me.GroupBox4.Location = New System.Drawing.Point(21, 13)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(496, 55)
+        Me.GroupBox4.TabIndex = 9
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Agregar Curso"
+        '
+        'btnAgregarCurso
+        '
+        Me.btnAgregarCurso.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarCurso.Location = New System.Drawing.Point(415, 23)
+        Me.btnAgregarCurso.Name = "btnAgregarCurso"
+        Me.btnAgregarCurso.Size = New System.Drawing.Size(75, 23)
+        Me.btnAgregarCurso.TabIndex = 6
+        Me.btnAgregarCurso.Text = "Agregar"
+        Me.btnAgregarCurso.UseVisualStyleBackColor = True
+        '
+        'btnEliminarMateria
+        '
+        Me.btnEliminarMateria.Location = New System.Drawing.Point(544, 419)
+        Me.btnEliminarMateria.Name = "btnEliminarMateria"
+        Me.btnEliminarMateria.Size = New System.Drawing.Size(126, 23)
+        Me.btnEliminarMateria.TabIndex = 10
+        Me.btnEliminarMateria.Text = "Eliminar Materia"
+        Me.btnEliminarMateria.UseVisualStyleBackColor = True
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Location = New System.Drawing.Point(356, 419)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(74, 23)
+        Me.btnCancelar.TabIndex = 11
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
         'frmCursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(948, 431)
+        Me.ClientSize = New System.Drawing.Size(948, 447)
+        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.btnEliminarMateria)
+        Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.btnEditarCurso)
         Me.Controls.Add(Me.btnFinalizar)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnEliminarCurso)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Panel2)
         Me.Name = "frmCursos"
         Me.Text = "Cursos"
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.dgvMaterias, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents txtAño As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents txtSubnivel As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents txtNivel As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dgvCursos As DataGridView
     Friend WithEvents Label6 As Label
@@ -336,13 +347,21 @@ Partial Class frmCursos
     Friend WithEvents dgvMaterias As DataGridView
     Friend WithEvents col_materia As DataGridViewTextBoxColumn
     Friend WithEvents col_Profesor As DataGridViewTextBoxColumn
-    Friend WithEvents btnAgregar As Button
-    Friend WithEvents btnEliminar As Button
     Friend WithEvents btnEliminarCurso As Button
     Friend WithEvents año As DataGridViewTextBoxColumn
     Friend WithEvents nivel As DataGridViewTextBoxColumn
     Friend WithEvents subnivel As DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As Button
     Friend WithEvents btnFinalizar As Button
     Friend WithEvents btnEditarCurso As Button
+    Friend WithEvents txtSubnivel As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtNivel As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtAño As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents btnAgregarMateria As Button
+    Friend WithEvents btnAgregarCurso As Button
+    Friend WithEvents btnEliminarMateria As Button
+    Friend WithEvents btnCancelar As Button
 End Class
