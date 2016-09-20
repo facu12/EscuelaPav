@@ -70,6 +70,10 @@
 
     Public Function addMateriaenCurso(cod As String, profesor As Integer, materia As Integer) As Boolean
         Dim str As String
+        str = "INSERT INTO profesorxmateriaxcurso values ('"
+        str += cod + "','" + profesor.ToString + "','" + materia.ToString + "') "
+
+        Return (BDHelper.getDBHelper.EjecutarSQL(str) = 1)
 
     End Function
 
