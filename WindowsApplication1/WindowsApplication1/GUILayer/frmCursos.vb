@@ -1,9 +1,16 @@
 ﻿Public Class frmCursos
+    Public action As Action_type
+
     Private Sub frmCursos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         momentoInicial() ' habilita los campos
-        cargarInformacion() 'cargo los combos y la grilla
-
+        cargarCombos() 'cargo combos
+        cargarCursos() 'cargo cursos
     End Sub
+    Enum Action_type
+        editar
+        borrar
+        mostrar
+    End Enum
 
     Private Sub llenarDgvCursos()
         Dim oCursoService As New CursoService
@@ -34,25 +41,34 @@
     End Sub
 
     Private Sub momentoInicial()
-        txtAño.Enabled = True
-        txtNivel.Enabled = True
-        txtSubnivel.Enabled = True
+        txtAño.Enabled = False
+        txtNivel.Enabled = False
+        txtSubnivel.Enabled = False
         cmbMateria.Enabled = False
         cmbProfesor.Enabled = False
-        dgvCursos.Enabled = False
+        dgvCursos.Enabled = True
         dgvMaterias.Enabled = False
         btnAgregarMateria.Enabled = False
         btnEliminarMateria.Enabled = False
         btnEliminarCurso.Enabled = False
         btnEditarCurso.Enabled = True
         btnEliminarCurso.Enabled = True
-        btnFinalizar.Enabled = False
+        btnFinalizar.Visible = False
         btnCancelar.Visible = False
+        txtAño.Text = Nothing
+        txtNivel.Text = Nothing
+        txtSubnivel.Text = Nothing
+        action = Action_type.mostrar
+        btnAgregarCurso.Enabled = False
+        mostrarBotones()
     End Sub
 
-    Private Sub cargarInformacion()
+    Private Sub cargarCombos()
         llenarComboMateria("nombre", "codMateria")
         llenarComboProfesor("nombre", "legajo")
+    End Sub
+
+    Private Sub cargarCursos()
         dgvCursos.Rows.Clear()
         llenarDgvCursos()
     End Sub
@@ -72,7 +88,7 @@
                 .nivel = txtNivel.Text
                 .subnivel = txtSubnivel.Text
             End With
-            If oCurso.registrarCurso(curso) = 1 Then
+            If oCurso.registrarCurso(curso) Then
                 MsgBox("Curso Agregado")
             Else
                 MsgBox("El curso ya existe, vuelva a intentarlo", vbCritical)
@@ -80,7 +96,7 @@
 
 
             momentoInicial()
-            cargarInformacion()
+            cargarCursos()
             limpiarCampos()
 
         Else
@@ -104,32 +120,69 @@
 
     Private Sub btnEditarCurso_Click(sender As Object, e As EventArgs) Handles btnEditarCurso.Click
         MsgBox("Seleccione curso a modificar")
-        btnEliminarCurso.Enabled = False
-        btnEditarCurso.Enabled = False
+        esconderBotones()
         txtAño.Enabled = False
         txtNivel.Enabled = False
         txtSubnivel.Enabled = False
         'btnEliminarMateria.Enabled = True
         dgvCursos.Enabled = True
         btnCancelar.Visible = True
+        btnFinalizar.Visible = True
         btnAgregarCurso.Enabled = False
+        action = Action_type.editar
 
+    End Sub
+    Public Sub esconderBotones()
+        btnEditarCurso.Visible = False
+        btnEliminarCurso.Visible = False
+        btnCurso.Visible = False
+        btnEliminarMateria.Visible = False
+    End Sub
 
+    Public Sub mostrarBotones()
+        btnEditarCurso.Visible = True
+        btnEliminarCurso.Visible = True
+        btnCurso.Visible = True
+        btnEliminarMateria.Visible = True
     End Sub
 
     Private Sub dgvCursos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCursos.CellContentClick
+        Dim oCursoService As New CursoService
 
-        ' llenar los campos de los cursos
-        txtAño.Text = dgvCursos.CurrentRow.Cells.Item("año").Value
-        txtNivel.Text = dgvCursos.CurrentRow.Cells.Item("nivel").Value
-        txtSubnivel.Text = dgvCursos.CurrentRow.Cells.Item("subnivel").Value
-        habilitarEdicion()
+        Select Case action
+            Case Action_type.editar
+                limpiarCampos()
+                ' llenar los campos de los cursos
+                txtAño.Text = dgvCursos.CurrentRow.Cells.Item("año").Value
+                txtNivel.Text = dgvCursos.CurrentRow.Cells.Item("nivel").Value
+                txtSubnivel.Text = dgvCursos.CurrentRow.Cells.Item("subnivel").Value
+                habilitarEdicion()
+                esconderBotones()
 
-        Dim cod_curso As String
-        cod_curso = txtAño.Text + txtNivel.Text + txtSubnivel.Text
+                Dim cod_curso As String
+                cod_curso = txtAño.Text + txtNivel.Text + txtSubnivel.Text
 
-        'llenar las materias para ese curso
-        llenarMateriaxCurso()
+                'llenar las materias para ese curso
+                llenarMateriaxCurso()
+            Case Action_type.borrar
+                limpiarCampos()
+                esconderBotones()
+                If MsgBox("Esta seguro que desea borrar el curso seleccionado?", vbYesNo, "Borrar") = vbYes Then
+                    Dim cod_curso As String
+                    cod_curso = dgvCursos.CurrentRow.Cells.Item("Año").Value
+                    cod_curso += dgvCursos.CurrentRow.Cells.Item("Nivel").Value
+                    cod_curso += dgvCursos.CurrentRow.Cells.Item("Subnivel").Value
+                    oCursoService.eliminarCurso(cod_curso)
+                    momentoInicial()
+                    cargarCursos()
+                End If
+            Case Action_type.mostrar
+                txtAño.Text = dgvCursos.CurrentRow.Cells.Item("año").Value
+                txtNivel.Text = dgvCursos.CurrentRow.Cells.Item("nivel").Value
+                txtSubnivel.Text = dgvCursos.CurrentRow.Cells.Item("subnivel").Value
+                llenarMateriaxCurso()
+
+        End Select
 
     End Sub
 
@@ -147,6 +200,8 @@
         If oMateriaService.registrarMateriaenCurso(getCodigoCurso, cmbMateria.SelectedValue, cmbProfesor.SelectedValue) Then
             MsgBox("Materia Agregada")
             llenarMateriaxCurso()
+            btnFinalizar.Enabled = True
+
         Else
             MsgBox("La Materia ya existe, intente nuevamente", vbCritical)
 
@@ -169,7 +224,33 @@
         Return cod_curso
     End Function
 
-    Private Sub dgvMaterias_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMaterias.CellContentClick
+    Private Sub btnEliminarCurso_Click(sender As Object, e As EventArgs) Handles btnEliminarCurso.Click
+        action = Action_type.borrar
+        MsgBox("Seleccione curso a eliminar")
+        btnFinalizar.Visible = True
+        btnCancelar.Visible = True
+        dgvCursos.Enabled = True
+        esconderBotones()
 
+
+    End Sub
+
+    Private Sub btnFinalizar_Click(sender As Object, e As EventArgs) Handles btnFinalizar.Click
+        momentoInicial() ' habilita los campos
+
+        dgvMaterias.Rows.Clear()
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        momentoInicial() ' habilita los campos
+        dgvMaterias.Rows.Clear()
+    End Sub
+
+    Private Sub btnCurso_Click(sender As Object, e As EventArgs) Handles btnCurso.Click
+        MsgBox("Complete los datos del curso")
+        txtAño.Enabled = True
+        txtNivel.Enabled = True
+        txtSubnivel.Enabled = True
+        btnAgregarCurso.Enabled = True
     End Sub
 End Class

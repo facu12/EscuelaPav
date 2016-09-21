@@ -12,4 +12,8 @@
         Return oCurso.add(curso)
     End Function
 
+    Public Function eliminarCurso(cod As String) As Boolean
+        Return oCurso.eliminarCurso(cod)
+    End Function
+
 End Class

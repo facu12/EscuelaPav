@@ -10,6 +10,15 @@
         Return cursos
     End Function
 
+    Public Function eliminarCurso(cod As String) As Boolean
+        Dim str As String
+        str = "DELETE profesorxmateriaxcurso WHERE cod_curso = " + "'" + cod + "'"
+        BDHelper.getDBHelper.EjecutarSQL(str)
+
+        str = "DELETE Curso WHERE cod_curso = " + "'" + cod + "'"
+        Return BDHelper.getDBHelper.EjecutarSQL(str) = 1
+    End Function
+
     Public Function add(ByVal oCurso As Curso) As Boolean
         Dim str As String
         str = "INSERT INTO Curso VALUES ("

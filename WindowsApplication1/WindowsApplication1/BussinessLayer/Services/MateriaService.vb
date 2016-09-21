@@ -17,7 +17,7 @@
     End Function
 
     Public Function registrarMateriaenCurso(cod As String, materia As Integer, profesor As Integer)
-        Return oMateriaDAO.addMateriaenCurso(cod, materia, profesor)
+        Return oMateriaDAO.addMateriaenCurso(cod, profesor, materia)
     End Function
 
     Public Function actualizarMateria(ByVal oMateria As Materia) As Boolean

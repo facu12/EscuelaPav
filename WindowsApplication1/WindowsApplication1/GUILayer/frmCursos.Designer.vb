@@ -49,6 +49,7 @@ Partial Class frmCursos
         Me.btnAgregarCurso = New System.Windows.Forms.Button()
         Me.btnEliminarMateria = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnCurso = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -196,7 +197,7 @@ Partial Class frmCursos
         '
         'btnFinalizar
         '
-        Me.btnFinalizar.Location = New System.Drawing.Point(436, 419)
+        Me.btnFinalizar.Location = New System.Drawing.Point(844, 419)
         Me.btnFinalizar.Name = "btnFinalizar"
         Me.btnFinalizar.Size = New System.Drawing.Size(75, 23)
         Me.btnFinalizar.TabIndex = 7
@@ -294,7 +295,7 @@ Partial Class frmCursos
         '
         'btnEliminarMateria
         '
-        Me.btnEliminarMateria.Location = New System.Drawing.Point(544, 419)
+        Me.btnEliminarMateria.Location = New System.Drawing.Point(385, 420)
         Me.btnEliminarMateria.Name = "btnEliminarMateria"
         Me.btnEliminarMateria.Size = New System.Drawing.Size(126, 23)
         Me.btnEliminarMateria.TabIndex = 10
@@ -303,18 +304,28 @@ Partial Class frmCursos
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(356, 419)
+        Me.btnCancelar.Location = New System.Drawing.Point(764, 420)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(74, 23)
         Me.btnCancelar.TabIndex = 11
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
+        'btnCurso
+        '
+        Me.btnCurso.Location = New System.Drawing.Point(544, 419)
+        Me.btnCurso.Name = "btnCurso"
+        Me.btnCurso.Size = New System.Drawing.Size(126, 23)
+        Me.btnCurso.TabIndex = 12
+        Me.btnCurso.Text = "Agregar Curso"
+        Me.btnCurso.UseVisualStyleBackColor = True
+        '
         'frmCursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(948, 447)
+        Me.Controls.Add(Me.btnCurso)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnEliminarMateria)
         Me.Controls.Add(Me.GroupBox4)
@@ -364,4 +375,5 @@ Partial Class frmCursos
     Friend WithEvents btnAgregarCurso As Button
     Friend WithEvents btnEliminarMateria As Button
     Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnCurso As Button
 End Class
