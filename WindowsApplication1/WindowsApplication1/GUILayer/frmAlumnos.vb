@@ -6,8 +6,6 @@
         'muestra los btn al momento del inicio
         btnMomentoInicial()
 
-
-
     End Sub
 
     Enum Action_type
