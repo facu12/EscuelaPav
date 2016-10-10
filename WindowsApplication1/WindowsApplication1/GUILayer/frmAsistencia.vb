@@ -1,6 +1,6 @@
-﻿Public Class frmNotas
-    Private Sub frmNotas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cargarComboAño()
+﻿Public Class frmAsistencia
+    Private Sub frmAsistencia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 
     Private Sub cargarComboAño()
@@ -8,7 +8,6 @@
         cmbAño.DataSource = oCursoService.getAño
         cmbAño.ValueMember = "Año"
         cmbAño.DisplayMember = "Año"
-        cmbAño.Text = "Año"
     End Sub
 
     'Private Sub cmbAño_MouseClick(sender As Object, e As MouseEventArgs) Handles cmbAño.MouseClick
@@ -39,8 +38,7 @@
     End Sub
 
     Private Sub dgvCursos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCursos.CellContentClick
-        cmbMateria.Enabled = True
-        cmbTipoNota.Enabled = True
+
     End Sub
 
     Private Sub llenarGridNotas(curso As Integer)
