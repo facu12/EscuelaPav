@@ -206,12 +206,9 @@ Public Class frmProfesores
         txt_documento = dgv_profesores.CurrentRow.Cells.Item("col_dni").Value
         txt_mail = dgv_profesores.CurrentRow.Cells.Item("col_mail").Value
         txt_telefono = dgv_profesores.CurrentRow.Cells.Item("col_tel").Value
-        dtp_profesor.
+        dtp_profesor.Value = dgv_profesores.CurrentRow.Cells.Item("col_fecha_nac").Value
 
 
-
-        'paraaa 
-        txt_ano_ingreso.Text = dgv_profesores.CurrentRow.Cells.Item("col_nombre").Value
 
 
     End Sub
