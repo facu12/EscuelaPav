@@ -59,7 +59,7 @@ Public Class frmProfesores
         txt_documento.Clear()
         txt_mail.Clear()
         txt_telefono.Clear()
-        dtp_profesor.Value = Date.Now
+        dtp_profesor.Value = Date.Now()
 
     End Sub
 
@@ -139,6 +139,7 @@ Public Class frmProfesores
         txt_documento.Enabled = False
         txt_mail.Enabled = False
         txt_telefono.Enabled = False
+        dtp_profesor.Enabled = False
 
         'estados iniciales de botones
         btn_confirmar.Visible = False
@@ -219,9 +220,16 @@ Public Class frmProfesores
         action = Action_type.Update
 
         'Habilita los txt para carga de datos excepto el legajo porque es PK 
-        txt_Apellido.Enabled = True
+
         txt_Legajo.Enabled = False
+        txt_Apellido.Enabled = True
+
         txt_Nombres.Enabled = True
+        txt_ano_ingreso.Enabled = True
+        txt_documento.Enabled = True
+        txt_mail.Enabled = True
+        txt_telefono.Enabled = True
+        dtp_profesor.Enabled = True
 
         'habilito y muestro btn de confirmar y cancelar
         btn_agregar.Visible = False

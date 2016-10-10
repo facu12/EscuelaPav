@@ -69,9 +69,9 @@
             .legajo = Convert.ToInt32(row.Item("legajo").ToString)
             .apellido = row.Item("apellido").ToString
             .nombre = row.Item("nombre").ToString
-            .dni = row.Item("dni").ToString
+            .dni = Convert.ToInt32(row.Item("dni").ToString)
             .fecha_nac = row.Item("fecha_nac").ToString
-            .año_ingreso = row.Item("año_ingreso").ToString
+            .año_ingreso = Convert.ToInt32(row.Item("año_ingreso").ToString)
             .tel = row.Item("tel").ToString
             .mail = row.Item("mail").ToString
         End With
