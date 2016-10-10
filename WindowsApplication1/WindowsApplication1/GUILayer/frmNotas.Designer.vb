@@ -36,6 +36,9 @@ Partial Class frmNotas
         Me.cmbMateria = New System.Windows.Forms.ComboBox()
         Me.dgvNotas = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.col_Legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_Curso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -159,6 +162,7 @@ Partial Class frmNotas
         Me.dgvNotas.AllowUserToAddRows = False
         Me.dgvNotas.AllowUserToDeleteRows = False
         Me.dgvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvNotas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_Legajo, Me.col_Nombre, Me.col_Curso})
         Me.dgvNotas.Enabled = False
         Me.dgvNotas.Location = New System.Drawing.Point(7, 63)
         Me.dgvNotas.Name = "dgvNotas"
@@ -174,6 +178,22 @@ Partial Class frmNotas
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "Agregar"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'col_Legajo
+        '
+        Me.col_Legajo.HeaderText = "Legajo"
+        Me.col_Legajo.Name = "col_Legajo"
+        '
+        'col_Nombre
+        '
+        Me.col_Nombre.HeaderText = "Alumno"
+        Me.col_Nombre.Name = "col_Nombre"
+        '
+        'col_Curso
+        '
+        Me.col_Curso.HeaderText = "Curso"
+        Me.col_Curso.Name = "col_Curso"
+        Me.col_Curso.Visible = False
         '
         'frmNotas
         '
@@ -210,4 +230,7 @@ Partial Class frmNotas
     Friend WithEvents col_Año As DataGridViewTextBoxColumn
     Friend WithEvents col_Nivel As DataGridViewTextBoxColumn
     Friend WithEvents col_Subnivel As DataGridViewTextBoxColumn
+    Friend WithEvents col_Legajo As DataGridViewTextBoxColumn
+    Friend WithEvents col_Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents col_Curso As DataGridViewTextBoxColumn
 End Class
