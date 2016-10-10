@@ -64,4 +64,13 @@
 
         Return BDHelper.getDBHelper.ConsultaSQL(str)
     End Function
+
+    Public Function getMateriaCurso(curso As Integer) As DataTable
+        Dim str As String
+        str = "SELECT b.cod_materia, b.nombre FROM ProfesorXMateriaXCurso a JOIN materia b ON a.cod_materia = b.cod_materia WHERE a.cod_curso = '"
+        str += curso.ToString + "'"
+        Return BDHelper.getDBHelper.ConsultaSQL(str)
+    End Function
+
+
 End Class
