@@ -56,4 +56,12 @@
         Next
         Return tabla
     End Function
+
+    Public Function getAlumnosCurso(curso As Integer) As DataTable
+        Dim str As String
+        str = "SELECT b.legajo, b.apellido + ', ' + b.nombre as nombre FROM AlumnosXCurso a JOIN Alumno b ON a.legajo = b.legajo WHERE cod_curso = '"
+        str += curso.ToString + "'"
+
+        Return BDHelper.getDBHelper.ConsultaSQL(str)
+    End Function
 End Class
