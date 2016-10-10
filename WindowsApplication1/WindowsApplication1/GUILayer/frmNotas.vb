@@ -39,11 +39,24 @@
     End Sub
 
     Private Sub dgvCursos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCursos.CellContentClick
+        Dim curso As String = ""
         cmbMateria.Enabled = True
         cmbTipoNota.Enabled = True
+        curso = getCurso()
+        llenarGridNotas(curso)
     End Sub
 
     Private Sub llenarGridNotas(curso As Integer)
+        Dim oCursoService As New CursoService
 
+        For Each row As DataRow In oCursoService.listarAlumnosCurso(curso).Rows
+            With row
+                dgvNotas.Rows.Add(New String() { .Item("legajo").ToString, .Item("nombre").ToString, getCurso()})
+            End With
+        Next
     End Sub
+
+    Private Function getCurso()
+        Return dgvCursos.CurrentRow.Cells.Item("col_año").Value + dgvCursos.CurrentRow.Cells.Item("col_nivel").Value + dgvCursos.CurrentRow.Cells.Item("col_subnivel").Value
+    End Function
 End Class
