@@ -12,7 +12,7 @@ Public Class BDHelper
 
         'string de conexion de FACU
         'string_conexion = "Password=salsamora;Persist Security Info=True;User ID=coco;Initial Catalog=Examen;Data Source=DESKTOP-U5IH0T9\SQLEXPRESS"
-        string_conexion = "Integrated Security=SSPI;Initial Catalog=pav;Data Source=VAIO\TEAMBI"
+        string_conexion = "Integrated Security=SSPI;Initial Catalog=pav;Data Source=DESKTOP-GQHCH0K\SQLEXPRESS"
         'conexion juan :  "Integrated Security=SSPI;Initial Catalog=pav;Data Source=DESKTOP-GQHCH0K\SQLEXPRESS"
     End Sub
 
