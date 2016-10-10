@@ -54,6 +54,8 @@
         txtNombres.Clear()
         txt_documento.Clear()
         txt_telefono.Clear()
+        txt_mail.Clear()
+
 
     End Sub
 

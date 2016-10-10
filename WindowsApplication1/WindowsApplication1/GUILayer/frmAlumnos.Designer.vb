@@ -23,6 +23,9 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txt_mail = New System.Windows.Forms.TextBox()
+        Me.lbl_mail = New System.Windows.Forms.Label()
+        Me.lbl_fecha_nac = New System.Windows.Forms.Label()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.btn_nuevo = New System.Windows.Forms.Button()
         Me.btn_salir = New System.Windows.Forms.Button()
@@ -50,10 +53,7 @@ Partial Class Form1
         Me.txt_busqueda_alumnos = New System.Windows.Forms.TextBox()
         Me.cmdConsultar = New System.Windows.Forms.Button()
         Me.lbl_alumnos = New System.Windows.Forms.Label()
-        Me.lbl_fecha_nac = New System.Windows.Forms.Label()
-        Me.lbl_mail = New System.Windows.Forms.Label()
-        Me.txt_mail = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.mc_fecha_nac = New System.Windows.Forms.MonthCalendar()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_listarAlumnos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,7 +61,7 @@ Partial Class Form1
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.DateTimePicker1)
+        Me.Panel1.Controls.Add(Me.mc_fecha_nac)
         Me.Panel1.Controls.Add(Me.txt_mail)
         Me.Panel1.Controls.Add(Me.lbl_mail)
         Me.Panel1.Controls.Add(Me.lbl_fecha_nac)
@@ -85,6 +85,32 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(429, 372)
         Me.Panel1.TabIndex = 29
+        '
+        'txt_mail
+        '
+        Me.txt_mail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_mail.Location = New System.Drawing.Point(117, 173)
+        Me.txt_mail.Name = "txt_mail"
+        Me.txt_mail.Size = New System.Drawing.Size(182, 20)
+        Me.txt_mail.TabIndex = 40
+        '
+        'lbl_mail
+        '
+        Me.lbl_mail.AutoSize = True
+        Me.lbl_mail.Location = New System.Drawing.Point(3, 176)
+        Me.lbl_mail.Name = "lbl_mail"
+        Me.lbl_mail.Size = New System.Drawing.Size(35, 13)
+        Me.lbl_mail.TabIndex = 39
+        Me.lbl_mail.Text = "Email:"
+        '
+        'lbl_fecha_nac
+        '
+        Me.lbl_fecha_nac.AutoSize = True
+        Me.lbl_fecha_nac.Location = New System.Drawing.Point(3, 149)
+        Me.lbl_fecha_nac.Name = "lbl_fecha_nac"
+        Me.lbl_fecha_nac.Size = New System.Drawing.Size(111, 13)
+        Me.lbl_fecha_nac.TabIndex = 37
+        Me.lbl_fecha_nac.Text = "Fecha de Nacimiento:"
         '
         'btn_cancelar
         '
@@ -353,38 +379,11 @@ Partial Class Form1
         Me.lbl_alumnos.TabIndex = 13
         Me.lbl_alumnos.Text = "Alumno:"
         '
-        'lbl_fecha_nac
+        'mc_fecha_nac
         '
-        Me.lbl_fecha_nac.AutoSize = True
-        Me.lbl_fecha_nac.Location = New System.Drawing.Point(3, 149)
-        Me.lbl_fecha_nac.Name = "lbl_fecha_nac"
-        Me.lbl_fecha_nac.Size = New System.Drawing.Size(111, 13)
-        Me.lbl_fecha_nac.TabIndex = 37
-        Me.lbl_fecha_nac.Text = "Fecha de Nacimiento:"
-        '
-        'lbl_mail
-        '
-        Me.lbl_mail.AutoSize = True
-        Me.lbl_mail.Location = New System.Drawing.Point(3, 176)
-        Me.lbl_mail.Name = "lbl_mail"
-        Me.lbl_mail.Size = New System.Drawing.Size(35, 13)
-        Me.lbl_mail.TabIndex = 39
-        Me.lbl_mail.Text = "Email:"
-        '
-        'txt_mail
-        '
-        Me.txt_mail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_mail.Location = New System.Drawing.Point(117, 173)
-        Me.txt_mail.Name = "txt_mail"
-        Me.txt_mail.Size = New System.Drawing.Size(182, 20)
-        Me.txt_mail.TabIndex = 40
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(117, 143)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 41
+        Me.mc_fecha_nac.Location = New System.Drawing.Point(117, 149)
+        Me.mc_fecha_nac.Name = "mc_fecha_nac"
+        Me.mc_fecha_nac.TabIndex = 41
         '
         'Form1
         '
@@ -432,8 +431,8 @@ Partial Class Form1
     Friend WithEvents col_nombre As DataGridViewTextBoxColumn
     Friend WithEvents col_documento As DataGridViewTextBoxColumn
     Friend WithEvents col_telefono As DataGridViewTextBoxColumn
-    Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents txt_mail As TextBox
     Friend WithEvents lbl_mail As Label
     Friend WithEvents lbl_fecha_nac As Label
+    Friend WithEvents mc_fecha_nac As MonthCalendar
 End Class
