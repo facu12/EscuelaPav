@@ -39,6 +39,9 @@ Partial Class frmNotas
         Me.col_Legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_Curso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_Nota = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cmbTrimestre = New System.Windows.Forms.ComboBox()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -105,6 +108,7 @@ Partial Class frmNotas
         Me.dgvCursos.ReadOnly = True
         Me.dgvCursos.RowHeadersVisible = False
         Me.dgvCursos.RowTemplate.Height = 24
+        Me.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvCursos.Size = New System.Drawing.Size(393, 337)
         Me.dgvCursos.TabIndex = 0
         '
@@ -128,6 +132,7 @@ Partial Class frmNotas
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.cmbTrimestre)
         Me.GroupBox3.Controls.Add(Me.cmbTipoNota)
         Me.GroupBox3.Controls.Add(Me.cmbMateria)
         Me.GroupBox3.Controls.Add(Me.dgvNotas)
@@ -162,12 +167,14 @@ Partial Class frmNotas
         Me.dgvNotas.AllowUserToAddRows = False
         Me.dgvNotas.AllowUserToDeleteRows = False
         Me.dgvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvNotas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_Legajo, Me.col_Nombre, Me.col_Curso})
+        Me.dgvNotas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_Legajo, Me.col_Nombre, Me.col_Curso, Me.col_Nota})
         Me.dgvNotas.Enabled = False
-        Me.dgvNotas.Location = New System.Drawing.Point(7, 63)
+        Me.dgvNotas.Location = New System.Drawing.Point(7, 85)
         Me.dgvNotas.Name = "dgvNotas"
+        Me.dgvNotas.RowHeadersVisible = False
         Me.dgvNotas.RowTemplate.Height = 24
-        Me.dgvNotas.Size = New System.Drawing.Size(395, 359)
+        Me.dgvNotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvNotas.Size = New System.Drawing.Size(395, 337)
         Me.dgvNotas.TabIndex = 0
         '
         'Button1
@@ -181,13 +188,16 @@ Partial Class frmNotas
         '
         'col_Legajo
         '
+        Me.col_Legajo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.col_Legajo.HeaderText = "Legajo"
         Me.col_Legajo.Name = "col_Legajo"
+        Me.col_Legajo.Width = 80
         '
         'col_Nombre
         '
         Me.col_Nombre.HeaderText = "Alumno"
         Me.col_Nombre.Name = "col_Nombre"
+        Me.col_Nombre.Width = 200
         '
         'col_Curso
         '
@@ -195,11 +205,37 @@ Partial Class frmNotas
         Me.col_Curso.Name = "col_Curso"
         Me.col_Curso.Visible = False
         '
+        'col_Nota
+        '
+        Me.col_Nota.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.col_Nota.HeaderText = "Nota"
+        Me.col_Nota.Name = "col_Nota"
+        Me.col_Nota.Width = 67
+        '
+        'cmbTrimestre
+        '
+        Me.cmbTrimestre.Enabled = False
+        Me.cmbTrimestre.FormattingEnabled = True
+        Me.cmbTrimestre.Location = New System.Drawing.Point(125, 55)
+        Me.cmbTrimestre.Name = "cmbTrimestre"
+        Me.cmbTrimestre.Size = New System.Drawing.Size(166, 24)
+        Me.cmbTrimestre.TabIndex = 3
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Location = New System.Drawing.Point(691, 450)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.TabIndex = 5
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
         'frmNotas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(866, 485)
+        Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -230,7 +266,10 @@ Partial Class frmNotas
     Friend WithEvents col_Año As DataGridViewTextBoxColumn
     Friend WithEvents col_Nivel As DataGridViewTextBoxColumn
     Friend WithEvents col_Subnivel As DataGridViewTextBoxColumn
+    Friend WithEvents cmbTrimestre As ComboBox
     Friend WithEvents col_Legajo As DataGridViewTextBoxColumn
     Friend WithEvents col_Nombre As DataGridViewTextBoxColumn
     Friend WithEvents col_Curso As DataGridViewTextBoxColumn
+    Friend WithEvents col_Nota As DataGridViewTextBoxColumn
+    Friend WithEvents btnCancelar As Button
 End Class

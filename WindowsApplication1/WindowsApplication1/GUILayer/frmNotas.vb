@@ -19,15 +19,13 @@
     Private Sub cargarGrillaCurso(año As Integer)
         Dim oCursoService As New CursoService
 
+        dgvCursos.Rows.Clear()
 
         For Each row In oCursoService.listarCursosAño(año)
             With row
                 dgvCursos.Rows.Add(New String() { .añolectivo.ToString, .nivel.ToString, .subnivel.ToString})
             End With
         Next
-
-
-
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
@@ -42,13 +40,40 @@
         Dim curso As String = ""
         cmbMateria.Enabled = True
         cmbTipoNota.Enabled = True
+        cmbTrimestre.Enabled = True
+        dgvNotas.Enabled = True
         curso = getCurso()
         llenarGridNotas(curso)
+        cargarComboMateria()
+        cargarComboTrimestre()
+        cargarComboTipoNota()
+    End Sub
+
+    Private Sub cargarComboTipoNota()
+        Dim oNotaservice As New NotaService
+        cmbTipoNota.DataSource = oNotaservice.getTipoNota
+        cmbTipoNota.ValueMember = "tipo_nota"
+        cmbTipoNota.DisplayMember = "descripcion"
+    End Sub
+
+    Private Sub cargarComboTrimestre()
+        Dim oNotaService As New NotaService
+        cmbTrimestre.DataSource = oNotaService.getTrimestres
+        cmbTrimestre.ValueMember = "trimestre"
+        cmbTrimestre.DisplayMember = "descripcion"
+    End Sub
+    Private Sub cargarComboMateria()
+        Dim oCursoService As New CursoService
+
+        cmbMateria.DataSource = Nothing
+        cmbMateria.DataSource = oCursoService.listarMateriaCurso(getCurso)
+        cmbMateria.DisplayMember = "nombre"
+        cmbMateria.ValueMember = "cod_materia"
     End Sub
 
     Private Sub llenarGridNotas(curso As Integer)
         Dim oCursoService As New CursoService
-
+        dgvNotas.Rows.Clear()
         For Each row As DataRow In oCursoService.listarAlumnosCurso(curso).Rows
             With row
                 dgvNotas.Rows.Add(New String() { .Item("legajo").ToString, .Item("nombre").ToString, getCurso()})
