@@ -24,4 +24,8 @@
         Return oCurso.getCursosAño(año)
     End Function
 
+    Public Function listarAlumnosCurso(curso As Integer) As DataTable
+        Return oCurso.getAlumnosCurso(curso)
+    End Function
+
 End Class
