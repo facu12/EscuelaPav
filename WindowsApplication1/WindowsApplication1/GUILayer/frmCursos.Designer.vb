@@ -34,8 +34,6 @@ Partial Class frmCursos
         Me.btnAgregarMateria = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.dgvMaterias = New System.Windows.Forms.DataGridView()
-        Me.col_materia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_Profesor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnEliminarCurso = New System.Windows.Forms.Button()
         Me.btnFinalizar = New System.Windows.Forms.Button()
         Me.btnEditarCurso = New System.Windows.Forms.Button()
@@ -48,7 +46,9 @@ Partial Class frmCursos
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btnAgregarCurso = New System.Windows.Forms.Button()
         Me.btnEliminarMateria = New System.Windows.Forms.Button()
-        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnCurso = New System.Windows.Forms.Button()
+        Me.col_materia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_Profesor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -173,18 +173,6 @@ Partial Class frmCursos
         Me.dgvMaterias.Size = New System.Drawing.Size(483, 248)
         Me.dgvMaterias.TabIndex = 0
         '
-        'col_materia
-        '
-        Me.col_materia.HeaderText = "Materia"
-        Me.col_materia.Name = "col_materia"
-        Me.col_materia.ReadOnly = True
-        '
-        'col_Profesor
-        '
-        Me.col_Profesor.HeaderText = "Profesor"
-        Me.col_Profesor.Name = "col_Profesor"
-        Me.col_Profesor.ReadOnly = True
-        '
         'btnEliminarCurso
         '
         Me.btnEliminarCurso.Location = New System.Drawing.Point(802, 419)
@@ -196,7 +184,7 @@ Partial Class frmCursos
         '
         'btnFinalizar
         '
-        Me.btnFinalizar.Location = New System.Drawing.Point(436, 419)
+        Me.btnFinalizar.Location = New System.Drawing.Point(844, 419)
         Me.btnFinalizar.Name = "btnFinalizar"
         Me.btnFinalizar.Size = New System.Drawing.Size(75, 23)
         Me.btnFinalizar.TabIndex = 7
@@ -205,11 +193,11 @@ Partial Class frmCursos
         '
         'btnEditarCurso
         '
-        Me.btnEditarCurso.Location = New System.Drawing.Point(676, 419)
+        Me.btnEditarCurso.Location = New System.Drawing.Point(669, 419)
         Me.btnEditarCurso.Name = "btnEditarCurso"
-        Me.btnEditarCurso.Size = New System.Drawing.Size(117, 23)
+        Me.btnEditarCurso.Size = New System.Drawing.Size(127, 23)
         Me.btnEditarCurso.TabIndex = 8
-        Me.btnEditarCurso.Text = "Editar Curso"
+        Me.btnEditarCurso.Text = "Agregar Materias"
         Me.btnEditarCurso.UseVisualStyleBackColor = True
         '
         'Label1
@@ -294,28 +282,42 @@ Partial Class frmCursos
         '
         'btnEliminarMateria
         '
-        Me.btnEliminarMateria.Location = New System.Drawing.Point(544, 419)
+        Me.btnEliminarMateria.Location = New System.Drawing.Point(385, 420)
         Me.btnEliminarMateria.Name = "btnEliminarMateria"
         Me.btnEliminarMateria.Size = New System.Drawing.Size(126, 23)
         Me.btnEliminarMateria.TabIndex = 10
         Me.btnEliminarMateria.Text = "Eliminar Materia"
         Me.btnEliminarMateria.UseVisualStyleBackColor = True
         '
-        'btnCancelar
+        'btnCurso
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(356, 419)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(74, 23)
-        Me.btnCancelar.TabIndex = 11
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
+        Me.btnCurso.Location = New System.Drawing.Point(544, 419)
+        Me.btnCurso.Name = "btnCurso"
+        Me.btnCurso.Size = New System.Drawing.Size(119, 23)
+        Me.btnCurso.TabIndex = 12
+        Me.btnCurso.Text = "Agregar Curso"
+        Me.btnCurso.UseVisualStyleBackColor = True
+        '
+        'col_materia
+        '
+        Me.col_materia.HeaderText = "Materia"
+        Me.col_materia.Name = "col_materia"
+        Me.col_materia.ReadOnly = True
+        Me.col_materia.Width = 150
+        '
+        'col_Profesor
+        '
+        Me.col_Profesor.HeaderText = "Profesor"
+        Me.col_Profesor.Name = "col_Profesor"
+        Me.col_Profesor.ReadOnly = True
+        Me.col_Profesor.Width = 300
         '
         'frmCursos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(948, 447)
-        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.btnCurso)
         Me.Controls.Add(Me.btnEliminarMateria)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.btnEditarCurso)
@@ -345,8 +347,6 @@ Partial Class frmCursos
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents dgvMaterias As DataGridView
-    Friend WithEvents col_materia As DataGridViewTextBoxColumn
-    Friend WithEvents col_Profesor As DataGridViewTextBoxColumn
     Friend WithEvents btnEliminarCurso As Button
     Friend WithEvents año As DataGridViewTextBoxColumn
     Friend WithEvents nivel As DataGridViewTextBoxColumn
@@ -363,5 +363,7 @@ Partial Class frmCursos
     Friend WithEvents btnAgregarMateria As Button
     Friend WithEvents btnAgregarCurso As Button
     Friend WithEvents btnEliminarMateria As Button
-    Friend WithEvents btnCancelar As Button
+    Friend WithEvents btnCurso As Button
+    Friend WithEvents col_materia As DataGridViewTextBoxColumn
+    Friend WithEvents col_Profesor As DataGridViewTextBoxColumn
 End Class

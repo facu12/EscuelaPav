@@ -10,6 +10,15 @@
         Return cursos
     End Function
 
+    Public Function eliminarCurso(cod As String) As Boolean
+        Dim str As String
+        str = "DELETE profesorxmateriaxcurso WHERE cod_curso = " + "'" + cod + "'"
+        BDHelper.getDBHelper.EjecutarSQL(str)
+
+        str = "DELETE Curso WHERE cod_curso = " + "'" + cod + "'"
+        Return BDHelper.getDBHelper.EjecutarSQL(str) = 1
+    End Function
+
     Public Function add(ByVal oCurso As Curso) As Boolean
         Dim str As String
         str = "INSERT INTO Curso VALUES ("
@@ -29,5 +38,22 @@
             .subnivel = row.Item("subnivel").ToString
         End With
         Return oCurso
+    End Function
+
+    Public Function getAño() As DataTable
+        Dim str As String
+        str = "Select distinct año_lectivo as año FROM curso ORDER BY año DESC"
+        Return BDHelper.getDBHelper.ConsultaSQL(str)
+    End Function
+
+    Public Function getCursosAño(año As Integer) As List(Of Curso)
+        Dim str As String
+        Dim tabla As New List(Of Curso)
+        str = "Select año_lectivo, nivel, subnivel FROM curso WHERE año_lectivo = '"
+        str += año.ToString + "' ORDER BY año_lectivo desc, nivel asc, subnivel asc"
+        For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL(str).Rows
+            tabla.Add(map(row))
+        Next
+        Return tabla
     End Function
 End Class

@@ -77,6 +77,16 @@
 
     End Function
 
+    Public Function elimnarMateriadeCurso(cod As String, profesor As Integer, materia As Integer) As Boolean
+        Dim str As String
+        str = "DELETE profesorxmateriaxcurso where cod_curso= '"
+        str += cod + "'"
+        str += "AND legajo = " + "'" + profesor.ToString + "' "
+        str += "AND cod_materia = " + "'" + materia.ToString + "' "
+
+        Return (BDHelper.getDBHelper.EjecutarSQL(str) > 0)
+    End Function
+
 
 
 End Class

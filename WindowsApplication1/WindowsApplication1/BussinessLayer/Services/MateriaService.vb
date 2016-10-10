@@ -17,7 +17,7 @@
     End Function
 
     Public Function registrarMateriaenCurso(cod As String, materia As Integer, profesor As Integer)
-        Return oMateriaDAO.addMateriaenCurso(cod, materia, profesor)
+        Return oMateriaDAO.addMateriaenCurso(cod, profesor, materia)
     End Function
 
     Public Function actualizarMateria(ByVal oMateria As Materia) As Boolean
@@ -26,5 +26,9 @@
 
     Public Function listarMateriaConFiltro(ByVal nombre As String) As List(Of Materia)
         Return oMateriaDAO.getByFilters(nombre)
+    End Function
+
+    Public Function eliminarMateriasCursos(cod As String, profesor As Integer, materia As Integer) As Boolean
+        Return oMateriaDAO.elimnarMateriadeCurso(cod, profesor, materia)
     End Function
 End Class
