@@ -11,8 +11,8 @@ Public Class BDHelper
     Private Sub New()
 
         'string de conexion de FACU
-        string_conexion = "Password=salsamora;Persist Security Info=True;User ID=coco;Initial Catalog=Examen;Data Source=DESKTOP-U5IH0T9\SQLEXPRESS"
-
+        'string_conexion = "Password=salsamora;Persist Security Info=True;User ID=coco;Initial Catalog=Examen;Data Source=DESKTOP-U5IH0T9\SQLEXPRESS"
+        string_conexion = "Integrated Security=SSPI;Initial Catalog=pav;Data Source=VAIO\TEAMBI"
         'conexion juan :  "Integrated Security=SSPI;Initial Catalog=pav;Data Source=DESKTOP-GQHCH0K\SQLEXPRESS"
     End Sub
 
@@ -45,7 +45,7 @@ Public Class BDHelper
             ' Retorna el resultado de ejecutar el comando
             Return cmd.ExecuteNonQuery()
         Catch ex As Exception
-            Throw ex
+            Return -1
         Finally
             ' Cierra la conexión
             conexion.Close()

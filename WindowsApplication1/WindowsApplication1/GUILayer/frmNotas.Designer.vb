@@ -24,18 +24,18 @@ Partial Class frmNotas
     Private Sub InitializeComponent()
         Me.cmbAño = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dgvCursos = New System.Windows.Forms.DataGridView()
+        Me.col_Año = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_Nivel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_Subnivel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.cmbTipoNota = New System.Windows.Forms.ComboBox()
         Me.cmbMateria = New System.Windows.Forms.ComboBox()
         Me.dgvNotas = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.col_Año = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_Nivel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_Subnivel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,6 +62,15 @@ Partial Class frmNotas
         Me.GroupBox1.Size = New System.Drawing.Size(406, 55)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.Location = New System.Drawing.Point(302, 18)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscar.TabIndex = 2
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -96,6 +105,24 @@ Partial Class frmNotas
         Me.dgvCursos.Size = New System.Drawing.Size(393, 337)
         Me.dgvCursos.TabIndex = 0
         '
+        'col_Año
+        '
+        Me.col_Año.HeaderText = "Año"
+        Me.col_Año.Name = "col_Año"
+        Me.col_Año.ReadOnly = True
+        '
+        'col_Nivel
+        '
+        Me.col_Nivel.HeaderText = "Nivel"
+        Me.col_Nivel.Name = "col_Nivel"
+        Me.col_Nivel.ReadOnly = True
+        '
+        'col_Subnivel
+        '
+        Me.col_Subnivel.HeaderText = "SubNivel"
+        Me.col_Subnivel.Name = "col_Subnivel"
+        Me.col_Subnivel.ReadOnly = True
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.cmbTipoNota)
@@ -128,6 +155,7 @@ Partial Class frmNotas
         '
         'dgvNotas
         '
+        Me.dgvNotas.AccessibleDescription = "sq"
         Me.dgvNotas.AllowUserToAddRows = False
         Me.dgvNotas.AllowUserToDeleteRows = False
         Me.dgvNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -146,33 +174,6 @@ Partial Class frmNotas
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "Agregar"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'btnBuscar
-        '
-        Me.btnBuscar.Location = New System.Drawing.Point(302, 18)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
-        Me.btnBuscar.TabIndex = 2
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.UseVisualStyleBackColor = True
-        '
-        'col_Año
-        '
-        Me.col_Año.HeaderText = "Año"
-        Me.col_Año.Name = "col_Año"
-        Me.col_Año.ReadOnly = True
-        '
-        'col_Nivel
-        '
-        Me.col_Nivel.HeaderText = "Nivel"
-        Me.col_Nivel.Name = "col_Nivel"
-        Me.col_Nivel.ReadOnly = True
-        '
-        'col_Subnivel
-        '
-        Me.col_Subnivel.HeaderText = "SubNivel"
-        Me.col_Subnivel.Name = "col_Subnivel"
-        Me.col_Subnivel.ReadOnly = True
         '
         'frmNotas
         '
