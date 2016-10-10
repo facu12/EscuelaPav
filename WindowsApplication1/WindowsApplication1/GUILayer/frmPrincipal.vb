@@ -22,7 +22,11 @@
         frmMaterias.ShowDialog()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnNotas_Click(sender As Object, e As EventArgs) Handles btnNotas.Click
         frmNotas.ShowDialog()
+    End Sub
+
+    Private Sub btnAsistencia_Click(sender As Object, e As EventArgs) Handles btnAsistencia.Click
+        frmAsistencia.ShowDialog()
     End Sub
 End Class

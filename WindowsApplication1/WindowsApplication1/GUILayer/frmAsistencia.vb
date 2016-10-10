@@ -1,6 +1,8 @@
 ﻿Public Class frmAsistencia
     Private Sub frmAsistencia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        cargarComboAño()
+        mtb_fecha.Enabled = False
+        txt_trimestre.Enabled = False
     End Sub
 
     Private Sub cargarComboAño()
@@ -8,6 +10,7 @@
         cmbAño.DataSource = oCursoService.getAño
         cmbAño.ValueMember = "Año"
         cmbAño.DisplayMember = "Año"
+        cmbAño.Text = "Año"
     End Sub
 
     'Private Sub cmbAño_MouseClick(sender As Object, e As MouseEventArgs) Handles cmbAño.MouseClick
@@ -38,10 +41,24 @@
     End Sub
 
     Private Sub dgvCursos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCursos.CellContentClick
-
+        Dim curso As String = ""
+        mtb_fecha.Enabled = True
+        txt_trimestre.Enabled = True
+        curso = getCurso()
+        llenarGridNotas(curso)
     End Sub
 
     Private Sub llenarGridNotas(curso As Integer)
+        Dim oCursoService As New CursoService
 
+        For Each row As DataRow In oCursoService.listarAlumnosCurso(curso).Rows
+            With row
+                dgvAsistencia.Rows.Add(New String() { .Item("legajo").ToString, .Item("nombre").ToString, getCurso()})
+            End With
+        Next
     End Sub
+
+    Private Function getCurso()
+        Return dgvCursos.CurrentRow.Cells.Item("col_año").Value + dgvCursos.CurrentRow.Cells.Item("col_nivel").Value + dgvCursos.CurrentRow.Cells.Item("col_subnivel").Value
+    End Function
 End Class
