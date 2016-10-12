@@ -84,4 +84,53 @@
     Private Function getCurso()
         Return dgvCursos.CurrentRow.Cells.Item("col_año").Value + dgvCursos.CurrentRow.Cells.Item("col_nivel").Value + dgvCursos.CurrentRow.Cells.Item("col_subnivel").Value
     End Function
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        limpiar()
+    End Sub
+    Private Sub limpiar()
+        dgvCursos.Rows.Clear()
+        dgvNotas.Rows.Clear()
+        cmbMateria.Enabled = False
+        cmbTipoNota.Enabled = False
+        cmbTrimestre.Enabled = False
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        Dim oNotasService As New NotaService
+        Dim tabla As New DataTable
+
+        If dgvNotas.Rows.Count > 0 Then
+
+            For Each col As DataGridViewColumn In dgvNotas.Columns
+                tabla.Columns.Add(col.Name)
+            Next
+
+
+            For Each row As DataGridViewRow In dgvNotas.Rows
+                Dim fila As DataRow = tabla.NewRow
+                For Each cell As DataGridViewCell In row.Cells
+                    fila(cell.ColumnIndex) = cell.Value
+                Next
+                tabla.Rows.Add(fila)
+            Next
+
+
+
+            If txtFecha.Text <> "  /  /" Then
+                If (oNotasService.insertarNotas(tabla, cmbTipoNota.SelectedValue, cmbTrimestre.SelectedValue, txtFecha.Text, cmbMateria.SelectedValue)) Then
+                    MsgBox("Agregado!", vbOK, "Nota")
+                End If
+            Else
+                MsgBox("Complete el campo Fecha")
+            End If
+        Else
+            MsgBox("Seleccione un curso con alumnos")
+
+        End If
+
+
+
+
+    End Sub
 End Class
