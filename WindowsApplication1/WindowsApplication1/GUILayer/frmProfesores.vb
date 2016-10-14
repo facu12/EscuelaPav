@@ -37,7 +37,7 @@ Public Class frmProfesores
 
             With oProfesor
                 'cargar filas del datagridview a partir de un array de strings
-                dgv_profesores.Rows.Add(New String() { .legajo.ToString, .apellido.ToString, .nombre.ToString})
+                dgv_profesores.Rows.Add(New String() { .legajo.ToString, .apellido.ToString, .nombre.ToString, .tel.ToString, .dni.ToString, .año_ingreso.ToString, .mail.ToString, .fecha_nac.ToString})
             End With
         Next
     End Sub
@@ -55,6 +55,11 @@ Public Class frmProfesores
         txt_Apellido.Clear()
         txt_Nombres.Clear()
         txt_Legajo.Clear()
+        txt_busqueda_profesor.Clear()
+        txt_documento.Clear()
+        txt_mail.Clear()
+        txt_telefono.Clear()
+        dtp_profesor.Value = Date.Now()
 
     End Sub
 
@@ -106,9 +111,20 @@ Public Class frmProfesores
 
     Private Function crearProfesor()
         Dim prof As New Profesor
-        prof.legajo = txt_Legajo.Text
-        prof.apellido = txt_Apellido.Text
-        prof.nombre = txt_Nombres.Text
+        With prof
+
+
+            .legajo = txt_Legajo.Text
+            .apellido = txt_Apellido.Text
+            .nombre = txt_Nombres.Text
+            .dni = txt_documento.Text
+            .fecha_nac = dtp_profesor.Value.ToString
+            .mail = txt_mail.ToString
+            .año_ingreso = txt_ano_ingreso.ToString
+            .tel = txt_telefono.ToString
+
+
+        End With
         Return prof
 
     End Function
@@ -119,6 +135,11 @@ Public Class frmProfesores
         txt_Apellido.Enabled = False
         txt_Legajo.Enabled = False
         txt_Nombres.Enabled = False
+        txt_ano_ingreso.Enabled = False
+        txt_documento.Enabled = False
+        txt_mail.Enabled = False
+        txt_telefono.Enabled = False
+        dtp_profesor.Enabled = False
 
         'estados iniciales de botones
         btn_confirmar.Visible = False
@@ -155,6 +176,10 @@ Public Class frmProfesores
         txt_Apellido.Enabled = True
         txt_Legajo.Enabled = True
         txt_Nombres.Enabled = True
+        txt_ano_ingreso.Enabled = True
+        txt_documento.Enabled = True
+        txt_mail.Enabled = True
+        txt_telefono.Enabled = True
 
         'habilito y muestro btn de confirmar y cancelar
         btn_cancelar.Enabled = True
@@ -178,6 +203,14 @@ Public Class frmProfesores
         txt_Apellido.Text = dgv_profesores.CurrentRow.Cells.Item("col_apellido").Value
         txt_Legajo.Text = dgv_profesores.CurrentRow.Cells.Item("col_legajo").Value
         txt_Nombres.Text = dgv_profesores.CurrentRow.Cells.Item("col_nombre").Value
+        txt_ano_ingreso = dgv_profesores.CurrentRow.Cells.Item("col_ano_ingreso").Value
+        txt_documento = dgv_profesores.CurrentRow.Cells.Item("col_dni").Value
+        txt_mail = dgv_profesores.CurrentRow.Cells.Item("col_mail").Value
+        txt_telefono = dgv_profesores.CurrentRow.Cells.Item("col_tel").Value
+        dtp_profesor.Value = dgv_profesores.CurrentRow.Cells.Item("col_fecha_nac").Value
+
+
+
 
     End Sub
 
@@ -187,9 +220,16 @@ Public Class frmProfesores
         action = Action_type.Update
 
         'Habilita los txt para carga de datos excepto el legajo porque es PK 
-        txt_Apellido.Enabled = True
+
         txt_Legajo.Enabled = False
+        txt_Apellido.Enabled = True
+
         txt_Nombres.Enabled = True
+        txt_ano_ingreso.Enabled = True
+        txt_documento.Enabled = True
+        txt_mail.Enabled = True
+        txt_telefono.Enabled = True
+        dtp_profesor.Enabled = True
 
         'habilito y muestro btn de confirmar y cancelar
         btn_agregar.Visible = False

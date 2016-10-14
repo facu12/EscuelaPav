@@ -23,6 +23,43 @@ Public Class BDHelper
         Return instance
     End Function
 
+    Public Function EjecutarSQLTransact(ByVal strSql As String) As Integer
+        ' Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”
+        Dim conexion As New SqlConnection
+        Dim cmd As New SqlCommand
+        Dim trans As SqlTransaction = Nothing
+        Dim status As Integer = 0
+        'Try Catch Finally
+        'Trata de ejecutar el código contenido dentro del bloque Try - Catch
+        'Si hay error lo capta a través de una excepción
+        'Si no hubo error
+        Try
+            ' Establece que conexión usar
+            conexion.ConnectionString = getDBHelper.string_conexion
+            ' Abre la conexión
+            conexion.Open()
+
+            trans = conexion.BeginTransaction()
+            With cmd
+                .Connection = conexion
+                .CommandType = CommandType.Text
+                ' Establece la instrucción a ejecutar
+                .Transaction = trans
+                .CommandText = strSql
+                ' Retorna el resultado de ejecutar el comando
+                status = .ExecuteNonQuery()
+            End With
+            trans.Commit()
+        Catch ex As Exception
+            Throw ex
+        Finally
+            ' Cierra la conexión
+            conexion.Close()
+            conexion.Dispose()
+        End Try
+        Return status
+    End Function
+
     Public Function EjecutarSQL(ByVal strSql As String) As Integer
         ' Se utiliza para sentencias SQL del tipo “Insert/Update/Delete”
         Dim conexion As New SqlConnection

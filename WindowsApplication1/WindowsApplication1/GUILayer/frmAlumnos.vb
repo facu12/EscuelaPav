@@ -32,7 +32,7 @@
 
             With oAlumno
                 'cargar filas del datagridview a partir de un array de strings
-                dgv_listarAlumnos.Rows.Add(New String() { .legajo.ToString, .apellido.ToString, .nombre.ToString, .documento.ToString, .telefono.ToString})
+                dgv_listarAlumnos.Rows.Add(New String() { .legajo.ToString, .apellido.ToString, .nombre.ToString, .documento.ToString, .telefono.ToString, .email.ToString, .fecha_nac.ToString, .año_ingreso.ToString})
             End With
         Next
     End Sub
@@ -53,6 +53,7 @@
         txt_documento.Clear()
         txt_telefono.Clear()
         txt_mail.Clear()
+        txt_ano_ingreso.Clear()
 
 
     End Sub
@@ -67,6 +68,9 @@
         al.nombre = txtNombres.Text.ToString
         al.documento = txt_documento.Text.ToString
         al.telefono = txt_telefono.Text.ToString
+        al.email = txt_mail.Text.ToString
+        al.año_ingreso = txt_ano_ingreso.Text.ToString
+        al.fecha_nac = dtp_alumno.Value.ToString
 
 
         Return al
@@ -126,6 +130,9 @@
         txtLegajo.Enabled = False
         txtNombres.Enabled = False
         txt_documento.Enabled = False
+        txt_ano_ingreso.Enabled = False
+        txt_telefono.Enabled = False
+        dtp_alumno.Enabled = False
 
         'estados iniciales de botones
         btn_confirmar.Visible = False
@@ -182,6 +189,9 @@
         txtLegajo.Enabled = True
         txtNombres.Enabled = True
         txt_documento.Enabled = True
+        txt_ano_ingreso.Enabled = True
+        txt_telefono.Enabled = True
+        dtp_alumno.Enabled = True
     End Sub
 
     Private Sub dgv_listarAlumnos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_listarAlumnos.CellContentClick
@@ -197,6 +207,10 @@
         txtNombres.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_nombre").Value
         txt_documento.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_documento").Value
         txt_telefono.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_telefono").Value
+
+
+
+
 
     End Sub
 

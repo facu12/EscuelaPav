@@ -27,5 +27,7 @@
     Public Function listarAlumnosCurso(curso As Integer) As DataTable
         Return oCurso.getAlumnosCurso(curso)
     End Function
-
+    Public Function listarMateriaCurso(curso As Integer) As DataTable
+        Return oCurso.getMateriaCurso(curso)
+    End Function
 End Class

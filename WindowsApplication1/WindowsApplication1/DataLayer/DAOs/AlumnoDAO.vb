@@ -62,7 +62,7 @@
             .nombre = row.Item("nombre").ToString
             .documento = row.Item("documento").ToString
             .fecha_nac = row.Item("fecha_nac").ToString
-            .año_ingreso = row.Item("año_ingreso").ToString
+            .año_ingreso = Convert.ToInt32(row.Item("año_ingreso").ToString)
             .telefono = row.Item("telefono").ToString
             .documento = row.Item("documento").ToString
         End With

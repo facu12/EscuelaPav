@@ -23,7 +23,6 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.mc_fecha_nac = New System.Windows.Forms.MonthCalendar()
         Me.txt_mail = New System.Windows.Forms.TextBox()
         Me.lbl_mail = New System.Windows.Forms.Label()
         Me.lbl_fecha_nac = New System.Windows.Forms.Label()
@@ -46,14 +45,20 @@ Partial Class Form1
         Me.btn_buscar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgv_listarAlumnos = New System.Windows.Forms.DataGridView()
+        Me.txt_busqueda_alumnos = New System.Windows.Forms.TextBox()
+        Me.cmdConsultar = New System.Windows.Forms.Button()
+        Me.lbl_alumnos = New System.Windows.Forms.Label()
+        Me.dtp_alumno = New System.Windows.Forms.DateTimePicker()
         Me.col_legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_documento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_busqueda_alumnos = New System.Windows.Forms.TextBox()
-        Me.cmdConsultar = New System.Windows.Forms.Button()
-        Me.lbl_alumnos = New System.Windows.Forms.Label()
+        Me.col_mail = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_fecha_nac = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_ano_ingreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_ano_ingreso = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_listarAlumnos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,7 +66,9 @@ Partial Class Form1
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.mc_fecha_nac)
+        Me.Panel1.Controls.Add(Me.txt_ano_ingreso)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.dtp_alumno)
         Me.Panel1.Controls.Add(Me.txt_mail)
         Me.Panel1.Controls.Add(Me.lbl_mail)
         Me.Panel1.Controls.Add(Me.lbl_fecha_nac)
@@ -86,16 +93,10 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(429, 461)
         Me.Panel1.TabIndex = 29
         '
-        'mc_fecha_nac
-        '
-        Me.mc_fecha_nac.Location = New System.Drawing.Point(195, 205)
-        Me.mc_fecha_nac.Name = "mc_fecha_nac"
-        Me.mc_fecha_nac.TabIndex = 41
-        '
         'txt_mail
         '
         Me.txt_mail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_mail.Location = New System.Drawing.Point(117, 156)
+        Me.txt_mail.Location = New System.Drawing.Point(117, 174)
         Me.txt_mail.Name = "txt_mail"
         Me.txt_mail.Size = New System.Drawing.Size(182, 20)
         Me.txt_mail.TabIndex = 40
@@ -103,7 +104,7 @@ Partial Class Form1
         'lbl_mail
         '
         Me.lbl_mail.AutoSize = True
-        Me.lbl_mail.Location = New System.Drawing.Point(3, 156)
+        Me.lbl_mail.Location = New System.Drawing.Point(3, 181)
         Me.lbl_mail.Name = "lbl_mail"
         Me.lbl_mail.Size = New System.Drawing.Size(35, 13)
         Me.lbl_mail.TabIndex = 39
@@ -112,7 +113,7 @@ Partial Class Form1
         'lbl_fecha_nac
         '
         Me.lbl_fecha_nac.AutoSize = True
-        Me.lbl_fecha_nac.Location = New System.Drawing.Point(3, 193)
+        Me.lbl_fecha_nac.Location = New System.Drawing.Point(3, 205)
         Me.lbl_fecha_nac.Name = "lbl_fecha_nac"
         Me.lbl_fecha_nac.Size = New System.Drawing.Size(111, 13)
         Me.lbl_fecha_nac.TabIndex = 37
@@ -225,7 +226,7 @@ Partial Class Form1
         'lbl_Mensajes
         '
         Me.lbl_Mensajes.AutoSize = True
-        Me.lbl_Mensajes.Location = New System.Drawing.Point(0, 359)
+        Me.lbl_Mensajes.Location = New System.Drawing.Point(3, 302)
         Me.lbl_Mensajes.Name = "lbl_Mensajes"
         Me.lbl_Mensajes.Size = New System.Drawing.Size(68, 13)
         Me.lbl_Mensajes.TabIndex = 27
@@ -316,7 +317,7 @@ Partial Class Form1
         Me.dgv_listarAlumnos.AllowUserToResizeColumns = False
         Me.dgv_listarAlumnos.AllowUserToResizeRows = False
         Me.dgv_listarAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_listarAlumnos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_legajo, Me.col_apellido, Me.col_nombre, Me.col_documento, Me.col_telefono})
+        Me.dgv_listarAlumnos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_legajo, Me.col_apellido, Me.col_nombre, Me.col_documento, Me.col_telefono, Me.col_mail, Me.col_fecha_nac, Me.col_ano_ingreso})
         Me.dgv_listarAlumnos.Location = New System.Drawing.Point(6, 24)
         Me.dgv_listarAlumnos.Margin = New System.Windows.Forms.Padding(2)
         Me.dgv_listarAlumnos.Name = "dgv_listarAlumnos"
@@ -326,6 +327,41 @@ Partial Class Form1
         Me.dgv_listarAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_listarAlumnos.Size = New System.Drawing.Size(421, 300)
         Me.dgv_listarAlumnos.TabIndex = 19
+        '
+        'txt_busqueda_alumnos
+        '
+        Me.txt_busqueda_alumnos.Location = New System.Drawing.Point(56, 423)
+        Me.txt_busqueda_alumnos.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_busqueda_alumnos.Name = "txt_busqueda_alumnos"
+        Me.txt_busqueda_alumnos.Size = New System.Drawing.Size(241, 20)
+        Me.txt_busqueda_alumnos.TabIndex = 18
+        '
+        'cmdConsultar
+        '
+        Me.cmdConsultar.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.cmdConsultar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdConsultar.Location = New System.Drawing.Point(448, 24)
+        Me.cmdConsultar.Name = "cmdConsultar"
+        Me.cmdConsultar.Size = New System.Drawing.Size(125, 31)
+        Me.cmdConsultar.TabIndex = 17
+        Me.cmdConsultar.Text = "Consultar"
+        Me.cmdConsultar.UseVisualStyleBackColor = False
+        '
+        'lbl_alumnos
+        '
+        Me.lbl_alumnos.AutoSize = True
+        Me.lbl_alumnos.Location = New System.Drawing.Point(6, 425)
+        Me.lbl_alumnos.Name = "lbl_alumnos"
+        Me.lbl_alumnos.Size = New System.Drawing.Size(45, 13)
+        Me.lbl_alumnos.TabIndex = 13
+        Me.lbl_alumnos.Text = "Alumno:"
+        '
+        'dtp_alumno
+        '
+        Me.dtp_alumno.Location = New System.Drawing.Point(141, 205)
+        Me.dtp_alumno.Name = "dtp_alumno"
+        Me.dtp_alumno.Size = New System.Drawing.Size(200, 20)
+        Me.dtp_alumno.TabIndex = 41
         '
         'col_legajo
         '
@@ -357,33 +393,42 @@ Partial Class Form1
         Me.col_telefono.Name = "col_telefono"
         Me.col_telefono.ReadOnly = True
         '
-        'txt_busqueda_alumnos
+        'col_mail
         '
-        Me.txt_busqueda_alumnos.Location = New System.Drawing.Point(56, 423)
-        Me.txt_busqueda_alumnos.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_busqueda_alumnos.Name = "txt_busqueda_alumnos"
-        Me.txt_busqueda_alumnos.Size = New System.Drawing.Size(241, 20)
-        Me.txt_busqueda_alumnos.TabIndex = 18
+        Me.col_mail.HeaderText = "mail"
+        Me.col_mail.Name = "col_mail"
+        Me.col_mail.ReadOnly = True
+        Me.col_mail.Visible = False
         '
-        'cmdConsultar
+        'col_fecha_nac
         '
-        Me.cmdConsultar.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.cmdConsultar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdConsultar.Location = New System.Drawing.Point(448, 24)
-        Me.cmdConsultar.Name = "cmdConsultar"
-        Me.cmdConsultar.Size = New System.Drawing.Size(125, 31)
-        Me.cmdConsultar.TabIndex = 17
-        Me.cmdConsultar.Text = "Consultar"
-        Me.cmdConsultar.UseVisualStyleBackColor = False
+        Me.col_fecha_nac.HeaderText = "fecha nac"
+        Me.col_fecha_nac.Name = "col_fecha_nac"
+        Me.col_fecha_nac.ReadOnly = True
+        Me.col_fecha_nac.Visible = False
         '
-        'lbl_alumnos
+        'col_ano_ingreso
         '
-        Me.lbl_alumnos.AutoSize = True
-        Me.lbl_alumnos.Location = New System.Drawing.Point(6, 425)
-        Me.lbl_alumnos.Name = "lbl_alumnos"
-        Me.lbl_alumnos.Size = New System.Drawing.Size(45, 13)
-        Me.lbl_alumnos.TabIndex = 13
-        Me.lbl_alumnos.Text = "Alumno:"
+        Me.col_ano_ingreso.HeaderText = "ano ingreso"
+        Me.col_ano_ingreso.Name = "col_ano_ingreso"
+        Me.col_ano_ingreso.ReadOnly = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(3, 151)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(72, 13)
+        Me.Label1.TabIndex = 42
+        Me.Label1.Text = "Anio Ingreso: "
+        '
+        'txt_ano_ingreso
+        '
+        Me.txt_ano_ingreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_ano_ingreso.Location = New System.Drawing.Point(117, 144)
+        Me.txt_ano_ingreso.Name = "txt_ano_ingreso"
+        Me.txt_ano_ingreso.Size = New System.Drawing.Size(182, 20)
+        Me.txt_ano_ingreso.TabIndex = 43
         '
         'Form1
         '
@@ -426,13 +471,18 @@ Partial Class Form1
     Friend WithEvents btn_salir As Button
     Friend WithEvents btn_nuevo As Button
     Friend WithEvents btn_cancelar As Button
+    Friend WithEvents txt_mail As TextBox
+    Friend WithEvents lbl_mail As Label
+    Friend WithEvents lbl_fecha_nac As Label
+    Friend WithEvents dtp_alumno As DateTimePicker
     Friend WithEvents col_legajo As DataGridViewTextBoxColumn
     Friend WithEvents col_apellido As DataGridViewTextBoxColumn
     Friend WithEvents col_nombre As DataGridViewTextBoxColumn
     Friend WithEvents col_documento As DataGridViewTextBoxColumn
     Friend WithEvents col_telefono As DataGridViewTextBoxColumn
-    Friend WithEvents txt_mail As TextBox
-    Friend WithEvents lbl_mail As Label
-    Friend WithEvents lbl_fecha_nac As Label
-    Friend WithEvents mc_fecha_nac As MonthCalendar
+    Friend WithEvents col_mail As DataGridViewTextBoxColumn
+    Friend WithEvents col_fecha_nac As DataGridViewTextBoxColumn
+    Friend WithEvents col_ano_ingreso As DataGridViewTextBoxColumn
+    Friend WithEvents txt_ano_ingreso As TextBox
+    Friend WithEvents Label1 As Label
 End Class
