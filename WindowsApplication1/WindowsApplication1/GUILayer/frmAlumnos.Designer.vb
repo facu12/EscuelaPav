@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.mc_fecha_nac = New System.Windows.Forms.MonthCalendar()
         Me.txt_mail = New System.Windows.Forms.TextBox()
         Me.lbl_mail = New System.Windows.Forms.Label()
         Me.lbl_fecha_nac = New System.Windows.Forms.Label()
@@ -53,7 +54,6 @@ Partial Class Form1
         Me.txt_busqueda_alumnos = New System.Windows.Forms.TextBox()
         Me.cmdConsultar = New System.Windows.Forms.Button()
         Me.lbl_alumnos = New System.Windows.Forms.Label()
-        Me.mc_fecha_nac = New System.Windows.Forms.MonthCalendar()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_listarAlumnos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,13 +83,19 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.lbl_legajo)
         Me.Panel1.Location = New System.Drawing.Point(24, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(429, 372)
+        Me.Panel1.Size = New System.Drawing.Size(429, 461)
         Me.Panel1.TabIndex = 29
+        '
+        'mc_fecha_nac
+        '
+        Me.mc_fecha_nac.Location = New System.Drawing.Point(195, 205)
+        Me.mc_fecha_nac.Name = "mc_fecha_nac"
+        Me.mc_fecha_nac.TabIndex = 41
         '
         'txt_mail
         '
         Me.txt_mail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_mail.Location = New System.Drawing.Point(117, 173)
+        Me.txt_mail.Location = New System.Drawing.Point(117, 156)
         Me.txt_mail.Name = "txt_mail"
         Me.txt_mail.Size = New System.Drawing.Size(182, 20)
         Me.txt_mail.TabIndex = 40
@@ -97,7 +103,7 @@ Partial Class Form1
         'lbl_mail
         '
         Me.lbl_mail.AutoSize = True
-        Me.lbl_mail.Location = New System.Drawing.Point(3, 176)
+        Me.lbl_mail.Location = New System.Drawing.Point(3, 156)
         Me.lbl_mail.Name = "lbl_mail"
         Me.lbl_mail.Size = New System.Drawing.Size(35, 13)
         Me.lbl_mail.TabIndex = 39
@@ -106,7 +112,7 @@ Partial Class Form1
         'lbl_fecha_nac
         '
         Me.lbl_fecha_nac.AutoSize = True
-        Me.lbl_fecha_nac.Location = New System.Drawing.Point(3, 149)
+        Me.lbl_fecha_nac.Location = New System.Drawing.Point(3, 193)
         Me.lbl_fecha_nac.Name = "lbl_fecha_nac"
         Me.lbl_fecha_nac.Size = New System.Drawing.Size(111, 13)
         Me.lbl_fecha_nac.TabIndex = 37
@@ -118,7 +124,7 @@ Partial Class Form1
         Me.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_cancelar.Image = Global.WindowsApplication1.My.Resources.Resources.cancelar
         Me.btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_cancelar.Location = New System.Drawing.Point(244, 313)
+        Me.btn_cancelar.Location = New System.Drawing.Point(254, 388)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 54)
         Me.btn_cancelar.TabIndex = 36
@@ -130,7 +136,7 @@ Partial Class Form1
         '
         Me.btn_nuevo.Image = Global.WindowsApplication1.My.Resources.Resources.agregar
         Me.btn_nuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_nuevo.Location = New System.Drawing.Point(160, 313)
+        Me.btn_nuevo.Location = New System.Drawing.Point(170, 388)
         Me.btn_nuevo.Name = "btn_nuevo"
         Me.btn_nuevo.Size = New System.Drawing.Size(78, 54)
         Me.btn_nuevo.TabIndex = 35
@@ -144,7 +150,7 @@ Partial Class Form1
         Me.btn_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_salir.Image = Global.WindowsApplication1.My.Resources.Resources.salir
         Me.btn_salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_salir.Location = New System.Drawing.Point(325, 313)
+        Me.btn_salir.Location = New System.Drawing.Point(335, 388)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(75, 54)
         Me.btn_salir.TabIndex = 34
@@ -158,7 +164,7 @@ Partial Class Form1
         Me.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_editar.Image = Global.WindowsApplication1.My.Resources.Resources.editar
         Me.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_editar.Location = New System.Drawing.Point(244, 313)
+        Me.btn_editar.Location = New System.Drawing.Point(254, 388)
         Me.btn_editar.Name = "btn_editar"
         Me.btn_editar.Size = New System.Drawing.Size(75, 54)
         Me.btn_editar.TabIndex = 33
@@ -172,7 +178,7 @@ Partial Class Form1
         Me.btn_confirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_confirmar.Image = Global.WindowsApplication1.My.Resources.Resources.Confirmar
         Me.btn_confirmar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_confirmar.Location = New System.Drawing.Point(163, 313)
+        Me.btn_confirmar.Location = New System.Drawing.Point(173, 388)
         Me.btn_confirmar.Name = "btn_confirmar"
         Me.btn_confirmar.Size = New System.Drawing.Size(75, 54)
         Me.btn_confirmar.TabIndex = 32
@@ -219,7 +225,7 @@ Partial Class Form1
         'lbl_Mensajes
         '
         Me.lbl_Mensajes.AutoSize = True
-        Me.lbl_Mensajes.Location = New System.Drawing.Point(23, 272)
+        Me.lbl_Mensajes.Location = New System.Drawing.Point(0, 359)
         Me.lbl_Mensajes.Name = "lbl_Mensajes"
         Me.lbl_Mensajes.Size = New System.Drawing.Size(68, 13)
         Me.lbl_Mensajes.TabIndex = 27
@@ -282,7 +288,7 @@ Partial Class Form1
         '
         Me.btn_buscar.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.btn_buscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_buscar.Location = New System.Drawing.Point(311, 347)
+        Me.btn_buscar.Location = New System.Drawing.Point(311, 423)
         Me.btn_buscar.Name = "btn_buscar"
         Me.btn_buscar.Size = New System.Drawing.Size(85, 23)
         Me.btn_buscar.TabIndex = 26
@@ -298,7 +304,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.lbl_alumnos)
         Me.GroupBox1.Location = New System.Drawing.Point(472, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(403, 372)
+        Me.GroupBox1.Size = New System.Drawing.Size(432, 461)
         Me.GroupBox1.TabIndex = 30
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Lista de Alumnos"
@@ -318,7 +324,7 @@ Partial Class Form1
         Me.dgv_listarAlumnos.RowHeadersVisible = False
         Me.dgv_listarAlumnos.RowTemplate.Height = 24
         Me.dgv_listarAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_listarAlumnos.Size = New System.Drawing.Size(391, 306)
+        Me.dgv_listarAlumnos.Size = New System.Drawing.Size(421, 300)
         Me.dgv_listarAlumnos.TabIndex = 19
         '
         'col_legajo
@@ -353,7 +359,7 @@ Partial Class Form1
         '
         'txt_busqueda_alumnos
         '
-        Me.txt_busqueda_alumnos.Location = New System.Drawing.Point(56, 347)
+        Me.txt_busqueda_alumnos.Location = New System.Drawing.Point(56, 423)
         Me.txt_busqueda_alumnos.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_busqueda_alumnos.Name = "txt_busqueda_alumnos"
         Me.txt_busqueda_alumnos.Size = New System.Drawing.Size(241, 20)
@@ -373,24 +379,18 @@ Partial Class Form1
         'lbl_alumnos
         '
         Me.lbl_alumnos.AutoSize = True
-        Me.lbl_alumnos.Location = New System.Drawing.Point(6, 349)
+        Me.lbl_alumnos.Location = New System.Drawing.Point(6, 425)
         Me.lbl_alumnos.Name = "lbl_alumnos"
         Me.lbl_alumnos.Size = New System.Drawing.Size(45, 13)
         Me.lbl_alumnos.TabIndex = 13
         Me.lbl_alumnos.Text = "Alumno:"
-        '
-        'mc_fecha_nac
-        '
-        Me.mc_fecha_nac.Location = New System.Drawing.Point(117, 149)
-        Me.mc_fecha_nac.Name = "mc_fecha_nac"
-        Me.mc_fecha_nac.TabIndex = 41
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.ClientSize = New System.Drawing.Size(882, 428)
+        Me.ClientSize = New System.Drawing.Size(958, 494)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Form1"
