@@ -23,6 +23,9 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txt_ano_ingreso = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dtp_alumno = New System.Windows.Forms.DateTimePicker()
         Me.txt_mail = New System.Windows.Forms.TextBox()
         Me.lbl_mail = New System.Windows.Forms.Label()
         Me.lbl_fecha_nac = New System.Windows.Forms.Label()
@@ -45,10 +48,6 @@ Partial Class Form1
         Me.btn_buscar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgv_listarAlumnos = New System.Windows.Forms.DataGridView()
-        Me.txt_busqueda_alumnos = New System.Windows.Forms.TextBox()
-        Me.cmdConsultar = New System.Windows.Forms.Button()
-        Me.lbl_alumnos = New System.Windows.Forms.Label()
-        Me.dtp_alumno = New System.Windows.Forms.DateTimePicker()
         Me.col_legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -57,8 +56,9 @@ Partial Class Form1
         Me.col_mail = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_fecha_nac = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_ano_ingreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt_ano_ingreso = New System.Windows.Forms.TextBox()
+        Me.txt_busqueda_alumnos = New System.Windows.Forms.TextBox()
+        Me.cmdConsultar = New System.Windows.Forms.Button()
+        Me.lbl_alumnos = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_listarAlumnos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,6 +92,30 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(429, 461)
         Me.Panel1.TabIndex = 29
+        '
+        'txt_ano_ingreso
+        '
+        Me.txt_ano_ingreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_ano_ingreso.Location = New System.Drawing.Point(117, 144)
+        Me.txt_ano_ingreso.Name = "txt_ano_ingreso"
+        Me.txt_ano_ingreso.Size = New System.Drawing.Size(182, 20)
+        Me.txt_ano_ingreso.TabIndex = 43
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(3, 151)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(72, 13)
+        Me.Label1.TabIndex = 42
+        Me.Label1.Text = "Anio Ingreso: "
+        '
+        'dtp_alumno
+        '
+        Me.dtp_alumno.Location = New System.Drawing.Point(141, 205)
+        Me.dtp_alumno.Name = "dtp_alumno"
+        Me.dtp_alumno.Size = New System.Drawing.Size(200, 20)
+        Me.dtp_alumno.TabIndex = 41
         '
         'txt_mail
         '
@@ -328,41 +352,6 @@ Partial Class Form1
         Me.dgv_listarAlumnos.Size = New System.Drawing.Size(421, 300)
         Me.dgv_listarAlumnos.TabIndex = 19
         '
-        'txt_busqueda_alumnos
-        '
-        Me.txt_busqueda_alumnos.Location = New System.Drawing.Point(56, 423)
-        Me.txt_busqueda_alumnos.Margin = New System.Windows.Forms.Padding(2)
-        Me.txt_busqueda_alumnos.Name = "txt_busqueda_alumnos"
-        Me.txt_busqueda_alumnos.Size = New System.Drawing.Size(241, 20)
-        Me.txt_busqueda_alumnos.TabIndex = 18
-        '
-        'cmdConsultar
-        '
-        Me.cmdConsultar.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.cmdConsultar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdConsultar.Location = New System.Drawing.Point(448, 24)
-        Me.cmdConsultar.Name = "cmdConsultar"
-        Me.cmdConsultar.Size = New System.Drawing.Size(125, 31)
-        Me.cmdConsultar.TabIndex = 17
-        Me.cmdConsultar.Text = "Consultar"
-        Me.cmdConsultar.UseVisualStyleBackColor = False
-        '
-        'lbl_alumnos
-        '
-        Me.lbl_alumnos.AutoSize = True
-        Me.lbl_alumnos.Location = New System.Drawing.Point(6, 425)
-        Me.lbl_alumnos.Name = "lbl_alumnos"
-        Me.lbl_alumnos.Size = New System.Drawing.Size(45, 13)
-        Me.lbl_alumnos.TabIndex = 13
-        Me.lbl_alumnos.Text = "Alumno:"
-        '
-        'dtp_alumno
-        '
-        Me.dtp_alumno.Location = New System.Drawing.Point(141, 205)
-        Me.dtp_alumno.Name = "dtp_alumno"
-        Me.dtp_alumno.Size = New System.Drawing.Size(200, 20)
-        Me.dtp_alumno.TabIndex = 41
-        '
         'col_legajo
         '
         Me.col_legajo.HeaderText = "Legajo"
@@ -413,22 +402,33 @@ Partial Class Form1
         Me.col_ano_ingreso.Name = "col_ano_ingreso"
         Me.col_ano_ingreso.ReadOnly = True
         '
-        'Label1
+        'txt_busqueda_alumnos
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 151)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(72, 13)
-        Me.Label1.TabIndex = 42
-        Me.Label1.Text = "Anio Ingreso: "
+        Me.txt_busqueda_alumnos.Location = New System.Drawing.Point(56, 423)
+        Me.txt_busqueda_alumnos.Margin = New System.Windows.Forms.Padding(2)
+        Me.txt_busqueda_alumnos.Name = "txt_busqueda_alumnos"
+        Me.txt_busqueda_alumnos.Size = New System.Drawing.Size(241, 20)
+        Me.txt_busqueda_alumnos.TabIndex = 18
         '
-        'txt_ano_ingreso
+        'cmdConsultar
         '
-        Me.txt_ano_ingreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_ano_ingreso.Location = New System.Drawing.Point(117, 144)
-        Me.txt_ano_ingreso.Name = "txt_ano_ingreso"
-        Me.txt_ano_ingreso.Size = New System.Drawing.Size(182, 20)
-        Me.txt_ano_ingreso.TabIndex = 43
+        Me.cmdConsultar.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.cmdConsultar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdConsultar.Location = New System.Drawing.Point(448, 24)
+        Me.cmdConsultar.Name = "cmdConsultar"
+        Me.cmdConsultar.Size = New System.Drawing.Size(125, 31)
+        Me.cmdConsultar.TabIndex = 17
+        Me.cmdConsultar.Text = "Consultar"
+        Me.cmdConsultar.UseVisualStyleBackColor = False
+        '
+        'lbl_alumnos
+        '
+        Me.lbl_alumnos.AutoSize = True
+        Me.lbl_alumnos.Location = New System.Drawing.Point(6, 425)
+        Me.lbl_alumnos.Name = "lbl_alumnos"
+        Me.lbl_alumnos.Size = New System.Drawing.Size(45, 13)
+        Me.lbl_alumnos.TabIndex = 13
+        Me.lbl_alumnos.Text = "Alumno:"
         '
         'Form1
         '

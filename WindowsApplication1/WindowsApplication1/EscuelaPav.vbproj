@@ -80,6 +80,7 @@
     <Compile Include="BussinessLayer\Services\AlumnoService.vb" />
     <Compile Include="BussinessLayer\Services\CursoService.vb" />
     <Compile Include="BussinessLayer\Services\MateriaService.vb" />
+    <Compile Include="BussinessLayer\Services\NotaService.vb" />
     <Compile Include="BussinessLayer\Services\ProfesorService.vb" />
     <Compile Include="BussinessLayer\Services\UserService.vb" />
     <Compile Include="DataLayer\DAOs\AlumnoDAO.vb" />

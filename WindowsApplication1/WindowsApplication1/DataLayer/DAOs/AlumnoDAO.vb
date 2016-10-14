@@ -19,8 +19,8 @@
         comandStr += "'" + oAlumno.nombre + "', "
         comandStr += "'" + oAlumno.apellido + "', "
         comandStr += "'" + oAlumno.documento + "', "
-        comandStr += "'" + oAlumno.fecha_nac + "', "
-        comandStr += "'" + oAlumno.año_ingreso + "', "
+        comandStr += "'" + oAlumno.fecha_nac.Year.ToString + "-" + oAlumno.fecha_nac.Month.ToString + "-" + oAlumno.fecha_nac.Day.ToString + "', "
+        comandStr += "'" + oAlumno.año_ingreso.ToString + "', "
         comandStr += "'" + oAlumno.telefono + "', "
         comandStr += "'" + oAlumno.email + "')"
 
@@ -34,6 +34,7 @@
         comandStr += "nombre='" + oAlumno.nombre + "', "
         comandStr += "apellido='" + oAlumno.apellido + "', "
         comandStr += "dni='" + oAlumno.documento + "', "
+        comandStr += "fecha_nac'" + oAlumno.fecha_nac.Year.ToString + "-" + oAlumno.fecha_nac.Month.ToString + "-" + oAlumno.fecha_nac.Day.ToString + "', "
         comandStr += "año_ingreso='" + oAlumno.año_ingreso + "', "
         comandStr += "telefono='" + oAlumno.telefono + "', "
         comandStr += "mail='" + oAlumno.email + "' "
