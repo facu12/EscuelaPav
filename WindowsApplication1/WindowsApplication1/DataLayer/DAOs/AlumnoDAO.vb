@@ -34,9 +34,9 @@
         comandStr += "nombre='" + oAlumno.nombre + "', "
         comandStr += "apellido='" + oAlumno.apellido + "', "
         comandStr += "dni='" + oAlumno.documento + "', "
-        comandStr += "fecha_nac'" + oAlumno.fecha_nac.Year.ToString + "-" + oAlumno.fecha_nac.Month.ToString + "-" + oAlumno.fecha_nac.Day.ToString + "', "
-        comandStr += "año_ingreso='" + oAlumno.año_ingreso + "', "
-        comandStr += "telefono='" + oAlumno.telefono + "', "
+        comandStr += "fecha_nac='" + oAlumno.fecha_nac.Year.ToString + "-" + oAlumno.fecha_nac.Month.ToString + "-" + oAlumno.fecha_nac.Day.ToString + "', "
+        comandStr += "año_ingreso='" + oAlumno.año_ingreso.ToString + "', "
+        comandStr += "tel='" + oAlumno.telefono + "', "
         comandStr += "mail='" + oAlumno.email + "' "
         comandStr += "WHERE legajo=" + oAlumno.legajo.ToString
 
@@ -59,13 +59,13 @@
         Dim oAlumno As New Alumno
         With oAlumno
             .legajo = Convert.ToInt32(row.Item("legajo").ToString)
-            .apellido = row.Item("apellido").ToString
             .nombre = row.Item("nombre").ToString
-            .documento = row.Item("documento").ToString
+            .apellido = row.Item("apellido").ToString
+            .documento = row.Item("dni").ToString
             .fecha_nac = row.Item("fecha_nac").ToString
             .año_ingreso = Convert.ToInt32(row.Item("año_ingreso").ToString)
-            .telefono = row.Item("telefono").ToString
-            .documento = row.Item("documento").ToString
+            .telefono = row.Item("tel").ToString
+            .email = row.Item("mail").ToString
         End With
         Return oAlumno
     End Function

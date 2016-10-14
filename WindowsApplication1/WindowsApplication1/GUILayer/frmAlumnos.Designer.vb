@@ -23,10 +23,10 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txt_mail = New System.Windows.Forms.TextBox()
         Me.txt_ano_ingreso = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtp_alumno = New System.Windows.Forms.DateTimePicker()
-        Me.txt_mail = New System.Windows.Forms.TextBox()
         Me.lbl_mail = New System.Windows.Forms.Label()
         Me.lbl_fecha_nac = New System.Windows.Forms.Label()
         Me.btn_cancelar = New System.Windows.Forms.Button()
@@ -66,10 +66,10 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.txt_mail)
         Me.Panel1.Controls.Add(Me.txt_ano_ingreso)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.dtp_alumno)
-        Me.Panel1.Controls.Add(Me.txt_mail)
         Me.Panel1.Controls.Add(Me.lbl_mail)
         Me.Panel1.Controls.Add(Me.lbl_fecha_nac)
         Me.Panel1.Controls.Add(Me.btn_cancelar)
@@ -93,10 +93,20 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(429, 461)
         Me.Panel1.TabIndex = 29
         '
+        'txt_mail
+        '
+        Me.txt_mail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_mail.Location = New System.Drawing.Point(117, 173)
+        Me.txt_mail.MaxLength = 50
+        Me.txt_mail.Name = "txt_mail"
+        Me.txt_mail.Size = New System.Drawing.Size(182, 20)
+        Me.txt_mail.TabIndex = 44
+        '
         'txt_ano_ingreso
         '
         Me.txt_ano_ingreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txt_ano_ingreso.Location = New System.Drawing.Point(117, 144)
+        Me.txt_ano_ingreso.MaxLength = 4
         Me.txt_ano_ingreso.Name = "txt_ano_ingreso"
         Me.txt_ano_ingreso.Size = New System.Drawing.Size(182, 20)
         Me.txt_ano_ingreso.TabIndex = 43
@@ -106,24 +116,17 @@ Partial Class Form1
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(3, 151)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(72, 13)
+        Me.Label1.Size = New System.Drawing.Size(70, 13)
         Me.Label1.TabIndex = 42
-        Me.Label1.Text = "Anio Ingreso: "
+        Me.Label1.Text = "Año Ingreso: "
         '
         'dtp_alumno
         '
-        Me.dtp_alumno.Location = New System.Drawing.Point(141, 205)
+        Me.dtp_alumno.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtp_alumno.Location = New System.Drawing.Point(117, 205)
         Me.dtp_alumno.Name = "dtp_alumno"
-        Me.dtp_alumno.Size = New System.Drawing.Size(200, 20)
+        Me.dtp_alumno.Size = New System.Drawing.Size(182, 20)
         Me.dtp_alumno.TabIndex = 41
-        '
-        'txt_mail
-        '
-        Me.txt_mail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_mail.Location = New System.Drawing.Point(117, 174)
-        Me.txt_mail.Name = "txt_mail"
-        Me.txt_mail.Size = New System.Drawing.Size(182, 20)
-        Me.txt_mail.TabIndex = 40
         '
         'lbl_mail
         '
@@ -215,9 +218,9 @@ Partial Class Form1
         '
         Me.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txt_telefono.Location = New System.Drawing.Point(117, 118)
-        Me.txt_telefono.MaxLength = 10
+        Me.txt_telefono.MaxLength = 20
         Me.txt_telefono.Name = "txt_telefono"
-        Me.txt_telefono.Size = New System.Drawing.Size(121, 20)
+        Me.txt_telefono.Size = New System.Drawing.Size(182, 20)
         Me.txt_telefono.TabIndex = 31
         '
         'lbl_telefono
@@ -235,7 +238,7 @@ Partial Class Form1
         Me.txt_documento.Location = New System.Drawing.Point(117, 92)
         Me.txt_documento.MaxLength = 8
         Me.txt_documento.Name = "txt_documento"
-        Me.txt_documento.Size = New System.Drawing.Size(121, 20)
+        Me.txt_documento.Size = New System.Drawing.Size(182, 20)
         Me.txt_documento.TabIndex = 29
         '
         'lbl_documento
@@ -261,8 +264,9 @@ Partial Class Form1
         '
         Me.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNombres.Location = New System.Drawing.Point(117, 66)
+        Me.txtNombres.MaxLength = 50
         Me.txtNombres.Name = "txtNombres"
-        Me.txtNombres.Size = New System.Drawing.Size(292, 20)
+        Me.txtNombres.Size = New System.Drawing.Size(182, 20)
         Me.txtNombres.TabIndex = 10
         '
         'lbl_nombre
@@ -278,6 +282,7 @@ Partial Class Form1
         '
         Me.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtApellido.Location = New System.Drawing.Point(117, 37)
+        Me.txtApellido.MaxLength = 50
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(182, 20)
         Me.txtApellido.TabIndex = 1
@@ -297,7 +302,7 @@ Partial Class Form1
         Me.txtLegajo.Location = New System.Drawing.Point(117, 11)
         Me.txtLegajo.MaxLength = 5
         Me.txtLegajo.Name = "txtLegajo"
-        Me.txtLegajo.Size = New System.Drawing.Size(91, 20)
+        Me.txtLegajo.Size = New System.Drawing.Size(182, 20)
         Me.txtLegajo.TabIndex = 0
         '
         'lbl_legajo
@@ -349,7 +354,7 @@ Partial Class Form1
         Me.dgv_listarAlumnos.RowHeadersVisible = False
         Me.dgv_listarAlumnos.RowTemplate.Height = 24
         Me.dgv_listarAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_listarAlumnos.Size = New System.Drawing.Size(421, 300)
+        Me.dgv_listarAlumnos.Size = New System.Drawing.Size(421, 394)
         Me.dgv_listarAlumnos.TabIndex = 19
         '
         'col_legajo
@@ -394,11 +399,10 @@ Partial Class Form1
         Me.col_fecha_nac.HeaderText = "fecha nac"
         Me.col_fecha_nac.Name = "col_fecha_nac"
         Me.col_fecha_nac.ReadOnly = True
-        Me.col_fecha_nac.Visible = False
         '
         'col_ano_ingreso
         '
-        Me.col_ano_ingreso.HeaderText = "ano ingreso"
+        Me.col_ano_ingreso.HeaderText = "año ingreso"
         Me.col_ano_ingreso.Name = "col_ano_ingreso"
         Me.col_ano_ingreso.ReadOnly = True
         '
@@ -471,10 +475,11 @@ Partial Class Form1
     Friend WithEvents btn_salir As Button
     Friend WithEvents btn_nuevo As Button
     Friend WithEvents btn_cancelar As Button
-    Friend WithEvents txt_mail As TextBox
     Friend WithEvents lbl_mail As Label
     Friend WithEvents lbl_fecha_nac As Label
     Friend WithEvents dtp_alumno As DateTimePicker
+    Friend WithEvents txt_ano_ingreso As TextBox
+    Friend WithEvents Label1 As Label
     Friend WithEvents col_legajo As DataGridViewTextBoxColumn
     Friend WithEvents col_apellido As DataGridViewTextBoxColumn
     Friend WithEvents col_nombre As DataGridViewTextBoxColumn
@@ -483,6 +488,5 @@ Partial Class Form1
     Friend WithEvents col_mail As DataGridViewTextBoxColumn
     Friend WithEvents col_fecha_nac As DataGridViewTextBoxColumn
     Friend WithEvents col_ano_ingreso As DataGridViewTextBoxColumn
-    Friend WithEvents txt_ano_ingreso As TextBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents txt_mail As TextBox
 End Class

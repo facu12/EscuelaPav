@@ -5,9 +5,8 @@
     End Function
 
     Public Function getTrimestres() As DataTable
-        Dim str As String
-        str = "SELECT * FROM Trimestre"
-        Return BDHelper.getDBHelper.ConsultaSQL(str)
+
+        Return oNotaDAO.getTrimestres()
     End Function
 
     Public Function insertarNotas(tabla As DataTable, tnota As Char, trim As Integer, fecha As String, mat As Integer) As Integer

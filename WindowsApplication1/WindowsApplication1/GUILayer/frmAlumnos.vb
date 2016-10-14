@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports System.Text.RegularExpressions
+
+Public Class Form1
     Private Sub frm_Alumnos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'carga la grilla apenas abre la ventana
@@ -54,7 +56,7 @@
         txt_telefono.Clear()
         txt_mail.Clear()
         txt_ano_ingreso.Clear()
-
+        dtp_alumno.Value = DateTime.Now
 
     End Sub
 
@@ -133,7 +135,7 @@
         txt_ano_ingreso.Enabled = False
         txt_telefono.Enabled = False
         dtp_alumno.Enabled = False
-
+        txt_mail.Enabled = False
         'estados iniciales de botones
         btn_confirmar.Visible = False
         btn_confirmar.Enabled = False
@@ -169,7 +171,7 @@
         'limpio campos txt
         limpiarCampos()
 
-        habilitarcampos()
+        habilitarCampos()
 
 
         'habilito y muestro btn de confirmar y cancelar
@@ -179,19 +181,22 @@
         btn_confirmar.Visible = True
         btn_confirmar.Enabled = True
 
-
+        dgv_listarAlumnos.Enabled = False
+        txtLegajo.Focus()
     End Sub
 
     Private Sub habilitarCampos()
         'Habilita los txt para carga de datos 
         txt_telefono.Enabled = True
         txtApellido.Enabled = True
-        txtLegajo.Enabled = True
         txtNombres.Enabled = True
         txt_documento.Enabled = True
         txt_ano_ingreso.Enabled = True
         txt_telefono.Enabled = True
+        txt_mail.Enabled = True
+
         dtp_alumno.Enabled = True
+        txtLegajo.Enabled = True
     End Sub
 
     Private Sub dgv_listarAlumnos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_listarAlumnos.CellContentClick
@@ -207,6 +212,9 @@
         txtNombres.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_nombre").Value
         txt_documento.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_documento").Value
         txt_telefono.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_telefono").Value
+        txt_mail.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_mail").Value
+        txt_ano_ingreso.Text = dgv_listarAlumnos.CurrentRow.Cells.Item("col_ano_ingreso").Value
+        dtp_alumno.Value = Convert.ToDateTime(dgv_listarAlumnos.CurrentRow.Cells.Item("col_fecha_nac").Value)
 
 
 
@@ -227,6 +235,9 @@
         txtLegajo.Enabled = False
         txtNombres.Enabled = True
         txt_documento.Enabled = True
+        txt_ano_ingreso.Enabled = True
+        txt_mail.Enabled = True
+        dtp_alumno.Enabled = True
 
         'habilito y muestro btn de confirmar y cancelar, ademas oculto nuevo y editar
         btn_cancelar.Enabled = True
@@ -260,9 +271,80 @@
 
             With oAlumno
                 'cargar filas del datagridview a partir de un array de strings
-                dgv_listarAlumnos.Rows.Add(New String() { .legajo.ToString, .apellido.ToString, .nombre.ToString, .documento.ToString, .telefono.ToString})
+
+
+                dgv_listarAlumnos.Rows.Add(New String() { .legajo.ToString, .apellido.ToString, .nombre.ToString, .documento.ToString, .telefono.ToString, .email.ToString, .fecha_nac.ToString, .año_ingreso.ToString})
             End With
         Next
     End Sub
+
+
+
+    '///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    'A PARTIR DE ACÁ, VALIDACIONES DE CAMPOS
+    '///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    'Metodos de validacion de campos de texto plano
+    Private Sub txtNombres_Leave(sender As Object, e As EventArgs) Handles txtNombres.Leave
+
+        If Not Regex.Match(txtNombres.Text, "^[a-z]*$", RegexOptions.IgnoreCase).Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres alfabéticos!")
+            txtNombres.Focus()
+            txtNombres.Clear()
+        End If
+    End Sub
+
+    Private Sub txtApellido_Leave(sender As Object, e As EventArgs) Handles txtApellido.Leave
+        If Not Regex.Match(txtApellido.Text, "^[a-z]*$", RegexOptions.IgnoreCase).Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres alfabéticos!")
+            txtApellido.Focus()
+            txtApellido.Clear()
+        End If
+    End Sub
+
+    'Metodos de validacion de campos numericos unicamente
+    Private Sub txt_documento_Leave(sender As Object, e As EventArgs) Handles txt_documento.Leave
+        If Not Regex.Match(txt_documento.Text, "^[0-9]\d*(\.\d+)?$").Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
+            txt_documento.Focus()
+            txt_documento.Clear()
+        End If
+    End Sub
+
+
+    'metodo que valida el patron del mail
+    Private Sub ValidarEmail()
+
+        'armo un patron de mail
+        Dim reEmail As Regex = New Regex("([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\." +
+        ")|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})",
+        RegexOptions.IgnoreCase _
+        Or RegexOptions.CultureInvariant _
+        Or RegexOptions.IgnorePatternWhitespace _
+        Or RegexOptions.Compiled)
+
+        Dim blnPossibleMatch As Boolean = reEmail.IsMatch(txt_mail.Text)
+
+        If blnPossibleMatch Then
+
+            'chekea si el mail tiene el formato correcto
+            If Not txt_mail.Text.Equals(reEmail.Match(txt_mail.Text).ToString) Then
+                MessageBox.Show("Direccion de Email Invalida!")
+            End If
+
+        Else 'Si no pega con el patron
+
+            MessageBox.Show("Direccion de Email Invalida!")
+            txt_mail.Clear()
+            'txt_mail.Focus()
+
+        End If
+
+    End Sub
+    'cuando sale del txt invoca a la validacion del mail
+    Private Sub txt_mail_LostFocus(sender As Object, e As System.EventArgs) Handles txt_mail.LostFocus
+        ValidarEmail() 'Valida el email
+
+    End Sub
+
 
 End Class

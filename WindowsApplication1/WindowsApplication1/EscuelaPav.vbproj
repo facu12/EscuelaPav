@@ -86,6 +86,7 @@
     <Compile Include="DataLayer\DAOs\AlumnoDAO.vb" />
     <Compile Include="DataLayer\DAOs\CursoDAO.vb" />
     <Compile Include="DataLayer\DAOs\MateriaDAO.vb" />
+    <Compile Include="DataLayer\DAOs\NotaDAO.vb" />
     <Compile Include="DataLayer\DAOs\ProfesorDAO.vb" />
     <Compile Include="DataLayer\DAOs\UserDAO.vb" />
     <Compile Include="DataLayer\Helper\BDHelper.vb" />
