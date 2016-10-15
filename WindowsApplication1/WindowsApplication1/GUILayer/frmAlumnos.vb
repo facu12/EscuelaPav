@@ -16,7 +16,121 @@ Public Class Form1
     End Enum
 
     Public action As Action_type
+    Private Sub btn_nuevo_Click_1(sender As Object, e As EventArgs) Handles btn_nuevo.Click
+        'setea el action tipe en insert
+        action = Action_type.Insert
 
+
+        'limpio campos txt
+        limpiarCampos()
+
+        habilitarCampos()
+
+
+        'habilito y muestro btn de confirmar y cancelar
+        btn_nuevo.Visible = False
+        btn_cancelar.Enabled = True
+        btn_cancelar.Visible = True
+        btn_confirmar.Visible = True
+        btn_confirmar.Enabled = True
+
+        dgv_listarAlumnos.Enabled = False
+    End Sub
+
+    Private Sub btn_editar_Click_1(sender As Object, e As EventArgs) Handles btn_editar.Click
+
+        'setea la variable action en update
+        action = Action_type.Update
+
+
+        'Habilita los txt para carga de datos excepto el legajo porque es PK 
+        txt_telefono.Enabled = True
+        txtApellido.Enabled = True
+        txtLegajo.Enabled = False
+        txtNombres.Enabled = True
+        txt_documento.Enabled = True
+        txt_ano_ingreso.Enabled = True
+        txt_mail.Enabled = True
+        dtp_alumno.Enabled = True
+
+        'habilito y muestro btn de confirmar y cancelar, ademas oculto nuevo y editar
+        btn_cancelar.Enabled = True
+        btn_cancelar.Visible = True
+        btn_confirmar.Visible = True
+        btn_confirmar.Enabled = True
+        btn_nuevo.Visible = False
+        btn_editar.Visible = False
+
+    End Sub
+
+    Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
+
+
+        'si cancela se limpian los datos de los txt
+
+        If MessageBox.Show("Seguro que desea cancelar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+            limpiarCampos()
+            btnMomentoInicial()
+
+        End If
+
+
+    End Sub
+
+    Private Sub btn_confirmar_Click_1(sender As Object, e As EventArgs) Handles btn_confirmar.Click
+        If camposCompletos(groupbox_frm) = True Then
+
+
+            If MessageBox.Show("Seguro que desea confirmar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                'Valida todos los campos completos 
+
+                'dimensiono alumno apartir de los txt
+                Dim al As Alumno
+                al = crearAlumno()
+                'dimensiono rta segun realiza con exito o no la consulta sql
+                Dim rta As Boolean
+                'dimensiono el servicio 
+                Dim oAlumnoServicio As New AlumnoService
+
+                'verifico si es un nuevo alumno o modifico uno ya creado 
+                If action = Action_type.Insert Then
+                    'tomo el alumno creado por la funcion y se la paso al servicio para crear
+
+                    rta = oAlumnoServicio.registrarAlumno(al)
+                Else
+                    'tomo al alumno creado por la funcion y se lo paso al servicio para actualizar
+                    rta = oAlumnoServicio.actualizarAlumno(al)
+                End If
+
+
+
+                'segun si pudo o no realizar la consulta sql, muestro un aviso
+                If rta = True Then
+                    MsgBox("operacion realizada exitosamente", vbOKOnly + MsgBoxStyle.Information, "Aviso")
+                    llenarGrid()
+                Else
+                    MsgBox("operacion no se realizo con exito", vbOKOnly + MsgBoxStyle.Information, "Aviso")
+
+                End If
+
+            Else
+
+                'vuelve al estado incial los btn 
+                limpiarCampos()
+                btnMomentoInicial()
+
+            End If
+        End If
+
+    End Sub
+
+    Private Sub btn_salir_Click_1(sender As Object, e As EventArgs) Handles btn_salir.Click
+
+        'Confirmación de salida.
+        If MessageBox.Show("Seguro que desea salir?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+            Me.Close()
+        End If
+    End Sub
 
     Friend Sub llenarGrid(Optional ByVal lst As List(Of Alumno) = Nothing)
         Dim oAlumnoService As New AlumnoService
@@ -40,12 +154,7 @@ Public Class Form1
     End Sub
 
 
-    Private Sub btn_salir_Click(sender As Object, e As EventArgs) Handles btn_salir.Click
-        'Confirmación de salida.
-        If MessageBox.Show("Seguro que desea salir?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-            Me.Close()
-        End If
-    End Sub
+
 
     Private Sub limpiarCampos()
         'limpia los campos txt del formulario
@@ -79,51 +188,6 @@ Public Class Form1
 
     End Function
 
-    Private Sub btn_confirmar_Click(sender As Object, e As EventArgs) Handles btn_confirmar.Click
-
-        'FALTA VALIDACIONES DE CAMPOS  Y TIPOS 
-
-        If MessageBox.Show("Seguro que desea confirmar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-
-            'dimensiono alumno apartir de los txt
-            Dim al As Alumno
-            al = crearAlumno()
-            'dimensiono rta segun realiza con exito o no la consulta sql
-            Dim rta As Boolean
-            'dimensiono el servicio 
-            Dim oAlumnoServicio As New AlumnoService
-
-            'verifico si es un nuevo alumno o modifico uno ya creado 
-            If action = Action_type.Insert Then
-                'tomo el alumno creado por la funcion y se la paso al servicio para crear
-
-                rta = oAlumnoServicio.registrarAlumno(al)
-            Else
-                'tomo al alumno creado por la funcion y se lo paso al servicio para actualizar
-                rta = oAlumnoServicio.actualizarAlumno(al)
-            End If
-
-
-            'vuelve al estado incial los btn 
-            limpiarCampos()
-            btnMomentoInicial()
-
-            'segun si pudo o no realizar la consulta sql, muestro un aviso
-            If rta = True Then
-                MsgBox("operacion realizada exitosamente", vbOKOnly + MsgBoxStyle.Information, "Aviso")
-                llenarGrid()
-            Else
-                MsgBox("operacion no se realizo con exito", vbOKOnly + MsgBoxStyle.Information, "Aviso")
-
-            End If
-
-        Else
-
-            limpiarCampos()
-            btnMomentoInicial()
-        End If
-
-    End Sub
 
     Private Sub btnMomentoInicial()
         'estado iniciales de los textbox
@@ -146,44 +210,14 @@ Public Class Form1
         btn_salir.Enabled = True
         btn_nuevo.Visible = True
         btn_nuevo.Enabled = True
-
-
-    End Sub
-
-    Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
-
-        'si cancela se limpian los datos de los txt
-
-        If MessageBox.Show("Seguro que desea cancelar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
-            limpiarCampos()
-            btnMomentoInicial()
-
-        End If
+        dgv_listarAlumnos.Enabled = True
 
     End Sub
 
-    Private Sub btn_nuevo_Click(sender As Object, e As EventArgs) Handles btn_nuevo.Click
-
-        'setea el action tipe en insert
-        action = Action_type.Insert
 
 
-        'limpio campos txt
-        limpiarCampos()
-
-        habilitarCampos()
 
 
-        'habilito y muestro btn de confirmar y cancelar
-        btn_nuevo.Visible = False
-        btn_cancelar.Enabled = True
-        btn_cancelar.Visible = True
-        btn_confirmar.Visible = True
-        btn_confirmar.Enabled = True
-
-        dgv_listarAlumnos.Enabled = False
-        txtLegajo.Focus()
-    End Sub
 
     Private Sub habilitarCampos()
         'Habilita los txt para carga de datos 
@@ -224,29 +258,7 @@ Public Class Form1
 
 
 
-    Private Sub btn_editar_Click(sender As Object, e As EventArgs) Handles btn_editar.Click
-        'setea la variable action en update
-        action = Action_type.Update
 
-
-        'Habilita los txt para carga de datos excepto el legajo porque es PK 
-        txt_telefono.Enabled = True
-        txtApellido.Enabled = True
-        txtLegajo.Enabled = False
-        txtNombres.Enabled = True
-        txt_documento.Enabled = True
-        txt_ano_ingreso.Enabled = True
-        txt_mail.Enabled = True
-        dtp_alumno.Enabled = True
-
-        'habilito y muestro btn de confirmar y cancelar, ademas oculto nuevo y editar
-        btn_cancelar.Enabled = True
-        btn_cancelar.Visible = True
-        btn_confirmar.Visible = True
-        btn_confirmar.Enabled = True
-        btn_nuevo.Visible = False
-        btn_editar.Visible = False
-    End Sub
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
         'invoca al metodo buscaralumno para generar la query y llenar la tabla
@@ -284,32 +296,54 @@ Public Class Form1
     'A PARTIR DE ACÁ, VALIDACIONES DE CAMPOS
     '///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     'Metodos de validacion de campos de texto plano
-    Private Sub txtNombres_Leave(sender As Object, e As EventArgs) Handles txtNombres.Leave
+    Private Sub txtNombres_LostFocus(sender As Object, e As EventArgs)
 
         If Not Regex.Match(txtNombres.Text, "^[a-z]*$", RegexOptions.IgnoreCase).Success Then
             MessageBox.Show("Por favor ingrese SOLO caracteres alfabéticos!")
-            txtNombres.Focus()
+            'txtNombres.Focus()
             txtNombres.Clear()
         End If
     End Sub
 
-    Private Sub txtApellido_Leave(sender As Object, e As EventArgs) Handles txtApellido.Leave
+    Private Sub txtApellido_LostFocus(sender As Object, e As EventArgs)
         If Not Regex.Match(txtApellido.Text, "^[a-z]*$", RegexOptions.IgnoreCase).Success Then
             MessageBox.Show("Por favor ingrese SOLO caracteres alfabéticos!")
-            txtApellido.Focus()
+            ' txtApellido.Focus()
             txtApellido.Clear()
         End If
     End Sub
 
     'Metodos de validacion de campos numericos unicamente
-    Private Sub txt_documento_Leave(sender As Object, e As EventArgs) Handles txt_documento.Leave
-        If Not Regex.Match(txt_documento.Text, "^[0-9]\d*(\.\d+)?$").Success Then
+    Private Sub txt_telefono_LostFocus(sender As Object, e As EventArgs)
+        If Not Regex.Match(txt_telefono.Text, "^[0-9]\d*(\.\d+)?$").Success Then
             MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
-            txt_documento.Focus()
-            txt_documento.Clear()
+            'txt_telefono.Focus()
+            txt_telefono.Clear()
         End If
     End Sub
 
+    Private Sub txt_ano_ingreso_LostFocus(sender As Object, e As EventArgs)
+        If Not Regex.Match(txt_ano_ingreso.Text, "^[0-9]\d*(\.\d+)?$").Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
+            'txt_ano_ingreso.Focus()
+            txt_ano_ingreso.Clear()
+        End If
+    End Sub
+
+    Private Sub txt_documento_LostFocus(sender As Object, e As EventArgs)
+        If Not Regex.Match(txt_documento.Text, "^[0-9]\d*(\.\d+)?$").Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
+            ' txt_documento.Focus()
+            txt_documento.Clear()
+        End If
+    End Sub
+    Private Sub txtLegajo_LostFocus(sender As Object, e As EventArgs)
+        If Not Regex.Match(txtLegajo.Text, "^[0-9]\d*(\.\d+)?$").Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
+            'txtLegajo.Focus()
+            txtLegajo.Clear()
+        End If
+    End Sub
 
     'metodo que valida el patron del mail
     Private Sub ValidarEmail()
@@ -341,10 +375,34 @@ Public Class Form1
 
     End Sub
     'cuando sale del txt invoca a la validacion del mail
-    Private Sub txt_mail_LostFocus(sender As Object, e As System.EventArgs) Handles txt_mail.LostFocus
+    Private Sub txt_mail_LostFocus(sender As Object, e As System.EventArgs)
         ValidarEmail() 'Valida el email
 
     End Sub
+    'Validacion de todos los campos completos
+
+    'La funcion recibe el control que es un groupbox ahora
+    Public Function camposCompletos(ByVal groupbox As GroupBox) As Boolean
+        'Recorre todos y cada uno de los controles contenidos en el contenedor
+        For Each Control As Control In groupbox.Controls
+            'Si el control que se esta revisando es un textbox
+            If TypeOf Control Is TextBox Then
+                'Verificamos que tenga informacion
+                If Trim(Control.Text) = "" Then
+                    'Si no tiene informacion mandamos un MSGBOX con el mensaje apropiado el cual se encuentra en el tag del control
+                    MsgBox("No ha introducido datos en " & Control.Tag, MsgBoxStyle.OkOnly + MsgBoxStyle.Information, Application.ProductName)
+
+                    'Regresa un falso indicando que los controles no estan llenados correctamente
+                    Return False
+                End If
+            Else
+
+            End If
+
+        Next
+        Return True
+    End Function
+
 
 
 End Class
