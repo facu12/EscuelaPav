@@ -25,13 +25,14 @@
         Dim comandStr As String
         comandStr = "INSERT INTO dbo.Profesor VALUES("
         comandStr += "'" + oProfesor.legajo.ToString + "', "
-        comandStr += "'" + oProfesor.nombre + "', "
-        comandStr += "'" + oProfesor.apellido + "',"
+        comandStr += "'" + oProfesor.nombre.ToString + "', "
+        comandStr += "'" + oProfesor.apellido.ToString + "',"
         comandStr += "'" + oProfesor.dni.ToString + "', "
-        comandStr += "'" + oProfesor.fecha_nac.ToString + "', "
+        comandStr += "'" + oProfesor.fecha_nac.Year.ToString + "-" + oProfesor.fecha_nac.Month.ToString + "-" + oProfesor.fecha_nac.Day.ToString + "', "
         comandStr += "'" + oProfesor.año_ingreso.ToString + "', "
         comandStr += "'" + oProfesor.tel.ToString + "', "
-        comandStr += "')"
+        comandStr += "'" + oProfesor.mail.ToString + "'"
+        comandStr += ")"
 
         Return (BDHelper.getDBHelper().EjecutarSQL(comandStr) = 1)
     End Function
@@ -43,10 +44,10 @@
         comandStr += "nombre= '" + oProfesor.nombre.ToString + "', "
         comandStr += "apellido= '" + oProfesor.apellido + "', "
         comandStr += "dni='" + oProfesor.dni.ToString + "', "
-        comandStr += "fecha_nac= " + oProfesor.fecha_nac.ToString + ", "
+        comandStr += "fecha_nac= '" + oProfesor.fecha_nac.Year.ToString + "-" + oProfesor.fecha_nac.Month.ToString + "-" + oProfesor.fecha_nac.Day.ToString + "', "
         comandStr += "año_ingreso= '" + oProfesor.año_ingreso.ToString + "', "
-        comandStr += "tel= '" + oProfesor.tel.ToString + "', "
-        comandStr += "WHERE legajo= " + oProfesor.legajo
+        comandStr += "tel= '" + oProfesor.tel.ToString + "' "
+        comandStr += "WHERE legajo= " + oProfesor.legajo.ToString
 
         Return (BDHelper.getDBHelper().EjecutarSQL(comandStr) = 1)
     End Function

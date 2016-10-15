@@ -29,7 +29,7 @@
         comandStr = "UPDATE Materia SET "
         ' comandStr += "cod_materia='" + oMateria.codMateria + "',"
         comandStr += "nombre= '" + oMateria.nombre + "', "
-        comandStr += "es_Contraturno= " + oMateria.UnoCero(oMateria.esContraturno)
+        comandStr += "es_contratraturno= " + oMateria.UnoCero(oMateria.esContraturno)
         comandStr += " WHERE cod_materia=" + oMateria.codMateria.ToString
 
         Return (BDHelper.getDBHelper().EjecutarSQL(comandStr) = 1)
@@ -52,7 +52,7 @@
         With oMateria
             .codMateria = row.Item("cod_materia").ToString
             .nombre = row.Item("nombre").ToString
-            .esContraturno = row.Item("es_Contraturno").ToString
+            .esContraturno = row.Item("es_contratraturno").ToString
         End With
         Return oMateria
     End Function

@@ -219,7 +219,7 @@
         'cargo los txt con los datos de la linea seleccionada
         txt_cod_materia.Text = dgv_materias.CurrentRow.Cells.Item("col_cod_materia").Value
         txt_nombre.Text = dgv_materias.CurrentRow.Cells.Item("col_nombre").Value
-        chkContraturno.Checked = TrueFlase(dgv_materias.CurrentRow.Cells.Item("col_contraturno").Value)
+        chkContraturno.Checked = TrueFlase(dgv_materias.CurrentRow.Cells.Item("col_Contraturno").Value)
 
     End Sub
 
