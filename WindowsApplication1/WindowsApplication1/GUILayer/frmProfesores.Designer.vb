@@ -22,7 +22,6 @@ Partial Class frmProfesores
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txt_ano_ingreso = New System.Windows.Forms.TextBox()
         Me.lbl_an_ingreso = New System.Windows.Forms.Label()
         Me.dtp_profesor = New System.Windows.Forms.DateTimePicker()
@@ -38,7 +37,6 @@ Partial Class frmProfesores
         Me.btn_salir = New System.Windows.Forms.Button()
         Me.btn_editar = New System.Windows.Forms.Button()
         Me.btn_agregar = New System.Windows.Forms.Button()
-        Me.lbl_Mensajes = New System.Windows.Forms.Label()
         Me.txt_Nombres = New System.Windows.Forms.TextBox()
         Me.lbl_nombre = New System.Windows.Forms.Label()
         Me.txt_Apellido = New System.Windows.Forms.TextBox()
@@ -59,53 +57,26 @@ Partial Class frmProfesores
         Me.txt_busqueda_profesor = New System.Windows.Forms.TextBox()
         Me.cmdConsultar = New System.Windows.Forms.Button()
         Me.lbl_profesor = New System.Windows.Forms.Label()
-        Me.Panel1.SuspendLayout()
+        Me.groupbox_prof = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_profesores, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.groupbox_prof.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.txt_ano_ingreso)
-        Me.Panel1.Controls.Add(Me.lbl_an_ingreso)
-        Me.Panel1.Controls.Add(Me.dtp_profesor)
-        Me.Panel1.Controls.Add(Me.txt_mail)
-        Me.Panel1.Controls.Add(Me.lbl_mail)
-        Me.Panel1.Controls.Add(Me.lbl_fecha_nac)
-        Me.Panel1.Controls.Add(Me.txt_telefono)
-        Me.Panel1.Controls.Add(Me.lbl_telefono)
-        Me.Panel1.Controls.Add(Me.txt_documento)
-        Me.Panel1.Controls.Add(Me.lbl_documento)
-        Me.Panel1.Controls.Add(Me.btn_cancelar)
-        Me.Panel1.Controls.Add(Me.btn_confirmar)
-        Me.Panel1.Controls.Add(Me.btn_salir)
-        Me.Panel1.Controls.Add(Me.btn_editar)
-        Me.Panel1.Controls.Add(Me.btn_agregar)
-        Me.Panel1.Controls.Add(Me.lbl_Mensajes)
-        Me.Panel1.Controls.Add(Me.txt_Nombres)
-        Me.Panel1.Controls.Add(Me.lbl_nombre)
-        Me.Panel1.Controls.Add(Me.txt_Apellido)
-        Me.Panel1.Controls.Add(Me.lbl_apellido)
-        Me.Panel1.Controls.Add(Me.txt_Legajo)
-        Me.Panel1.Controls.Add(Me.lbl_legajo)
-        Me.Panel1.Location = New System.Drawing.Point(12, 12)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(457, 446)
-        Me.Panel1.TabIndex = 30
         '
         'txt_ano_ingreso
         '
         Me.txt_ano_ingreso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_ano_ingreso.Location = New System.Drawing.Point(167, 186)
+        Me.txt_ano_ingreso.Location = New System.Drawing.Point(163, 190)
         Me.txt_ano_ingreso.MaxLength = 4
         Me.txt_ano_ingreso.Name = "txt_ano_ingreso"
         Me.txt_ano_ingreso.Size = New System.Drawing.Size(182, 20)
         Me.txt_ano_ingreso.TabIndex = 53
+        Me.txt_ano_ingreso.Tag = "Año Ingreso"
         '
         'lbl_an_ingreso
         '
         Me.lbl_an_ingreso.AutoSize = True
-        Me.lbl_an_ingreso.Location = New System.Drawing.Point(21, 188)
+        Me.lbl_an_ingreso.Location = New System.Drawing.Point(17, 192)
         Me.lbl_an_ingreso.Name = "lbl_an_ingreso"
         Me.lbl_an_ingreso.Size = New System.Drawing.Size(70, 13)
         Me.lbl_an_ingreso.TabIndex = 52
@@ -113,23 +84,26 @@ Partial Class frmProfesores
         '
         'dtp_profesor
         '
-        Me.dtp_profesor.Location = New System.Drawing.Point(164, 212)
+        Me.dtp_profesor.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp_profesor.Location = New System.Drawing.Point(163, 218)
         Me.dtp_profesor.Name = "dtp_profesor"
-        Me.dtp_profesor.Size = New System.Drawing.Size(200, 20)
+        Me.dtp_profesor.Size = New System.Drawing.Size(182, 20)
         Me.dtp_profesor.TabIndex = 51
         '
         'txt_mail
         '
         Me.txt_mail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_mail.Location = New System.Drawing.Point(167, 151)
+        Me.txt_mail.Location = New System.Drawing.Point(163, 162)
+        Me.txt_mail.MaxLength = 50
         Me.txt_mail.Name = "txt_mail"
         Me.txt_mail.Size = New System.Drawing.Size(182, 20)
         Me.txt_mail.TabIndex = 49
+        Me.txt_mail.Tag = "Email"
         '
         'lbl_mail
         '
         Me.lbl_mail.AutoSize = True
-        Me.lbl_mail.Location = New System.Drawing.Point(21, 153)
+        Me.lbl_mail.Location = New System.Drawing.Point(17, 164)
         Me.lbl_mail.Name = "lbl_mail"
         Me.lbl_mail.Size = New System.Drawing.Size(35, 13)
         Me.lbl_mail.TabIndex = 48
@@ -138,7 +112,7 @@ Partial Class frmProfesores
         'lbl_fecha_nac
         '
         Me.lbl_fecha_nac.AutoSize = True
-        Me.lbl_fecha_nac.Location = New System.Drawing.Point(21, 212)
+        Me.lbl_fecha_nac.Location = New System.Drawing.Point(17, 220)
         Me.lbl_fecha_nac.Name = "lbl_fecha_nac"
         Me.lbl_fecha_nac.Size = New System.Drawing.Size(111, 13)
         Me.lbl_fecha_nac.TabIndex = 47
@@ -147,16 +121,17 @@ Partial Class frmProfesores
         'txt_telefono
         '
         Me.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_telefono.Location = New System.Drawing.Point(167, 121)
+        Me.txt_telefono.Location = New System.Drawing.Point(163, 134)
         Me.txt_telefono.MaxLength = 10
         Me.txt_telefono.Name = "txt_telefono"
         Me.txt_telefono.Size = New System.Drawing.Size(182, 20)
         Me.txt_telefono.TabIndex = 46
+        Me.txt_telefono.Tag = "Telefono"
         '
         'lbl_telefono
         '
         Me.lbl_telefono.AutoSize = True
-        Me.lbl_telefono.Location = New System.Drawing.Point(21, 121)
+        Me.lbl_telefono.Location = New System.Drawing.Point(17, 136)
         Me.lbl_telefono.Name = "lbl_telefono"
         Me.lbl_telefono.Size = New System.Drawing.Size(52, 13)
         Me.lbl_telefono.TabIndex = 45
@@ -165,16 +140,17 @@ Partial Class frmProfesores
         'txt_documento
         '
         Me.txt_documento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_documento.Location = New System.Drawing.Point(167, 91)
+        Me.txt_documento.Location = New System.Drawing.Point(163, 106)
         Me.txt_documento.MaxLength = 8
         Me.txt_documento.Name = "txt_documento"
         Me.txt_documento.Size = New System.Drawing.Size(182, 20)
         Me.txt_documento.TabIndex = 44
+        Me.txt_documento.Tag = "Documento"
         '
         'lbl_documento
         '
         Me.lbl_documento.AutoSize = True
-        Me.lbl_documento.Location = New System.Drawing.Point(21, 95)
+        Me.lbl_documento.Location = New System.Drawing.Point(17, 108)
         Me.lbl_documento.Name = "lbl_documento"
         Me.lbl_documento.Size = New System.Drawing.Size(65, 13)
         Me.lbl_documento.TabIndex = 43
@@ -186,7 +162,7 @@ Partial Class frmProfesores
         Me.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_cancelar.Image = Global.WindowsApplication1.My.Resources.Resources.cancelar
         Me.btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_cancelar.Location = New System.Drawing.Point(274, 368)
+        Me.btn_cancelar.Location = New System.Drawing.Point(270, 379)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 54)
         Me.btn_cancelar.TabIndex = 38
@@ -200,7 +176,7 @@ Partial Class frmProfesores
         Me.btn_confirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_confirmar.Image = Global.WindowsApplication1.My.Resources.Resources.Confirmar
         Me.btn_confirmar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_confirmar.Location = New System.Drawing.Point(179, 368)
+        Me.btn_confirmar.Location = New System.Drawing.Point(175, 379)
         Me.btn_confirmar.Name = "btn_confirmar"
         Me.btn_confirmar.Size = New System.Drawing.Size(75, 54)
         Me.btn_confirmar.TabIndex = 37
@@ -214,7 +190,7 @@ Partial Class frmProfesores
         Me.btn_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_salir.Image = Global.WindowsApplication1.My.Resources.Resources.salir
         Me.btn_salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_salir.Location = New System.Drawing.Point(363, 368)
+        Me.btn_salir.Location = New System.Drawing.Point(359, 379)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(75, 55)
         Me.btn_salir.TabIndex = 34
@@ -228,7 +204,7 @@ Partial Class frmProfesores
         Me.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_editar.Image = Global.WindowsApplication1.My.Resources.Resources.editar
         Me.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_editar.Location = New System.Drawing.Point(273, 367)
+        Me.btn_editar.Location = New System.Drawing.Point(269, 378)
         Me.btn_editar.Name = "btn_editar"
         Me.btn_editar.Size = New System.Drawing.Size(75, 55)
         Me.btn_editar.TabIndex = 33
@@ -242,7 +218,7 @@ Partial Class frmProfesores
         Me.btn_agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_agregar.Image = Global.WindowsApplication1.My.Resources.Resources.agregar
         Me.btn_agregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_agregar.Location = New System.Drawing.Point(179, 367)
+        Me.btn_agregar.Location = New System.Drawing.Point(175, 378)
         Me.btn_agregar.Name = "btn_agregar"
         Me.btn_agregar.Size = New System.Drawing.Size(75, 55)
         Me.btn_agregar.TabIndex = 32
@@ -250,27 +226,20 @@ Partial Class frmProfesores
         Me.btn_agregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_agregar.UseVisualStyleBackColor = False
         '
-        'lbl_Mensajes
-        '
-        Me.lbl_Mensajes.AutoSize = True
-        Me.lbl_Mensajes.Location = New System.Drawing.Point(18, 303)
-        Me.lbl_Mensajes.Name = "lbl_Mensajes"
-        Me.lbl_Mensajes.Size = New System.Drawing.Size(68, 13)
-        Me.lbl_Mensajes.TabIndex = 27
-        Me.lbl_Mensajes.Text = "[lblMensajes]"
-        '
         'txt_Nombres
         '
         Me.txt_Nombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_Nombres.Location = New System.Drawing.Point(167, 65)
+        Me.txt_Nombres.Location = New System.Drawing.Point(163, 78)
+        Me.txt_Nombres.MaxLength = 50
         Me.txt_Nombres.Name = "txt_Nombres"
         Me.txt_Nombres.Size = New System.Drawing.Size(182, 20)
         Me.txt_Nombres.TabIndex = 10
+        Me.txt_Nombres.Tag = "Nombres"
         '
         'lbl_nombre
         '
         Me.lbl_nombre.AutoSize = True
-        Me.lbl_nombre.Location = New System.Drawing.Point(23, 65)
+        Me.lbl_nombre.Location = New System.Drawing.Point(19, 80)
         Me.lbl_nombre.Name = "lbl_nombre"
         Me.lbl_nombre.Size = New System.Drawing.Size(52, 13)
         Me.lbl_nombre.TabIndex = 9
@@ -279,15 +248,17 @@ Partial Class frmProfesores
         'txt_Apellido
         '
         Me.txt_Apellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_Apellido.Location = New System.Drawing.Point(167, 38)
+        Me.txt_Apellido.Location = New System.Drawing.Point(163, 50)
+        Me.txt_Apellido.MaxLength = 50
         Me.txt_Apellido.Name = "txt_Apellido"
         Me.txt_Apellido.Size = New System.Drawing.Size(182, 20)
         Me.txt_Apellido.TabIndex = 1
+        Me.txt_Apellido.Tag = "Apellido"
         '
         'lbl_apellido
         '
         Me.lbl_apellido.AutoSize = True
-        Me.lbl_apellido.Location = New System.Drawing.Point(21, 38)
+        Me.lbl_apellido.Location = New System.Drawing.Point(17, 52)
         Me.lbl_apellido.Name = "lbl_apellido"
         Me.lbl_apellido.Size = New System.Drawing.Size(47, 13)
         Me.lbl_apellido.TabIndex = 0
@@ -296,15 +267,16 @@ Partial Class frmProfesores
         'txt_Legajo
         '
         Me.txt_Legajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_Legajo.Location = New System.Drawing.Point(167, 11)
+        Me.txt_Legajo.Location = New System.Drawing.Point(163, 22)
         Me.txt_Legajo.Name = "txt_Legajo"
         Me.txt_Legajo.Size = New System.Drawing.Size(182, 20)
         Me.txt_Legajo.TabIndex = 0
+        Me.txt_Legajo.Tag = "Legajo"
         '
         'lbl_legajo
         '
         Me.lbl_legajo.AutoSize = True
-        Me.lbl_legajo.Location = New System.Drawing.Point(21, 13)
+        Me.lbl_legajo.Location = New System.Drawing.Point(17, 24)
         Me.lbl_legajo.Name = "lbl_legajo"
         Me.lbl_legajo.Size = New System.Drawing.Size(42, 13)
         Me.lbl_legajo.TabIndex = 0
@@ -319,7 +291,7 @@ Partial Class frmProfesores
         Me.GroupBox1.Controls.Add(Me.lbl_profesor)
         Me.GroupBox1.Location = New System.Drawing.Point(485, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(448, 443)
+        Me.GroupBox1.Size = New System.Drawing.Size(442, 443)
         Me.GroupBox1.TabIndex = 31
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Lista de Profesores"
@@ -420,29 +392,55 @@ Partial Class frmProfesores
         Me.lbl_profesor.TabIndex = 13
         Me.lbl_profesor.Text = "Profesor:"
         '
+        'groupbox_prof
+        '
+        Me.groupbox_prof.Controls.Add(Me.txt_ano_ingreso)
+        Me.groupbox_prof.Controls.Add(Me.lbl_legajo)
+        Me.groupbox_prof.Controls.Add(Me.lbl_an_ingreso)
+        Me.groupbox_prof.Controls.Add(Me.txt_Legajo)
+        Me.groupbox_prof.Controls.Add(Me.dtp_profesor)
+        Me.groupbox_prof.Controls.Add(Me.lbl_apellido)
+        Me.groupbox_prof.Controls.Add(Me.txt_mail)
+        Me.groupbox_prof.Controls.Add(Me.txt_Apellido)
+        Me.groupbox_prof.Controls.Add(Me.lbl_mail)
+        Me.groupbox_prof.Controls.Add(Me.lbl_nombre)
+        Me.groupbox_prof.Controls.Add(Me.lbl_fecha_nac)
+        Me.groupbox_prof.Controls.Add(Me.txt_Nombres)
+        Me.groupbox_prof.Controls.Add(Me.txt_telefono)
+        Me.groupbox_prof.Controls.Add(Me.lbl_telefono)
+        Me.groupbox_prof.Controls.Add(Me.btn_agregar)
+        Me.groupbox_prof.Controls.Add(Me.txt_documento)
+        Me.groupbox_prof.Controls.Add(Me.btn_editar)
+        Me.groupbox_prof.Controls.Add(Me.lbl_documento)
+        Me.groupbox_prof.Controls.Add(Me.btn_salir)
+        Me.groupbox_prof.Controls.Add(Me.btn_cancelar)
+        Me.groupbox_prof.Controls.Add(Me.btn_confirmar)
+        Me.groupbox_prof.Location = New System.Drawing.Point(23, 12)
+        Me.groupbox_prof.Name = "groupbox_prof"
+        Me.groupbox_prof.Size = New System.Drawing.Size(442, 443)
+        Me.groupbox_prof.TabIndex = 27
+        Me.groupbox_prof.TabStop = False
+        '
         'frmProfesores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(968, 473)
+        Me.Controls.Add(Me.groupbox_prof)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Panel1)
         Me.Name = "frmProfesores"
         Me.Text = "Profesores"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgv_profesores, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.groupbox_prof.ResumeLayout(False)
+        Me.groupbox_prof.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents btn_salir As Button
     Friend WithEvents btn_editar As Button
     Friend WithEvents btn_agregar As Button
-    Friend WithEvents lbl_Mensajes As Label
     Friend WithEvents txt_Nombres As TextBox
     Friend WithEvents lbl_nombre As Label
     Friend WithEvents txt_Apellido As TextBox
@@ -475,4 +473,5 @@ Partial Class frmProfesores
     Friend WithEvents col_ano_ingreso As DataGridViewTextBoxColumn
     Friend WithEvents col_mail As DataGridViewTextBoxColumn
     Friend WithEvents col_fecha_nac As DataGridViewTextBoxColumn
+    Friend WithEvents groupbox_prof As GroupBox
 End Class
