@@ -4,10 +4,14 @@ Imports System.Text.RegularExpressions
 Public Class frmProfesores
 
     Private Sub frm_Profesores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         'carga la grilla apenas abre la ventana
         llenarGrid()
         'muestra los btn al momento del inicio
         btnMomentoInicial()
+
+
+
     End Sub
 
     Enum Action_type
@@ -63,50 +67,46 @@ Public Class frmProfesores
     End Sub
 
     Private Sub btn_confirmar_Click(sender As Object, e As EventArgs) Handles btn_confirmar.Click
-        If camposCompletos(groupbox_prof) = True Then
 
 
-            If MessageBox.Show("Seguro que desea confirmar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
 
-                'dimensiono alumno apartir de los txt
-                Dim prof As Profesor
-                prof = crearProfesor()
-                'dimensiono rta segun realiza con exito o no la consulta sql
-                Dim rta As Boolean
-                'dimensiono el servicio 
-                Dim oProfesorService As New ProfesorService
+        If MessageBox.Show("Seguro que desea confirmar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
 
-                'verifico si es un nuevo alumno o modifico uno ya creado 
-                If action = Action_type.Insert Then
-                    'tomo el alumno creado por la funcion y se la paso al servicio para crear
+            'dimensiono alumno apartir de los txt
+            Dim prof As Profesor
+            prof = crearProfesor()
+            'dimensiono rta segun realiza con exito o no la consulta sql
+            Dim rta As Boolean
+            'dimensiono el servicio 
+            Dim oProfesorService As New ProfesorService
 
-                    rta = oProfesorService.registrarProfesor(prof)
-                Else
-                    'tomo al alumno creado por la funcion y se lo paso al servicio para actualizar
-                    rta = oProfesorService.actualizarProfesor(prof)
-                End If
+            'verifico si es un nuevo alumno o modifico uno ya creado 
+            If action = Action_type.Insert Then
+                'tomo el alumno creado por la funcion y se la paso al servicio para crear
+
+                rta = oProfesorService.registrarProfesor(prof)
+            Else
+                'tomo al alumno creado por la funcion y se lo paso al servicio para actualizar
+                rta = oProfesorService.actualizarProfesor(prof)
+            End If
 
 
-                'vuelve al estado incial los btn 
-                limpiarCampos()
-                btnMomentoInicial()
+            'vuelve al estado incial los btn 
+            limpiarCampos()
+            btnMomentoInicial()
 
-                'segun si pudo o no realizar la consulta sql, muestro un aviso
-                If rta = True Then
-                    MsgBox("operacion realizada exitosamente", vbOKOnly + MsgBoxStyle.Information, "Aviso")
-                    llenarGrid()
-                    limpiarCampos()
-                    btnMomentoInicial()
-                Else
-                    MsgBox("operacion no se realizo con exito", vbOKOnly + MsgBoxStyle.Information, "Aviso")
-                    limpiarCampos()
-                    btnMomentoInicial()
-                End If
+            'segun si pudo o no realizar la consulta sql, muestro un aviso
+            If rta = True Then
+                MsgBox("operacion realizada exitosamente", vbOKOnly + MsgBoxStyle.Information, "Aviso")
 
             Else
-
+                MsgBox("operacion no se realizo con exito", vbOKOnly + MsgBoxStyle.Information, "Aviso")
 
             End If
+
+        Else
+
+
         End If
 
     End Sub
@@ -114,6 +114,7 @@ Public Class frmProfesores
     Private Function crearProfesor()
         Dim prof As New Profesor
         With prof
+
 
             .legajo = txt_Legajo.Text.ToString
             .apellido = txt_Apellido.Text.ToString
@@ -123,6 +124,7 @@ Public Class frmProfesores
             .mail = txt_mail.Text.ToString
             .año_ingreso = txt_ano_ingreso.Text.ToString
             .tel = txt_telefono.Text.ToString
+
 
         End With
         Return prof
@@ -151,7 +153,7 @@ Public Class frmProfesores
         btn_salir.Enabled = True
         btn_agregar.Visible = True
         btn_agregar.Enabled = True
-        dgv_profesores.Enabled = True
+
     End Sub
 
     Private Sub btn_cancelar_Click(sender As Object, e As EventArgs) Handles btn_cancelar.Click
@@ -175,33 +177,29 @@ Public Class frmProfesores
         limpiarCampos()
 
         'Habilita los txt para carga de datos 
-        habilitarCampos()
+        txt_Apellido.Enabled = True
+        txt_Legajo.Enabled = True
+        txt_Nombres.Enabled = True
+        txt_ano_ingreso.Enabled = True
+        txt_documento.Enabled = True
+        txt_mail.Enabled = True
+        txt_telefono.Enabled = True
+        dtp_profesor.Enabled = True
 
         'habilito y muestro btn de confirmar y cancelar
         btn_cancelar.Enabled = True
         btn_cancelar.Visible = True
         btn_confirmar.Visible = True
         btn_confirmar.Enabled = True
+
         btn_agregar.Visible = False
         btn_agregar.Enabled = False
         btn_editar.Visible = False
         btn_editar.Enabled = False
-        dgv_profesores.Enabled = False
+
     End Sub
 
-    Private Sub habilitarCampos()
-        'Habilita los txt para carga de datos 
-        txt_telefono.Enabled = True
-        txt_Apellido.Enabled = True
-        txt_Nombres.Enabled = True
-        txt_documento.Enabled = True
-        txt_ano_ingreso.Enabled = True
-        txt_mail.Enabled = True
-        dtp_profesor.Enabled = True
-        txt_Legajo.Enabled = True
-    End Sub
-
-    Private Sub dgv_listarProfesores_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_profesores.CellContentClick
+    Private Sub dgv_listarAlumnos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_profesores.CellContentClick
 
         'habilito boton editar
         btn_editar.Enabled = True
@@ -216,6 +214,9 @@ Public Class frmProfesores
         txt_telefono.Text = dgv_profesores.CurrentRow.Cells.Item("col_tel").Value
         dtp_profesor.Value = Convert.ToDateTime(dgv_profesores.CurrentRow.Cells.Item("col_fecha_nac").Value)
 
+
+
+
     End Sub
 
 
@@ -225,8 +226,15 @@ Public Class frmProfesores
 
         'Habilita los txt para carga de datos excepto el legajo porque es PK 
 
-        habilitarCampos()
         txt_Legajo.Enabled = False
+        txt_Apellido.Enabled = True
+
+        txt_Nombres.Enabled = True
+        txt_ano_ingreso.Enabled = True
+        txt_documento.Enabled = True
+        txt_mail.Enabled = True
+        txt_telefono.Enabled = True
+        dtp_profesor.Enabled = True
 
 
         'habilito y muestro btn de confirmar y cancelar
@@ -234,6 +242,7 @@ Public Class frmProfesores
         btn_agregar.Enabled = False
         btn_editar.Visible = False
         btn_editar.Enabled = False
+
         btn_cancelar.Enabled = True
         btn_cancelar.Visible = True
         btn_confirmar.Visible = True
@@ -275,20 +284,53 @@ Public Class frmProfesores
     '///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     'A PARTIR DE ACÁ, VALIDACIONES DE CAMPOS
     '///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    'Metodos de validacion de campos de texto plano
+    Private Sub txtNombres_LostFocus(sender As Object, e As EventArgs)
 
-    'Metodos de validacion de campos numericos unicamente
-    Private Sub validarNumericos(sender As Object, e As EventArgs) Handles txt_telefono.Leave, txt_ano_ingreso.Leave, txt_documento.Leave, txt_Legajo.Leave
-        If Not Regex.Match(CType(sender, TextBox).Text, "^[0-9]\d*(\.\d+)?$").Success Then
-            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
-            CType(sender, TextBox).Clear()
+        If Not Regex.Match(txt_Nombres.Text, "^[a-z]*$", RegexOptions.IgnoreCase).Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres alfabéticos!")
+            'txtNombres.Focus()
+            txt_Nombres.Clear()
         End If
     End Sub
 
-    'Validacion de campos de texto plano
-    Private Sub validarTextoPlano(sender As Object, e As EventArgs) Handles txt_Nombres.Leave, txt_Apellido.Leave
-        If Not Regex.Match(CType(sender, TextBox).Text, "^[a-z]*$", RegexOptions.IgnoreCase).Success Then
+    Private Sub txtApellido_LostFocus(sender As Object, e As EventArgs)
+        If Not Regex.Match(txt_Apellido.Text, "^[a-z]*$", RegexOptions.IgnoreCase).Success Then
             MessageBox.Show("Por favor ingrese SOLO caracteres alfabéticos!")
-            CType(sender, TextBox).Clear()
+            ' txtApellido.Focus()
+            txt_Apellido.Clear()
+        End If
+    End Sub
+
+    'Metodos de validacion de campos numericos unicamente
+    Private Sub txt_telefono_LostFocus(sender As Object, e As EventArgs)
+        If Not Regex.Match(txt_telefono.Text, "^[0-9]\d*(\.\d+)?$").Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
+            'txt_telefono.Focus()
+            txt_telefono.Clear()
+        End If
+    End Sub
+
+    Private Sub txt_ano_ingreso_LostFocus(sender As Object, e As EventArgs)
+        If Not Regex.Match(txt_ano_ingreso.Text, "^[0-9]\d*(\.\d+)?$").Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
+            'txt_ano_ingreso.Focus()
+            txt_ano_ingreso.Clear()
+        End If
+    End Sub
+
+    Private Sub txt_documento_LostFocus(sender As Object, e As EventArgs)
+        If Not Regex.Match(txt_documento.Text, "^[0-9]\d*(\.\d+)?$").Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
+            ' txt_documento.Focus()
+            txt_documento.Clear()
+        End If
+    End Sub
+    Private Sub txtLegajo_LostFocus(sender As Object, e As EventArgs)
+        If Not Regex.Match(txt_Legajo.Text, "^[0-9]\d*(\.\d+)?$").Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
+            'txtLegajo.Focus()
+            txt_Legajo.Clear()
         End If
     End Sub
 
@@ -316,13 +358,13 @@ Public Class frmProfesores
 
             MessageBox.Show("Direccion de Email Invalida!")
             txt_mail.Clear()
-
+            'txt_mail.Focus()
 
         End If
 
     End Sub
     'cuando sale del txt invoca a la validacion del mail
-    Private Sub txt_mail_Leave(sender As Object, e As System.EventArgs) Handles txt_mail.Leave
+    Private Sub txt_mail_LostFocus(sender As Object, e As System.EventArgs)
         ValidarEmail() 'Valida el email
 
     End Sub
@@ -349,5 +391,6 @@ Public Class frmProfesores
         Next
         Return True
     End Function
+
 
 End Class
