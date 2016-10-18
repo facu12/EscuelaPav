@@ -90,6 +90,12 @@
     <Compile Include="DataLayer\DAOs\ProfesorDAO.vb" />
     <Compile Include="DataLayer\DAOs\UserDAO.vb" />
     <Compile Include="DataLayer\Helper\BDHelper.vb" />
+    <Compile Include="GUILayer\frmAsignarAlumno.Designer.vb">
+      <DependentUpon>frmAsignarAlumno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmAsignarAlumno.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\frmAsistencia.Designer.vb">
       <DependentUpon>frmAsistencia.vb</DependentUpon>
     </Compile>
@@ -156,6 +162,9 @@
     <Compile Include="Settings.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUILayer\frmAsignarAlumno.resx">
+      <DependentUpon>frmAsignarAlumno.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmAsistencia.resx">
       <DependentUpon>frmAsistencia.vb</DependentUpon>
     </EmbeddedResource>
