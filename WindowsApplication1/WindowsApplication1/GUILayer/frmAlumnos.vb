@@ -108,9 +108,12 @@ Public Class Form1
                 If rta = True Then
                     MsgBox("operacion realizada exitosamente", vbOKOnly + MsgBoxStyle.Information, "Aviso")
                     llenarGrid()
+                    limpiarCampos()
+                    btnMomentoInicial()
                 Else
                     MsgBox("operacion no se realizo con exito", vbOKOnly + MsgBoxStyle.Information, "Aviso")
-
+                    limpiarCampos()
+                    btnMomentoInicial()
                 End If
 
             Else

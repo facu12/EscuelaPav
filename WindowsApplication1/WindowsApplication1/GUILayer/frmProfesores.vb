@@ -1,4 +1,5 @@
 ﻿Imports WindowsApplication1
+Imports System.Text.RegularExpressions
 
 Public Class frmProfesores
 
@@ -59,13 +60,15 @@ Public Class frmProfesores
         txt_documento.Clear()
         txt_mail.Clear()
         txt_telefono.Clear()
+        txt_ano_ingreso.Clear()
         dtp_profesor.Value = Date.Now()
+        txt_busqueda_profesor.Clear()
 
     End Sub
 
     Private Sub btn_confirmar_Click(sender As Object, e As EventArgs) Handles btn_confirmar.Click
 
-        'FALTA VALIDACIONES DE CAMPOS  Y TIPOS 
+
 
         If MessageBox.Show("Seguro que desea confirmar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
 
@@ -95,7 +98,7 @@ Public Class frmProfesores
             'segun si pudo o no realizar la consulta sql, muestro un aviso
             If rta = True Then
                 MsgBox("operacion realizada exitosamente", vbOKOnly + MsgBoxStyle.Information, "Aviso")
-                llenarGrid()
+
             Else
                 MsgBox("operacion no se realizo con exito", vbOKOnly + MsgBoxStyle.Information, "Aviso")
 
@@ -103,8 +106,7 @@ Public Class frmProfesores
 
         Else
 
-            limpiarCampos()
-            btnMomentoInicial()
+
         End If
 
     End Sub
@@ -114,14 +116,14 @@ Public Class frmProfesores
         With prof
 
 
-            .legajo = txt_Legajo.Text
-            .apellido = txt_Apellido.Text
-            .nombre = txt_Nombres.Text
-            .dni = txt_documento.Text
+            .legajo = txt_Legajo.Text.ToString
+            .apellido = txt_Apellido.Text.ToString
+            .nombre = txt_Nombres.Text.ToString
+            .dni = txt_documento.Text.ToString
             .fecha_nac = dtp_profesor.Value.ToString
-            .mail = txt_mail.ToString
-            .año_ingreso = txt_ano_ingreso.ToString
-            .tel = txt_telefono.ToString
+            .mail = txt_mail.Text.ToString
+            .año_ingreso = txt_ano_ingreso.Text.ToString
+            .tel = txt_telefono.Text.ToString
 
 
         End With
@@ -147,7 +149,9 @@ Public Class frmProfesores
         btn_cancelar.Visible = False
         btn_cancelar.Enabled = False
         btn_editar.Enabled = False
+        btn_editar.Visible = True
         btn_salir.Enabled = True
+        btn_agregar.Visible = True
         btn_agregar.Enabled = True
 
     End Sub
@@ -180,6 +184,7 @@ Public Class frmProfesores
         txt_documento.Enabled = True
         txt_mail.Enabled = True
         txt_telefono.Enabled = True
+        dtp_profesor.Enabled = True
 
         'habilito y muestro btn de confirmar y cancelar
         btn_cancelar.Enabled = True
@@ -203,11 +208,11 @@ Public Class frmProfesores
         txt_Apellido.Text = dgv_profesores.CurrentRow.Cells.Item("col_apellido").Value
         txt_Legajo.Text = dgv_profesores.CurrentRow.Cells.Item("col_legajo").Value
         txt_Nombres.Text = dgv_profesores.CurrentRow.Cells.Item("col_nombre").Value
-        txt_ano_ingreso = dgv_profesores.CurrentRow.Cells.Item("col_ano_ingreso").Value
-        txt_documento = dgv_profesores.CurrentRow.Cells.Item("col_dni").Value
-        txt_mail = dgv_profesores.CurrentRow.Cells.Item("col_mail").Value
-        txt_telefono = dgv_profesores.CurrentRow.Cells.Item("col_tel").Value
-        dtp_profesor.Value = dgv_profesores.CurrentRow.Cells.Item("col_fecha_nac").Value
+        txt_ano_ingreso.Text = dgv_profesores.CurrentRow.Cells.Item("col_ano_ingreso").Value
+        txt_documento.Text = dgv_profesores.CurrentRow.Cells.Item("col_dni").Value
+        txt_mail.Text = dgv_profesores.CurrentRow.Cells.Item("col_mail").Value
+        txt_telefono.Text = dgv_profesores.CurrentRow.Cells.Item("col_tel").Value
+        dtp_profesor.Value = Convert.ToDateTime(dgv_profesores.CurrentRow.Cells.Item("col_fecha_nac").Value)
 
 
 
@@ -230,6 +235,7 @@ Public Class frmProfesores
         txt_mail.Enabled = True
         txt_telefono.Enabled = True
         dtp_profesor.Enabled = True
+
 
         'habilito y muestro btn de confirmar y cancelar
         btn_agregar.Visible = False
@@ -265,8 +271,126 @@ Public Class frmProfesores
 
             With oProfesor
                 'cargar filas del datagridview a partir de un array de strings
-                dgv_profesores.Rows.Add(New String() { .legajo.ToString, .apellido.ToString, .nombre.ToString})
+                dgv_profesores.Rows.Add(New String() { .legajo.ToString, .apellido.ToString, .nombre.ToString, .tel.ToString, .dni.ToString, .año_ingreso.ToString, .mail.ToString, .fecha_nac.ToString})
             End With
         Next
     End Sub
+
+
+
+
+
+
+    '///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    'A PARTIR DE ACÁ, VALIDACIONES DE CAMPOS
+    '///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    'Metodos de validacion de campos de texto plano
+    Private Sub txtNombres_LostFocus(sender As Object, e As EventArgs)
+
+        If Not Regex.Match(txt_Nombres.Text, "^[a-z]*$", RegexOptions.IgnoreCase).Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres alfabéticos!")
+            'txtNombres.Focus()
+            txt_Nombres.Clear()
+        End If
+    End Sub
+
+    Private Sub txtApellido_LostFocus(sender As Object, e As EventArgs)
+        If Not Regex.Match(txt_Apellido.Text, "^[a-z]*$", RegexOptions.IgnoreCase).Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres alfabéticos!")
+            ' txtApellido.Focus()
+            txt_Apellido.Clear()
+        End If
+    End Sub
+
+    'Metodos de validacion de campos numericos unicamente
+    Private Sub txt_telefono_LostFocus(sender As Object, e As EventArgs)
+        If Not Regex.Match(txt_telefono.Text, "^[0-9]\d*(\.\d+)?$").Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
+            'txt_telefono.Focus()
+            txt_telefono.Clear()
+        End If
+    End Sub
+
+    Private Sub txt_ano_ingreso_LostFocus(sender As Object, e As EventArgs)
+        If Not Regex.Match(txt_ano_ingreso.Text, "^[0-9]\d*(\.\d+)?$").Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
+            'txt_ano_ingreso.Focus()
+            txt_ano_ingreso.Clear()
+        End If
+    End Sub
+
+    Private Sub txt_documento_LostFocus(sender As Object, e As EventArgs)
+        If Not Regex.Match(txt_documento.Text, "^[0-9]\d*(\.\d+)?$").Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
+            ' txt_documento.Focus()
+            txt_documento.Clear()
+        End If
+    End Sub
+    Private Sub txtLegajo_LostFocus(sender As Object, e As EventArgs)
+        If Not Regex.Match(txt_Legajo.Text, "^[0-9]\d*(\.\d+)?$").Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
+            'txtLegajo.Focus()
+            txt_Legajo.Clear()
+        End If
+    End Sub
+
+    'metodo que valida el patron del mail
+    Private Sub ValidarEmail()
+
+        'armo un patron de mail
+        Dim reEmail As Regex = New Regex("([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\." +
+        ")|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})",
+        RegexOptions.IgnoreCase _
+        Or RegexOptions.CultureInvariant _
+        Or RegexOptions.IgnorePatternWhitespace _
+        Or RegexOptions.Compiled)
+
+        Dim blnPossibleMatch As Boolean = reEmail.IsMatch(txt_mail.Text)
+
+        If blnPossibleMatch Then
+
+            'chekea si el mail tiene el formato correcto
+            If Not txt_mail.Text.Equals(reEmail.Match(txt_mail.Text).ToString) Then
+                MessageBox.Show("Direccion de Email Invalida!")
+            End If
+
+        Else 'Si no pega con el patron
+
+            MessageBox.Show("Direccion de Email Invalida!")
+            txt_mail.Clear()
+            'txt_mail.Focus()
+
+        End If
+
+    End Sub
+    'cuando sale del txt invoca a la validacion del mail
+    Private Sub txt_mail_LostFocus(sender As Object, e As System.EventArgs)
+        ValidarEmail() 'Valida el email
+
+    End Sub
+    'Validacion de todos los campos completos
+
+    'La funcion recibe el control que es un groupbox ahora
+    Public Function camposCompletos(ByVal groupbox As GroupBox) As Boolean
+        'Recorre todos y cada uno de los controles contenidos en el contenedor
+        For Each Control As Control In groupbox.Controls
+            'Si el control que se esta revisando es un textbox
+            If TypeOf Control Is TextBox Then
+                'Verificamos que tenga informacion
+                If Trim(Control.Text) = "" Then
+                    'Si no tiene informacion mandamos un MSGBOX con el mensaje apropiado el cual se encuentra en el tag del control
+                    MsgBox("No ha introducido datos en " & Control.Tag, MsgBoxStyle.OkOnly + MsgBoxStyle.Information, Application.ProductName)
+
+                    'Regresa un falso indicando que los controles no estan llenados correctamente
+                    Return False
+                End If
+            Else
+
+            End If
+
+        Next
+        Return True
+    End Function
+
+
 End Class
