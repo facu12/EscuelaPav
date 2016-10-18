@@ -12,6 +12,20 @@
         Return alumnos
     End Function
 
+    Public Function getAlumnosTotal(curso As Integer) As List(Of Alumno)
+        Dim alumnos As New List(Of Alumno)
+        Dim strSQL = "SELECT * from Alumno WHERE legajo not in (select legajo from alumnosxcurso where cod_curso = '"
+        strSQL += curso.ToString + "')"
+
+
+        'Con la tabla devuelta por el Helper creamos N OBJETOS Bug a partir de los datos de la/s filas de la tabla Bugs
+        For Each row As DataRow In BDHelper.getDBHelper().ConsultaSQL(strSQL).Rows
+            alumnos.Add(map(row))
+        Next
+
+        Return alumnos
+    End Function
+
     Public Function add(ByVal oAlumno As Alumno) As Boolean
         Dim comandStr As String
         comandStr = "INSERT INTO dbo.Alumno VALUES("
