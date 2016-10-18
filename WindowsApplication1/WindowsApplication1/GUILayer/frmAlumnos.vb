@@ -295,53 +295,20 @@ Public Class Form1
     '///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     'A PARTIR DE ACÁ, VALIDACIONES DE CAMPOS
     '///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    'Metodos de validacion de campos de texto plano
-    Private Sub txtNombres_LostFocus(sender As Object, e As EventArgs)
-
-        If Not Regex.Match(txtNombres.Text, "^[a-z]*$", RegexOptions.IgnoreCase).Success Then
-            MessageBox.Show("Por favor ingrese SOLO caracteres alfabéticos!")
-            'txtNombres.Focus()
-            txtNombres.Clear()
-        End If
-    End Sub
-
-    Private Sub txtApellido_LostFocus(sender As Object, e As EventArgs)
-        If Not Regex.Match(txtApellido.Text, "^[a-z]*$", RegexOptions.IgnoreCase).Success Then
-            MessageBox.Show("Por favor ingrese SOLO caracteres alfabéticos!")
-            ' txtApellido.Focus()
-            txtApellido.Clear()
-        End If
-    End Sub
 
     'Metodos de validacion de campos numericos unicamente
-    Private Sub txt_telefono_LostFocus(sender As Object, e As EventArgs)
-        If Not Regex.Match(txt_telefono.Text, "^[0-9]\d*(\.\d+)?$").Success Then
+    Private Sub validarNumericos(sender As Object, e As EventArgs) Handles txt_telefono.Leave, txt_ano_ingreso.Leave, txt_documento.Leave, txtLegajo.Leave
+        If Not Regex.Match(CType(sender, TextBox).Text, "^[0-9]\d*(\.\d+)?$").Success Then
             MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
-            'txt_telefono.Focus()
-            txt_telefono.Clear()
+            CType(sender, TextBox).Clear()
         End If
     End Sub
 
-    Private Sub txt_ano_ingreso_LostFocus(sender As Object, e As EventArgs)
-        If Not Regex.Match(txt_ano_ingreso.Text, "^[0-9]\d*(\.\d+)?$").Success Then
-            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
-            'txt_ano_ingreso.Focus()
-            txt_ano_ingreso.Clear()
-        End If
-    End Sub
-
-    Private Sub txt_documento_LostFocus(sender As Object, e As EventArgs)
-        If Not Regex.Match(txt_documento.Text, "^[0-9]\d*(\.\d+)?$").Success Then
-            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
-            ' txt_documento.Focus()
-            txt_documento.Clear()
-        End If
-    End Sub
-    Private Sub txtLegajo_LostFocus(sender As Object, e As EventArgs)
-        If Not Regex.Match(txtLegajo.Text, "^[0-9]\d*(\.\d+)?$").Success Then
-            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
-            'txtLegajo.Focus()
-            txtLegajo.Clear()
+    'Validacion de campos de texto plano
+    Private Sub validarTextoPlano(sender As Object, e As EventArgs) Handles txtApellido.Leave, txtNombres.Leave
+        If Not Regex.Match(CType(sender, TextBox).Text, "^[a-z]*$", RegexOptions.IgnoreCase).Success Then
+            MessageBox.Show("Por favor ingrese SOLO caracteres alfabéticos!")
+            CType(sender, TextBox).Clear()
         End If
     End Sub
 
@@ -369,13 +336,12 @@ Public Class Form1
 
             MessageBox.Show("Direccion de Email Invalida!")
             txt_mail.Clear()
-            'txt_mail.Focus()
 
         End If
 
     End Sub
     'cuando sale del txt invoca a la validacion del mail
-    Private Sub txt_mail_LostFocus(sender As Object, e As System.EventArgs)
+    Private Sub txt_mail_Leave(sender As Object, e As System.EventArgs)
         ValidarEmail() 'Valida el email
 
     End Sub
@@ -390,7 +356,7 @@ Public Class Form1
                 'Verificamos que tenga informacion
                 If Trim(Control.Text) = "" Then
                     'Si no tiene informacion mandamos un MSGBOX con el mensaje apropiado el cual se encuentra en el tag del control
-                    MsgBox("No ha introducido datos en " & Control.Tag, MsgBoxStyle.OkOnly + MsgBoxStyle.Information, Application.ProductName)
+                    MsgBox("No ha introducido datos en " & Control.Tag, MsgBoxStyle.OkOnly + MsgBoxStyle.Information)
 
                     'Regresa un falso indicando que los controles no estan llenados correctamente
                     Return False
@@ -402,7 +368,6 @@ Public Class Form1
         Next
         Return True
     End Function
-
 
 
 End Class
