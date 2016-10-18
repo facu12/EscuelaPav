@@ -20,4 +20,8 @@
         Return oAlumnoDao.getByFilters(apellido)
     End Function
 
+    Public Function listarAlumnosTotal(curso As Integer) As List(Of Alumno)
+        Return oAlumnoDao.getAlumnosTotal(curso)
+    End Function
+
 End Class
