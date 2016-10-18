@@ -20,10 +20,9 @@ Public Class Form1
         'setea el action tipe en insert
         action = Action_type.Insert
 
-
         'limpio campos txt
         limpiarCampos()
-
+        'habilito campos txt
         habilitarCampos()
 
 
@@ -33,7 +32,6 @@ Public Class Form1
         btn_cancelar.Visible = True
         btn_confirmar.Visible = True
         btn_confirmar.Enabled = True
-
         dgv_listarAlumnos.Enabled = False
     End Sub
 
@@ -44,14 +42,7 @@ Public Class Form1
 
 
         'Habilita los txt para carga de datos excepto el legajo porque es PK 
-        txt_telefono.Enabled = True
-        txtApellido.Enabled = True
-        txtLegajo.Enabled = False
-        txtNombres.Enabled = True
-        txt_documento.Enabled = True
-        txt_ano_ingreso.Enabled = True
-        txt_mail.Enabled = True
-        dtp_alumno.Enabled = True
+        habilitarCampos()
 
         'habilito y muestro btn de confirmar y cancelar, ademas oculto nuevo y editar
         btn_cancelar.Enabled = True
@@ -229,9 +220,7 @@ Public Class Form1
         txtNombres.Enabled = True
         txt_documento.Enabled = True
         txt_ano_ingreso.Enabled = True
-        txt_telefono.Enabled = True
         txt_mail.Enabled = True
-
         dtp_alumno.Enabled = True
         txtLegajo.Enabled = True
     End Sub
@@ -344,7 +333,7 @@ Public Class Form1
 
     End Sub
     'cuando sale del txt invoca a la validacion del mail
-    Private Sub txt_mail_Leave(sender As Object, e As System.EventArgs)
+    Private Sub txt_mail_Leave(sender As Object, e As System.EventArgs) Handles txt_mail.Leave
         ValidarEmail() 'Valida el email
 
     End Sub

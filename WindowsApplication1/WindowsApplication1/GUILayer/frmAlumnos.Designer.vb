@@ -52,7 +52,6 @@ Partial Class Form1
         Me.lbl_telefono = New System.Windows.Forms.Label()
         Me.txt_documento = New System.Windows.Forms.TextBox()
         Me.lbl_documento = New System.Windows.Forms.Label()
-        Me.lbl_Mensajes = New System.Windows.Forms.Label()
         Me.txtNombres = New System.Windows.Forms.TextBox()
         Me.lbl_nombre = New System.Windows.Forms.Label()
         Me.txtApellido = New System.Windows.Forms.TextBox()
@@ -201,7 +200,6 @@ Partial Class Form1
         Me.groupbox_frm.Controls.Add(Me.lbl_telefono)
         Me.groupbox_frm.Controls.Add(Me.txt_documento)
         Me.groupbox_frm.Controls.Add(Me.lbl_documento)
-        Me.groupbox_frm.Controls.Add(Me.lbl_Mensajes)
         Me.groupbox_frm.Controls.Add(Me.txtNombres)
         Me.groupbox_frm.Controls.Add(Me.lbl_nombre)
         Me.groupbox_frm.Controls.Add(Me.txtApellido)
@@ -375,16 +373,6 @@ Partial Class Form1
         Me.lbl_documento.TabIndex = 52
         Me.lbl_documento.Text = "Documento:"
         '
-        'lbl_Mensajes
-        '
-        Me.lbl_Mensajes.AutoSize = True
-        Me.lbl_Mensajes.Location = New System.Drawing.Point(6, 318)
-        Me.lbl_Mensajes.Name = "lbl_Mensajes"
-        Me.lbl_Mensajes.Size = New System.Drawing.Size(68, 13)
-        Me.lbl_Mensajes.TabIndex = 51
-        Me.lbl_Mensajes.Text = "[lblMensajes]"
-        Me.lbl_Mensajes.Visible = False
-        '
         'txtNombres
         '
         Me.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -427,7 +415,7 @@ Partial Class Form1
         '
         Me.txtLegajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtLegajo.Location = New System.Drawing.Point(120, 27)
-        Me.txtLegajo.MaxLength = 5
+        Me.txtLegajo.MaxLength = 1000
         Me.txtLegajo.Name = "txtLegajo"
         Me.txtLegajo.Size = New System.Drawing.Size(182, 20)
         Me.txtLegajo.TabIndex = 47
@@ -490,7 +478,6 @@ Partial Class Form1
     Friend WithEvents lbl_telefono As Label
     Friend WithEvents txt_documento As TextBox
     Friend WithEvents lbl_documento As Label
-    Friend WithEvents lbl_Mensajes As Label
     Friend WithEvents txtNombres As TextBox
     Friend WithEvents lbl_nombre As Label
     Friend WithEvents txtApellido As TextBox
