@@ -52,7 +52,6 @@
         With oMateria
             .codMateria = row.Item("cod_materia").ToString
             .nombre = row.Item("nombre").ToString
-            .esContraturno = row.Item("es_contratraturno").ToString
         End With
         Return oMateria
     End Function
