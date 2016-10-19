@@ -19,6 +19,23 @@
         Return BDHelper.getDBHelper.EjecutarSQL(str) = 1
     End Function
 
+    Public Function limpiarCurso(cod As String) As Boolean
+        Dim str As String
+        str = "DELETE AlumnosxcURSO WHERE cod_curso = " + "'" + cod.ToString + "'"
+        Return BDHelper.getDBHelper.EjecutarSQL(str) = 1
+    End Function
+
+    Public Function asignarAlumnos(tabla As DataTable) As Boolean
+        Dim str As String = ""
+        For Each row As DataRow In tabla.Rows
+            str += "INSERT INTO AlumnosxCurso Values ('"
+            str += row.Item("col1_curso").ToString + "',"
+            str += row.Item("col1_legajo").ToString + ")"
+            str += " ; "
+        Next
+        Return BDHelper.getDBHelper.EjecutarSQLTransact(str)
+    End Function
+
     Public Function add(ByVal oCurso As Curso) As Boolean
         Dim str As String
         str = "INSERT INTO Curso VALUES ("
