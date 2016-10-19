@@ -56,7 +56,7 @@
 
             With oMateria
                 'cargar filas del datagridview a partir de un array de strings
-                dgv_materias.Rows.Add(New String() { .codMateria.ToString, .nombre.ToString})
+                dgv_materias.Rows.Add(New String() { .codMateria.ToString, .nombre.ToString, .SiNo(.esContraturno.ToString)})
             End With
         Next
     End Sub
