@@ -1,7 +1,7 @@
 ﻿Public Class frmAsignarAlumno
     Private Sub frmAsignarAlumno_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarComboAño()
-
+        momentoInicial()
     End Sub
 
     Private Sub cargarComboAño()
@@ -101,6 +101,7 @@
 
     Private Sub dgvAlumnos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvAlumnos.CellContentClick
         btnAgregar.Enabled = True
+        btnFinalizar.Enabled = True
     End Sub
 
     Private Sub dgvCursoAlu_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCursoAlu.CellContentClick
@@ -110,10 +111,49 @@
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         dgvCursoAlu.Rows.Add(New String() {dgvAlumnos.CurrentRow.Cells.Item("col_legajo").Value.ToString, dgvAlumnos.CurrentRow.Cells.Item("col_nombre").Value.ToString, getCurso()})
         dgvAlumnos.Rows.Remove(dgvAlumnos.CurrentRow)
+        btnFinalizar.Enabled = True
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         dgvAlumnos.Rows.Add(New String() {dgvCursoAlu.CurrentRow.Cells.Item("col1_legajo").Value.ToString, dgvCursoAlu.CurrentRow.Cells.Item("col1_nombre").Value.ToString})
         dgvCursoAlu.Rows.Remove(dgvCursoAlu.CurrentRow)
+        btnFinalizar.Enabled = True
+    End Sub
+
+    Private Sub btnFinalizar_Click(sender As Object, e As EventArgs) Handles btnFinalizar.Click
+        Dim oCursoService As New CursoService
+        oCursoService.limpiarCurso(getCurso)
+
+        Dim tabla As New DataTable
+
+        If dgvCursoAlu.Rows.Count > 0 Then
+
+            For Each col As DataGridViewColumn In dgvCursoAlu.Columns
+                tabla.Columns.Add(col.Name)
+            Next
+
+            For Each row As DataGridViewRow In dgvCursoAlu.Rows
+                Dim fila As DataRow = tabla.NewRow
+                For Each cell As DataGridViewCell In row.Cells
+                    fila(cell.ColumnIndex) = cell.Value
+                Next
+                tabla.Rows.Add(fila)
+            Next
+
+            If (oCursoService.asignarAlumnos(tabla)) Then
+                MsgBox("Alumnos Agregados con exito", vbOK, "Agregado con exito")
+            End If
+
+        End If
+
+    End Sub
+
+    Private Sub momentoInicial()
+        dgvCursoAlu.Enabled = False
+        dgvAlumnos.Enabled = False
+        dgvCursos.Enabled = False
+        btnAgregar.Enabled = False
+        btnEliminar.Enabled = False
+        btnFinalizar.Enabled = False
     End Sub
 End Class

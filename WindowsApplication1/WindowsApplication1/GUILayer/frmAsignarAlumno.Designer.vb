@@ -32,19 +32,20 @@ Partial Class frmAsignarAlumno
         Me.col_Subnivel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dgvAlumnos = New System.Windows.Forms.DataGridView()
+        Me.col_Legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.txtApellido = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnBuscarAlumno = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.btnAgregar = New System.Windows.Forms.Button()
-        Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.col_Legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvCursoAlu = New System.Windows.Forms.DataGridView()
         Me.col1_legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col1_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col1_curso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnFinalizar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -153,6 +154,19 @@ Partial Class frmAsignarAlumno
         Me.dgvAlumnos.Size = New System.Drawing.Size(292, 374)
         Me.dgvAlumnos.TabIndex = 4
         '
+        'col_Legajo
+        '
+        Me.col_Legajo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.col_Legajo.HeaderText = "Legajo"
+        Me.col_Legajo.Name = "col_Legajo"
+        Me.col_Legajo.Width = 80
+        '
+        'col_Nombre
+        '
+        Me.col_Nombre.HeaderText = "Alumno"
+        Me.col_Nombre.Name = "col_Nombre"
+        Me.col_Nombre.Width = 200
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.txtApellido)
@@ -201,39 +215,6 @@ Partial Class frmAsignarAlumno
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Alumnos en Curso Actual"
         '
-        'btnAgregar
-        '
-        Me.btnAgregar.Enabled = False
-        Me.btnAgregar.Location = New System.Drawing.Point(751, 189)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(37, 41)
-        Me.btnAgregar.TabIndex = 8
-        Me.btnAgregar.Text = ">"
-        Me.btnAgregar.UseVisualStyleBackColor = True
-        '
-        'btnEliminar
-        '
-        Me.btnEliminar.Enabled = False
-        Me.btnEliminar.Location = New System.Drawing.Point(750, 236)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(37, 41)
-        Me.btnEliminar.TabIndex = 9
-        Me.btnEliminar.Text = "<"
-        Me.btnEliminar.UseVisualStyleBackColor = True
-        '
-        'col_Legajo
-        '
-        Me.col_Legajo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.col_Legajo.HeaderText = "Legajo"
-        Me.col_Legajo.Name = "col_Legajo"
-        Me.col_Legajo.Width = 80
-        '
-        'col_Nombre
-        '
-        Me.col_Nombre.HeaderText = "Alumno"
-        Me.col_Nombre.Name = "col_Nombre"
-        Me.col_Nombre.Width = 200
-        '
         'dgvCursoAlu
         '
         Me.dgvCursoAlu.AccessibleDescription = "sq"
@@ -273,11 +254,41 @@ Partial Class frmAsignarAlumno
         Me.col1_curso.ReadOnly = True
         Me.col1_curso.Visible = False
         '
+        'btnAgregar
+        '
+        Me.btnAgregar.Enabled = False
+        Me.btnAgregar.Location = New System.Drawing.Point(751, 189)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(37, 41)
+        Me.btnAgregar.TabIndex = 8
+        Me.btnAgregar.Text = ">"
+        Me.btnAgregar.UseVisualStyleBackColor = True
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Enabled = False
+        Me.btnEliminar.Location = New System.Drawing.Point(750, 236)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(37, 41)
+        Me.btnEliminar.TabIndex = 9
+        Me.btnEliminar.Text = "<"
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
+        'btnFinalizar
+        '
+        Me.btnFinalizar.Location = New System.Drawing.Point(1012, 454)
+        Me.btnFinalizar.Name = "btnFinalizar"
+        Me.btnFinalizar.Size = New System.Drawing.Size(75, 23)
+        Me.btnFinalizar.TabIndex = 7
+        Me.btnFinalizar.Text = "Agregar"
+        Me.btnFinalizar.UseVisualStyleBackColor = True
+        '
         'frmAsignarAlumno
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1099, 517)
+        Me.Controls.Add(Me.btnFinalizar)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.GroupBox4)
@@ -322,4 +333,5 @@ Partial Class frmAsignarAlumno
     Friend WithEvents col1_legajo As DataGridViewTextBoxColumn
     Friend WithEvents col1_nombre As DataGridViewTextBoxColumn
     Friend WithEvents col1_curso As DataGridViewTextBoxColumn
+    Friend WithEvents btnFinalizar As Button
 End Class
