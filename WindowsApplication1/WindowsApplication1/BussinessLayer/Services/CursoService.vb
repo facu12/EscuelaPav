@@ -24,10 +24,19 @@
         Return oCurso.getCursosAño(año)
     End Function
 
+    Public Function limpiarCurso(cod As Integer) As Boolean
+        Return oCurso.limpiarCurso(cod)
+    End Function
+    Public Function asignarAlumnos(tabla As DataTable)
+        Return oCurso.asignarAlumnos(tabla)
+    End Function
+
     Public Function listarAlumnosCurso(curso As Integer) As DataTable
         Return oCurso.getAlumnosCurso(curso)
     End Function
+
     Public Function listarMateriaCurso(curso As Integer) As DataTable
         Return oCurso.getMateriaCurso(curso)
     End Function
+
 End Class
