@@ -120,6 +120,8 @@
             If txtFecha.Text <> "  /  /" Then
                 If (oNotasService.insertarNotas(tabla, cmbTipoNota.SelectedValue, cmbTrimestre.SelectedValue, txtFecha.Text, cmbMateria.SelectedValue)) Then
                     MsgBox("Agregado!", vbOK, "Nota")
+                    dgvNotas.Rows.Clear()
+                    txtFecha.Text = Nothing
                 End If
             Else
                 MsgBox("Complete el campo Fecha")
