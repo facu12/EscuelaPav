@@ -21,7 +21,7 @@
             str += ", '" + fecha + "'"
             str += ", '" + tnota.ToString + "'"
             str += ", " + trim.ToString
-            str += ", " + row.Item("col_Nota").ToString + ")"
+            str += ", '" + row.Item("col_Nota").ToString + "')"
             str += " ; "
         Next
         Return BDHelper.getDBHelper.EjecutarSQLTransact(str)
