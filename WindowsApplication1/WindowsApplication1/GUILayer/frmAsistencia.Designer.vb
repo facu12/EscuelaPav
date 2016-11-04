@@ -32,16 +32,18 @@ Partial Class frmAsistencia
         Me.col_Nivel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_Subnivel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.dgvAsistencia = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.txt_trimestre = New System.Windows.Forms.TextBox()
-        Me.lbl_trimestre = New System.Windows.Forms.Label()
-        Me.lbl_fecha = New System.Windows.Forms.Label()
+        Me.cmbTrimestre = New System.Windows.Forms.ComboBox()
         Me.mtb_fecha = New System.Windows.Forms.MaskedTextBox()
+        Me.lbl_fecha = New System.Windows.Forms.Label()
+        Me.lbl_trimestre = New System.Windows.Forms.Label()
+        Me.dgvAsistencia = New System.Windows.Forms.DataGridView()
         Me.col_legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_curso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_asistencia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_asistencia = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.col_justificada = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.btn_agregar = New System.Windows.Forms.Button()
+        Me.btn_planilla = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,7 +90,7 @@ Partial Class frmAsistencia
         Me.cmbAño.Location = New System.Drawing.Point(94, 15)
         Me.cmbAño.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbAño.Name = "cmbAño"
-        Me.cmbAño.Size = New System.Drawing.Size(48, 21)
+        Me.cmbAño.Size = New System.Drawing.Size(58, 21)
         Me.cmbAño.TabIndex = 0
         Me.cmbAño.Text = "Año.."
         '
@@ -139,60 +141,35 @@ Partial Class frmAsistencia
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.cmbTrimestre)
         Me.GroupBox3.Controls.Add(Me.mtb_fecha)
         Me.GroupBox3.Controls.Add(Me.lbl_fecha)
         Me.GroupBox3.Controls.Add(Me.lbl_trimestre)
-        Me.GroupBox3.Controls.Add(Me.txt_trimestre)
         Me.GroupBox3.Controls.Add(Me.dgvAsistencia)
         Me.GroupBox3.Location = New System.Drawing.Point(335, 9)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox3.Size = New System.Drawing.Size(329, 348)
+        Me.GroupBox3.Size = New System.Drawing.Size(411, 348)
         Me.GroupBox3.TabIndex = 4
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Asistencia"
         '
-        'dgvAsistencia
+        'cmbTrimestre
         '
-        Me.dgvAsistencia.AccessibleDescription = "sq"
-        Me.dgvAsistencia.AllowUserToAddRows = False
-        Me.dgvAsistencia.AllowUserToDeleteRows = False
-        Me.dgvAsistencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvAsistencia.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_legajo, Me.col_nombre, Me.col_curso, Me.col_asistencia})
-        Me.dgvAsistencia.Enabled = False
-        Me.dgvAsistencia.Location = New System.Drawing.Point(5, 51)
-        Me.dgvAsistencia.Margin = New System.Windows.Forms.Padding(2)
-        Me.dgvAsistencia.Name = "dgvAsistencia"
-        Me.dgvAsistencia.RowTemplate.Height = 24
-        Me.dgvAsistencia.Size = New System.Drawing.Size(320, 292)
-        Me.dgvAsistencia.TabIndex = 0
+        Me.cmbTrimestre.FormattingEnabled = True
+        Me.cmbTrimestre.Location = New System.Drawing.Point(257, 22)
+        Me.cmbTrimestre.Name = "cmbTrimestre"
+        Me.cmbTrimestre.Size = New System.Drawing.Size(121, 21)
+        Me.cmbTrimestre.TabIndex = 6
         '
-        'Button1
+        'mtb_fecha
         '
-        Me.Button1.Location = New System.Drawing.Point(580, 370)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(56, 19)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Agregar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'txt_trimestre
-        '
-        Me.txt_trimestre.Location = New System.Drawing.Point(258, 22)
-        Me.txt_trimestre.Name = "txt_trimestre"
-        Me.txt_trimestre.Size = New System.Drawing.Size(29, 20)
-        Me.txt_trimestre.TabIndex = 2
-        '
-        'lbl_trimestre
-        '
-        Me.lbl_trimestre.AutoSize = True
-        Me.lbl_trimestre.Location = New System.Drawing.Point(199, 26)
-        Me.lbl_trimestre.Name = "lbl_trimestre"
-        Me.lbl_trimestre.Size = New System.Drawing.Size(53, 13)
-        Me.lbl_trimestre.TabIndex = 3
-        Me.lbl_trimestre.Text = "Trimestre:"
+        Me.mtb_fecha.Location = New System.Drawing.Point(63, 22)
+        Me.mtb_fecha.Mask = "##/##/####"
+        Me.mtb_fecha.Name = "mtb_fecha"
+        Me.mtb_fecha.Size = New System.Drawing.Size(100, 20)
+        Me.mtb_fecha.TabIndex = 5
         '
         'lbl_fecha
         '
@@ -203,13 +180,31 @@ Partial Class frmAsistencia
         Me.lbl_fecha.TabIndex = 4
         Me.lbl_fecha.Text = "Fecha:"
         '
-        'mtb_fecha
+        'lbl_trimestre
         '
-        Me.mtb_fecha.Location = New System.Drawing.Point(63, 22)
-        Me.mtb_fecha.Mask = "##/##/####"
-        Me.mtb_fecha.Name = "mtb_fecha"
-        Me.mtb_fecha.Size = New System.Drawing.Size(100, 20)
-        Me.mtb_fecha.TabIndex = 5
+        Me.lbl_trimestre.AutoSize = True
+        Me.lbl_trimestre.Location = New System.Drawing.Point(199, 26)
+        Me.lbl_trimestre.Name = "lbl_trimestre"
+        Me.lbl_trimestre.Size = New System.Drawing.Size(53, 13)
+        Me.lbl_trimestre.TabIndex = 3
+        Me.lbl_trimestre.Text = "Trimestre:"
+        '
+        'dgvAsistencia
+        '
+        Me.dgvAsistencia.AccessibleDescription = "sq"
+        Me.dgvAsistencia.AllowUserToAddRows = False
+        Me.dgvAsistencia.AllowUserToDeleteRows = False
+        Me.dgvAsistencia.AllowUserToResizeColumns = False
+        Me.dgvAsistencia.AllowUserToResizeRows = False
+        Me.dgvAsistencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAsistencia.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_legajo, Me.col_nombre, Me.col_curso, Me.col_asistencia, Me.col_justificada})
+        Me.dgvAsistencia.Location = New System.Drawing.Point(0, 51)
+        Me.dgvAsistencia.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgvAsistencia.Name = "dgvAsistencia"
+        Me.dgvAsistencia.RowHeadersVisible = False
+        Me.dgvAsistencia.RowTemplate.Height = 24
+        Me.dgvAsistencia.Size = New System.Drawing.Size(378, 292)
+        Me.dgvAsistencia.TabIndex = 0
         '
         'col_legajo
         '
@@ -234,15 +229,47 @@ Partial Class frmAsistencia
         '
         Me.col_asistencia.Frozen = True
         Me.col_asistencia.HeaderText = "Asistencia"
+        Me.col_asistencia.Items.AddRange(New Object() {"1", "0.75", "0.5", "0.25", "0"})
         Me.col_asistencia.Name = "col_asistencia"
+        Me.col_asistencia.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.col_asistencia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.col_asistencia.Width = 75
+        '
+        'col_justificada
+        '
+        Me.col_justificada.HeaderText = "Justificada"
+        Me.col_justificada.Items.AddRange(New Object() {"SI", "NO"})
+        Me.col_justificada.Name = "col_justificada"
+        Me.col_justificada.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.col_justificada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
+        'btn_agregar
+        '
+        Me.btn_agregar.Location = New System.Drawing.Point(518, 361)
+        Me.btn_agregar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_agregar.Name = "btn_agregar"
+        Me.btn_agregar.Size = New System.Drawing.Size(85, 24)
+        Me.btn_agregar.TabIndex = 5
+        Me.btn_agregar.Text = "Agregar"
+        Me.btn_agregar.UseVisualStyleBackColor = True
+        '
+        'btn_planilla
+        '
+        Me.btn_planilla.Location = New System.Drawing.Point(616, 361)
+        Me.btn_planilla.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_planilla.Name = "btn_planilla"
+        Me.btn_planilla.Size = New System.Drawing.Size(85, 24)
+        Me.btn_planilla.TabIndex = 6
+        Me.btn_planilla.Text = "Ver Planilla"
+        Me.btn_planilla.UseVisualStyleBackColor = True
         '
         'frmAsistencia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(675, 396)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(726, 396)
+        Me.Controls.Add(Me.btn_planilla)
+        Me.Controls.Add(Me.btn_agregar)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -270,13 +297,15 @@ Partial Class frmAsistencia
     Friend WithEvents col_Subnivel As DataGridViewTextBoxColumn
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents dgvAsistencia As DataGridView
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_agregar As Button
     Friend WithEvents mtb_fecha As MaskedTextBox
     Friend WithEvents lbl_fecha As Label
     Friend WithEvents lbl_trimestre As Label
-    Friend WithEvents txt_trimestre As TextBox
+    Friend WithEvents cmbTrimestre As ComboBox
     Friend WithEvents col_legajo As DataGridViewTextBoxColumn
     Friend WithEvents col_nombre As DataGridViewTextBoxColumn
     Friend WithEvents col_curso As DataGridViewTextBoxColumn
-    Friend WithEvents col_asistencia As DataGridViewTextBoxColumn
+    Friend WithEvents col_asistencia As DataGridViewComboBoxColumn
+    Friend WithEvents col_justificada As DataGridViewComboBoxColumn
+    Friend WithEvents btn_planilla As Button
 End Class
