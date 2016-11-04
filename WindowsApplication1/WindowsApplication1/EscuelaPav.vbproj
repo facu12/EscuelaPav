@@ -78,12 +78,14 @@
     <Compile Include="BussinessLayer\Entities\Profesor.vb" />
     <Compile Include="BussinessLayer\Entities\User.vb" />
     <Compile Include="BussinessLayer\Services\AlumnoService.vb" />
+    <Compile Include="BussinessLayer\Services\AsistenciaService.vb" />
     <Compile Include="BussinessLayer\Services\CursoService.vb" />
     <Compile Include="BussinessLayer\Services\MateriaService.vb" />
     <Compile Include="BussinessLayer\Services\NotaService.vb" />
     <Compile Include="BussinessLayer\Services\ProfesorService.vb" />
     <Compile Include="BussinessLayer\Services\UserService.vb" />
     <Compile Include="DataLayer\DAOs\AlumnoDAO.vb" />
+    <Compile Include="DataLayer\DAOs\AsistenciaDAO.vb" />
     <Compile Include="DataLayer\DAOs\CursoDAO.vb" />
     <Compile Include="DataLayer\DAOs\MateriaDAO.vb" />
     <Compile Include="DataLayer\DAOs\NotaDAO.vb" />
