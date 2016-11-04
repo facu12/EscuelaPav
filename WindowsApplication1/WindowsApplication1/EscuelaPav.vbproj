@@ -128,10 +128,22 @@
     <Compile Include="GUILayer\frmMaterias.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\frmNotaAlumno.Designer.vb">
+      <DependentUpon>frmNotaAlumno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmNotaAlumno.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\frmNotas.Designer.vb">
       <DependentUpon>frmNotas.vb</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\frmNotas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmPlanillaAsistencia.Designer.vb">
+      <DependentUpon>frmPlanillaAsistencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmPlanillaAsistencia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUILayer\frmPrincipal.Designer.vb">
@@ -188,8 +200,14 @@
     <EmbeddedResource Include="GUILayer\frmMaterias.resx">
       <DependentUpon>frmMaterias.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmNotaAlumno.resx">
+      <DependentUpon>frmNotaAlumno.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmNotas.resx">
       <DependentUpon>frmNotas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmPlanillaAsistencia.resx">
+      <DependentUpon>frmPlanillaAsistencia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>

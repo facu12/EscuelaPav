@@ -40,4 +40,11 @@
         str = "SELECT * FROM Trimestre"
         Return BDHelper.getDBHelper.ConsultaSQL(str)
     End Function
+
+    Public Function getDatosFecha(fecha As String) As DataTable
+        Dim str As String
+        str = "Select * from asistencia where fecha=" & fecha
+        Return BDHelper.getDBHelper.ConsultaSQL(str)
+    End Function
+
 End Class
