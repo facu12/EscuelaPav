@@ -36,7 +36,7 @@ Partial Class frmPrincipal
         Me.btn_profesores.Image = Global.WindowsApplication1.My.Resources.Resources.profesor_farsnworth_32
         Me.btn_profesores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_profesores.Location = New System.Drawing.Point(249, 13)
-        Me.btn_profesores.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_profesores.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_profesores.Name = "btn_profesores"
         Me.btn_profesores.Size = New System.Drawing.Size(217, 82)
         Me.btn_profesores.TabIndex = 1
@@ -48,7 +48,7 @@ Partial Class frmPrincipal
         Me.btn_alumnos.Image = Global.WindowsApplication1.My.Resources.Resources.alumno
         Me.btn_alumnos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_alumnos.Location = New System.Drawing.Point(13, 13)
-        Me.btn_alumnos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_alumnos.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_alumnos.Name = "btn_alumnos"
         Me.btn_alumnos.Size = New System.Drawing.Size(217, 82)
         Me.btn_alumnos.TabIndex = 0
@@ -60,7 +60,7 @@ Partial Class frmPrincipal
         Me.btn_curso.Image = Global.WindowsApplication1.My.Resources.Resources.profesor_farsnworth_32
         Me.btn_curso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_curso.Location = New System.Drawing.Point(13, 113)
-        Me.btn_curso.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_curso.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_curso.Name = "btn_curso"
         Me.btn_curso.Size = New System.Drawing.Size(217, 82)
         Me.btn_curso.TabIndex = 2
@@ -71,7 +71,7 @@ Partial Class frmPrincipal
         '
         Me.btn_materia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_materia.Location = New System.Drawing.Point(249, 113)
-        Me.btn_materia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btn_materia.Margin = New System.Windows.Forms.Padding(4)
         Me.btn_materia.Name = "btn_materia"
         Me.btn_materia.Size = New System.Drawing.Size(217, 82)
         Me.btn_materia.TabIndex = 3
@@ -82,7 +82,7 @@ Partial Class frmPrincipal
         '
         Me.btnNotas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNotas.Location = New System.Drawing.Point(485, 113)
-        Me.btnNotas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnNotas.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNotas.Name = "btnNotas"
         Me.btnNotas.Size = New System.Drawing.Size(217, 82)
         Me.btnNotas.TabIndex = 4
@@ -93,7 +93,7 @@ Partial Class frmPrincipal
         '
         Me.btnAsistencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnAsistencia.Location = New System.Drawing.Point(485, 13)
-        Me.btnAsistencia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAsistencia.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAsistencia.Name = "btnAsistencia"
         Me.btnAsistencia.Size = New System.Drawing.Size(217, 82)
         Me.btnAsistencia.TabIndex = 5
@@ -115,7 +115,7 @@ Partial Class frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(811, 433)
+        Me.ClientSize = New System.Drawing.Size(740, 330)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnAsistencia)
         Me.Controls.Add(Me.btnNotas)
@@ -123,7 +123,7 @@ Partial Class frmPrincipal
         Me.Controls.Add(Me.btn_curso)
         Me.Controls.Add(Me.btn_profesores)
         Me.Controls.Add(Me.btn_alumnos)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmPrincipal"
         Me.Text = "frmPrincipal"
         Me.ResumeLayout(False)
