@@ -32,18 +32,18 @@ Partial Class frmNotas
         Me.col_Nivel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_Subnivel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.txtFecha = New System.Windows.Forms.MaskedTextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.cmbTrimestre = New System.Windows.Forms.ComboBox()
         Me.cmbTipoNota = New System.Windows.Forms.ComboBox()
         Me.cmbMateria = New System.Windows.Forms.ComboBox()
         Me.dgvNotas = New System.Windows.Forms.DataGridView()
+        Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.col_Legajo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_Curso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_Nota = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnAgregar = New System.Windows.Forms.Button()
-        Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtFecha = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -147,6 +147,25 @@ Partial Class frmNotas
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Notas"
         '
+        'txtFecha
+        '
+        Me.txtFecha.Location = New System.Drawing.Point(96, 25)
+        Me.txtFecha.Mask = "00/00/0000"
+        Me.txtFecha.Name = "txtFecha"
+        Me.txtFecha.Size = New System.Drawing.Size(94, 22)
+        Me.txtFecha.TabIndex = 5
+        Me.txtFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtFecha.ValidatingType = GetType(Date)
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(27, 25)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(47, 17)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Fecha"
+        '
         'cmbTrimestre
         '
         Me.cmbTrimestre.Enabled = False
@@ -190,32 +209,6 @@ Partial Class frmNotas
         Me.dgvNotas.Size = New System.Drawing.Size(395, 337)
         Me.dgvNotas.TabIndex = 0
         '
-        'col_Legajo
-        '
-        Me.col_Legajo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.col_Legajo.HeaderText = "Legajo"
-        Me.col_Legajo.Name = "col_Legajo"
-        Me.col_Legajo.Width = 80
-        '
-        'col_Nombre
-        '
-        Me.col_Nombre.HeaderText = "Alumno"
-        Me.col_Nombre.Name = "col_Nombre"
-        Me.col_Nombre.Width = 200
-        '
-        'col_Curso
-        '
-        Me.col_Curso.HeaderText = "Curso"
-        Me.col_Curso.Name = "col_Curso"
-        Me.col_Curso.Visible = False
-        '
-        'col_Nota
-        '
-        Me.col_Nota.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.col_Nota.HeaderText = "Nota"
-        Me.col_Nota.Name = "col_Nota"
-        Me.col_Nota.Width = 67
-        '
         'btnAgregar
         '
         Me.btnAgregar.Location = New System.Drawing.Point(772, 450)
@@ -234,24 +227,33 @@ Partial Class frmNotas
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
-        'Label2
+        'col_Legajo
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(27, 25)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(47, 17)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Fecha"
+        Me.col_Legajo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.col_Legajo.HeaderText = "Legajo"
+        Me.col_Legajo.Name = "col_Legajo"
+        Me.col_Legajo.ReadOnly = True
+        Me.col_Legajo.Width = 80
         '
-        'txtFecha
+        'col_Nombre
         '
-        Me.txtFecha.Location = New System.Drawing.Point(96, 25)
-        Me.txtFecha.Mask = "00/00/0000"
-        Me.txtFecha.Name = "txtFecha"
-        Me.txtFecha.Size = New System.Drawing.Size(94, 22)
-        Me.txtFecha.TabIndex = 5
-        Me.txtFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txtFecha.ValidatingType = GetType(Date)
+        Me.col_Nombre.HeaderText = "Alumno"
+        Me.col_Nombre.Name = "col_Nombre"
+        Me.col_Nombre.ReadOnly = True
+        Me.col_Nombre.Width = 200
+        '
+        'col_Curso
+        '
+        Me.col_Curso.HeaderText = "Curso"
+        Me.col_Curso.Name = "col_Curso"
+        Me.col_Curso.Visible = False
+        '
+        'col_Nota
+        '
+        Me.col_Nota.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.col_Nota.HeaderText = "Nota"
+        Me.col_Nota.Name = "col_Nota"
+        Me.col_Nota.Width = 67
         '
         'frmNotas
         '
@@ -291,11 +293,11 @@ Partial Class frmNotas
     Friend WithEvents col_Nivel As DataGridViewTextBoxColumn
     Friend WithEvents col_Subnivel As DataGridViewTextBoxColumn
     Friend WithEvents cmbTrimestre As ComboBox
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents txtFecha As MaskedTextBox
+    Friend WithEvents Label2 As Label
     Friend WithEvents col_Legajo As DataGridViewTextBoxColumn
     Friend WithEvents col_Nombre As DataGridViewTextBoxColumn
     Friend WithEvents col_Curso As DataGridViewTextBoxColumn
     Friend WithEvents col_Nota As DataGridViewTextBoxColumn
-    Friend WithEvents btnCancelar As Button
-    Friend WithEvents txtFecha As MaskedTextBox
-    Friend WithEvents Label2 As Label
 End Class
