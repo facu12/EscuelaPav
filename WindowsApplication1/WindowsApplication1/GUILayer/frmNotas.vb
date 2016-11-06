@@ -81,7 +81,7 @@
         Next
     End Sub
 
-    Private Function getCurso()
+    Public Function getCurso()
         Return dgvCursos.CurrentRow.Cells.Item("col_año").Value + dgvCursos.CurrentRow.Cells.Item("col_nivel").Value + dgvCursos.CurrentRow.Cells.Item("col_subnivel").Value
     End Function
 
@@ -115,13 +115,14 @@
                 tabla.Rows.Add(fila)
             Next
 
-
-
             If txtFecha.Text <> "  /  /" Then
-                If (oNotasService.insertarNotas(tabla, cmbTipoNota.SelectedValue, cmbTrimestre.SelectedValue, txtFecha.Text, cmbMateria.SelectedValue)) Then
-                    MsgBox("Agregado!", vbOK, "Nota")
-                    dgvNotas.Rows.Clear()
-                    txtFecha.Text = Nothing
+                If cmbTipoNota.SelectedValue = "F" Then
+                    If oNotasService.existeNotaFinal(getCurso, cmbMateria.SelectedValue, cmbTrimestre.SelectedValue) = "True" Then
+                        MsgBox("La nota final para esta materia en este cuatrimestre ya fue cargada")
+                    Else
+                        cargarNota(tabla)
+                    End If
+                Else cargarNota(tabla)
                 End If
             Else
                 MsgBox("Complete el campo Fecha")
@@ -130,9 +131,17 @@
             MsgBox("Seleccione un curso con alumnos")
 
         End If
+    End Sub
 
-
-
+    Private Sub cargarNota(tabla As DataTable)
+        Dim oNotasService As New NotaService
+        If (oNotasService.insertarNotas(tabla, cmbTipoNota.SelectedValue, cmbTrimestre.SelectedValue, txtFecha.Text, cmbMateria.SelectedValue)) Then
+            MsgBox("Agregado!", vbOK, "Nota")
+            dgvNotas.Rows.Clear()
+            txtFecha.Text = Nothing
+        Else
+            MsgBox("Error al cargar")
+        End If
 
     End Sub
 

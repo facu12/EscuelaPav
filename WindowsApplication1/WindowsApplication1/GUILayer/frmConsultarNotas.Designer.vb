@@ -22,43 +22,49 @@ Partial Class frmConsultarNotas
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.lblTitulo = New System.Windows.Forms.Label()
+        Me.cmbMateria = New System.Windows.Forms.ComboBox()
+        Me.cmbTrimestre = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dgvNotasTrim = New System.Windows.Forms.DataGridView()
+        Me.btnConsultar = New System.Windows.Forms.Button()
+        Me.dgvFinal = New System.Windows.Forms.DataGridView()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.btnBorrarDia = New System.Windows.Forms.Button()
+        Me.btnBorrarFinal = New System.Windows.Forms.Button()
+        CType(Me.dgvNotasTrim, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvFinal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblTitulo
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(535, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(163, 25)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Reporte de Notas"
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.Location = New System.Drawing.Point(535, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(157, 25)
+        Me.lblTitulo.TabIndex = 0
+        Me.lblTitulo.Text = "Planilla de Notas"
         '
-        'ComboBox1
+        'cmbMateria
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(160, 51)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 24)
-        Me.ComboBox1.TabIndex = 1
+        Me.cmbMateria.FormattingEnabled = True
+        Me.cmbMateria.Location = New System.Drawing.Point(160, 51)
+        Me.cmbMateria.Name = "cmbMateria"
+        Me.cmbMateria.Size = New System.Drawing.Size(121, 24)
+        Me.cmbMateria.TabIndex = 1
         '
-        'ComboBox2
+        'cmbTrimestre
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(496, 51)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 24)
-        Me.ComboBox2.TabIndex = 2
+        Me.cmbTrimestre.FormattingEnabled = True
+        Me.cmbTrimestre.Location = New System.Drawing.Point(496, 51)
+        Me.cmbTrimestre.Name = "cmbTrimestre"
+        Me.cmbTrimestre.Size = New System.Drawing.Size(121, 24)
+        Me.cmbTrimestre.TabIndex = 2
         '
         'Label2
         '
@@ -78,69 +84,125 @@ Partial Class frmConsultarNotas
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Seleccionar Trimestre:"
         '
-        'DataGridView1
+        'dgvNotasTrim
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(16, 85)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1190, 428)
-        Me.DataGridView1.TabIndex = 5
+        Me.dgvNotasTrim.AllowUserToAddRows = False
+        Me.dgvNotasTrim.AllowUserToDeleteRows = False
+        Me.dgvNotasTrim.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.dgvNotasTrim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvNotasTrim.DefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvNotasTrim.Location = New System.Drawing.Point(16, 85)
+        Me.dgvNotasTrim.Name = "dgvNotasTrim"
+        Me.dgvNotasTrim.ReadOnly = True
+        Me.dgvNotasTrim.RowHeadersVisible = False
+        Me.dgvNotasTrim.RowTemplate.Height = 24
+        Me.dgvNotasTrim.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvNotasTrim.Size = New System.Drawing.Size(1235, 558)
+        Me.dgvNotasTrim.TabIndex = 5
         '
-        'Button1
+        'btnConsultar
         '
-        Me.Button1.Location = New System.Drawing.Point(673, 51)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Consultar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnConsultar.Location = New System.Drawing.Point(673, 51)
+        Me.btnConsultar.Name = "btnConsultar"
+        Me.btnConsultar.Size = New System.Drawing.Size(75, 23)
+        Me.btnConsultar.TabIndex = 6
+        Me.btnConsultar.Text = "Consultar"
+        Me.btnConsultar.UseVisualStyleBackColor = True
         '
-        'DataGridView2
+        'dgvFinal
         '
-        Me.DataGridView2.AllowUserToAddRows = False
-        Me.DataGridView2.AllowUserToDeleteRows = False
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(1212, 85)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.RowTemplate.Height = 24
-        Me.DataGridView2.Size = New System.Drawing.Size(120, 428)
-        Me.DataGridView2.TabIndex = 7
+        Me.dgvFinal.AllowUserToAddRows = False
+        Me.dgvFinal.AllowUserToDeleteRows = False
+        Me.dgvFinal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvFinal.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvFinal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvFinal.Location = New System.Drawing.Point(1257, 85)
+        Me.dgvFinal.Name = "dgvFinal"
+        Me.dgvFinal.ReadOnly = True
+        Me.dgvFinal.RowHeadersVisible = False
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.dgvFinal.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvFinal.RowTemplate.Height = 24
+        Me.dgvFinal.Size = New System.Drawing.Size(75, 558)
+        Me.dgvFinal.TabIndex = 7
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Location = New System.Drawing.Point(1231, 649)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(101, 23)
+        Me.btnCerrar.TabIndex = 8
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = True
+        '
+        'btnBorrarDia
+        '
+        Me.btnBorrarDia.Location = New System.Drawing.Point(1126, 649)
+        Me.btnBorrarDia.Name = "btnBorrarDia"
+        Me.btnBorrarDia.Size = New System.Drawing.Size(99, 23)
+        Me.btnBorrarDia.TabIndex = 9
+        Me.btnBorrarDia.Text = "Borrar Dia"
+        Me.btnBorrarDia.UseVisualStyleBackColor = True
+        '
+        'btnBorrarFinal
+        '
+        Me.btnBorrarFinal.Location = New System.Drawing.Point(1021, 649)
+        Me.btnBorrarFinal.Name = "btnBorrarFinal"
+        Me.btnBorrarFinal.Size = New System.Drawing.Size(99, 23)
+        Me.btnBorrarFinal.TabIndex = 10
+        Me.btnBorrarFinal.Text = "Borrar Final"
+        Me.btnBorrarFinal.UseVisualStyleBackColor = True
         '
         'frmConsultarNotas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1344, 539)
-        Me.Controls.Add(Me.DataGridView2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(1344, 691)
+        Me.Controls.Add(Me.btnBorrarFinal)
+        Me.Controls.Add(Me.btnBorrarDia)
+        Me.Controls.Add(Me.btnCerrar)
+        Me.Controls.Add(Me.dgvFinal)
+        Me.Controls.Add(Me.btnConsultar)
+        Me.Controls.Add(Me.dgvNotasTrim)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.cmbTrimestre)
+        Me.Controls.Add(Me.cmbMateria)
+        Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmConsultarNotas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Notas"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvNotasTrim, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvFinal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents lblTitulo As Label
+    Friend WithEvents cmbMateria As ComboBox
+    Friend WithEvents cmbTrimestre As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button1 As Button
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents dgvNotasTrim As DataGridView
+    Friend WithEvents btnConsultar As Button
+    Friend WithEvents dgvFinal As DataGridView
+    Friend WithEvents btnCerrar As Button
+    Friend WithEvents btnBorrarDia As Button
+    Friend WithEvents btnBorrarFinal As Button
 End Class
