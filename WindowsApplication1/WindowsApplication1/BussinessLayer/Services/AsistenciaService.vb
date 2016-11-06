@@ -12,4 +12,8 @@
         Return oAsistencia.getTrimestres()
     End Function
 
+    Public Function getDatosFecha(fecha As String)
+        Return oAsistencia.getDatosFecha()
+    End Function
+
 End Class

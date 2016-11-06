@@ -116,7 +116,7 @@
     End Sub
 
     Private Sub btn_planilla_Click(sender As Object, e As EventArgs) Handles btn_planilla.Click
-        'abrir nuevo frm
+        frmPlanillaAsistencia.ShowDialog()
 
     End Sub
 End Class
