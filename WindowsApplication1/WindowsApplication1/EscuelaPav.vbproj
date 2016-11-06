@@ -128,6 +128,12 @@
     <Compile Include="GUILayer\frmMaterias.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\frmNotaAlumno.Designer.vb">
+      <DependentUpon>frmNotaAlumno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmNotaAlumno.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\frmNotas.Designer.vb">
       <DependentUpon>frmNotas.vb</DependentUpon>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmMaterias.resx">
       <DependentUpon>frmMaterias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmNotaAlumno.resx">
+      <DependentUpon>frmNotaAlumno.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmNotas.resx">
       <DependentUpon>frmNotas.vb</DependentUpon>
