@@ -39,7 +39,6 @@ Partial Class frmMaterias
         Me.btn_salir = New System.Windows.Forms.Button()
         Me.btn_editar = New System.Windows.Forms.Button()
         Me.btn_agregar = New System.Windows.Forms.Button()
-        Me.lbl_Mensajes = New System.Windows.Forms.Label()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.lbl_nombre = New System.Windows.Forms.Label()
         Me.txt_cod_materia = New System.Windows.Forms.TextBox()
@@ -56,11 +55,9 @@ Partial Class frmMaterias
         Me.GroupBox1.Controls.Add(Me.txt_busqueda_materia)
         Me.GroupBox1.Controls.Add(Me.cmdConsultar)
         Me.GroupBox1.Controls.Add(Me.lbl_profesor)
-        Me.GroupBox1.Location = New System.Drawing.Point(601, 15)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Location = New System.Drawing.Point(451, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(537, 458)
+        Me.GroupBox1.Size = New System.Drawing.Size(403, 372)
         Me.GroupBox1.TabIndex = 33
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Lista de Materias"
@@ -71,14 +68,14 @@ Partial Class frmMaterias
         Me.dgv_materias.AllowUserToDeleteRows = False
         Me.dgv_materias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_materias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_cod_materia, Me.col_nombre, Me.col_Contraturno})
-        Me.dgv_materias.Location = New System.Drawing.Point(12, 30)
-        Me.dgv_materias.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgv_materias.Location = New System.Drawing.Point(9, 24)
+        Me.dgv_materias.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgv_materias.Name = "dgv_materias"
         Me.dgv_materias.ReadOnly = True
         Me.dgv_materias.RowHeadersVisible = False
         Me.dgv_materias.RowTemplate.Height = 24
         Me.dgv_materias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_materias.Size = New System.Drawing.Size(517, 377)
+        Me.dgv_materias.Size = New System.Drawing.Size(388, 306)
         Me.dgv_materias.TabIndex = 19
         '
         'col_cod_materia
@@ -103,30 +100,28 @@ Partial Class frmMaterias
         '
         Me.btn_buscar.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.btn_buscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_buscar.Location = New System.Drawing.Point(415, 427)
-        Me.btn_buscar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_buscar.Location = New System.Drawing.Point(307, 344)
         Me.btn_buscar.Name = "btn_buscar"
-        Me.btn_buscar.Size = New System.Drawing.Size(113, 28)
+        Me.btn_buscar.Size = New System.Drawing.Size(85, 23)
         Me.btn_buscar.TabIndex = 26
         Me.btn_buscar.Text = "Buscar"
         Me.btn_buscar.UseVisualStyleBackColor = False
         '
         'txt_busqueda_materia
         '
-        Me.txt_busqueda_materia.Location = New System.Drawing.Point(75, 427)
-        Me.txt_busqueda_materia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txt_busqueda_materia.Location = New System.Drawing.Point(56, 347)
+        Me.txt_busqueda_materia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txt_busqueda_materia.Name = "txt_busqueda_materia"
-        Me.txt_busqueda_materia.Size = New System.Drawing.Size(320, 22)
+        Me.txt_busqueda_materia.Size = New System.Drawing.Size(241, 20)
         Me.txt_busqueda_materia.TabIndex = 18
         '
         'cmdConsultar
         '
         Me.cmdConsultar.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.cmdConsultar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdConsultar.Location = New System.Drawing.Point(597, 30)
-        Me.cmdConsultar.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmdConsultar.Location = New System.Drawing.Point(448, 24)
         Me.cmdConsultar.Name = "cmdConsultar"
-        Me.cmdConsultar.Size = New System.Drawing.Size(167, 38)
+        Me.cmdConsultar.Size = New System.Drawing.Size(125, 31)
         Me.cmdConsultar.TabIndex = 17
         Me.cmdConsultar.Text = "Consultar"
         Me.cmdConsultar.UseVisualStyleBackColor = False
@@ -134,10 +129,9 @@ Partial Class frmMaterias
         'lbl_profesor
         '
         Me.lbl_profesor.AutoSize = True
-        Me.lbl_profesor.Location = New System.Drawing.Point(8, 430)
-        Me.lbl_profesor.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_profesor.Location = New System.Drawing.Point(6, 349)
         Me.lbl_profesor.Name = "lbl_profesor"
-        Me.lbl_profesor.Size = New System.Drawing.Size(59, 17)
+        Me.lbl_profesor.Size = New System.Drawing.Size(45, 13)
         Me.lbl_profesor.TabIndex = 13
         Me.lbl_profesor.Text = "Materia:"
         '
@@ -150,33 +144,31 @@ Partial Class frmMaterias
         Me.Panel1.Controls.Add(Me.btn_salir)
         Me.Panel1.Controls.Add(Me.btn_editar)
         Me.Panel1.Controls.Add(Me.btn_agregar)
-        Me.Panel1.Controls.Add(Me.lbl_Mensajes)
         Me.Panel1.Controls.Add(Me.txt_nombre)
         Me.Panel1.Controls.Add(Me.lbl_nombre)
         Me.Panel1.Controls.Add(Me.txt_cod_materia)
         Me.Panel1.Controls.Add(Me.lbl_cod_materia)
-        Me.Panel1.Location = New System.Drawing.Point(5, 15)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Location = New System.Drawing.Point(4, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(572, 458)
+        Me.Panel1.Size = New System.Drawing.Size(429, 372)
         Me.Panel1.TabIndex = 32
         '
         'chkContraturno
         '
         Me.chkContraturno.AutoSize = True
-        Me.chkContraturno.Location = New System.Drawing.Point(148, 83)
+        Me.chkContraturno.Location = New System.Drawing.Point(111, 67)
+        Me.chkContraturno.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.chkContraturno.Name = "chkContraturno"
-        Me.chkContraturno.Size = New System.Drawing.Size(18, 17)
+        Me.chkContraturno.Size = New System.Drawing.Size(15, 14)
         Me.chkContraturno.TabIndex = 40
         Me.chkContraturno.UseVisualStyleBackColor = True
         '
         'lbl_descripcion
         '
         Me.lbl_descripcion.AutoSize = True
-        Me.lbl_descripcion.Location = New System.Drawing.Point(20, 82)
-        Me.lbl_descripcion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_descripcion.Location = New System.Drawing.Point(15, 67)
         Me.lbl_descripcion.Name = "lbl_descripcion"
-        Me.lbl_descripcion.Size = New System.Drawing.Size(111, 17)
+        Me.lbl_descripcion.Size = New System.Drawing.Size(83, 13)
         Me.lbl_descripcion.TabIndex = 39
         Me.lbl_descripcion.Text = "Es Contraturno: "
         '
@@ -186,10 +178,9 @@ Partial Class frmMaterias
         Me.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_cancelar.Image = Global.WindowsApplication1.My.Resources.Resources.cancelar
         Me.btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_cancelar.Location = New System.Drawing.Point(333, 378)
-        Me.btn_cancelar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_cancelar.Location = New System.Drawing.Point(250, 307)
         Me.btn_cancelar.Name = "btn_cancelar"
-        Me.btn_cancelar.Size = New System.Drawing.Size(100, 66)
+        Me.btn_cancelar.Size = New System.Drawing.Size(75, 54)
         Me.btn_cancelar.TabIndex = 38
         Me.btn_cancelar.Text = "Cancelar"
         Me.btn_cancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -201,10 +192,9 @@ Partial Class frmMaterias
         Me.btn_confirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_confirmar.Image = Global.WindowsApplication1.My.Resources.Resources.Confirmar
         Me.btn_confirmar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_confirmar.Location = New System.Drawing.Point(207, 378)
-        Me.btn_confirmar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_confirmar.Location = New System.Drawing.Point(155, 307)
         Me.btn_confirmar.Name = "btn_confirmar"
-        Me.btn_confirmar.Size = New System.Drawing.Size(100, 66)
+        Me.btn_confirmar.Size = New System.Drawing.Size(75, 54)
         Me.btn_confirmar.TabIndex = 37
         Me.btn_confirmar.Text = "Confirmar"
         Me.btn_confirmar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -216,10 +206,9 @@ Partial Class frmMaterias
         Me.btn_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_salir.Image = Global.WindowsApplication1.My.Resources.Resources.salir
         Me.btn_salir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_salir.Location = New System.Drawing.Point(452, 378)
-        Me.btn_salir.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_salir.Location = New System.Drawing.Point(339, 307)
         Me.btn_salir.Name = "btn_salir"
-        Me.btn_salir.Size = New System.Drawing.Size(100, 68)
+        Me.btn_salir.Size = New System.Drawing.Size(75, 55)
         Me.btn_salir.TabIndex = 34
         Me.btn_salir.Text = "Salir"
         Me.btn_salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -231,10 +220,9 @@ Partial Class frmMaterias
         Me.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_editar.Image = Global.WindowsApplication1.My.Resources.Resources.editar
         Me.btn_editar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_editar.Location = New System.Drawing.Point(332, 377)
-        Me.btn_editar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_editar.Location = New System.Drawing.Point(249, 306)
         Me.btn_editar.Name = "btn_editar"
-        Me.btn_editar.Size = New System.Drawing.Size(100, 68)
+        Me.btn_editar.Size = New System.Drawing.Size(75, 55)
         Me.btn_editar.TabIndex = 33
         Me.btn_editar.Text = "Editar"
         Me.btn_editar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -246,71 +234,55 @@ Partial Class frmMaterias
         Me.btn_agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btn_agregar.Image = Global.WindowsApplication1.My.Resources.Resources.agregar
         Me.btn_agregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btn_agregar.Location = New System.Drawing.Point(207, 377)
-        Me.btn_agregar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_agregar.Location = New System.Drawing.Point(155, 306)
         Me.btn_agregar.Name = "btn_agregar"
-        Me.btn_agregar.Size = New System.Drawing.Size(100, 68)
+        Me.btn_agregar.Size = New System.Drawing.Size(75, 55)
         Me.btn_agregar.TabIndex = 32
         Me.btn_agregar.Text = "Agregar"
         Me.btn_agregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btn_agregar.UseVisualStyleBackColor = False
         '
-        'lbl_Mensajes
-        '
-        Me.lbl_Mensajes.AutoSize = True
-        Me.lbl_Mensajes.Location = New System.Drawing.Point(31, 335)
-        Me.lbl_Mensajes.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lbl_Mensajes.Name = "lbl_Mensajes"
-        Me.lbl_Mensajes.Size = New System.Drawing.Size(90, 17)
-        Me.lbl_Mensajes.TabIndex = 27
-        Me.lbl_Mensajes.Text = "[lblMensajes]"
-        '
         'txt_nombre
         '
         Me.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_nombre.Location = New System.Drawing.Point(148, 47)
-        Me.txt_nombre.Margin = New System.Windows.Forms.Padding(4)
+        Me.txt_nombre.Location = New System.Drawing.Point(111, 38)
         Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(242, 22)
+        Me.txt_nombre.Size = New System.Drawing.Size(182, 20)
         Me.txt_nombre.TabIndex = 1
         '
         'lbl_nombre
         '
         Me.lbl_nombre.AutoSize = True
-        Me.lbl_nombre.Location = New System.Drawing.Point(20, 49)
-        Me.lbl_nombre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_nombre.Location = New System.Drawing.Point(15, 40)
         Me.lbl_nombre.Name = "lbl_nombre"
-        Me.lbl_nombre.Size = New System.Drawing.Size(59, 17)
+        Me.lbl_nombre.Size = New System.Drawing.Size(45, 13)
         Me.lbl_nombre.TabIndex = 0
         Me.lbl_nombre.Text = "Materia:"
         '
         'txt_cod_materia
         '
         Me.txt_cod_materia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_cod_materia.Location = New System.Drawing.Point(148, 14)
-        Me.txt_cod_materia.Margin = New System.Windows.Forms.Padding(4)
+        Me.txt_cod_materia.Location = New System.Drawing.Point(111, 11)
         Me.txt_cod_materia.Name = "txt_cod_materia"
-        Me.txt_cod_materia.Size = New System.Drawing.Size(121, 22)
+        Me.txt_cod_materia.Size = New System.Drawing.Size(91, 20)
         Me.txt_cod_materia.TabIndex = 0
         '
         'lbl_cod_materia
         '
         Me.lbl_cod_materia.AutoSize = True
-        Me.lbl_cod_materia.Location = New System.Drawing.Point(20, 16)
-        Me.lbl_cod_materia.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbl_cod_materia.Location = New System.Drawing.Point(15, 13)
         Me.lbl_cod_materia.Name = "lbl_cod_materia"
-        Me.lbl_cod_materia.Size = New System.Drawing.Size(56, 17)
+        Me.lbl_cod_materia.Size = New System.Drawing.Size(43, 13)
         Me.lbl_cod_materia.TabIndex = 0
         Me.lbl_cod_materia.Text = "Codigo:"
         '
         'frmMaterias
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1140, 474)
+        Me.ClientSize = New System.Drawing.Size(855, 385)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmMaterias"
         Me.Text = "Materias"
         Me.GroupBox1.ResumeLayout(False)
@@ -335,7 +307,6 @@ Partial Class frmMaterias
     Friend WithEvents btn_salir As Button
     Friend WithEvents btn_editar As Button
     Friend WithEvents btn_agregar As Button
-    Friend WithEvents lbl_Mensajes As Label
     Friend WithEvents txt_nombre As TextBox
     Friend WithEvents lbl_nombre As Label
     Friend WithEvents txt_cod_materia As TextBox

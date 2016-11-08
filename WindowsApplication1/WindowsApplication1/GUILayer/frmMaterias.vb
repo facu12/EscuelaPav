@@ -232,5 +232,33 @@
         End If
     End Function
 
+    Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
+        If Not txt_busqueda_materia.Text = "" Then
+            buscarMateria(txt_busqueda_materia.Text)
+        Else
+            MsgBox("Introduzca un nombre de una materia!", vbOKOnly)
+        End If
 
+    End Sub
+
+    Public Sub buscarMateria(ByVal materia As String, Optional ByVal lst As List(Of Materia) = Nothing)
+        Dim oMateriaService As New MateriaService
+        dgv_materias.Rows.Clear()
+
+        If IsNothing(lst) Then
+            lst = oMateriaService.listarMateriaConFiltro(materia)
+        End If
+
+        'Asignamos a la propiedad SelectionMode el valor FullRowSelect para que 
+        'al hacer click sobre la grilla se resalte toda la fila completa. Esto puede tmb hacerse en modo diseño.
+        dgv_materias.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dgv_materias.Rows.Clear()
+        For Each oMateria In lst
+
+            With oMateria
+                'cargar filas del datagridview a partir de un array de strings
+                dgv_materias.Rows.Add(New String() { .codMateria.ToString, .nombre.ToString, .SiNo(.esContraturno.ToString)})
+            End With
+        Next
+    End Sub
 End Class
