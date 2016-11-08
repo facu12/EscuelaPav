@@ -116,6 +116,12 @@
     <Compile Include="GUILayer\frmCursos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\frmEditarAsistencia.Designer.vb">
+      <DependentUpon>frmEditarAsistencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmEditarAsistencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmCursos.resx">
       <DependentUpon>frmCursos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmEditarAsistencia.resx">
+      <DependentUpon>frmEditarAsistencia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
