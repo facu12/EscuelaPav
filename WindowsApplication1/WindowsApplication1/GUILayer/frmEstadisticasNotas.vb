@@ -2,11 +2,12 @@
     Private Sub btnGenerar_Click(sender As Object, e As EventArgs) Handles btnGenerar.Click
         Dim reporte As New DocNotas
         Dim oCursoService As New CursoService
-        If (txtAño.Text = "") Then
+        If (txtAño.Text = "" Or txtNivel.Text = "") Then
             MsgBox("Faltan Completar Datos", vbOK, "Datos Incompletos")
         Else
             If (oCursoService.listarCursosAño(txtAño.Text).Count > 0) Then
                 reporte.SetParameterValue("@año", txtAño.Text)
+                reporte.SetParameterValue("@curso", txtNivel.Text)
                 rptNotas.ReportSource = reporte
                 rptNotas.Show()
                 rptNotas.Refresh()

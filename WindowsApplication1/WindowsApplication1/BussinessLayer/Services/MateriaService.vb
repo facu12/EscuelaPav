@@ -16,7 +16,7 @@
         Return oMateriaDAO.add(oMateria)
     End Function
 
-    Public Function registrarMateriaenCurso(cod As String, materia As Integer, profesor As Integer)
+    Public Function registrarMateriaenCurso(cod As String, materia As String, profesor As Integer)
         Return oMateriaDAO.addMateriaenCurso(cod, profesor, materia)
     End Function
 

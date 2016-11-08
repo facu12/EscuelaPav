@@ -68,7 +68,7 @@
 
     End Function
 
-    Public Function addMateriaenCurso(cod As String, profesor As Integer, materia As Integer) As Boolean
+    Public Function addMateriaenCurso(cod As String, profesor As Integer, materia As String) As Boolean
         Dim str As String
         str = "INSERT INTO profesorxmateriaxcurso values ('"
         str += cod + "','" + profesor.ToString + "','" + materia.ToString + "') "

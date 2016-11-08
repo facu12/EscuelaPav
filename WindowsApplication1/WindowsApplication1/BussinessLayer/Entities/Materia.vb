@@ -1,5 +1,5 @@
 ﻿Public Class Materia
-    Public Property codMateria As Integer
+    Public Property codMateria As String
     Public Property nombre As String
     Public Property esContraturno As String
 

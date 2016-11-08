@@ -27,11 +27,15 @@ Partial Class frmEstadisticasNotas
         Me.txtAño = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.rptNotas = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.txtNivel = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtNivel)
+        Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.btnGenerar)
         Me.GroupBox1.Controls.Add(Me.txtAño)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -44,7 +48,7 @@ Partial Class frmEstadisticasNotas
         '
         'btnGenerar
         '
-        Me.btnGenerar.Location = New System.Drawing.Point(265, 41)
+        Me.btnGenerar.Location = New System.Drawing.Point(523, 38)
         Me.btnGenerar.Name = "btnGenerar"
         Me.btnGenerar.Size = New System.Drawing.Size(75, 23)
         Me.btnGenerar.TabIndex = 6
@@ -82,6 +86,22 @@ Partial Class frmEstadisticasNotas
         Me.rptNotas.Size = New System.Drawing.Size(1302, 507)
         Me.rptNotas.TabIndex = 5
         '
+        'txtNivel
+        '
+        Me.txtNivel.Location = New System.Drawing.Point(338, 41)
+        Me.txtNivel.Name = "txtNivel"
+        Me.txtNivel.Size = New System.Drawing.Size(100, 22)
+        Me.txtNivel.TabIndex = 8
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(283, 41)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(49, 17)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "Curso:"
+        '
         'frmEstadisticasNotas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -102,4 +122,6 @@ Partial Class frmEstadisticasNotas
     Friend WithEvents txtAño As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents rptNotas As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents txtNivel As TextBox
+    Friend WithEvents Label2 As Label
 End Class

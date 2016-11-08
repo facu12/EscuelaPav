@@ -148,6 +148,7 @@ Partial Class frmAsignarAlumno
         Me.dgvAlumnos.Enabled = False
         Me.dgvAlumnos.Location = New System.Drawing.Point(14, 25)
         Me.dgvAlumnos.Name = "dgvAlumnos"
+        Me.dgvAlumnos.ReadOnly = True
         Me.dgvAlumnos.RowHeadersVisible = False
         Me.dgvAlumnos.RowTemplate.Height = 24
         Me.dgvAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -159,12 +160,14 @@ Partial Class frmAsignarAlumno
         Me.col_Legajo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.col_Legajo.HeaderText = "Legajo"
         Me.col_Legajo.Name = "col_Legajo"
+        Me.col_Legajo.ReadOnly = True
         Me.col_Legajo.Width = 80
         '
         'col_Nombre
         '
         Me.col_Nombre.HeaderText = "Alumno"
         Me.col_Nombre.Name = "col_Nombre"
+        Me.col_Nombre.ReadOnly = True
         Me.col_Nombre.Width = 200
         '
         'GroupBox3
