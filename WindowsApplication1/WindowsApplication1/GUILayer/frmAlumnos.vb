@@ -291,18 +291,30 @@ Public Class Form1
     'Metodos de validacion de campos numericos unicamente
     Private Sub validarNumericos(sender As Object, e As EventArgs) Handles txt_telefono.Leave, txt_ano_ingreso.Leave, txt_documento.Leave, txtLegajo.Leave
         If Not Regex.Match(CType(sender, TextBox).Text, "^[0-9]\d*(\.\d+)?$").Success Then
-            MessageBox.Show("Por favor ingrese SOLO caracteres Numéricos!")
+            MessageBox.Show("Por favor ingrese solo caracteres Numéricos!")
             CType(sender, TextBox).Clear()
         End If
     End Sub
 
     'Validacion de campos de texto plano
     Private Sub validarTextoPlano(sender As Object, e As EventArgs) Handles txtApellido.Leave, txtNombres.Leave
-        If Not Regex.Match(CType(sender, TextBox).Text, "^[a-z]*$", RegexOptions.IgnoreCase).Success Then
-            MessageBox.Show("Por favor ingrese SOLO caracteres alfabéticos!")
-            CType(sender, TextBox).Clear()
-        End If
+        For Each letra As Char In txtApellido.Text
+            If Not (Char.IsLetter(letra) Or Char.IsControl(letra) Or Char.IsSeparator(letra)) Then
+                MsgBox("Ha ingresado un tipo de caracter no valido. Por favor, vuelva a intentarlo", vbOK, "Error")
+            End If
+        Next
     End Sub
+
+    Private Function validarTexto(texto As String) As Boolean
+        Dim flag As Boolean = True
+        For Each letra As Char In texto
+            If Not (Char.IsLetter(letra) Or Char.IsControl(letra) Or Char.IsSeparator(letra)) Then
+                Return False
+            End If
+            Return False
+        Next
+        Return flag
+    End Function
 
     'metodo que valida el patron del mail
     Private Sub ValidarEmail()
@@ -361,5 +373,7 @@ Public Class Form1
         Return True
     End Function
 
+    Private Sub txtApellido_TextChanged(sender As Object, e As EventArgs) Handles txtApellido.TextChanged
 
+    End Sub
 End Class
