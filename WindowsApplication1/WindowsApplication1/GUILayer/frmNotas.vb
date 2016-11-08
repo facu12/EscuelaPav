@@ -1,6 +1,7 @@
 ﻿Public Class frmNotas
     Private Sub frmNotas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarComboAño()
+        Button1.Enabled = False
     End Sub
 
     Private Sub cargarComboAño()
@@ -9,6 +10,7 @@
         cmbAño.ValueMember = "Año"
         cmbAño.DisplayMember = "Año"
         cmbAño.Text = "Año"
+
     End Sub
 
     'Private Sub cmbAño_MouseClick(sender As Object, e As MouseEventArgs) Handles cmbAño.MouseClick
@@ -47,6 +49,7 @@
         cargarComboMateria()
         cargarComboTrimestre()
         cargarComboTipoNota()
+        Button1.Enabled = True
     End Sub
 
     Private Sub cargarComboTipoNota()

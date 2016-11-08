@@ -12,6 +12,7 @@
         cargarComboTrimestre()
         mtb_fecha.Enabled = False
         cmbTrimestre.Enabled = False
+        btn_planilla.Enabled = False
     End Sub
 
     Private Sub cargarComboAño()
@@ -50,6 +51,7 @@
         cmbTrimestre.Enabled = True
         curso = getCurso()
         llenarGridNotas(curso)
+        btn_planilla.Enabled = True
     End Sub
 
     Private Sub llenarGridNotas(curso As Integer)
