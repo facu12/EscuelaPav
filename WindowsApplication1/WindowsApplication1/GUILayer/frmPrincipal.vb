@@ -33,4 +33,16 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         frmAsignarAlumno.ShowDialog()
     End Sub
+
+    Private Sub btnReporteNotas_Click(sender As Object, e As EventArgs) Handles btnReporteNotas.Click
+        frmReporteNota.ShowDialog()
+    End Sub
+
+    Private Sub btnReporteAsist_Click(sender As Object, e As EventArgs) Handles btnReporteAsist.Click
+        frmReporteAsistencia.ShowDialog()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        frmEstadisticasNotas.ShowDialog()
+    End Sub
 End Class

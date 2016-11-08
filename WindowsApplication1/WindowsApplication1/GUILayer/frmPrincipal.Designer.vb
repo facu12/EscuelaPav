@@ -29,6 +29,9 @@ Partial Class frmPrincipal
         Me.btnNotas = New System.Windows.Forms.Button()
         Me.btnAsistencia = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnReporteAsist = New System.Windows.Forms.Button()
+        Me.btnReporteNotas = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_profesores
@@ -111,11 +114,47 @@ Partial Class frmPrincipal
         Me.Button1.Text = "Asignar Alumnos a Curso"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'btnReporteAsist
+        '
+        Me.btnReporteAsist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReporteAsist.Location = New System.Drawing.Point(249, 215)
+        Me.btnReporteAsist.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnReporteAsist.Name = "btnReporteAsist"
+        Me.btnReporteAsist.Size = New System.Drawing.Size(217, 82)
+        Me.btnReporteAsist.TabIndex = 7
+        Me.btnReporteAsist.Text = "Reporte Asistencias"
+        Me.btnReporteAsist.UseVisualStyleBackColor = True
+        '
+        'btnReporteNotas
+        '
+        Me.btnReporteNotas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnReporteNotas.Location = New System.Drawing.Point(13, 215)
+        Me.btnReporteNotas.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnReporteNotas.Name = "btnReporteNotas"
+        Me.btnReporteNotas.Size = New System.Drawing.Size(217, 82)
+        Me.btnReporteNotas.TabIndex = 8
+        Me.btnReporteNotas.Text = "Reporte Notas"
+        Me.btnReporteNotas.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(13, 315)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(217, 82)
+        Me.Button2.TabIndex = 9
+        Me.Button2.Text = "Estadisticas "
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(740, 330)
+        Me.ClientSize = New System.Drawing.Size(740, 424)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btnReporteNotas)
+        Me.Controls.Add(Me.btnReporteAsist)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnAsistencia)
         Me.Controls.Add(Me.btnNotas)
@@ -137,4 +176,7 @@ Partial Class frmPrincipal
     Friend WithEvents btnNotas As Button
     Friend WithEvents btnAsistencia As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents btnReporteAsist As Button
+    Friend WithEvents btnReporteNotas As Button
+    Friend WithEvents Button2 As Button
 End Class

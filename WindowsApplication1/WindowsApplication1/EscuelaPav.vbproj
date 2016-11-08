@@ -50,10 +50,14 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -125,6 +129,12 @@
     <Compile Include="GUILayer\frmEditarAsistencia.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\frmEstadisticasNotas.Designer.vb">
+      <DependentUpon>frmEstadisticasNotas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmEstadisticasNotas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUILayer\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -173,6 +183,30 @@
     <Compile Include="GUILayer\frmAlumnos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GUILayer\frmReporteAsistencia.Designer.vb">
+      <DependentUpon>frmReporteAsistencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmReporteAsistencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmReporteNota.Designer.vb">
+      <DependentUpon>frmReporteNota.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmReporteNota.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\DocNotas.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocNotas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\ReporteAsistencias.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteAsistencias.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GUILayer\Reportes\ReporteNotas.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -212,6 +246,9 @@
     <EmbeddedResource Include="GUILayer\frmEditarAsistencia.resx">
       <DependentUpon>frmEditarAsistencia.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmEstadisticasNotas.resx">
+      <DependentUpon>frmEstadisticasNotas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +272,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmAlumnos.resx">
       <DependentUpon>frmAlumnos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmReporteAsistencia.resx">
+      <DependentUpon>frmReporteAsistencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmReporteNota.resx">
+      <DependentUpon>frmReporteNota.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\DocNotas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DocNotas.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\ReporteAsistencias.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteAsistencias.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Reportes\ReporteNotas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
