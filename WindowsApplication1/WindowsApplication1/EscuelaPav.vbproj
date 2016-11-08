@@ -320,6 +320,8 @@
     <None Include="Resources\alumno.png" />
     <Content Include="Resources\editar.png" />
     <None Include="Resources\profesor_farsnworth_32.png" />
+    <None Include="Resources\reporte.png" />
+    <None Include="Resources\estadistica.png" />
     <Content Include="Resources\salir.png" />
   </ItemGroup>
   <ItemGroup>
