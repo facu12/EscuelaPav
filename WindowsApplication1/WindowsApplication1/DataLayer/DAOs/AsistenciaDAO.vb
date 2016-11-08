@@ -41,10 +41,48 @@
         Return BDHelper.getDBHelper.ConsultaSQL(str)
     End Function
 
-    Public Function getDatosFecha(fecha As String) As DataTable
+    Public Function existeAsistencia(ByVal curso As String, ByVal trimestre As String) As Boolean
+        Dim str As String = ""
+        str = "SELECT * FROM Asistencia where cod_curso = "
+        str += "'" + curso.ToString + "' "
+        str += "AND trimestre = " + trimestre.ToString
+        Return BDHelper.getDBHelper.ConsultaSQL(str).Rows.Count > 0
+    End Function
+
+    Public Function getAsistencias(ByVal curso As String, ByVal trimestre As String) As DataTable
+        Dim str As String = ""
+        str = "EXECUTE obtenerAsistencias "
+        str += "'" + curso.ToString + "'"
+        str += ",'" + trimestre.ToString + "'"
+
+        Return BDHelper.getDBHelper.EjecutarProcedure(str)
+    End Function
+    Public Function getAsistenciaTotal(curso As String, trimestre As String) As DataTable
         Dim str As String
-        str = "Select * from asistencia where fecha=" & fecha
+        str = "select SUM(asistencia) as Total from Asistencia a join Alumno b on a.legajo_alu = b.legajo WHERE cod_curso = '" + curso.ToString + "'"
+        str += "AND trimestre = " + trimestre.ToString + " "
+        str += "GROUP BY b.apellido"
         Return BDHelper.getDBHelper.ConsultaSQL(str)
+    End Function
+
+    Public Function actualizarAsistencia(curso As String, trimestre As String, legajo As String, asist As String, fecha As String, justif As String) As Boolean
+        Dim str As String
+        str = "UPDATE Asistencia set asistencia = " + asist.ToString + ", "
+        str += "es_justificada = " + justif.ToString + " "
+        str += "WHERE cod_curso = '" + curso.ToString + "' "
+        str += "AND legajo_alu = " + legajo.ToString + " "
+        str += "AND fecha = '" + fecha.ToString + "' "
+        str += "AND trimestre = " + trimestre.ToString
+        Return BDHelper.getDBHelper.EjecutarSQL(str) > 0
+    End Function
+
+    Public Function borrarDia(curso As String, trimestre As String, dia As String) As Boolean
+        Dim str As String = ""
+        str = "DELETE asistencia "
+        str += "WHERE cod_curso = '" + curso.ToString + "' "
+        str += "AND fecha = '" + dia.ToString + "' "
+        str += "AND trimestre = " + trimestre.ToString
+        Return BDHelper.getDBHelper.EjecutarSQL(str) > 0
     End Function
 
 End Class

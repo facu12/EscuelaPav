@@ -62,7 +62,7 @@
         Next
     End Sub
 
-    Private Function getCurso()
+    Public Function getCurso()
         Return dgvCursos.CurrentRow.Cells.Item("col_año").Value + dgvCursos.CurrentRow.Cells.Item("col_nivel").Value + dgvCursos.CurrentRow.Cells.Item("col_subnivel").Value
     End Function
 
@@ -96,7 +96,7 @@
 
 
             If mtb_fecha.Text <> "  /  /    " And cmbTrimestre.SelectedIndex <> -1 Then
-                If (oAsistenciaService.insertarAsistencias(tabla, cmbTrimestre.SelectedValue + 1, mtb_fecha.Text)) Then
+                If (oAsistenciaService.insertarAsistencias(tabla, cmbTrimestre.SelectedValue, mtb_fecha.Text)) Then
                     MsgBox("Asistencia del día Cargada!", vbOK, "Asistencia")
                     dgvAsistencia.Rows.Clear()
                     mtb_fecha.Text = Nothing
@@ -119,4 +119,6 @@
         frmPlanillaAsistencia.ShowDialog()
 
     End Sub
+
+
 End Class
