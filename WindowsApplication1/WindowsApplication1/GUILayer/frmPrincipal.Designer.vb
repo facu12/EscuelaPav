@@ -40,10 +40,9 @@ Partial Class frmPrincipal
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label1.Location = New System.Drawing.Point(8, 7)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(11, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(192, 24)
+        Me.Label1.Size = New System.Drawing.Size(240, 29)
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Gestión de Escuela"
         '
@@ -51,9 +50,10 @@ Partial Class frmPrincipal
         '
         Me.Button2.Image = Global.WindowsApplication1.My.Resources.Resources.estadistica
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(10, 283)
+        Me.Button2.Location = New System.Drawing.Point(13, 348)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(163, 67)
+        Me.Button2.Size = New System.Drawing.Size(217, 82)
         Me.Button2.TabIndex = 9
         Me.Button2.Text = "Estadisticas "
         Me.Button2.UseVisualStyleBackColor = True
@@ -62,9 +62,10 @@ Partial Class frmPrincipal
         '
         Me.btnReporteNotas.Image = Global.WindowsApplication1.My.Resources.Resources.reporte
         Me.btnReporteNotas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnReporteNotas.Location = New System.Drawing.Point(10, 202)
+        Me.btnReporteNotas.Location = New System.Drawing.Point(13, 249)
+        Me.btnReporteNotas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnReporteNotas.Name = "btnReporteNotas"
-        Me.btnReporteNotas.Size = New System.Drawing.Size(163, 67)
+        Me.btnReporteNotas.Size = New System.Drawing.Size(217, 82)
         Me.btnReporteNotas.TabIndex = 8
         Me.btnReporteNotas.Text = "Reporte Notas"
         Me.btnReporteNotas.UseVisualStyleBackColor = True
@@ -73,21 +74,22 @@ Partial Class frmPrincipal
         '
         Me.btnReporteAsist.Image = Global.WindowsApplication1.My.Resources.Resources.reporte
         Me.btnReporteAsist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnReporteAsist.Location = New System.Drawing.Point(187, 202)
+        Me.btnReporteAsist.Location = New System.Drawing.Point(249, 249)
+        Me.btnReporteAsist.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnReporteAsist.Name = "btnReporteAsist"
-        Me.btnReporteAsist.Size = New System.Drawing.Size(163, 67)
+        Me.btnReporteAsist.Size = New System.Drawing.Size(217, 82)
         Me.btnReporteAsist.TabIndex = 7
         Me.btnReporteAsist.Text = "Reporte Asistencias"
-        Me.btnReporteAsist.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnReporteAsist.UseVisualStyleBackColor = True
         '
         'Button1
         '
         Me.Button1.Image = Global.WindowsApplication1.My.Resources.Resources.aconc
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(364, 202)
+        Me.Button1.Location = New System.Drawing.Point(485, 249)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(163, 67)
+        Me.Button1.Size = New System.Drawing.Size(217, 82)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Asignar Alumnos a Curso"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -97,21 +99,22 @@ Partial Class frmPrincipal
         '
         Me.btnAsistencia.Image = Global.WindowsApplication1.My.Resources.Resources.asistencias
         Me.btnAsistencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAsistencia.Location = New System.Drawing.Point(364, 37)
+        Me.btnAsistencia.Location = New System.Drawing.Point(485, 46)
+        Me.btnAsistencia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAsistencia.Name = "btnAsistencia"
-        Me.btnAsistencia.Size = New System.Drawing.Size(163, 67)
+        Me.btnAsistencia.Size = New System.Drawing.Size(217, 82)
         Me.btnAsistencia.TabIndex = 5
         Me.btnAsistencia.Text = "Registrar Asistencias"
-        Me.btnAsistencia.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnAsistencia.UseVisualStyleBackColor = True
         '
         'btnNotas
         '
         Me.btnNotas.Image = Global.WindowsApplication1.My.Resources.Resources.calificaciones
         Me.btnNotas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNotas.Location = New System.Drawing.Point(364, 119)
+        Me.btnNotas.Location = New System.Drawing.Point(485, 146)
+        Me.btnNotas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnNotas.Name = "btnNotas"
-        Me.btnNotas.Size = New System.Drawing.Size(163, 67)
+        Me.btnNotas.Size = New System.Drawing.Size(217, 82)
         Me.btnNotas.TabIndex = 4
         Me.btnNotas.Text = "Registrar Notas"
         Me.btnNotas.UseVisualStyleBackColor = True
@@ -120,9 +123,10 @@ Partial Class frmPrincipal
         '
         Me.btn_materia.Image = Global.WindowsApplication1.My.Resources.Resources.materias
         Me.btn_materia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_materia.Location = New System.Drawing.Point(187, 119)
+        Me.btn_materia.Location = New System.Drawing.Point(249, 146)
+        Me.btn_materia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btn_materia.Name = "btn_materia"
-        Me.btn_materia.Size = New System.Drawing.Size(163, 67)
+        Me.btn_materia.Size = New System.Drawing.Size(217, 82)
         Me.btn_materia.TabIndex = 3
         Me.btn_materia.Text = "Crear Materias "
         Me.btn_materia.UseVisualStyleBackColor = True
@@ -131,9 +135,10 @@ Partial Class frmPrincipal
         '
         Me.btn_curso.Image = Global.WindowsApplication1.My.Resources.Resources.curso
         Me.btn_curso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_curso.Location = New System.Drawing.Point(10, 119)
+        Me.btn_curso.Location = New System.Drawing.Point(13, 146)
+        Me.btn_curso.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btn_curso.Name = "btn_curso"
-        Me.btn_curso.Size = New System.Drawing.Size(163, 67)
+        Me.btn_curso.Size = New System.Drawing.Size(217, 82)
         Me.btn_curso.TabIndex = 2
         Me.btn_curso.Text = "Crear Cursos"
         Me.btn_curso.UseVisualStyleBackColor = True
@@ -142,9 +147,10 @@ Partial Class frmPrincipal
         '
         Me.btn_profesores.Image = Global.WindowsApplication1.My.Resources.Resources.profesor_farsnworth_32
         Me.btn_profesores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_profesores.Location = New System.Drawing.Point(187, 37)
+        Me.btn_profesores.Location = New System.Drawing.Point(249, 46)
+        Me.btn_profesores.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btn_profesores.Name = "btn_profesores"
-        Me.btn_profesores.Size = New System.Drawing.Size(163, 67)
+        Me.btn_profesores.Size = New System.Drawing.Size(217, 82)
         Me.btn_profesores.TabIndex = 1
         Me.btn_profesores.Text = "Crear Profesores"
         Me.btn_profesores.UseVisualStyleBackColor = True
@@ -153,18 +159,19 @@ Partial Class frmPrincipal
         '
         Me.btn_alumnos.Image = Global.WindowsApplication1.My.Resources.Resources.alumno
         Me.btn_alumnos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_alumnos.Location = New System.Drawing.Point(10, 37)
+        Me.btn_alumnos.Location = New System.Drawing.Point(13, 46)
+        Me.btn_alumnos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btn_alumnos.Name = "btn_alumnos"
-        Me.btn_alumnos.Size = New System.Drawing.Size(163, 67)
+        Me.btn_alumnos.Size = New System.Drawing.Size(217, 82)
         Me.btn_alumnos.TabIndex = 0
         Me.btn_alumnos.Text = "Crear Alumnos"
         Me.btn_alumnos.UseVisualStyleBackColor = True
         '
         'frmPrincipal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(566, 360)
+        Me.ClientSize = New System.Drawing.Size(755, 443)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btnReporteNotas)
@@ -176,6 +183,7 @@ Partial Class frmPrincipal
         Me.Controls.Add(Me.btn_curso)
         Me.Controls.Add(Me.btn_profesores)
         Me.Controls.Add(Me.btn_alumnos)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmPrincipal"
         Me.ShowIcon = False
         Me.Text = "Gestion Escuela"

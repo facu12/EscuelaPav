@@ -9,7 +9,7 @@
         Return oNotaDAO.getTrimestres()
     End Function
 
-    Public Function insertarNotas(tabla As DataTable, tnota As Char, trim As Integer, fecha As String, mat As Integer) As Integer
+    Public Function insertarNotas(tabla As DataTable, tnota As Char, trim As Integer, fecha As String, mat As String) As Integer
         Return oNotaDAO.insertarNotas(tabla, tnota, trim, fecha, mat)
     End Function
 
@@ -22,7 +22,7 @@
     End Function
 
     Public Function existeNotaFinal(curso As String, materia As String, trimestre As String) As Boolean
-        Return oNotaDAO.existeNota(curso, materia, trimestre)
+        Return oNotaDAO.existeNotaFinal(curso, materia, trimestre)
     End Function
 
     Public Function getNotaFinal(curso As String, materia As String, trimestre As String) As DataTable

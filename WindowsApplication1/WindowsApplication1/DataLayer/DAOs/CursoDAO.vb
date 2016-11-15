@@ -74,6 +74,19 @@
         Return tabla
     End Function
 
+    Public Function getCursosAñoNivel(año As Integer, nivel As Integer) As List(Of Curso)
+        Dim str As String
+        Dim tabla As New List(Of Curso)
+        str = "Select año_lectivo, nivel, subnivel FROM curso WHERE año_lectivo = '"
+        str += año.ToString + "'"
+        str += " AND nivel = '" + nivel.ToString + "' "
+        str += "ORDER BY año_lectivo desc, nivel asc, subnivel asc"
+        For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL(str).Rows
+            tabla.Add(map(row))
+        Next
+        Return tabla
+    End Function
+
     Public Function getAlumnosCurso(curso As Integer) As DataTable
         Dim str As String
         str = "SELECT b.legajo, b.apellido + ', ' + b.nombre as nombre FROM AlumnosXCurso a JOIN Alumno b ON a.legajo = b.legajo WHERE cod_curso = '"

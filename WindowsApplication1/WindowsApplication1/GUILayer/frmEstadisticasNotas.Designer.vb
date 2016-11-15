@@ -23,12 +23,12 @@ Partial Class frmEstadisticasNotas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtNivel = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnGenerar = New System.Windows.Forms.Button()
         Me.txtAño = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.rptNotas = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.txtNivel = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -45,6 +45,22 @@ Partial Class frmEstadisticasNotas
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Seleccionar Año"
+        '
+        'txtNivel
+        '
+        Me.txtNivel.Location = New System.Drawing.Point(338, 41)
+        Me.txtNivel.Name = "txtNivel"
+        Me.txtNivel.Size = New System.Drawing.Size(100, 22)
+        Me.txtNivel.TabIndex = 8
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(283, 41)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(49, 17)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "Curso:"
         '
         'btnGenerar
         '
@@ -85,22 +101,6 @@ Partial Class frmEstadisticasNotas
         Me.rptNotas.ShowCloseButton = False
         Me.rptNotas.Size = New System.Drawing.Size(1302, 507)
         Me.rptNotas.TabIndex = 5
-        '
-        'txtNivel
-        '
-        Me.txtNivel.Location = New System.Drawing.Point(338, 41)
-        Me.txtNivel.Name = "txtNivel"
-        Me.txtNivel.Size = New System.Drawing.Size(100, 22)
-        Me.txtNivel.TabIndex = 8
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(283, 41)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 17)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Curso:"
         '
         'frmEstadisticasNotas
         '

@@ -57,7 +57,7 @@
 
     Private Sub btn_borrar_dia_Click(sender As Object, e As EventArgs) Handles btn_borrar_dia.Click
         Dim fecha As String = InputBox("Seleccione la fecha a borrar: ", "Fecha a Borrar", Date.Today)
-        If (MsgBox("Seguro que desea borrar la fecha " + fecha + " del " + cbo_trimestre.Text + " Trimestre?", vbYesNo, "Borrar Fecha") = vbYes) Then
+        If (MsgBox("Seguro que desea borrar la fecha " + fecha + " del " + cbo_trimestre.Text + " ?", vbYesNo, "Borrar Fecha") = vbYes) Then
             If (oAsistenciaService.borrarDia(lbl_cursoreal.Text, cbo_trimestre.SelectedValue, fecha) = "True") Then
                 MsgBox("Eliminado con exito!")
                 cargarAsistencias()

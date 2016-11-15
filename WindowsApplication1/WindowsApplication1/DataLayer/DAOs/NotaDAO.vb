@@ -11,14 +11,14 @@
         Return BDHelper.getDBHelper.ConsultaSQL(str)
     End Function
 
-    Public Function insertarNotas(tabla As DataTable, tnota As Char, trim As Integer, fecha As String, mat As Integer) As Integer
+    Public Function insertarNotas(tabla As DataTable, tnota As Char, trim As Integer, fecha As String, mat As String) As Integer
         Dim str As String = ""
         For Each row As DataRow In tabla.Rows
             str += "INSERT INTO Nota VALUES ('"
             str += row.Item("col_Curso").ToString + "'"
             str += ", " + row.Item("col_Legajo").ToString
-            str += ", " + mat.ToString
-            str += ", '" + fecha + "'"
+            str += ", '" + mat.ToString + "'"
+            str += ", '" + fecha.ToString + "'"
             str += ", '" + tnota.ToString + "'"
             str += ", " + trim.ToString
             str += ", '" + row.Item("col_Nota").ToString + "')"

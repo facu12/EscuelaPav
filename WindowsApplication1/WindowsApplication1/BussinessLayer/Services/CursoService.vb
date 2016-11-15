@@ -39,4 +39,8 @@
         Return oCurso.getMateriaCurso(curso)
     End Function
 
+    Public Function getCursosAñoNivel(año As Integer, nivel As Integer) As List(Of Curso)
+        Return oCurso.getCursosAñoNivel(año, nivel)
+    End Function
+
 End Class

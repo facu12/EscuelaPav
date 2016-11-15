@@ -1,4 +1,6 @@
-﻿Public Class frmReporteNota
+﻿Imports System.Text.RegularExpressions
+
+Public Class frmReporteNota
     Private Sub btnGenerar_Click(sender As Object, e As EventArgs) Handles btnGenerar.Click
         Dim reporte As New ReporteNotas
         Dim oCursoService As New CursoService
@@ -24,5 +26,20 @@
 
     Private Sub frmReporteNota_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+        rptNotas.ReportSource = Nothing
+        rptNotas.Refresh()
+        txtAño.Text = ""
+        txtNivel.Text = ""
+        txtSubnivel.Text = ""
+    End Sub
+
+    Private Sub validarNumericos(sender As Object, e As EventArgs) Handles txtAño.Leave, txtNivel.Leave, txtSubnivel.Leave
+        If Not Regex.Match(CType(sender, TextBox).Text, "^[0-9]\d*(\.\d+)?$").Success Then
+            MessageBox.Show("Por favor ingrese solo caracteres Numéricos!")
+            CType(sender, TextBox).Clear()
+        End If
     End Sub
 End Class
