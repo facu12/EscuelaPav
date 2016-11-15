@@ -44,43 +44,48 @@ Partial Class frmConsultarNotas
         '
         Me.lblTitulo.AutoSize = True
         Me.lblTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitulo.Location = New System.Drawing.Point(535, 9)
+        Me.lblTitulo.Location = New System.Drawing.Point(401, 7)
+        Me.lblTitulo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(157, 25)
+        Me.lblTitulo.Size = New System.Drawing.Size(126, 20)
         Me.lblTitulo.TabIndex = 0
         Me.lblTitulo.Text = "Planilla de Notas"
         '
         'cmbMateria
         '
         Me.cmbMateria.FormattingEnabled = True
-        Me.cmbMateria.Location = New System.Drawing.Point(160, 51)
+        Me.cmbMateria.Location = New System.Drawing.Point(120, 41)
+        Me.cmbMateria.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbMateria.Name = "cmbMateria"
-        Me.cmbMateria.Size = New System.Drawing.Size(121, 24)
+        Me.cmbMateria.Size = New System.Drawing.Size(92, 21)
         Me.cmbMateria.TabIndex = 1
         '
         'cmbTrimestre
         '
         Me.cmbTrimestre.FormattingEnabled = True
-        Me.cmbTrimestre.Location = New System.Drawing.Point(496, 51)
+        Me.cmbTrimestre.Location = New System.Drawing.Point(372, 41)
+        Me.cmbTrimestre.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cmbTrimestre.Name = "cmbTrimestre"
-        Me.cmbTrimestre.Size = New System.Drawing.Size(121, 24)
+        Me.cmbTrimestre.Size = New System.Drawing.Size(92, 21)
         Me.cmbTrimestre.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(13, 54)
+        Me.Label2.Location = New System.Drawing.Point(10, 44)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(141, 17)
+        Me.Label2.Size = New System.Drawing.Size(107, 13)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Seleccionar Materia: "
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(340, 54)
+        Me.Label3.Location = New System.Drawing.Point(255, 44)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(150, 17)
+        Me.Label3.Size = New System.Drawing.Size(112, 13)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Seleccionar Trimestre:"
         '
@@ -98,20 +103,22 @@ Partial Class frmConsultarNotas
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvNotasTrim.DefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvNotasTrim.Location = New System.Drawing.Point(16, 85)
+        Me.dgvNotasTrim.Location = New System.Drawing.Point(12, 69)
+        Me.dgvNotasTrim.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgvNotasTrim.Name = "dgvNotasTrim"
         Me.dgvNotasTrim.ReadOnly = True
         Me.dgvNotasTrim.RowHeadersVisible = False
         Me.dgvNotasTrim.RowTemplate.Height = 24
         Me.dgvNotasTrim.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvNotasTrim.Size = New System.Drawing.Size(1235, 558)
+        Me.dgvNotasTrim.Size = New System.Drawing.Size(926, 453)
         Me.dgvNotasTrim.TabIndex = 5
         '
         'btnConsultar
         '
-        Me.btnConsultar.Location = New System.Drawing.Point(673, 51)
+        Me.btnConsultar.Location = New System.Drawing.Point(505, 41)
+        Me.btnConsultar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnConsultar.Name = "btnConsultar"
-        Me.btnConsultar.Size = New System.Drawing.Size(75, 23)
+        Me.btnConsultar.Size = New System.Drawing.Size(56, 19)
         Me.btnConsultar.TabIndex = 6
         Me.btnConsultar.Text = "Consultar"
         Me.btnConsultar.UseVisualStyleBackColor = True
@@ -130,48 +137,52 @@ Partial Class frmConsultarNotas
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvFinal.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvFinal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvFinal.Location = New System.Drawing.Point(1257, 85)
+        Me.dgvFinal.Location = New System.Drawing.Point(943, 69)
+        Me.dgvFinal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgvFinal.Name = "dgvFinal"
         Me.dgvFinal.ReadOnly = True
         Me.dgvFinal.RowHeadersVisible = False
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
         Me.dgvFinal.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvFinal.RowTemplate.Height = 24
-        Me.dgvFinal.Size = New System.Drawing.Size(75, 558)
+        Me.dgvFinal.Size = New System.Drawing.Size(56, 453)
         Me.dgvFinal.TabIndex = 7
         '
         'btnCerrar
         '
-        Me.btnCerrar.Location = New System.Drawing.Point(1231, 649)
+        Me.btnCerrar.Location = New System.Drawing.Point(923, 527)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(101, 23)
+        Me.btnCerrar.Size = New System.Drawing.Size(76, 19)
         Me.btnCerrar.TabIndex = 8
         Me.btnCerrar.Text = "Cerrar"
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
         'btnBorrarDia
         '
-        Me.btnBorrarDia.Location = New System.Drawing.Point(1126, 649)
+        Me.btnBorrarDia.Location = New System.Drawing.Point(844, 527)
+        Me.btnBorrarDia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnBorrarDia.Name = "btnBorrarDia"
-        Me.btnBorrarDia.Size = New System.Drawing.Size(99, 23)
+        Me.btnBorrarDia.Size = New System.Drawing.Size(74, 19)
         Me.btnBorrarDia.TabIndex = 9
         Me.btnBorrarDia.Text = "Borrar Dia"
         Me.btnBorrarDia.UseVisualStyleBackColor = True
         '
         'btnBorrarFinal
         '
-        Me.btnBorrarFinal.Location = New System.Drawing.Point(1021, 649)
+        Me.btnBorrarFinal.Location = New System.Drawing.Point(766, 527)
+        Me.btnBorrarFinal.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnBorrarFinal.Name = "btnBorrarFinal"
-        Me.btnBorrarFinal.Size = New System.Drawing.Size(99, 23)
+        Me.btnBorrarFinal.Size = New System.Drawing.Size(74, 19)
         Me.btnBorrarFinal.TabIndex = 10
         Me.btnBorrarFinal.Text = "Borrar Final"
         Me.btnBorrarFinal.UseVisualStyleBackColor = True
         '
         'frmConsultarNotas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1344, 691)
+        Me.ClientSize = New System.Drawing.Size(1008, 561)
         Me.Controls.Add(Me.btnBorrarFinal)
         Me.Controls.Add(Me.btnBorrarDia)
         Me.Controls.Add(Me.btnCerrar)
@@ -183,9 +194,10 @@ Partial Class frmConsultarNotas
         Me.Controls.Add(Me.cmbTrimestre)
         Me.Controls.Add(Me.cmbMateria)
         Me.Controls.Add(Me.lblTitulo)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "frmConsultarNotas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Notas"
+        Me.Text = "Planilla de Notas"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.dgvNotasTrim, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvFinal, System.ComponentModel.ISupportInitialize).EndInit()

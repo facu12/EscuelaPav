@@ -150,7 +150,7 @@ Partial Class frmPlanillaAsistencia
         Me.Controls.Add(Me.dgv_totalizador)
         Me.Controls.Add(Me.dgv_asistencias)
         Me.Name = "frmPlanillaAsistencia"
-        Me.Text = "frmPlanillaAsistencia"
+        Me.Text = "Planilla de Asistencias"
         CType(Me.dgv_asistencias, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_totalizador, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

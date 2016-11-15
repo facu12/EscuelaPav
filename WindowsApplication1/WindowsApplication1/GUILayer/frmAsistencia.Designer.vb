@@ -286,7 +286,7 @@ Partial Class frmAsistencia
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmAsistencia"
-        Me.Text = "frmAsistencia"
+        Me.Text = "Asistencia"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)

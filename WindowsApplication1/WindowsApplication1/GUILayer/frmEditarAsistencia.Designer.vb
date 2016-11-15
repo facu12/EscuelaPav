@@ -211,7 +211,7 @@ Partial Class frmEditarAsistencia
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frmEditarAsistencia"
-        Me.Text = "frmEditarAsistencia"
+        Me.Text = "Editar Asistencia"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)

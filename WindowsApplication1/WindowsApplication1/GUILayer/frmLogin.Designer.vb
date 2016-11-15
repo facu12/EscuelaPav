@@ -104,7 +104,7 @@ Partial Class frmLogin
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_ingresar)
         Me.Name = "frmLogin"
-        Me.Text = "frmLogin"
+        Me.Text = "Login"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -60,7 +60,7 @@ Partial Class frmAsignarAlumno
         '
         Me.btnBuscar.Enabled = False
         Me.btnBuscar.Location = New System.Drawing.Point(226, 15)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(56, 19)
         Me.btnBuscar.TabIndex = 2
@@ -73,9 +73,9 @@ Partial Class frmAsignarAlumno
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.cmbAño)
         Me.GroupBox1.Location = New System.Drawing.Point(9, 10)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(304, 45)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
@@ -94,7 +94,7 @@ Partial Class frmAsignarAlumno
         '
         Me.cmbAño.FormattingEnabled = True
         Me.cmbAño.Location = New System.Drawing.Point(94, 15)
-        Me.cmbAño.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cmbAño.Margin = New System.Windows.Forms.Padding(2)
         Me.cmbAño.Name = "cmbAño"
         Me.cmbAño.Size = New System.Drawing.Size(48, 21)
         Me.cmbAño.TabIndex = 0
@@ -108,7 +108,7 @@ Partial Class frmAsignarAlumno
         Me.dgvCursos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_Año, Me.col_Nivel, Me.col_Subnivel})
         Me.dgvCursos.Enabled = False
         Me.dgvCursos.Location = New System.Drawing.Point(5, 18)
-        Me.dgvCursos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvCursos.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvCursos.Name = "dgvCursos"
         Me.dgvCursos.ReadOnly = True
         Me.dgvCursos.RowHeadersVisible = False
@@ -139,9 +139,9 @@ Partial Class frmAsignarAlumno
         '
         Me.GroupBox2.Controls.Add(Me.dgvCursos)
         Me.GroupBox2.Location = New System.Drawing.Point(9, 70)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Size = New System.Drawing.Size(304, 297)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
@@ -156,7 +156,7 @@ Partial Class frmAsignarAlumno
         Me.dgvAlumnos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_Legajo, Me.col_Nombre})
         Me.dgvAlumnos.Enabled = False
         Me.dgvAlumnos.Location = New System.Drawing.Point(10, 20)
-        Me.dgvAlumnos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvAlumnos.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvAlumnos.Name = "dgvAlumnos"
         Me.dgvAlumnos.ReadOnly = True
         Me.dgvAlumnos.RowHeadersVisible = False
@@ -187,9 +187,9 @@ Partial Class frmAsignarAlumno
         Me.GroupBox3.Controls.Add(Me.btnBuscarAlumno)
         Me.GroupBox3.Controls.Add(Me.dgvAlumnos)
         Me.GroupBox3.Location = New System.Drawing.Point(319, 17)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox3.Size = New System.Drawing.Size(239, 350)
         Me.GroupBox3.TabIndex = 6
         Me.GroupBox3.TabStop = False
@@ -198,7 +198,7 @@ Partial Class frmAsignarAlumno
         'txtApellido
         '
         Me.txtApellido.Location = New System.Drawing.Point(59, 329)
-        Me.txtApellido.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtApellido.Margin = New System.Windows.Forms.Padding(2)
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(110, 20)
         Me.txtApellido.TabIndex = 6
@@ -216,7 +216,7 @@ Partial Class frmAsignarAlumno
         'btnBuscarAlumno
         '
         Me.btnBuscarAlumno.Location = New System.Drawing.Point(173, 329)
-        Me.btnBuscarAlumno.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBuscarAlumno.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscarAlumno.Name = "btnBuscarAlumno"
         Me.btnBuscarAlumno.Size = New System.Drawing.Size(56, 19)
         Me.btnBuscarAlumno.TabIndex = 3
@@ -227,9 +227,9 @@ Partial Class frmAsignarAlumno
         '
         Me.GroupBox4.Controls.Add(Me.dgvCursoAlu)
         Me.GroupBox4.Location = New System.Drawing.Point(596, 17)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Size = New System.Drawing.Size(220, 347)
         Me.GroupBox4.TabIndex = 7
         Me.GroupBox4.TabStop = False
@@ -244,7 +244,7 @@ Partial Class frmAsignarAlumno
         Me.dgvCursoAlu.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col1_legajo, Me.col1_nombre, Me.col1_curso})
         Me.dgvCursoAlu.Enabled = False
         Me.dgvCursoAlu.Location = New System.Drawing.Point(4, 20)
-        Me.dgvCursoAlu.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgvCursoAlu.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvCursoAlu.Name = "dgvCursoAlu"
         Me.dgvCursoAlu.ReadOnly = True
         Me.dgvCursoAlu.RowHeadersVisible = False
@@ -279,7 +279,7 @@ Partial Class frmAsignarAlumno
         '
         Me.btnAgregar.Enabled = False
         Me.btnAgregar.Location = New System.Drawing.Point(563, 154)
-        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(28, 33)
         Me.btnAgregar.TabIndex = 8
@@ -290,7 +290,7 @@ Partial Class frmAsignarAlumno
         '
         Me.btnEliminar.Enabled = False
         Me.btnEliminar.Location = New System.Drawing.Point(562, 192)
-        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(28, 33)
         Me.btnEliminar.TabIndex = 9
@@ -300,7 +300,7 @@ Partial Class frmAsignarAlumno
         'btnFinalizar
         '
         Me.btnFinalizar.Location = New System.Drawing.Point(673, 368)
-        Me.btnFinalizar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnFinalizar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnFinalizar.Name = "btnFinalizar"
         Me.btnFinalizar.Size = New System.Drawing.Size(60, 23)
         Me.btnFinalizar.TabIndex = 7
@@ -330,9 +330,9 @@ Partial Class frmAsignarAlumno
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmAsignarAlumno"
-        Me.Text = "frmAsignarAlumno"
+        Me.Text = "Asignar Alumnos"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).EndInit()
