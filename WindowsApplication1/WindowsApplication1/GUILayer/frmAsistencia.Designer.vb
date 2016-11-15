@@ -44,6 +44,7 @@ Partial Class frmAsistencia
         Me.col_justificada = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.btn_agregar = New System.Windows.Forms.Button()
         Me.btn_planilla = New System.Windows.Forms.Button()
+        Me.btn_cerrar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvCursos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -245,7 +246,7 @@ Partial Class frmAsistencia
         '
         'btn_agregar
         '
-        Me.btn_agregar.Location = New System.Drawing.Point(518, 361)
+        Me.btn_agregar.Location = New System.Drawing.Point(432, 361)
         Me.btn_agregar.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_agregar.Name = "btn_agregar"
         Me.btn_agregar.Size = New System.Drawing.Size(85, 24)
@@ -255,7 +256,7 @@ Partial Class frmAsistencia
         '
         'btn_planilla
         '
-        Me.btn_planilla.Location = New System.Drawing.Point(616, 361)
+        Me.btn_planilla.Location = New System.Drawing.Point(537, 361)
         Me.btn_planilla.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_planilla.Name = "btn_planilla"
         Me.btn_planilla.Size = New System.Drawing.Size(85, 24)
@@ -263,11 +264,22 @@ Partial Class frmAsistencia
         Me.btn_planilla.Text = "Ver Planilla"
         Me.btn_planilla.UseVisualStyleBackColor = True
         '
+        'btn_cerrar
+        '
+        Me.btn_cerrar.Location = New System.Drawing.Point(630, 361)
+        Me.btn_cerrar.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_cerrar.Name = "btn_cerrar"
+        Me.btn_cerrar.Size = New System.Drawing.Size(85, 24)
+        Me.btn_cerrar.TabIndex = 7
+        Me.btn_cerrar.Text = "Cerrar"
+        Me.btn_cerrar.UseVisualStyleBackColor = True
+        '
         'frmAsistencia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(726, 396)
+        Me.Controls.Add(Me.btn_cerrar)
         Me.Controls.Add(Me.btn_planilla)
         Me.Controls.Add(Me.btn_agregar)
         Me.Controls.Add(Me.GroupBox3)
@@ -308,4 +320,5 @@ Partial Class frmAsistencia
     Friend WithEvents col_asistencia As DataGridViewComboBoxColumn
     Friend WithEvents col_justificada As DataGridViewComboBoxColumn
     Friend WithEvents btn_planilla As Button
+    Friend WithEvents btn_cerrar As Button
 End Class
